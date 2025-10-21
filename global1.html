@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reproductor Global1</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      height: 100%;
+      overflow: hidden;
+    }
+    #contenedor {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: black;
+    }
+    #iframeReproductor {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .boton {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      z-index: 10;
+    }
+    #btnSalirPantalla {
+      right: 150px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="contenedor">
+    <iframe id="iframeReproductor" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+    <button class="boton" id="btnPantallaCompleta" onclick="activarPantallaCompleta()">Pantalla completa</button>
+    <button class="boton" id="btnSalirPantalla" onclick="salirPantallaCompleta()">Salir pantalla</button>
+  </div>
+
+  <script>
+    function getChannelParam() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("channel") || "espn";
+    }
+
+    function cargarCanal() {
+      const canal = getChannelParam();
+      const streamURL = `https://streamvv11.lat/global1.php?channel=${canal}`;
+      document.getElementById("iframeReproductor").src = streamURL;
+    }
+
+    function activarPantallaCompleta() {
+      const contenedor = document.getElementById("contenedor");
+      if (contenedor.requestFullscreen) {
+        contenedor.requestFullscreen().then(() => {
+          if (screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock("landscape").catch(() => {});
+          }
+          document.getElementById("btnPantallaCompleta").style.display = "none";
+          document.getElementById("btnSalirPantalla").style.display = "block";
+        });
+      }
+    }
+
+    function salirPantallaCompleta() {
+      if (document.fullscreenElement) {
+        document.exitFullscreen().then(() => {
+          document.getElementById("btnPantallaCompleta").style.display = "block";
+          document.getElementById("btnSalirPantalla").style.display = "none";
+        });
+      }
+    }
+
+    cargarCanal();
+  </script>
+</body>
+</html>
