@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reproductor HSPORTSHD</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      height: 100%;
+      overflow: hidden;
+    }
+    #player {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="player" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const canal = params.get("channel") || "espn";
+    const streamURL = `//streamvv11.lat/global.php?channel=${canal}`;
+    document.getElementById("player").src = streamURL;
+  </script>
+</body>
+</html>
