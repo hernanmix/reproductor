@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reproductor oculto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { margin: 0; background: #000; }
+    iframe { width: 100%; height: 100vh; border: none; }
+  </style>
+</head>
+<body>
+  <script>
+    const canal = new URLSearchParams(location.search).get("channel") || "espnpremium";
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://hernanmix.github.io/reproductor/global1.html?channel=" + canal;
+    iframe.allowFullscreen = true;
+    iframe.setAttribute("allow", "autoplay; encrypted-media");
+    iframe.style.width = "100%";
+    iframe.style.height = "100vh";
+    iframe.style.border = "none";
+    document.body.appendChild(iframe);
+  </script>
+</body>
+</html>
