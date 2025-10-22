@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Reproductor en Vivo</title>
+  <title>Eventos en VIVO - </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
   <style>
     body {
@@ -12,11 +12,24 @@
       font-family: Arial, sans-serif;
     }
 
+    .header {
+      background-color: #0b90c5;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .header img {
+      width: 220px;
+      height: 40px;
+    }
+
     .iframe-container {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
+      border-radius: 10px;
       overflow: hidden;
+      margin: 20px auto;
     }
 
     .iframe-container iframe {
@@ -28,54 +41,71 @@
       border: none;
     }
 
-    #overlayPlay {
+    .alert {
+      background-color: #f0ad4e;
+      color: #000;
+      padding: 10px;
+      margin: 20px auto;
+      border-radius: 8px;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .alert .closebtn {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 5px;
+      right: 10px;
+      font-size: 20px;
+      font-weight: bold;
       cursor: pointer;
-      z-index: 10;
     }
 
-    #btnFullscreen {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      z-index: 9999;
-      background: #0b90c5;
+    .btn-md {
+      background-color: #0b90c5;
       color: #fff;
+      padding: 10px 26px;
+      border-radius: 12px;
+      font-size: 16px;
+      margin: 20px auto;
+      display: block;
+      width: 90%;
+      max-width: 400px;
       border: none;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 13px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.4);
+      cursor: pointer;
     }
 
-    #btnRecargar {
-      position: fixed;
-      bottom: 20px;
-      right: 10px;
-      z-index: 9999;
-      background: #0b90c5;
-      color: #fff;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 13px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    footer {
+      text-align: center;
+      color: #aaa;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <div class="iframe-container">
-    <iframe id="miVideo" allow="autoplay; encrypted-media" allowfullscreen scrolling="no"></iframe>
-    <div id="overlayPlay" onclick="activarPantallaCompleta()"></div>
+  <div class="header">
+    <a href="/">
+      <img src="/img/dptvhd.png" alt="HSPORTSHD">
+    </a>
   </div>
 
-  <button id="btnFullscreen" onclick="activarPantallaCompleta()">⛶ Pantalla completa</button>
-  <button id="btnRecargar" onclick="recargarReproductor()">🔄 Recargar reproductor</button>
+  <div class="alert" id="alerta">
+    <span class="closebtn" onclick="document.getElementById('alerta').style.display='none';">❌</span>
+    🚨 <strong>ATENCIÓN:</strong> Si presentas problemas con algunas señales o acceso a la web te recomiendo uses una VPN, cambio de DNS en tu navegador o puedes usar <a href="https://one.one.one.one" target="_blank">Cloudflare DNS</a>. Con esto evitas el bloqueo de tu proveedor a nuestra web y así disfrutas del contenido.
+  </div>
+
+  <h3 style="text-align:center;">Eventos - HSPORTSTVHD</h3>
+
+  <div class="iframe-container">
+    <iframe id="miVideo" allow="autoplay; encrypted-media" allowfullscreen scrolling="no"></iframe>
+  </div>
+
+  <button class="btn-md" onclick="recargarReproductor()">🔄 Recargar reproductor</button>
+
+  <footer>
+    <h5>HSPORTSHD © Todos los derechos reservados.</h5>
+    <a href="#" rel="nofollow">DMCA</a>
+  </footer>
 
   <script>
     function getParameterByName(name) {
@@ -95,26 +125,6 @@
 
     function recargarReproductor() {
       iframe.src = "https://hernanmix.github.io/reproductor/global1.html?channel=" + canal;
-    }
-
-    async function activarPantallaCompleta() {
-      try {
-        if (iframe.requestFullscreen) {
-          await iframe.requestFullscreen();
-        } else if (iframe.webkitRequestFullscreen) {
-          await iframe.webkitRequestFullscreen();
-        } else if (iframe.msRequestFullscreen) {
-          await iframe.msRequestFullscreen();
-        }
-
-        if (screen.orientation && screen.orientation.lock) {
-          await screen.orientation.lock("landscape");
-        }
-
-        document.getElementById("overlayPlay").style.display = "none";
-      } catch (err) {
-        console.error("Error al activar pantalla completa:", err);
-      }
     }
   </script>
 </body>
