@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Eventos en VIVO</title>
+  <title>Reproductor en Vivo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
   <style>
     body {
@@ -12,24 +12,11 @@
       font-family: Arial, sans-serif;
     }
 
-    .header {
-      background-color: #0b90c5;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .header img {
-      width: 220px;
-      height: 40px;
-    }
-
     .iframe-container {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
-      border-radius: 10px;
       overflow: hidden;
-      margin: 20px auto;
     }
 
     .iframe-container iframe {
@@ -39,16 +26,6 @@
       width: 100%;
       height: 100%;
       border: none;
-    }
-
-    #overlayPlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-      z-index: 10;
     }
 
     #btnFullscreen {
@@ -65,47 +42,25 @@
       box-shadow: 0 0 6px rgba(0,0,0,0.4);
     }
 
-    .btn-md {
-      background-color: #0b90c5;
-      color: #fff;
-      padding: 10px 26px;
-      border-radius: 12px;
-      font-size: 16px;
-      margin: 20px auto;
-      display: block;
-      width: 90%;
-      max-width: 400px;
-      border: none;
+    #overlayPlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      color: #aaa;
-      margin-top: 40px;
+      z-index: 10;
     }
   </style>
 </head>
 <body>
-
-  <div class="header">
-    <img src="/img/dptvhd.png" alt="HSPORTSHD">
-  </div>
-
-  <h3 style="text-align:center;">Eventos - HSPORTSTVHD</h3>
 
   <div class="iframe-container">
     <iframe id="miVideo" allow="autoplay; encrypted-media" allowfullscreen scrolling="no"></iframe>
     <div id="overlayPlay" onclick="activarPantallaCompleta()"></div>
   </div>
 
-  <button class="btn-md" onclick="location.reload()">🔄 Recargar reproductor</button>
   <button id="btnFullscreen" onclick="activarPantallaCompleta()">⛶ Pantalla completa</button>
-
-  <footer>
-    <h5>HSPORTSHD © Todos los derechos reservados.</h5>
-    <a href="#" rel="nofollow">DMCA</a>
-  </footer>
 
   <script>
     function getParameterByName(name) {
