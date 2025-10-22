@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Reproductor en Vivo</title>
+  <title>Eventos en VIVO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body { margin: 0; background: #000; color: #fff; font-family: Arial; }
@@ -21,23 +21,33 @@
 
   <script>
     function getParameterByName(name) {
+      const url = window.location.href;
       name = name.replace(/[
 
 \[\]
 
 ]/g, "\\$&");
-      var regex = new RegExp("[?&]" + name + "=([^&#]*)"),
-          results = regex.exec(location.search);
-      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+      const results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
     const canal = getParameterByName("channel") || "espnpremium";
     const iframe = document.getElementById("miVideo");
-    iframe.src = "https://hernanmix.github.io/reproductor/global1.html?channel=" + canal;
+    const baseURL = "https://hernanmix.github.io/reproductor/global1.html?channel=";
+
+    function cargarReproductor() {
+      iframe.src = baseURL + canal;
+    }
 
     function recargarReproductor() {
-      iframe.src = "https://hernanmix.github.io/reproductor/global1.html?channel=" + canal;
+      iframe.src = ""; // Limpia primero
+      setTimeout(() => { iframe.src = baseURL + canal; }, 100);
     }
+
+    cargarReproductor();
   </script>
 </body>
 </html>
