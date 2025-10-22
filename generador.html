@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Generador Base64</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #111; color: #eee; }
+    input, textarea { width: 100%; padding: 10px; margin-top: 10px; font-size: 16px; }
+    button { padding: 10px 20px; font-size: 16px; margin-top: 10px; cursor: pointer; }
+    .output { margin-top: 20px; font-weight: bold; color: #0f0; }
+  </style>
+</head>
+<body>
+  <h2>🔐 Generador de enlaces codificados en Base64</h2>
+  <label>🔗 Enlace original (ej: /global1.html?channel=espn2)</label>
+  <input type="text" id="inputUrl" placeholder="/global1.html?channel=espn2">
+
+  <button onclick="generar()">Codificar</button>
+
+  <div class="output" id="resultado"></div>
+
+  <script>
+    function generar() {
+      const input = document.getElementById("inputUrl").value.trim();
+      if (!input) return alert("Ingresa una URL para codificar");
+      const encoded = btoa(input);
+      const finalUrl = "?r=" + encoded;
+      document.getElementById("resultado").innerText = finalUrl;
+    }
+  </script>
+</body>
+</html>
