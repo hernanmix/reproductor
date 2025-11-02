@@ -1,47 +1,127 @@
-<script>
-  function getParam(key) {
-    const params = new URLSearchParams(window.location.search);
-    return params.get(key);
-  }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reproductor Global1</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      height: 100%;
+      overflow: hidden;
+    }
+    #contenedor {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: black;
+    }
+    #iframeReproductor {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .boton {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      z-index: 10;
+    }
+    #btnSalirPantalla {
+      right: 150px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="contenedor">
+    <iframe id="iframeReproductor" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+    <button class="boton" id="btnPantallaCompleta" onclick="activarPantallaCompleta()">Pantalla completa</button>
+    <button class="boton" id="btnSalirPantalla" onclick="salirPantallaCompleta()">Salir pantalla</button>
+  </div>
 
-  function cargarCanal() {
-    const canalChannel = getParam("channel");
-    const canalStream = getParam("stream");
-    let url = "";
-
-    if (canalChannel) {
-      url = `//streamvv11.lat/global.php?channel=${canalChannel}`;
-    } else if (canalStream) {
-      url = `https://streamtpmedia.com/global1.php?stream=${canalStream}`;
-    } else {
-      document.getElementById("iframeReproductor").outerHTML = "<h2 style='color:white;text-align:center;margin-top:20%'>Canal no especificado</h2>";
-      return;
+  <script>
+    function getParam(key) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(key);
     }
 
-    document.getElementById("iframeReproductor").src = url;
-  }
+    function cargarCanal() {
+      const canalChannel = getParam("channel");
+      const canalStream = getParam("stream");
+      let url = "";
 
-  function activarPantallaCompleta() {
-    const contenedor = document.getElementById("contenedor");
-    if (contenedor.requestFullscreen) {
-      contenedor.requestFullscreen().then(() => {
-        if (screen.orientation && screen.orientation.lock) {
-          screen.orientation.lock("landscape").catch(() => {});
-        }
-        document.getElementById("btnPantallaCompleta").style.display = "none";
-        document.getElementById("btnSalirPantalla").style.display = "block";
-      });
+      if (canalChannel) {
+        url = `//streamvv11.lat/global.php?channel=${canalChannel}`;
+      } else if (canalStream) {
+        url = `https://streamtpmedia.com/global1.php?stream=${canalStream}`;
+      } else {
+        document.getElementById("iframeReproductor").outerHTML = "<h2 style='color:white;text-align:center;margin-top:20%'>Canal no especificado</h2>";
+        return;
+      }
+
+      document.getElementById("iframeReproductor").src = url;
     }
-  }
 
-  function salirPantallaCompleta() {
-    if (document.fullscreenElement) {
-      document.exitFullscreen().then(() => {
-        document.getElementById("btnPantallaCompleta").style.display = "block";
-        document.getElementById("btnSalirPantalla").style.display = "none";
-      });
+    function activarPantallaCompleta() {
+      const contenedor = document.getElementById("contenedor");
+      if (contenedor.requestFullscreen) {
+        contenedor.requestFullscreen().then(() => {
+          if (screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock("landscape").catch(() => {});
+          }
+          document.getElementById("btnPantallaCompleta").style.display = "none";
+          document.getElementById("btnSalirPantalla").style.display = "block";
+        });
+      }
     }
-  }
 
-  cargarCanal();
-</script>
+    function salirPantallaCompleta() {
+      if (document.fullscreenElement) {
+        document.exitFullscreen().then(() => {
+          document.getElementById("btnPantallaCompleta").style.display = "block";
+          document.getElementById("btnSalirPantalla").style.display = "none";
+        });
+      }
+    }
+
+    cargarCanal();
+  </script>
+
+  <div style="display:none;"><img id="vw24" src="//whos.amung.us/cwidget/gdnr7m8zcy/000000ffffff.png" style="display: none !important;"></div>
+  <script>
+    var vw24 = document.getElementById("vw24");
+    setInterval(function(){
+      vw24.src = "//whos.amung.us/cwidget/gdnr7m8zcy/000000ffffff.png?" + new Date().getTime();
+    }, 100000);
+  </script>
+
+  <script type="text/javascript">
+    var _Hasync = _Hasync || [];
+    _Hasync.push(['Histats.start', '1,4743517,4,0,0,0,00010000']);
+    _Hasync.push(['Histats.fasi', '1']);
+    _Hasync.push(['Histats.track_hits', '']);
+    (function() {
+      var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+      hs.src = ('//s10.histats.com/js15_as.js');
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+    })();
+  </script>
+  <noscript>
+    <a href="/" target="_blank">
+      <img src="//sstatic1.histats.com/0.gif?4743517&101" alt="counter create hit" border="0">
+    </a>
+  </noscript>
+</body>
+</html>
