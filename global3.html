@@ -1,0 +1,47 @@
+<script>
+  function getParam(key) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(key);
+  }
+
+  function cargarCanal() {
+    const canalChannel = getParam("channel");
+    const canalStream = getParam("stream");
+    let url = "";
+
+    if (canalChannel) {
+      url = `//streamvv11.lat/global.php?channel=${canalChannel}`;
+    } else if (canalStream) {
+      url = `https://streamtpmedia.com/global1.php?stream=${canalStream}`;
+    } else {
+      document.getElementById("iframeReproductor").outerHTML = "<h2 style='color:white;text-align:center;margin-top:20%'>Canal no especificado</h2>";
+      return;
+    }
+
+    document.getElementById("iframeReproductor").src = url;
+  }
+
+  function activarPantallaCompleta() {
+    const contenedor = document.getElementById("contenedor");
+    if (contenedor.requestFullscreen) {
+      contenedor.requestFullscreen().then(() => {
+        if (screen.orientation && screen.orientation.lock) {
+          screen.orientation.lock("landscape").catch(() => {});
+        }
+        document.getElementById("btnPantallaCompleta").style.display = "none";
+        document.getElementById("btnSalirPantalla").style.display = "block";
+      });
+    }
+  }
+
+  function salirPantallaCompleta() {
+    if (document.fullscreenElement) {
+      document.exitFullscreen().then(() => {
+        document.getElementById("btnPantallaCompleta").style.display = "block";
+        document.getElementById("btnSalirPantalla").style.display = "none";
+      });
+    }
+  }
+
+  cargarCanal();
+</script>
