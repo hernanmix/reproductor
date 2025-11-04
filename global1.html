@@ -59,7 +59,7 @@
 
     function cargarCanal() {
       const canal = getChannelParam();
-      const streamURL = `//streamzs1.xyz/global.php?stream${canal}`;
+      const streamURL = `//streamzs1.xyz/global.php?stream=${canal}`;
       document.getElementById("iframeReproductor").src = streamURL;
     }
 
