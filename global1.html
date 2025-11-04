@@ -54,12 +54,12 @@
   <script>
     function getChannelParam() {
       const params = new URLSearchParams(window.location.search);
-      return params.get("stream") || "espn";
+      return params.get("channel") || "espn";
     }
 
     function cargarCanal() {
       const canal = getChannelParam();
-      const streamURL = `//streamzs1.xyz/global.php?stream=${canal}`;
+      const streamURL = `//streamvv11.lat/global1.php?channel=${canal}`;
       document.getElementById("iframeReproductor").src = streamURL;
     }
 
