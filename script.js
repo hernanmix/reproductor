@@ -4,12 +4,12 @@ estilo.textContent = `
   .marcador-container {
     position: relative;
     width: 100%;
-    height: 32px;
+    height: 48px;
     margin-top: 6px;
   }
   .barra-progreso {
     position: absolute;
-    top: 22px;
+    top: 30px;
     left: 0;
     height: 8px;
     background-color: #00ff00;
@@ -29,6 +29,15 @@ estilo.textContent = `
     text-align: center;
     min-width: 32px;
     transition: left 1s linear;
+    display: none; /* oculto hasta que empiece */
+  }
+  .hora-evento {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
   }
   .estado {
     display: none !important;
@@ -49,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const marcador = document.createElement("div");
     marcador.className = "marcador-container";
     marcador.innerHTML = `
+      <div class="hora-evento" id="hora-${index}"></div>
       <div class="barra-progreso" id="barra-${index}"></div>
       <div class="minuto-overlay" id="minuto-${index}">1'</div>
     `;
@@ -56,7 +66,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const barra = document.getElementById(`barra-${index}`);
     const minuto = document.getElementById(`minuto-${index}`);
+    const horaEl = document.getElementById(`hora-${index}`);
     let ultimaPosicionET = null;
+
+    // Mostrar la hora programada del evento
+    const fecha = new Date(hora);
+    let h = fecha.getHours();
+    let m = fecha.getMinutes().toString().padStart(2, "0");
+    const ampm = h >= 12 ? "pm" : "am";
+    h = h % 12 || 12;
+    horaEl.textContent = `${h}:${m}${ampm}`;
 
     function actualizarMinuto() {
       const ahora = Date.now();
@@ -67,9 +86,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (minutosPasados < 0) {
         porcentaje = 0;
         texto = "";
+        minuto.style.display = "none"; // antes de empezar, oculto
       } else if (minutosPasados <= 45) {
         porcentaje = (minutosPasados / 120) * 100;
         texto = minutosPasados + "'";
+        minuto.style.display = "block"; // mostrar bolita al iniciar
       } else if (minutosPasados <= 60) {
         porcentaje = (45 / 120) * 100;
         texto = "ET";
