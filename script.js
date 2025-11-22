@@ -88,29 +88,36 @@ document.addEventListener("DOMContentLoaded", function () {
         texto = "";
         minuto.style.display = "none"; // antes de empezar, oculto
       } else if (minutosPasados <= 45) {
+        // Primer tiempo
         porcentaje = (minutosPasados / 120) * 100;
         texto = minutosPasados + "'";
         minuto.style.display = "block"; // mostrar bolita al iniciar
       } else if (minutosPasados <= 60) {
+        // Entretiempo: bolita se mantiene en 45'
         porcentaje = (45 / 120) * 100;
         texto = "ET";
+        minuto.style.display = "block"; // mantener visible en ET
         if (ultimaPosicionET === null) {
           ultimaPosicionET = porcentaje;
         }
       } else if (minutosPasados <= 120) {
-        const segundoTiempo = minutosPasados - 15;
+        // Segundo tiempo y prórroga
+        const segundoTiempo = minutosPasados - 15; // restamos 15 min de ET
         porcentaje = (segundoTiempo / 120) * 100;
         texto = segundoTiempo + "'";
+        minuto.style.display = "block";
       } else {
+        // Final
         porcentaje = 100;
         texto = "FT";
+        minuto.style.display = "block";
       }
 
       barra.style.width = porcentaje + "%";
       minuto.textContent = texto;
 
       if (texto === "ET" && ultimaPosicionET !== null) {
-        minuto.style.left = `calc(${ultimaPosicionET}% - 16px)`;
+        minuto.style.left = `calc(${ultimaPosicionET}% - 16px)`; // fija en 45'
       } else {
         minuto.style.left = `calc(${porcentaje}% - 16px)`;
       }
@@ -120,3 +127,4 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(actualizarMinuto, 1000);
   });
 });
+
