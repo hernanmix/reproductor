@@ -37,7 +37,7 @@ estilo.textContent = `
     left: 0;
     font-size: 14px;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
   }
   .estado {
     display: none !important;
