@@ -1,25 +1,5 @@
 [
-  {
-    "nombre": "Eredivisie: Feyenoord vs NEC",
-    "hora": "2025-11-23T08:30:00",
-    "canales": [
-      "espn"
-    ]
-  },
-  {
-    "nombre": "Serie A: Cremonese vs Roma",
-    "hora": "2025-11-23T09:00:00",
-    "canales": [
-      "espnmx"
-    ]
-  },
-  {
-    "nombre": "Premier League: Leeds United vs Aston Villa",
-    "hora": "2025-11-23T09:00:00",
-    "canales": [
-      "espn"
-    ]
-  },
+  
   {
     "nombre": "Bundesliga: RB Leipzig vs Werder Bremen",
     "hora": "2025-11-23T09:30:00",
@@ -43,10 +23,10 @@
     ]
   },
   {
-    "nombre": "LaLiga 2: Huesca vs Sporting Gijón",
-    "hora": "2025-11-23T10:15:00",
+    "nombre": "Premier League: Arsenal vs Tottenham Hotspur",
+    "hora": "2025-11-23T11:30:00",
     "canales": [
-      "hyper1"
+      "disney18", "peacock2"
     ]
   },
   {
