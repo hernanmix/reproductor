@@ -1,26 +1,5 @@
 [
   {
-    "nombre": "Serie A: Sassuolo vs Pisa",
-    "hora": "2025-11-24T14:45:00",
-    "canales": [
-      "espn"
-    ]
-  },
-  {
-    "nombre": "Premier League: Manchester United vs Everton",
-    "hora": "2025-11-24T15:00:00",
-    "canales": [
-      "disney3", "usanetwork"
-    ]
-  },
-  {
-    "nombre": "LaLiga: Espanyol vs Sevilla",
-    "hora": "2025-11-24T15:00:00",
-    "canales": [
-      "espndeportes"
-    ]
-  },
-  {
     "nombre": "Brasileirão: Mirassol vs Ceará",
     "hora": "2025-11-24T17:00:00",
     "canales": [
@@ -54,6 +33,66 @@
     "hora": "2025-11-24T20:00:00",
     "canales": [
       "espnpremium"
+    ]
+  },
+  {
+    "nombre": "Champions League: Galatasaray vs Union Saint-Gilloise",
+    "hora": "2025-11-25T12:45:00",
+    "canales": [
+      "espn2"
+    ]
+  },
+  {
+    "nombre": "Champions League: Ajax vs Benfica",
+    "hora": "2025-11-25T12:45:00",
+    "canales": [
+      "espn"
+    ]
+  },
+  {
+    "nombre": "Champions League: Bodø / Glimt vs Juventusa",
+    "hora": "2025-11-25T15:00:00",
+    "canales": [
+      "espn2"
+    ]
+  },
+  {
+    "nombre": "Champions League: Slavia Praha vs Athletic Club:",
+    "hora": "2025-11-25T15:00:00",
+    "canales": []
+  },
+  {
+    "nombre": "Champions League: Borussia Dortmund vs Villarreal",
+    "hora": "2025-11-25T15:00:00",
+    "canales": [
+      "fox2ar"
+    ]
+  },
+  {
+    "nombre": "Champions League: Napoli vs Qarabağ",
+    "hora": "2025-11-25T15:00:00",
+    "canales": []
+  },
+  {
+    "nombre": "Champions League: Chelsea vs Barcelona",
+    "hora": "2025-11-25T15:00:00",
+    "canales": [
+      "espn"
+    ]
+  },
+  {
+    "nombre": "Champions League: Olympique Marseille vs Newcastle United",
+    "hora": "2025-11-25T15:00:00",
+    "canales": [
+      "espn3"
+    ]
+  },
+  {
+    "nombre": "Champions League: Manchester City vs Bayer Leverkusen",
+    "hora": "2025-11-25T15:00:00",
+    "canales": [
+      "espn",
+      "fox1ar"
     ]
   }
 ]
