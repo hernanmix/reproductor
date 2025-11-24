@@ -1,241 +1,59 @@
 [
-  
   {
-    "nombre": "Bundesliga: RB Leipzig vs Werder Bremen",
-    "hora": "2025-11-23T09:30:00",
-    "canales": [
-      "sportv1"
-    ]
-  },
-  {
-    "nombre": "Primera División: Antofagasta vs Deportes Concepción",
-    "hora": "2025-11-23T10:00:00",
-    "canales": [
-      "tntsportschile"
-    ]
-  },
-  {
-    "nombre": "LaLiga: Real Betis vs Girona",
-    "hora": "2025-11-23T10:15:00",
-    "canales": [
-      "espndeportes",
-      "dsports2"
-    ]
-  },
-  {
-    "nombre": "Premier League: Arsenal vs Tottenham Hotspur",
-    "hora": "2025-11-23T11:30:00",
-    "canales": [
-      "disney18", "peacock2"
-    ]
-  },
-  {
-    "nombre": "Serie A: Lazio vs Lecce",
-    "hora": "2025-11-23T12:00:00",
-    "canales": [
-      "foxdeportes"
-    ]
-  },
-  {
-    "nombre": "LaLiga: Getafe vs Atlético Madrid",
-    "hora": "2025-11-23T12:30:00",
-    "canales": [
-      "espn",
-      "espndeportes"
-    ]
-  },
-  {
-    "nombre": "LaLiga 2: Burgos vs Racing Santander",
-    "hora": "2025-11-23T12:30:00",
-    "canales": [
-      "hyper1"
-    ]
-  },
-  {
-    "nombre": "Pro League: Al Nassr vs Al Khaleej",
-    "hora": "2025-11-23T12:30:00",
-    "canales": []
-  },
-  {
-    "nombre": "Serie A: Macará vs Delfinecdf, zapping",
-    "hora": "2025-11-23T13:00:00",
-    "canales": []
-  },
-  {
-    "nombre": "Copa: Potrero – Final",
-    "hora": "2025-11-23T13:30:00",
-    "canales": [
-      "espn3"
-    ]
-  },
-  {
-    "nombre": "Brasileirão: São Paulo vs Juventude",
-    "hora": "2025-11-23T14:00:00",
-    "canales": [
-      "premiere1"
-    ]
-  },
-  {
-    "nombre": "Brasileirão: Bahia vs Vasco da Gama",
-    "hora": "2025-11-23T14:00:00",
-    "canales": [
-      "premiere2"
-    ]
-  },
-  {
-    "nombre": "Primera División: Peñarol vs Nacional",
-    "hora": "2025-11-23T14:30:00",
-    "canales": [
-      "goltv1"
-    ]
-  },
-  {
-    "nombre": "Serie A: Internazionale vs Milan",
-    "hora": "2025-11-23T14:45:00",
-    "canales": [
-      "espn",
-      "espnmx",
-      "foxdeportes"
-    ]
-  },
-  {
-    "nombre": "Ligue 1: Lille vs Parise",
-    "hora": "2025-11-23T14:45:00",
-    "canales": [
-      "espn2"
-    ]
-  },
-  {
-    "nombre": "LaLiga: Elche vs Real Madrid",
-    "hora": "2025-11-23T15:00:00",
-    "canales": [
-      "espndeportes"
-    ]
-  },
-  {
-    "nombre": "Liga 1: Alianza Lima vs UTC Cajamarca",
-    "hora": "2025-11-23T15:00:00",
-    "canales": [
-      "liga1max"
-    ]
-  },
-  {
-    "nombre": "Liga 1: Comerciantes Unidos vs ADT",
-    "hora": "2025-11-23T15:00:00",
-    "canales": []
-  },
-  {
-    "nombre": "Serie A: Barcelona vs LDU Quito",
-    "hora": "2025-11-23T15:30:00",
-    "canales": [
-      "zapping"
-    ]
-  },
-  {
-    "nombre": "Liga Profesional: Rosario Central vs Estudiantes",
-    "hora": "2025-11-23T15:30:00",
-    "canales": [
-      "espnpremium"
-    ]
-  },
-  {
-    "nombre": "Primera División: Cerro Porteño vs Libertad",
-    "hora": "2025-11-23T16:00:00",
-    "canales": [
-      "goltv"
-    ]
-  },
-  {
-    "nombre": "Primera División: O'Higgins vs Universidad Chile",
-    "hora": "2025-11-23T16:00:00",
-    "canales": [
-      "tntsportschile"
-    ]
-  },
-  {
-    "nombre": "Primera División: General Caballero JLM vs Guaraní",
-    "hora": "2025-11-23T16:00:00",
-    "canales": []
-  },
-  {
-    "nombre": "Liga Nacional: Malacateco vs Comunicaciones",
-    "hora": "2025-11-23T16:00:00",
-    "canales": []
-  },
-  {
-    "nombre": "Brasileirão: Sport Recife vs Vitória",
-    "hora": "2025-11-23T16:30:00",
-    "canales": []
-  },
-  {
-    "nombre": "MLS: Cincinnati vs Inter Miami",
-    "hora": "2025-11-23T17:00:00",
-    "canales": [
-      "mls_1es"
-    ]
-  },
-  {
-    "nombre": "Primera A: Medellín vs Atlético Nacionalwinplus, winsports",
-    "hora": "2025-11-23T17:45:00",
-    "canales": []
-  },
-  {
-    "nombre": "Liga Profesional: Boca Juniors vs Talleres Córdoba",
-    "hora": "2025-11-23T18:00:00",
+    "nombre": "Serie A: Sassuolo vs Pisa",
+    "hora": "2025-10-24T14:45:00",
     "canales": [
       "espn"
     ]
   },
   {
-    "nombre": "Liga Nacional: Guastatoya vs Marquense",
-    "hora": "2025-11-23T18:00:00",
-    "canales": []
-  },
-  {
-    "nombre": "Liga MX Femenil: Tigres UANL vs América",
-    "hora": "2025-11-23T18:00:00",
-    "canales": []
-  },
-  {
-    "nombre": "Serie A: Independiente del Valle vs Orense",
-    "hora": "2025-11-23T18:00:00",
+    "nombre": "Premier League: Manchester United vs Everton",
+    "hora": "2025-10-24T15:00:00",
     "canales": [
-      "zapping",
-      "ecdf"
+      "disney3"
     ]
   },
   {
-    "nombre": "Liga de Expansión MX: CDS Tampico Madero vs Tepatitlán",
-    "hora": "2025-11-23T18:00:00",
-    "canales": []
+    "nombre": "LaLiga: Espanyol vs Sevilla",
+    "hora": "2025-10-24T15:00:00",
+    "canales": [
+      "espndeportes"
+    ]
   },
   {
-    "nombre": "Liga Nacional: Olimpia vs Marathón",
-    "hora": "2025-11-23T18:15:00",
-    "canales": []
+    "nombre": "Brasileirão: Mirassol vs Ceará",
+    "hora": "2025-10-24T17:00:00",
+    "canales": [
+      "premiere2"
+    ]
   },
   {
-    "nombre": "Primera División: Colo-Colo vs Unión La Calera",
-    "hora": "2025-11-23T18:30:00",
+    "nombre": "Liga Profesional: Racing Club vs River Plate",
+    "hora": "2025-10-24T17:15:00",
+    "canales": [
+      "espn",
+      "espnpremium"
+    ]
+  },
+  {
+    "nombre": "Primera División: Ñublense vs Huachipato",
+    "hora": "2025-10-24T18:00:00",
     "canales": [
       "tntsportschile"
     ]
   },
   {
-    "nombre": "Brasileirão: Cruzeiro vs Corinthians",
-    "hora": "2025-11-23T18:30:00",
-    "canales": []
-  },
-  {
-    "nombre": "Primera A: América de Cali vs Junior",
-    "hora": "2025-11-23T20:00:00",
+    "nombre": "Brasileirão: Internacional vs Santos",
+    "hora": "2025-10-24T19:00:00",
     "canales": [
-      "winsports"
+      "premiere2"
     ]
   },
   {
-    "nombre": "Liga Nacional: Real España vs Motagua",
-    "hora": "2025-11-23T20:30:00",
-    "canales": []
+    "nombre": "Liga Profesional: Unión Santa Fe vs Gimnasia La Plata",
+    "hora": "2025-10-24T20:00:00",
+    "canales": [
+      "espnpremium"
+    ]
   }
 ]
