@@ -1,62 +1,123 @@
 [
   {
-    "nombre": "Champions League: Galatasaray vs Union Saint-Gilloise",
-    "hora": "2025-11-25T12:45:00",
+    "nombre": "champions League:København vs Kairat",
+    "hora": "2025-11-26T12:45:00",
     "canales": [
       "espn2"
     ]
   },
   {
-    "nombre": "Champions League: Ajax vs Benfica",
-    "hora": "2025-11-25T12:45:00",
+    "nombre": "champions League:Paphos vs Monaco",
+    "hora": "2025-11-26T12:45:00",
     "canales": [
-      "espn"
+      "espn2",
+      "fox1ar"
     ]
   },
   {
-    "nombre": "Champions League: Bodø / Glimt vs Juventusa",
-    "hora": "2025-11-25T15:00:00",
+    "nombre": "champions League:Eintracht Frankfurt vs Atalanta",
+    "hora": "2025-11-26T15:00:00",
     "canales": [
-      "espn2"
+      "espn4"
     ]
   },
   {
-    "nombre": "Champions League: Slavia Praha vs Athletic Club:",
-    "hora": "2025-11-25T15:00:00",
-    "canales": []
-  },
-  {
-    "nombre": "Champions League: Borussia Dortmund vs Villarreal",
-    "hora": "2025-11-25T15:00:00",
-    "canales": [
-      "fox2ar"
-    ]
-  },
-  {
-    "nombre": "Champions League: Napoli vs Qarabağ",
-    "hora": "2025-11-25T15:00:00",
-    "canales": []
-  },
-  {
-    "nombre": "Champions League: Chelsea vs Barcelona",
-    "hora": "2025-11-25T15:00:00",
-    "canales": [
-      "espn"
-    ]
-  },
-  {
-    "nombre": "Champions League: Olympique Marseille vs Newcastle United",
-    "hora": "2025-11-25T15:00:00",
-    "canales": [
-      "espn3"
-    ]
-  },
-  {
-    "nombre": "Champions League: Manchester City vs Bayer Leverkusen",
-    "hora": "2025-11-25T15:00:00",
+    "nombre": "champions League:Olympiakos Piraeus vs Real Madrid",
+    "hora": "2025-11-26T15:00:00",
     "canales": [
       "espn",
-      "fox1ar"
+      "espn2"
+    ]
+  },
+  {
+    "nombre": "champions League:Atlético Madrid vs Internazionalelespn5, fix1ar",
+    "hora": "2025-11-26T15:00:00",
+    "canales": []
+  },
+  {
+    "nombre": "champions League:Sporting CP vs Club Brugge",
+    "hora": "2025-11-26T15:00:00",
+    "canales": [
+      "espn6"
+    ]
+  },
+  {
+    "nombre": "champions League:Arsenal vs Bayern München",
+    "hora": "2025-11-26T15:00:00",
+    "canales": [
+      "espn",
+      "espn2"
+    ]
+  },
+  {
+    "nombre": "champions League:Liverpool vs PSV",
+    "hora": "2025-11-26T15:00:00",
+    "canales": [
+      "fox2ar",
+      "espn7"
+    ]
+  },
+  {
+    "nombre": "Primera División:San Marcos vs Cobreloa",
+    "hora": "2025-11-26T16:00:00",
+    "canales": [
+      "tntsportschile"
+    ]
+  },
+  {
+    "nombre": "Brasilero:RB Bragantino vs Fortaleza",
+    "hora": "2025-11-26T17:00:00",
+    "canales": [
+      "premiere1"
+    ]
+  },
+  {
+    "nombre": "Primera División:Deportes Concepción vs Copiapó",
+    "hora": "2025-11-26T18:30:00",
+    "canales": [
+      "tntsportschile"
+    ]
+  },
+  {
+    "nombre": "Lia Betplay:Atlético Bucaramanga vs Fortaleza CEIF",
+    "hora": "2025-11-26T18:30:00",
+    "canales": [
+      "winplus"
+    ]
+  },
+  {
+    "nombre": "Copa Argentina:Lanús vs Tigre",
+    "hora": "2025-11-26T19:00:00",
+    "canales": [
+      "tntsports"
+    ]
+  },
+  {
+    "nombre": "Liga MX:Juárez vs Toluca",
+    "hora": "2025-11-26T20:00:00",
+    "canales": [
+      "universousa"
+    ]
+  },
+  {
+    "nombre": "Liga Betplay:Atlético Nacional vs Junior",
+    "hora": "2025-11-26T20:30:00",
+    "canales": [
+      "winplus"
+    ]
+  },
+  {
+    "nombre": "Liga MX:Monterrey vs América",
+    "hora": "2025-11-26T22:00:00",
+    "canales": [
+      "tudnus"
+    ]
+  },
+  {
+    "nombre": "Liga MX:Tijuana vs Tigres UANL",
+    "hora": "2025-11-26T23:00:00",
+    "canales": [
+      "fox1mx"
     ]
   }
 ]
