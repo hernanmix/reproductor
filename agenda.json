@@ -1,16 +1,31 @@
 [
   {
-    "nombre": "Premier League: Aston Villa vs Wolverhampton Wanderers",
-    "hora": "2025-11-30T09:05:00",
+    "nombre": "Premier League: Chelsea vs Arsenal",
+    "hora": "2025-11-29T11:30:00",
     "canales": [
       "espn"
     ]
   },
   {
-    "nombre": "Premier League: Chelsea vs Arsenal",
-    "hora": "2025-11-30T11:30:00",
+    "nombre": "Seré A:Atalanta vs Fiorentina",
+    "hora": "2025-11-29T12:00:00",
     "canales": [
-      "espn"
+      "espn2"
+    ]
+  },
+  {
+    "nombre": "La Liga: Girona vs Real Madrid",
+    "hora": "2025-11-29T15:00:00",
+    "canales": [
+      "espn2"
+    ]
+  },
+  {
+    "nombre": "Copa Argentina: Boca Juniors vs Argentinos Juniors",
+    "hora": "2025-11-29T16:30:00",
+    "canales": [
+      "espn2",
+      "tycar"
     ]
   }
 ]
