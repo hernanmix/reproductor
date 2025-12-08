@@ -1,31 +1,62 @@
 [
   {
     "nombre": "Premier League: Chelsea vs Arsenal",
-    "hora": "2025-11-30T11:30:00",
+  [
+  {
+    "nombre": "Serie A: Pisa vs Parma",
+    "hora": "2025-12-08T09:00:00",
     "canales": [
       "espn"
     ]
   },
   {
-    "nombre": "Seré A:Atalanta vs Fiorentina",
-    "hora": "2025-11-30T12:00:00",
+    "nombre": "Liga 2: Burgos vs Albacete",
+    "hora": "2025-12-08T09:00:00",
+    "canales": [
+      "hyper"
+    ]
+  },
+  {
+    "nombre": "SeriA: Udinese vs Genoa",
+    "hora": "2025-12-08T12:00:00",
+    "canales": [
+      "espn"
+    ]
+  },
+  {
+    "nombre": "Laliga2: Las Palmas vs Mirandés",
+    "hora": "2025-12-08T12:30:00",
+    "canales": [
+      "hyper"
+    ]
+  },
+  {
+    "nombre": "SerieA: Torino vs Milan",
+    "hora": "2025-12-08T14:45:00",
     "canales": [
       "espn2"
     ]
   },
   {
-    "nombre": "La Liga: Girona vs Real Madrid",
-    "hora": "2025-11-30T15:00:00",
+    "nombre": "Primera División: Gimnasia La Plata vs Estudiantes",
+    "hora": "2025-12-08T15:00:00",
     "canales": [
-      "espn2"
+      "espnpremium"
     ]
   },
   {
-    "nombre": "Copa Argentina: Boca Juniors vs Argentinos Juniors",
-    "hora": "2025-11-30T16:30:00",
+    "nombre": "Premier League:Wolverhampton Wanderers vs Manchester United",
+    "hora": "2025-12-08T15:00:00",
     "canales": [
-      "espn2",
-      "tycar"
+      "espn"
+    ]
+  },
+  {
+    "nombre": "Liga Pro: Emelec vs Macará",
+    "hora": "2025-12-08T19:00:00",
+    "canales": [
+      "zapping",
+      "ecdf"
     ]
   }
 ]
