@@ -1,7 +1,7 @@
- [
+[
   {
     "nombre": "UEFA Champions League: Galatasaray vs Atlético Madrid",
-    "hora": "2026-01-20T12:45:00",
+    "hora": "2026-01-21T12:45:00",
     "canales": [
       "disney1",
       "espn",
@@ -10,7 +10,7 @@
   },
   {
     "nombre": "UEFA Champions League: Qarabağ vs Eintracht Frankfurt",
-    "hora": "2026-01-20T12:45:00",
+    "hora": "2026-01-21T12:45:00",
     "canales": [
       "espn2",
       "disney2"
@@ -18,7 +18,7 @@
   },
   {
     "nombre": "UEFA Champions League: Bayern München vs Union Saint-Gilloise",
-    "hora": "2026-01-20T15:00:00",
+    "hora": "2026-01-21T15:00:00",
     "canales": [
       "disney1",
       "espn"
@@ -26,14 +26,14 @@
   },
   {
     "nombre": "UEFA Champions League: Slavia Praha vs Barcelona",
-    "hora": "2026-01-20T15:00:00",
+    "hora": "2026-01-21T15:00:00",
     "canales": [
       "espn2"
     ]
   },
   {
     "nombre": "UEFA Champions League: Chelsea vs Paphos",
-    "hora": "2026-01-20T15:00:00",
+    "hora": "2026-01-21T15:00:00",
     "canales": [
       "disney3",
       "espn3"
@@ -41,7 +41,7 @@
   },
   {
     "nombre": "UEFA Champions League: Atalanta vs Athletic Club",
-    "hora": "2026-01-20T15:00:00",
+    "hora": "2026-01-21T15:00:00",
     "canales": [
       "disney4",
       "espn4"
@@ -49,7 +49,7 @@
   },
   {
     "nombre": "UEFA Champions League: Olympique Marseille vs Liverpool",
-    "hora": "2026-01-20T15:00:00",
+    "hora": "2026-01-21T15:00:00",
     "canales": [
       "espn5",
       "max3"
@@ -57,7 +57,7 @@
   },
   {
     "nombre": "UEFA Champions League: Newcastle United vs PSV",
-    "hora": "2026-01-20T15:00:00",
+    "hora": "2026-01-21T15:00:00",
     "canales": [
       "espn6",
       "max4",
@@ -66,7 +66,7 @@
   },
   {
     "nombre": "UEFA Champions League: Juventus vs Benfica",
-    "hora": "2026-01-20T15:00:00",
+    "hora": "2026-01-21T15:00:00",
     "canales": [
       "disney7",
       "espn7"
@@ -74,42 +74,42 @@
   },
   {
     "nombre": "Championship: Stoke City vs Middlesbrough",
-    "hora": "2026-01-20T15:00:00",
+    "hora": "2026-01-21T15:00:00",
     "canales": [
       "disney8"
     ]
   },
   {
     "nombre": "Supercopa de Chile: Coquimbo Unido vs Deportes Limache",
-    "hora": "2026-01-20T17:00:00",
+    "hora": "2026-01-21T17:00:00",
     "canales": [
       "max5"
     ]
   },
   {
     "nombre": "Campeonato Carioca: Botafogo vs Volta Redonda",
-    "hora": "2026-01-20T17:00:00",
+    "hora": "2026-01-21T17:00:00",
     "canales": [
       "premiere1br"
     ]
   },
   {
     "nombre": "Campeonato Gaúcho: Internacional vs Inter Santa Maria",
-    "hora": "2026-01-20T17:00:00",
+    "hora": "2026-01-21T17:00:00",
     "canales": [
       "sporttvbr1"
     ]
   },
   {
     "nombre": "Campeonato Paulista A1: Mirassol vs RB Bragantino",
-    "hora": "2026-01-20T18:00:00",
+    "hora": "2026-01-21T18:00:00",
     "canales": [
       "max1"
     ]
   },
   {
     "nombre": "Serie Río de la Plata: Colo-Colo vs Peñarol",
-    "hora": "2026-01-20T19:00:00",
+    "hora": "2026-01-21T19:00:00",
     "canales": [
       "disney1",
       "espnpremium"
@@ -117,35 +117,35 @@
   },
   {
     "nombre": "NBA: Cavaliers vs Hornets",
-    "hora": "2026-01-20T19:00:00",
+    "hora": "2026-01-21T19:00:00",
     "canales": [
       "espn4"
     ]
   },
   {
     "nombre": "Copa Argentina: Argentinos Juniors vs Midland",
-    "hora": "2026-01-20T19:15:00",
+    "hora": "2026-01-21T19:15:00",
     "canales": [
       "tycsports"
     ]
   },
   {
     "nombre": "Superliga Colombiana: Santa Fe vs Junior | FINAL (2/2)",
-    "hora": "2026-01-20T19:30:00",
+    "hora": "2026-01-21T19:30:00",
     "canales": [
       "winplus"
     ]
   },
   {
     "nombre": "Campeonato Carioca: Flamengo vs Vasco da Gama",
-    "hora": "2026-01-20T19:30:00",
+    "hora": "2026-01-21T19:30:00",
     "canales": [
       "sporttvbr1"
     ]
   },
   {
     "nombre": "NBA: Thunders vs Bucks",
-    "hora": "2026-01-20T21:30:00",
+    "hora": "2026-01-21T21:30:00",
     "canales": [
       "espn4"
     ]
