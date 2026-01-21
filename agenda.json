@@ -1,59 +1,153 @@
  [
   {
-    "nombre": "Serie A: Pisa vs Parma",
-    "hora": "2025-12-08T09:00:00",
+    "nombre": "UEFA Champions League: Galatasaray vs Atlético Madrid",
+    "hora": "2026-01-20T12:45:00",
     "canales": [
+      "disney1",
+      "espn",
+      "tudnusa"
+    ]
+  },
+  {
+    "nombre": "UEFA Champions League: Qarabağ vs Eintracht Frankfurt",
+    "hora": "2026-01-20T12:45:00",
+    "canales": [
+      "espn2",
+      "disney2"
+    ]
+  },
+  {
+    "nombre": "UEFA Champions League: Bayern München vs Union Saint-Gilloise",
+    "hora": "2026-01-20T15:00:00",
+    "canales": [
+      "disney1",
       "espn"
     ]
   },
   {
-    "nombre": "Liga 2: Burgos vs Albacete",
-    "hora": "2025-12-08T09:00:00",
-    "canales": [
-      "hyper"
-    ]
-  },
-  {
-    "nombre": "SeriA: Udinese vs Genoa",
-    "hora": "2025-12-08T12:00:00",
-    "canales": [
-      "espn"
-    ]
-  },
-  {
-    "nombre": "Laliga2: Las Palmas vs Mirandés",
-    "hora": "2025-12-08T12:30:00",
-    "canales": [
-      "hyper"
-    ]
-  },
-  {
-    "nombre": "SerieA: Torino vs Milan",
-    "hora": "2025-12-08T14:45:00",
+    "nombre": "UEFA Champions League: Slavia Praha vs Barcelona",
+    "hora": "2026-01-20T15:00:00",
     "canales": [
       "espn2"
     ]
   },
   {
-    "nombre": "Primera División: Gimnasia La Plata vs Estudiantes",
-    "hora": "2025-12-08T15:00:00",
+    "nombre": "UEFA Champions League: Chelsea vs Paphos",
+    "hora": "2026-01-20T15:00:00",
     "canales": [
+      "disney3",
+      "espn3"
+    ]
+  },
+  {
+    "nombre": "UEFA Champions League: Atalanta vs Athletic Club",
+    "hora": "2026-01-20T15:00:00",
+    "canales": [
+      "disney4",
+      "espn4"
+    ]
+  },
+  {
+    "nombre": "UEFA Champions League: Olympique Marseille vs Liverpool",
+    "hora": "2026-01-20T15:00:00",
+    "canales": [
+      "espn5",
+      "max3"
+    ]
+  },
+  {
+    "nombre": "UEFA Champions League: Newcastle United vs PSV",
+    "hora": "2026-01-20T15:00:00",
+    "canales": [
+      "espn6",
+      "max4",
+      "disney6"
+    ]
+  },
+  {
+    "nombre": "UEFA Champions League: Juventus vs Benfica",
+    "hora": "2026-01-20T15:00:00",
+    "canales": [
+      "disney7",
+      "espn7"
+    ]
+  },
+  {
+    "nombre": "Championship: Stoke City vs Middlesbrough",
+    "hora": "2026-01-20T15:00:00",
+    "canales": [
+      "disney8"
+    ]
+  },
+  {
+    "nombre": "Supercopa de Chile: Coquimbo Unido vs Deportes Limache",
+    "hora": "2026-01-20T17:00:00",
+    "canales": [
+      "max5"
+    ]
+  },
+  {
+    "nombre": "Campeonato Carioca: Botafogo vs Volta Redonda",
+    "hora": "2026-01-20T17:00:00",
+    "canales": [
+      "premiere1br"
+    ]
+  },
+  {
+    "nombre": "Campeonato Gaúcho: Internacional vs Inter Santa Maria",
+    "hora": "2026-01-20T17:00:00",
+    "canales": [
+      "sporttvbr1"
+    ]
+  },
+  {
+    "nombre": "Campeonato Paulista A1: Mirassol vs RB Bragantino",
+    "hora": "2026-01-20T18:00:00",
+    "canales": [
+      "max1"
+    ]
+  },
+  {
+    "nombre": "Serie Río de la Plata: Colo-Colo vs Peñarol",
+    "hora": "2026-01-20T19:00:00",
+    "canales": [
+      "disney1",
       "espnpremium"
     ]
   },
   {
-    "nombre": "Premier League:Wolverhampton Wanderers vs Manchester United",
-    "hora": "2025-12-08T15:00:00",
+    "nombre": "NBA: Cavaliers vs Hornets",
+    "hora": "2026-01-20T19:00:00",
     "canales": [
-      "espn"
+      "espn4"
     ]
   },
   {
-    "nombre": "Liga Pro: Emelec vs Macará",
-    "hora": "2025-12-08T19:00:00",
+    "nombre": "Copa Argentina: Argentinos Juniors vs Midland",
+    "hora": "2026-01-20T19:15:00",
     "canales": [
-      "zapping",
-      "ecdf"
+      "tycsports"
+    ]
+  },
+  {
+    "nombre": "Superliga Colombiana: Santa Fe vs Junior | FINAL (2/2)",
+    "hora": "2026-01-20T19:30:00",
+    "canales": [
+      "winplus"
+    ]
+  },
+  {
+    "nombre": "Campeonato Carioca: Flamengo vs Vasco da Gama",
+    "hora": "2026-01-20T19:30:00",
+    "canales": [
+      "sporttvbr1"
+    ]
+  },
+  {
+    "nombre": "NBA: Thunders vs Bucks",
+    "hora": "2026-01-20T21:30:00",
+    "canales": [
+      "espn4"
     ]
   }
 ]
