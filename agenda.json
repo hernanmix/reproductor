@@ -1,141 +1,74 @@
 [
   {
-    "nombre": "Pro League: Al Quadisiya vs Al Ittihad",
-    "hora": "2026-01-22T12:30:00",
+    "nombre": "Ligue 1: Auxerre vs PSG",
+    "hora": "2026-01-23T14:00:00",
     "canales": [
-      "foxdeportes"
+      "disney1",
+      "espn5"
     ]
   },
   {
-    "nombre": "UEFA Europa League: Feyenoord vs Sturm Graz",
-    "hora": "2026-01-22T12:45:00",
+    "nombre": "Bundesliga: St. Pauli vs Hamburger SV",
+    "hora": "2026-01-23T14:30:00",
     "canales": [
-      "disney6",
+      "disney2"
+    ]
+  },
+  {
+    "nombre": "Serie A: Inter vs Pisa",
+    "hora": "2026-01-23T14:45:00",
+    "canales": [
+      "disney3",
+      "espn2"
+    ]
+  },
+  {
+    "nombre": "LaLiga: Levante vs Elche",
+    "hora": "2026-01-23T15:00:00",
+    "canales": [
+      "dsports"
+    ]
+  },
+  {
+    "nombre": "Championship: Derby County vs West Bromwich Albion",
+    "hora": "2026-01-23T15:00:00",
+    "canales": [
       "espn7"
     ]
   },
   {
-    "nombre": "UEFA Europa League: Brann vs Midtjylland",
-    "hora": "2026-01-22T12:45:00",
-    "canales": [
-      "disney8"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: Malmö FF vs Crvena Zvezda",
-    "hora": "2026-01-22T12:45:00",
-    "canales": [
-      "disney7"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: Young Boys vs Olympique Lyonnais E",
-    "hora": "2026-01-22T12:45:00",
-    "canales": [
-      "disney2",
-      "espn2"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: Freiburg vs Maccabi Tel Aviv",
-    "hora": "2026-01-22T12:45:00",
-    "canales": [
-      "disney1",
-      "espn",
-      "tudnusa"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: Fenerbahçe vs Aston Villa",
-    "hora": "2026-01-22T12:45:00",
-    "canales": [
-      "disney5",
-      "espn5"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: Bologna vs Celtic",
-    "hora": "2026-01-22T12:45:00",
-    "canales": [
-      "espn5"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: Viktoria Plzeň vs Porto",
-    "hora": "2026-01-22T12:45:00",
-    "canales": [
-      "disney4",
-      "espn4"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: PAOK vs Real Betis",
-    "hora": "2026-01-22T12:45:00",
-    "canales": [
-      "disney3",
-      "espn3"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: Roma vs Stuttgart",
-    "hora": "2026-01-22T15:00:00",
-    "canales": [
-      "disney10",
-      "espn",
-      "tudnusa"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: Celta de Vigo vs Lille",
-    "hora": "2026-01-22T15:00:00",
-    "canales": [
-      "disney12",
-      "espn3"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: Ferencváros vs Panathinaikos",
-    "hora": "2026-01-22T15:00:00",
-    "canales": [
-      "disney13",
-      "espn4"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: Sporting Braga vs Nottingham Forest",
-    "hora": "2026-01-22T15:00:00",
-    "canales": [
-      "disney11",
-      "espn2"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: Dinamo Zagreb vs FCSB",
-    "hora": "2026-01-22T15:00:00",
-    "canales": [
-      "disney17"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: Nice vs Go Ahead Eagles",
-    "hora": "2026-01-22T15:00:00",
-    "canales": [
-      "disney18"
-    ]
-  },
-  {
-    "nombre": "UEFA Europa League: Utrecht vs Genk",
-    "hora": "2026-01-22T15:00:00",
-    "canales": [
-      "disney14",
-      "espn5"
-    ]
-  },
-  {
-    "nombre": "Liga Profesional: Aldosivi vs Defensa y Justicia",
-    "hora": "2026-01-22T15:00:00",
+    "nombre": "Liga Profesional: San Lorenzo vs Lanús",
+    "hora": "2026-01-23T17:00:00",
     "canales": [
       "tntsports"
+    ]
+  },
+  {
+    "nombre": "Liga Profesional: Independiente vs Estudiantes (LP)",
+    "hora": "2026-01-23T18:00:00",
+    "canales": [
+      "espnpremium"
+    ]
+  },
+  {
+    "nombre": "Serie Río de la Plata: Colón vs Paysandu",
+    "hora": "2026-01-23T18:00:00",
+    "canales": [
+      "disney1"
+    ]
+  },
+  {
+    "nombre": "Liga Profesional: Independiente Rivadavia vs Atlético Tucumán",
+    "hora": "2026-01-23T20:15:00",
+    "canales": [
+      "tntsports"
+    ]
+  },
+  {
+    "nombre": "Liga Profesional: Talleres Córdoba vs Newell's Old Boys",
+    "hora": "2026-01-23T20:15:00",
+    "canales": [
+      "espnpremium"
     ]
   }
 ]
