@@ -1,0 +1,13 @@
+#EXTM3U
+
+#EXTINF:-1 tvg-id="35" tvg-name="Vos HD" tvg-logo="https://i.ibb.co/BVjLCTzN/VOSTVOF.png" group-title="Nacionales", Vos HD
+https://59d39900ebfb8.streamlock.net/vostv/vostv/playlist.m3u8
+
+#EXTINF:-1 tvg-id="36" tvg-name="Estrella" tvg-logo="https://canales.asplurtv.com/logo_teleestrella.png" group-title="Nacionales", Estrella
+https://59d39900ebfb8.streamlock.net:443/teleestrella/teleestrella/playlist.m3u8
+
+#EXTINF:-1 tvg-id="37" tvg-name="FAP TV" tvg-logo="https://canales.asplurtv.com/logo_faptv.png" group-title="Nacionales", FAP TV
+https://lv.andeshost.com/hls/faptv/index.m3u8
+
+#EXTINF:-1 tvg-id="38" tvg-name="OFF TV" tvg-logo="https://redtvoff.com.bo/wp-content/uploads/2025/01/TVOFF-Logotipo-200x113.png" group-title="Nacionales", OFF TV
+https://seo.tv.bo/hls/TVOFF.m3u8
