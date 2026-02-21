@@ -127,5 +127,50 @@ hs.src = ('//s10.histats.com/js15_as.js');
 })();</script>
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4743517&101" alt="counter create hit" border="0"></a></noscript>
 
+  <!-- Botón flotante Inicio -->
+<a href="https://hsports4hd.blogspot.com/p/hsportshd.html?m=1#" id="btnInicio">🏠</a>
+
+<style>
+#btnInicio {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: transparent; /* transparente */
+  color: white;
+  font-size: 28px;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 10px 14px;
+  z-index: 9999;
+  cursor: pointer;
+  display: none; /* oculto por defecto */
+}
+#btnInicio:focus {
+  outline: 3px solid yellow; /* resalta al navegar con control remoto */
+}
+</style>
+
+<script>
+// Detectar dispositivo
+function isSmartTVorPC() {
+  const ua = navigator.userAgent.toLowerCase();
+  // Detecta Android TV, Google TV, Smart TV o escritorio
+  return (
+    ua.includes("smarttv") ||
+    ua.includes("googletv") ||
+    ua.includes("androidtv") ||
+    ua.includes("tv") ||
+    !/mobile|android|iphone|ipad/.test(ua) // PC
+  );
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (isSmartTVorPC()) {
+    document.getElementById("btnInicio").style.display = "block";
+  }
+});
+</script>
+
 </body>
 </html>
