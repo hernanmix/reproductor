@@ -128,7 +128,8 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4743517&101" alt="counter create hit" border="0"></a></noscript>
 
   <!-- Botón flotante Inicio -->
-<a href="https://hsports4hd.blogspot.com/p/hsportshd.html?m=1#" id="btnInicio">🏠</a>
+<a href="https://hsports4hd.blogspot.com/p/hsportshd.html?m=1#" 
+   id="btnInicio" tabindex="0">🏠</a>
 
 <style>
 #btnInicio {
@@ -146,16 +147,19 @@ hs.src = ('//s10.histats.com/js15_as.js');
   cursor: pointer;
   display: none; /* oculto por defecto */
 }
+
+/* Resaltado al navegar con control remoto */
 #btnInicio:focus {
-  outline: 3px solid yellow; /* resalta al navegar con control remoto */
+  outline: 3px solid yellow;
+  background: rgba(255,255,255,0.1);
+  transform: scale(1.1);
 }
 </style>
 
 <script>
-// Detectar dispositivo
+// Detectar dispositivo (Smart TV o PC)
 function isSmartTVorPC() {
   const ua = navigator.userAgent.toLowerCase();
-  // Detecta Android TV, Google TV, Smart TV o escritorio
   return (
     ua.includes("smarttv") ||
     ua.includes("googletv") ||
@@ -168,6 +172,16 @@ function isSmartTVorPC() {
 document.addEventListener("DOMContentLoaded", () => {
   if (isSmartTVorPC()) {
     document.getElementById("btnInicio").style.display = "block";
+  }
+});
+
+// Desactivar atajos de teclado de JWPlayer para permitir foco
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof jwplayer !== "undefined") {
+    jwplayer("player").setup({
+      // tu configuración normal del player...
+      keyboardShortcuts: false // 🔹 permite que el control remoto navegue al botón
+    });
   }
 });
 </script>
