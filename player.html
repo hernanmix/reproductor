@@ -74,5 +74,43 @@
       }
     });
   </script>
+<style>
+.menu-inferior {
+  position:fixed;
+  bottom:0; left:0; right:0;
+  background:#111; /* fondo oscuro */
+  display:flex; justify-content:space-around;
+  padding:10px 0;
+  z-index:9999; /* siempre encima */
+}
+.menu-inferior a {
+  color:#fff; /* texto blanco */
+  text-decoration:none;
+  font-weight:bold;
+  padding:10px 20px;
+  border-radius:6px;
+  transition:all 0.3s ease;
+}
+.menu-inferior a:hover {
+  background:#333;
+  transform:translateY(-5px);
+  box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+</style>
+
+<div class='menu-inferior'>
+  <!-- Botón Inicio &#8594; tu agenda Blogger -->
+  <a href='/p/hsportshd.html?m=1#'>🏠 Inicio</a>
+  
+  <!-- Botón TV &#8594; referencia go:tv en AppCreator24 -->
+  <a href='/2026/02/tv.html'>📺 TV</a>
+  
+  <!-- Botón Donar &#8594; referencia go:donar o tu URL de donaciones -->
+  <a href='https://hsports4hd.blogspot.com/2026/02/donar.html?m=1'>💖 Donar</a>
+  
+   <!-- Botón Disney+ &#8594; referencia go:disney+ o tu URL de agenda disney+ -->
+  <a href='https://hsports4hd.blogspot.com/2026/02/disney2.html'>Disney+</a>
+</div>
+  
 </body>
 </html>
