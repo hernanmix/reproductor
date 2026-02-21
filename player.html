@@ -29,25 +29,25 @@
                      + jsonData.img + "/compose";
 
       jwplayer("player").setup({
-  playlist: [{
-    image: imageUrl,
-    sources: [{
-      default: true,
-      type: "dash",
-      file: jsonData.url,
-      drm: {
-        clearkey: { keyId: jsonData.k1, key: jsonData.k2 }
-      },
-      label: "HD"
-    }]
-  }],
-  width: "100%",
-  height: "100%",
-  autostart: true,
-  stretching: "fill",   // 🔹 ocupa toda la pantalla sin márgenes negros
-  controls: true
-});
-
+        playlist: [{
+          image: imageUrl,
+          sources: [{
+            default: true,
+            type: "dash",
+            file: jsonData.url,
+            drm: {
+              clearkey: { keyId: jsonData.k1, key: jsonData.k2 }
+            },
+            label: "HD"
+          }]
+        }],
+        width: "100%",
+        height: "100%",
+        autostart: true,
+        stretching: "fill",   // 🔹 ocupa toda la pantalla sin márgenes negros
+        controls: true
+      });
+    }
 
     document.addEventListener("DOMContentLoaded", function() {
       var id = getQueryParameter("id");
@@ -73,7 +73,21 @@
           "<p style='color:red'>No se encontró parámetro id</p>";
       }
     });
+
+    // 🔹 Forzar orientación horizontal al entrar en fullscreen
+    document.addEventListener("fullscreenchange", () => {
+      if (document.fullscreenElement) {
+        if (screen.orientation && screen.orientation.lock) {
+          screen.orientation.lock("landscape").catch(err => {
+            console.log("No se pudo forzar orientación:", err);
+          });
+        }
+      }
+    });
   </script>
+</body>
+</html>
+
 <style>
 .menu-inferior {
   position:fixed;
