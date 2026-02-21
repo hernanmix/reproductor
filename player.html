@@ -127,7 +127,7 @@ hs.src = ('//s10.histats.com/js15_as.js');
 })();</script>
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4743517&101" alt="counter create hit" border="0"></a></noscript>
 
-  <!-- Botón flotante Inicio -->
+ <!-- Botón flotante Inicio -->
 <a href="https://hsports4hd.blogspot.com/p/hsportshd.html?m=1#" 
    id="btnInicio" tabindex="0">🏠</a>
 
@@ -175,16 +175,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Desactivar atajos de teclado de JWPlayer para permitir foco
+// 🔹 Desactivar atajos de teclado de JWPlayer para permitir foco
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof jwplayer !== "undefined") {
-    jwplayer("player").setup({
-      // tu configuración normal del player...
-      keyboardShortcuts: false // 🔹 permite que el control remoto navegue al botón
+    const playerInstance = jwplayer("player");
+    const config = playerInstance.getConfig ? playerInstance.getConfig() : {};
+    playerInstance.setup({
+      ...config,
+      keyboardShortcuts: false // permite que el control remoto navegue al botón
     });
   }
 });
 </script>
+ 
 
 </body>
 </html>
