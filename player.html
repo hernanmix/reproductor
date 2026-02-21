@@ -127,6 +127,7 @@ hs.src = ('//s10.histats.com/js15_as.js');
 })();</script>
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4743517&101" alt="counter create hit" border="0"></a></noscript>
 
+
  <!-- Botón flotante Inicio -->
 <a href="https://hsports4hd.blogspot.com/p/hsportshd.html?m=1#" 
    id="btnInicio" tabindex="0">🏠</a>
@@ -136,7 +137,7 @@ hs.src = ('//s10.histats.com/js15_as.js');
   position: fixed;
   top: 20px;       /* 🔹 ahora arriba */
   right: 20px;     /* 🔹 esquina derecha */
-  background: transparent; /* transparente */
+  background: transparent;
   color: white;
   font-size: 28px;
   text-decoration: none;
@@ -156,38 +157,6 @@ hs.src = ('//s10.histats.com/js15_as.js');
 }
 </style>
 
-<script>
-// Detectar dispositivo (Smart TV o PC)
-function isSmartTVorPC() {
-  const ua = navigator.userAgent.toLowerCase();
-  return (
-    ua.includes("smarttv") ||
-    ua.includes("googletv") ||
-    ua.includes("androidtv") ||
-    ua.includes("tv") ||
-    !/mobile|android|iphone|ipad/.test(ua) // PC
-  );
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  if (isSmartTVorPC()) {
-    document.getElementById("btnInicio").style.display = "block";
-  }
-});
-
-// 🔹 Desactivar atajos de teclado de JWPlayer para permitir foco
-document.addEventListener("DOMContentLoaded", () => {
-  if (typeof jwplayer !== "undefined") {
-    const playerInstance = jwplayer("player");
-    const config = playerInstance.getConfig ? playerInstance.getConfig() : {};
-    playerInstance.setup({
-      ...config,
-      keyboardShortcuts: false // permite que el control remoto navegue al botón
-    });
-  }
-});
-</script>
- 
 
 </body>
 </html>
