@@ -29,25 +29,25 @@
                      + jsonData.img + "/compose";
 
       jwplayer("player").setup({
-        playlist: [{
-          image: imageUrl,
-          sources: [{
-            default: true,
-            type: "dash",
-            file: jsonData.url,
-            drm: {
-              clearkey: { keyId: jsonData.k1, key: jsonData.k2 }
-            },
-            label: "HD"
-          }]
-        }],
-        width: "100%",
-        height: "100vh",
-        autostart: true,
-        stretching: "uniform",
-        controls: true
-      });
-    }
+  playlist: [{
+    image: imageUrl,
+    sources: [{
+      default: true,
+      type: "dash",
+      file: jsonData.url,
+      drm: {
+        clearkey: { keyId: jsonData.k1, key: jsonData.k2 }
+      },
+      label: "HD"
+    }]
+  }],
+  width: "100%",
+  height: "100%",
+  autostart: true,
+  stretching: "fill",   // 🔹 ocupa toda la pantalla sin márgenes negros
+  controls: true
+});
+
 
     document.addEventListener("DOMContentLoaded", function() {
       var id = getQueryParameter("id");
