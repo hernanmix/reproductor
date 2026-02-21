@@ -15,7 +15,6 @@
   <!-- JWPlayer CDN -->
   <script src="//ssl.p.jwpcdn.com/player/v/8.25.1/jwplayer.js"></script>
   <script>
-    // Tu licencia JWPlayer
     jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo";
 
     // Obtener parámetro id de la URL
@@ -28,12 +27,18 @@
       var imageUrl = "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/" 
                      + jsonData.img + "/compose";
 
+      // Detectar tipo de stream según extensión
+      let streamType = "dash";
+      if (jsonData.url.endsWith(".m3u8")) {
+        streamType = "hls";
+      }
+
       jwplayer("player").setup({
         playlist: [{
           image: imageUrl,
           sources: [{
             default: true,
-            type: "dash",
+            type: streamType,
             file: jsonData.url,
             drm: {
               clearkey: { keyId: jsonData.k1, key: jsonData.k2 }
@@ -87,6 +92,7 @@
   </script>
 </body>
 </html>
+
 
 <style>
 .menu-inferior {
