@@ -85,14 +85,15 @@
 
   <!-- Reproductor global -->
   <div id="playerContainer">
-    <iframe id="playerFrame" src="https://hernanmix.github.io/reproductor/zappintv3.html"></iframe>
+    <iframe id="playerFrame" src="https://hernanmix.github.io/reproductor/zappintv3.html"sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
     <!-- Botón de canales compacto con menú pegado -->
     <div id="menuWrapper">
       <div id="menuBtn">📺 Canales</div>
       <div id="menu">
-        <button onclick="loadChannel('zappintv.html')">ZAPPINTV</button>
-        <button onclick="loadChannel('zappintv2.html')">ZAPPINTV 2</button>
-        <button onclick="loadChannel('zappintv3.html')">ZAPPINTV3</button>
+        <button onclick="loadChannel('zappintv.html')">ZAPPINTV video</button>
+        <button onclick="loadChannel('zappintv2.html')">ZAPPINTV2 hls</button>
+        <button onclick="loadChannel('zappintv3.html')">ZAPPINTV3 jwplayer</button>
+        <button onclick="loadChannel('zappintv3.html')">ZAPPINTV4 obs</button>
       </div>
     </div>
   </div>
