@@ -128,17 +128,16 @@
     const placeholder = document.getElementById("placeholder");
 
     window.addEventListener("scroll", function() {
-      const scrollY = window.scrollY;
-      const triggerPoint = player.offsetHeight;
+  if (window.scrollY > 50) {   // apenas bajas un poco
+    player.classList.add("floating");
+    placeholder.style.display = "block";
+  } else {
+    player.classList.remove("floating");
+    placeholder.style.display = "none";
+  }
+});
 
-      if (scrollY > triggerPoint) {
-        player.classList.add("floating");
-        placeholder.style.display = "block"; // reserva espacio
-      } else {
-        player.classList.remove("floating");
-        placeholder.style.display = "none"; // quita espacio
-      }
-    });
+
   </script>
 
 </body>
