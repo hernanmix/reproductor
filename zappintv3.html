@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reproductor JWPlayer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Librería oficial de JW Player -->
+  <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: #000;
+    }
+    #myPlayer {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Contenedor del reproductor -->
+  <div id="myPlayer"></div>
+
+  <script>
+    jwplayer("myPlayer").setup({
+      file: "//streamtp10.com/global1.php?stream=ecdf",  // tu URL de transmisión
+      width: "100%",
+      height: "100%",
+      aspectratio: "16:9",
+      autostart: true,
+      controls: true,
+      stretching: "uniform",
+      skin: { name: "seven" } // estilo visual
+    });
+  </script>
+
+</body>
+</html>
