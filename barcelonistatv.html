@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>BARCELONISTA TV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { margin:0; background:#000; color:#fff; font-family:Arial,sans-serif; text-align:center; }
+    h1 { color:#FFD700; background:#111; padding:10px; margin:0; }
+    #playerContainer { position:relative; max-width:960px; margin:20px auto; }
+    #playerFrame { width:100%; height:540px; border:none; border-radius:10px; }
+    #menuBtn { position:absolute; bottom:-50px; right:0; background:#0b90c5; color:#fff; padding:12px 20px; border-radius:8px; cursor:pointer; transition:transform 0.2s; }
+    #menuBtn:hover { transform:scale(1.05); }
+    #menu { display:none; position:relative; max-width:960px; margin:10px auto; text-align:right; }
+    #menu button { display:block; background:#0b90c5; color:#fff; border:none; margin:5px 0; padding:10px; border-radius:6px; cursor:pointer; width:150px; }
+    #chatBtn { background:#0b90c5; color:#fff; padding:12px 20px; border-radius:8px; cursor:pointer; margin-top:60px; }
+    #chatFrame { display:none; width:100%; max-width:960px; height:400px; margin:20px auto; border:none; }
+    footer { margin-top:30px; color:#aaa; }
+  </style>
+</head>
+<body>
+
+  <h1>BARCELONISTA TV</h1>
+
+  <!-- Reproductor global -->
+  <div id="playerContainer">
+    <iframe id="playerFrame" src="espn.html"></iframe>
+    <!-- Botón debajo del reproductor, esquina derecha -->
+    <div id="menuBtn">📺 Canales</div>
+  </div>
+
+  <!-- Menú desplegable -->
+  <div id="menu">
+    <button onclick="loadChannel('zappintv.html')">ESPN MX</button>
+    <button onclick="loadChannel('zappintv2.html')">ESPN 2</button>
+    <button onclick="loadChannel('zappintv3.html')">ESPN 3</button>
+  </div>
+
+  <!-- Botón Chat -->
+  <div>
+    <button id="chatBtn">💬 Chat</button>
+    <iframe id="chatFrame" src="TU_URL_CHAT_AQUI"></iframe>
+  </div>
+
+  <footer>
+    COPYRIGHT TODOS LOS RESERVADOS 2026
+  </footer>
+
+  <script>
+    function loadChannel(page) {
+      document.getElementById('playerFrame').src = page;
+      document.getElementById('menu').style.display = 'none';
+    }
+    document.getElementById('menuBtn').onclick = function() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    };
+    document.getElementById('chatBtn').onclick = function() {
+      const chat = document.getElementById('chatFrame');
+      chat.style.display = (chat.style.display === 'block') ? 'none' : 'block';
+    };
+  </script>
+
+</body>
+</html>
