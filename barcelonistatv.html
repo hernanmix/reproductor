@@ -17,15 +17,13 @@
     }
     /* Estilo flotante */
     #playerFrame.floating {
-      position:fixed;
-      top:0; left:0;
-      width: 280%;   /* más pequeño para pantallas */
-      height: 158px;
-      z-index:9999;
-      box-shadow:0 0 10px #000;
-      border-radius:8px;
-      background:#000;
-    }
+  position:fixed;
+  top:0; left:0;
+  transform: scale(0.6);   /* reduce tamaño visual */
+  transform-origin: top left;
+  z-index:9999;
+}
+
     /* Placeholder para evitar salto */
     #placeholder {
       width:100%;
