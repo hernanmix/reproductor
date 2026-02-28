@@ -49,6 +49,7 @@
       transition:transform 0.2s;
     }
     #menuBtn:hover { transform:scale(1.05); }
+    /* Menú con scroll vertical */
     #menu {
       display:none;
       position:absolute;
@@ -56,6 +57,9 @@
       background:#111;
       border-radius:6px;
       padding:5px;
+      max-height:200px;       /* altura máxima */
+      overflow-y:auto;        /* scroll vertical */
+      width:140px;
     }
     #menu button {
       display:block;
