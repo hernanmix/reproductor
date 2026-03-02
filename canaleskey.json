@@ -1,0 +1,18 @@
+[
+  {
+    "name": "TUDN MX",
+    "player": "shaka",
+    "url": "https://zap-live1-ott.izzigo.tv/11/out/u/dash/TUDN-HD/default.mpd",
+    "keys": {
+      "2722647f77b44824c432a3c4555830a2": "2722647f77b44824c432a3c4555830a2"
+    }
+  },
+  {
+    "name": "Canal 2",
+    "player": "jw",
+    "url": "https://zap-live1-ott.izzigo.tv/11/out/u/dash/TUDN-HD/default.mpd...",
+    "keys": {
+      "2722647f77b44824c432a3c4555830a2": "2722647f77b44824c432a3c4555830a2"
+    }
+  }
+]
