@@ -66,7 +66,7 @@
         url = '//streamx10.cloud/global1.php?channel=${canalChannel}`;
       } else if (canalStream) {
         url = `https://streamtp10.com/global1.php?stream=${canalStream}`;
-      } else {
+      } else if (canalChannel) {
         document.getElementById("iframeReproductor").outerHTML = "<h2 style='color:white;text-align:center;margin-top:20%'>Canal no especificado</h2>";
         return;
       }
