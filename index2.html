@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proxy Reproductor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {margin:0; background:#000; color:#fff; font-family:Arial,sans-serif;}
+    .iframe-container {position:relative; width:100%; height:100vh; overflow:hidden;}
+    .iframe-container iframe {position:absolute; top:0; left:0; width:100%; height:100%; border:none;}
+  </style>
+</head>
+<body>
+
+  <div class="iframe-container" id="player"></div>
+
+  <script>
+    // URL del reproductor externo
+    const url = "https://brit.287wd0wifeqsjrfought.cfd/es/player.html?mdata=NDMyNTQ2N18x&ilang=es";
+
+    // Inserta el iframe dinámicamente
+    document.getElementById("player").innerHTML =
+      '<iframe src="'+url+'" allowfullscreen frameborder="0" scrolling="no"></iframe>';
+  </script>
+
+</body>
+</html>
