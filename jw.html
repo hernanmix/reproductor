@@ -5,26 +5,21 @@
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="referrer" content="no-referrer">
 
-  <!-- JWPlayer -->
   <script src="https://ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
   <script>
     jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo";
 
     document.addEventListener("DOMContentLoaded", function () {
-      // 🔹 Tomamos todos los parámetros de la URL
       const params = new URLSearchParams(window.location.search);
 
-      // Verificamos que exista "canal"
       if (!params.has("canal")) {
         console.error("Falta el parámetro ?canal=");
         return;
       }
 
-      // 🔹 Construimos la URL final con TODOS los parámetros
       const proxyBase = "https://canchatv.online/embedslatam/";
       const finalUrl = proxyBase + "?" + params.toString();
 
-      // 🔹 Configuración del reproductor
       const playerInstance = jwplayer("player").setup({
         playlist: [{
           sources: [{
@@ -43,11 +38,9 @@
           margin: 20,
           link: "https://whatsapp.com/channel/0029VbAtpgq4IBh5G4dGwZ1T"
         },
-        // 🔹 Desactivar menú contextual
         contextmenu: false
       });
 
-      // Ajuste de fullscreen
       playerInstance.on("fullscreen", function(e) {
         if (e.fullscreen) {
           playerInstance.setConfig({ stretching: "exactfit" });
@@ -75,9 +68,15 @@
       z-index: 9999;
     }
 
+    /* 🔹 Forzar logo siempre visible incluso en fullscreen */
     .jw-logo {
       width: 120px !important;
       height: auto !important;
+      display: block !important;
+      position: absolute !important;
+      top: 10px !important;
+      right: 10px !important;
+      z-index: 99999 !important;
     }
   </style>
 </head>
