@@ -11,16 +11,20 @@
     jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo";
 
     document.addEventListener("DOMContentLoaded", function () {
+      // Tomamos todos los parámetros de la URL
       const params = new URLSearchParams(window.location.search);
 
+      // Verificamos que exista "canal"
       if (!params.has("canal")) {
         console.error("Falta el parámetro ?canal=");
         return;
       }
 
+      // Construimos la URL final con TODOS los parámetros
       const proxyBase = "https://canchatv.online/embedslatam/";
       const finalUrl = proxyBase + "?" + params.toString();
 
+      // Configuración del reproductor
       const playerInstance = jwplayer("player").setup({
         playlist: [{
           sources: [{
@@ -70,7 +74,7 @@
       z-index: 9999;
     }
 
-    /* 🔹 Forzar logo siempre visible incluso en fullscreen */
+    /* Forzar logo siempre visible incluso en fullscreen */
     .jw-logo {
       width: 120px !important;
       height: auto !important;
