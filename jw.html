@@ -41,7 +41,10 @@
       }
     });
 
-    // Ajuste de fullscreen
+    // 🔹 Desactivar menú contextual
+      contextmenu: false
+    });
+
     playerInstance.on("fullscreen", function(e) {
       if (e.fullscreen) {
         playerInstance.setConfig({ stretching: "exactfit" });
