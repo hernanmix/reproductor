@@ -70,17 +70,18 @@
       z-index: 9999;
     }
 
-    /* Forzar logo siempre visible incluso en fullscreen */
-    .jw-logo {
-      width: 120px !important;
-      height: auto !important;
-      display: block !important;
-      position: absolute !important;
-      top: 10px !important;
-      right: 10px !important;
-      z-index: 99999 !important;
-      pointer-events: auto !important;
-    }
+    /* Forzar que el logo siempre aparezca en la esquina superior derecha */
+.jw-logo {
+  width: 120px !important;
+  height: auto !important;
+  display: block !important;
+  position: fixed !important;   /* 👈 usar fixed en lugar de absolute */
+  top: 10px !important;
+  right: 10px !important;
+  z-index: 999999 !important;
+  pointer-events: auto !important;
+}
+
   </style>
 </head>
 <body>
