@@ -11,18 +11,18 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    // 🔹 Tomamos el parámetro ?stream= de la URL
-    const streamParam = getQueryParameter("stream");
+    // 🔹 Tomamos el parámetro ?canal= de la URL
+    const streamParam = getQueryParameter("canal");
 
     // Si no hay parámetro, mostramos error
     if (!streamParam) {
-      console.error("Falta el parámetro ?stream=");
+      console.error("Falta el parámetro ?canal=");
       return;
     }
 
     // 🔹 Construimos la URL final para el proxy
-    // Ejemplo: https://canchatv.online/la14hd/proxy.php?stream=espn3
-    const proxyBase = "https://canchatv.online/la14hd/proxy.php?stream=";
+    // Ejemplo: https://canchatv.online/embedslatam/?canal=tudn&target=3&raw=1
+    const proxyBase = "https://canchatv.online/embedslatam/?canal=";
     const finalUrl = proxyBase + encodeURIComponent(streamParam);
 
     const playerInstance = jwplayer("player").setup({
