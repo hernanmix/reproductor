@@ -27,17 +27,17 @@
       // Configuración del reproductor
       const playerInstance = jwplayer("player").setup({
         file: finalUrl,
-        type: "hls",
+        type: "hls",   // 👈 importante: HLS para .m3u8
         autostart: true,
         width: "100%",
         height: "100%",
-        stretching: "uniform",   // modo normal
+        stretching: "uniform",
         skin: { name: "cyan" },
         logo: {
           file: "https://hernanmix.github.io/play.github.io/hsportshd.jpg", // URL del logo
-          position: "top-right",                // esquina superior derecha
-          margin: 20,                           // separación del borde
-          link: "https://whatsapp.com/channel/0029VbAtpgq4IBh5G4dGwZ1T" // clic en logo
+          position: "top-right",   // esquina superior derecha
+          margin: 20,              // separación del borde
+          link: "https://whatsapp.com/channel/0029VbAtpgq4IBh5G4dGwZ1T" // enlace al hacer clic
         },
         contextmenu: false
       });
@@ -70,18 +70,17 @@
       z-index: 9999;
     }
 
-    /* Forzar que el logo siempre aparezca en la esquina superior derecha */
-.jw-logo {
-  width: 120px !important;
-  height: auto !important;
-  display: block !important;
-  position: fixed !important;   /* 👈 usar fixed en lugar de absolute */
-  top: 10px !important;
-  right: 10px !important;
-  z-index: 999999 !important;
-  pointer-events: auto !important;
-}
-
+    /* 🔹 Forzar logo siempre visible incluso en fullscreen */
+    .jw-logo {
+      width: 120px !important;
+      height: auto !important;
+      display: block !important;
+      position: fixed !important;
+      top: 10px !important;
+      right: 10px !important;
+      z-index: 99999 !important;
+      pointer-events: auto !important;
+    }
   </style>
 </head>
 <body>
