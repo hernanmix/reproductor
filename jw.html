@@ -26,16 +26,12 @@
 
       // Configuración del reproductor
       const playerInstance = jwplayer("player").setup({
-        playlist: [{
-          sources: [{
-            file: finalUrl,
-            type: "hls"   // 👈 importante: HLS para .m3u8
-          }]
-        }],
+        file: finalUrl,
+        type: "hls",
         autostart: true,
         width: "100%",
         height: "100%",
-        stretching: "uniform",
+        stretching: "uniform",   // modo normal
         skin: { name: "cyan" },
         logo: {
           file: "https://hernanmix.github.io/play.github.io/hsportshd.jpg", // URL del logo
@@ -79,7 +75,7 @@
       width: 120px !important;
       height: auto !important;
       display: block !important;
-      position: fixed !important;
+      position: absolute !important;
       top: 10px !important;
       right: 10px !important;
       z-index: 99999 !important;
