@@ -1,0 +1,17 @@
+[
+  {
+    "evento": "Liga BetPlay: Boyacá Chicó vs Deportes Tolima",
+    "hora": "14:00pm",
+    "canales": [
+      { "nombre": "WN+", "url": "winplus.html", "calidad": "720p" },
+      { "nombre": "FANATIZ", "url": "fanatiz.html", "calidad": "720p" }
+    ]
+  },
+  {
+    "evento": "Liga MX: América vs Chivas",
+    "hora": "20:00pm",
+    "canales": [
+      { "nombre": "ESPN", "url": "?canal=espn&target=3&raw=1", "calidad": "1080p" }
+    ]
+  }
+]
