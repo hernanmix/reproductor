@@ -12,27 +12,56 @@
   <div id="player"></div>
 
   <script>
-    // Leer parámetros de la URL
-    const params = new URLSearchParams(window.location.search);
-    const canal  = params.get("canal");
-    const target = params.get("target") || "3";
-    const raw    = params.get("raw") || "1";
+function getQueryParameter(name) {
+      return new URLSearchParams(window.location.search).get(name);
+    }
 
-    // Construir la URL completa hacia tu proxy
-    const SRC = "https://hsportsec.42web.io/proxy.php?canal=" + canal + "&target=" + target + "&raw=" + raw;
+    document.addEventListener("DOMContentLoaded", function () {
+      // Tomamos todos los parámetros de la URL
+      const params = new URLSearchParams(window.location.search);
 
-    // Inicializar JWPlayer
-    jwplayer("player").setup({
-      file: SRC,
-      width: "100%",
-      aspectratio: "16:9",
-      autostart: true,
-      logo: {
-        file: "https://hernanmix.github.io/reproductor/logo.png", // tu logo en GitHub
-        position: "top-right",
-        link: "https://hsports4hd.blogspot.com" // opcional
+      // Verificamos que exista "canal"
+      if (!params.has("canal")) {
+        console.error("Falta el parámetro ?canal=");
+        return;
       }
+
+      // Construimos la URL final con TODOS los parámetros
+      const proxyBase = "https://hsportsec.42web.io/proxy.php?canal=";
+      const finalUrl = proxyBase + "?" + params.toString();
+
+      const playerInstance = jwplayer("player").setup({
+        playlist: [{
+          sources: [{
+            file: finalUrl,
+            type: "hls"   // 👈 importante: HLS para .m3u8
+          }]
+        }],
+        autostart: true,
+        width: "100%",
+        height: "100%",
+        stretching: "uniform",
+        skin: { name: "cyan" },
+        logo: {
+          file: "https://hernanmix.github.io/play.github.io/hsportshd.jpg", // URL del logo
+          position: "top-right",   // esquina superior derecha
+          margin: 20,              // separación del borde
+          link: "https://whatsapp.com/channel/0029VbAtpgq4IBh5G4dGwZ1T" // enlace al hacer clic
+        }
+      });
+
+      // Al entrar en fullscreen → forzar fill (sin bordes negros)
+      playerInstance.on("fullscreen", function(e) {
+        if (e.fullscreen) {
+          playerInstance.setConfig({ stretching: "exactfit" });
+        } else {
+          playerInstance.setConfig({ stretching: "uniform" });
+        }
+      });
     });
   </script>
+
+    
+    
 </body>
 </html>
