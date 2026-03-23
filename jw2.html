@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HSportsHD Player</title>
+  <script src="https://cdn.jsdelivr.net/npm/jwplayer@latest"></script>
+  <style>
+    #player { width: 100%; height: 100vh; background:#000; }
+  </style>
+</head>
+<body>
+  <div id="player"></div>
+
+  <script>
+    // Leer parámetros de la URL
+    const params = new URLSearchParams(window.location.search);
+    const canal  = params.get("canal");
+    const target = params.get("target") || "3";
+    const raw    = params.get("raw") || "1";
+
+    // Construir la URL completa hacia tu proxy
+    const SRC = "https://hsportsec.42web.io/proxy.php?canal=" + canal + "&target=" + target + "&raw=" + raw;
+
+    // Inicializar JWPlayer
+    jwplayer("player").setup({
+      file: SRC,
+      width: "100%",
+      aspectratio: "16:9",
+      autostart: true,
+      logo: {
+        file: "https://hernanmix.github.io/reproductor/logo.png", // tu logo en GitHub
+        position: "top-right",
+        link: "https://hsports4hd.blogspot.com" // opcional
+      }
+    });
+  </script>
+</body>
+</html>
