@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reproductor HLS en GitHub</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    body { margin:0; background:#000; }
+    video { width:100%; height:100vh; background:#000; }
+  </style>
+</head>
+<body>
+  <video id="video" controls autoplay playsinline></video>
+
+  <script>
+    const video = document.getElementById('video');
+    // URL pública del playlist en GitHub Pages
+    const SRC = "https://hernanmix.github.io/reproductor/playlist3.m3u8";
+
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(SRC);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      video.src = SRC;
+      video.play();
+    }
+  </script>
+</body>
+</html>
