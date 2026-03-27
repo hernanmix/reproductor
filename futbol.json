@@ -1,0 +1,12 @@
+[
+  {
+    "evento": "F1 | GP de Japón: Entrenamientos #1",
+    "hora": "9:30pm",
+    "canales": [
+      { "nombre": "Disney+", "url": "disney1.html", "calidad": "720p" },
+      { "nombre": "DAZN F1", "url": "daznf1.html", "calidad": "720p" },
+      { "nombre": "ESPN 2", "url": "espn2.html", "calidad": "720p" },
+      { "nombre": "FOX Sports AR", "url": "fox1ar.html", "calidad": "720p" }
+    ]
+  }
+]
