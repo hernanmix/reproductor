@@ -30,7 +30,7 @@ container.appendChild(countdown);
 document.body.insertBefore(container, document.body.firstChild);
 
 // ⚽ Opción 1: Fecha fija exacta (ejemplo: 12 junio 2026, 14:00 hora Ecuador)
-var targetDate = new Date("June 12, 2026 14:00:00").getTime();
+var targetDate = new Date("June 11, 2026 14:00:00").getTime();
 
 // ⚽ Opción 2: Dinámico (75 días y 4 horas desde ahora)
 // var targetDate = new Date();
