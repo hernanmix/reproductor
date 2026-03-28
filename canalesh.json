@@ -18,5 +18,10 @@
     "nombre": "FOX Sports",
     "imagen": "https://hernanmix.github.io/reproductor/Fox-Sports.png",
     "url": "fox1ar_14.html"
+  },
+  {
+    "nombre": "Win+ Fútbol",
+    "imagen": "https://hernanmix.github.io/reproductor/winfutbol.png",
+    "url": "winplus.html"
   }
 ]
