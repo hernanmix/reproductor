@@ -16,29 +16,52 @@ logo.alt = "FIFA World Cup 2026";
 logo.style.maxWidth = "120px";
 logo.style.height = "auto";
 
-// Contador
+// Contenedor del contador
 const countdown = document.createElement("div");
 countdown.id = "countdown";
 countdown.style.color = "white";
-countdown.style.fontSize = "20px";
-countdown.style.fontWeight = "bold";
 countdown.style.fontFamily = "Arial, sans-serif";
+countdown.style.display = "flex";
+countdown.style.gap = "20px";
+
+// Crear cajas con número arriba y etiqueta abajo
+function createBox(id, label) {
+  const box = document.createElement("div");
+  box.style.textAlign = "center";
+  const num = document.createElement("div");
+  num.id = id;
+  num.style.fontSize = "28px";
+  num.style.fontWeight = "bold";
+  const txt = document.createElement("div");
+  txt.innerText = label;
+  txt.style.fontSize = "14px";
+  box.appendChild(num);
+  box.appendChild(txt);
+  return box;
+}
+
+countdown.appendChild(createBox("days", "Días"));
+countdown.appendChild(createBox("hours", "Horas"));
+countdown.appendChild(createBox("minutes", "Min"));
+countdown.appendChild(createBox("seconds", "Seg"));
 
 // Insertar elementos
 container.appendChild(logo);
 container.appendChild(countdown);
 document.body.insertBefore(container, document.body.firstChild);
 
-// ⚽ Fecha objetivo fija: calcula una sola vez y ponla aquí
-// Ejemplo: si hoy es 28 marzo 2026 a las 11:40, entonces 75 días y 4 horas después es 12 junio 2026 a las 15:40
-var targetDate = new Date("June 11, 2026 15:00:00").getTime();
+// ⚽ Fecha objetivo fija: ajusta al día/hora exacto
+var targetDate = new Date("June 12, 2026 15:40:00").getTime();
 
 function updateCountdown() {
   var now = new Date().getTime();
   var distance = targetDate - now;
 
   if (distance < 0) {
-    countdown.innerHTML = "¡Evento iniciado!";
+    document.getElementById("days").innerText = "0";
+    document.getElementById("hours").innerText = "00";
+    document.getElementById("minutes").innerText = "00";
+    document.getElementById("seconds").innerText = "00";
     return;
   }
 
@@ -47,10 +70,11 @@ function updateCountdown() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  countdown.innerHTML =
-    days + "d : " + hours + "h : " + minutes + "m : " + seconds + "s";
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
+  document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
+  document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
 }
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
-
