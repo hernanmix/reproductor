@@ -29,17 +29,14 @@ container.appendChild(logo);
 container.appendChild(countdown);
 document.body.insertBefore(container, document.body.firstChild);
 
-// ⚽ Opción 1: Fecha fija exacta (ejemplo: 12 junio 2026, 14:00 hora Ecuador)
-var targetDate = new Date("June 11, 2026 14:00:00").getTime();
-
-// ⚽ Opción 2: Dinámico (75 días y 4 horas desde ahora)
-// var targetDate = new Date();
-// targetDate.setDate(targetDate.getDate() + 75);
-// targetDate.setHours(targetDate.getHours() + 4);
+// ⚽ Fecha objetivo: exactamente 75 días y 4 horas desde el momento de carga
+var targetDate = new Date();
+targetDate.setDate(targetDate.getDate() + 75);
+targetDate.setHours(targetDate.getHours() + 4);
 
 function updateCountdown() {
   var now = new Date().getTime();
-  var distance = targetDate - now;
+  var distance = targetDate.getTime() - now;
 
   if (distance < 0) {
     countdown.innerHTML = "¡Evento iniciado!";
