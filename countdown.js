@@ -51,7 +51,7 @@ container.appendChild(countdown);
 document.body.insertBefore(container, document.body.firstChild);
 
 // ⚽ Fecha objetivo fija: ajusta al día/hora exacto
-var targetDate = new Date("June 12, 2026 15:40:00").getTime();
+var targetDate = new Date("June 11, 2026 15:00:00").getTime();
 
 function updateCountdown() {
   var now = new Date().getTime();
