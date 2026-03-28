@@ -16,7 +16,7 @@
   },
   {
     "nombre": "FOX Sports",
-    "imagen": "/img/new/Fox-Sports.png",
+    "imagen": "https://r2.thesportsdb.com/images/media/channel/logo/ec5xf51707916511.png",
     "url": "fox1ar.html"
   }
 ]
