@@ -30,7 +30,7 @@ container.appendChild(countdown);
 document.body.insertBefore(container, document.body.firstChild);
 
 // Fecha objetivo fija (ajusta al día/hora exacto del evento)
-var targetDate = new Date("June 11, 2026 13:10:00").getTime();
+var targetDate = new Date("June 11, 2026 10:10:00").getTime();
 
 function updateCountdown() {
   var now = new Date().getTime();
