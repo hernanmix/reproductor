@@ -31,7 +31,7 @@ document.body.insertBefore(container, document.body.firstChild);
 
 // ⚽ Fecha objetivo fija: calcula una sola vez y ponla aquí
 // Ejemplo: si hoy es 28 marzo 2026 a las 11:40, entonces 75 días y 4 horas después es 12 junio 2026 a las 15:40
-var targetDate = new Date("June 11, 2026 15:06:00").getTime();
+var targetDate = new Date("June 11, 2026 15:00:00").getTime();
 
 function updateCountdown() {
   var now = new Date().getTime();
