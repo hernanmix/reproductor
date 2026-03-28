@@ -20,6 +20,11 @@
     "url": "fox1ar_14.html"
   },
   {
+    "nombre": "DSPORTS",
+    "imagen": "https://hernanmix.github.io/reproductor/Dsports.png",
+    "url": "dsports.html"
+  },
+  {
     "nombre": "Win+ Fútbol",
     "imagen": "https://hernanmix.github.io/reproductor/winfutbolplus.png",
     "url": "winplus.html"
