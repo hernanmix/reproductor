@@ -1,7 +1,6 @@
 function toDate(dStr, format) {
   var now = new Date();
   if (format == "h:m") {
-    // separar hora y minutos
     var hour = parseInt(dStr.substr(0, dStr.indexOf(":")));
     var rest = dStr.substr(dStr.indexOf(":") + 1).toLowerCase();
     var minute = parseInt(rest);
