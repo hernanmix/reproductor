@@ -29,14 +29,13 @@ container.appendChild(logo);
 container.appendChild(countdown);
 document.body.insertBefore(container, document.body.firstChild);
 
-// ⚽ Fecha objetivo: exactamente 75 días y 4 horas desde el momento de carga
-var targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + 75);
-targetDate.setHours(targetDate.getHours() + 4);
+// ⚽ Fecha objetivo fija: calcula una sola vez y ponla aquí
+// Ejemplo: si hoy es 28 marzo 2026 a las 11:40, entonces 75 días y 4 horas después es 12 junio 2026 a las 15:40
+var targetDate = new Date("June 11, 2026 15:40:00").getTime();
 
 function updateCountdown() {
   var now = new Date().getTime();
-  var distance = targetDate.getTime() - now;
+  var distance = targetDate - now;
 
   if (distance < 0) {
     countdown.innerHTML = "¡Evento iniciado!";
@@ -54,3 +53,4 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
