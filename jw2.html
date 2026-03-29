@@ -12,16 +12,15 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       const params = new URLSearchParams(window.location.search);
+      const stream = params.get("stream");
 
-      // Verificamos que exista el parámetro canal
-      if (!params.has("stream=")) {
+      if (!stream) {
         console.error("Falta el parámetro ?stream=");
         return;
       }
 
-      // Construimos la URL final con TODOS los parámetros
-      const proxyBase = "https://canchatv.online/tvtvhd/proxy2.php?stream=";
-      const finalUrl = proxyBase + "?" + params.toString();
+      // Construir URL final hacia tu proxy
+      const finalUrl = "https://hsportsec.42web.io/proxy2.php?stream=" + stream;
 
       // Configuración JWPlayer
       const playerInstance = jwplayer("player").setup({
