@@ -30,11 +30,20 @@
         swFile: './sw.js',
         live: false
     }
+
+    // 🔹 Lógica del parámetro ?stream=
+    const params = new URLSearchParams(window.location.search);
+    const stream = params.get("stream");
+    let finalUrl = "";
+    if (stream) {
+        finalUrl = "https://canchatv.online/tvtvhd/proxy.php?stream=" + stream;
+    }
+
     P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
         var player = new window.Player({
             id: 'mse',
             // isLive: true,
-            url: "https://canchatv.online/tvtvhd/proxy.php?stream=universo",
+            url: finalUrl,
             autoplay: true,
             playsinline: true,
             height: window.innerHeight,
