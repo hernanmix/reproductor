@@ -8,7 +8,7 @@
         html, body {width:100%;height:100%;margin:auto;overflow: hidden;}
         body {display:flex;}
         #mse {flex:auto;}
-        /* 🔹 Ajuste fullscreen: elimina márgenes negros */
+        /* 🔹 Ajuste fullscreen: elimina márgenes negros y fuerza horizontal */
         video {
             object-fit: fill !important;
         }
@@ -53,6 +53,14 @@
                 hlsOpts: {}
             }
         });
+
+        // 🔹 Forzar pantalla completa horizontal
+        player.on('fullscreen', () => {
+            screen.orientation.lock("landscape").catch(err => {
+                console.warn("No se pudo forzar landscape:", err);
+            });
+        });
+
         const events = window.Player.Events;
         [events.READY, events.URL_CHANGE].forEach(event => {
             player.on(event, () => {
