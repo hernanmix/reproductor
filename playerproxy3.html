@@ -31,12 +31,12 @@
         live: false
     }
 
-    // 🔹 Lógica del parámetro ?player=
+    // 🔹 Lógica del parámetro ?stream=
     const params = new URLSearchParams(window.location.search);
-    const playerParam = params.get("player");
+    const streamParam = params.get("stream");
     let finalUrl = "";
-    if (playerParam) {
-        finalUrl = "https://canchatv.online/tvtvhd/proxy3.php?player=" + playerParam;
+    if (streamParam) {
+        finalUrl = "https://canchatv.online/tvtvhd/proxy3.php?stream=" + streamParam;
     }
 
     P2pEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
