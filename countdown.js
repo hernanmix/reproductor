@@ -50,7 +50,7 @@ container.appendChild(logo);
 container.appendChild(countdown);
 document.body.insertBefore(container, document.body.firstChild);
 
-// ⚽ Fecha objetivo fija: ajusta al día/hora exacto
+// ⚽ Fecha objetivo fija
 var targetDate = new Date("June 11, 2026 15:00:00").getTime();
 
 function updateCountdown() {
@@ -76,5 +76,10 @@ function updateCountdown() {
   document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
 }
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
+// 🔹 Retrasar la aparición del contador 16 segundos
+setTimeout(() => {
+  // primera actualización después de 16 segundos
+  updateCountdown();
+  // luego sigue actualizando cada segundo normalmente
+  setInterval(updateCountdown, 1000);
+}, 16000);
