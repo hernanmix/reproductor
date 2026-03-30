@@ -9,6 +9,9 @@ container.style.justifyContent = "center";
 container.style.alignItems = "center";
 container.style.gap = "20px";
 
+// 🔹 Ocultar al inicio
+container.style.display = "none";
+
 // Logo FIFA
 const logo = document.createElement("img");
 logo.src = "https://digitalhub.fifa.com/transform/7189acb1-8453-4a14-8248-70ab7a76f372/FWC-26-Logo-for-Countdown?&io=transform:fill&quality=75";
@@ -76,10 +79,9 @@ function updateCountdown() {
   document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
 }
 
-// 🔹 Retrasar la aparición del contador 16 segundos
+// 🔹 Mostrar todo el reloj después de 16 segundos
 setTimeout(() => {
-  // primera actualización después de 16 segundos
+  container.style.display = "flex"; // ahora aparece el bloque completo
   updateCountdown();
-  // luego sigue actualizando cada segundo normalmente
   setInterval(updateCountdown, 1000);
 }, 16000);
