@@ -29,22 +29,19 @@
     var p2pConfig = {
         swFile: 'https://hernanmix.github.io/reproductor/sw.js',
         live: false
-    
     }
-    
 
     // 🔹 Lógica del parámetro ?player=
     const params = new URLSearchParams(window.location.search);
-    const player = params.get("player");
+    const playerParam = params.get("player");
     let finalUrl = "";
-    if (player) {
-        finalUrl = "https://canchatv.online/tvtvhd/proxy3.php?player=" + stream;
+    if (playerParam) {
+        finalUrl = "https://canchatv.online/tvtvhd/proxy3.php?player=" + playerParam;
     }
 
-    P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
+    P2pEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
         var player = new window.Player({
             id: 'mse',
-            // isLive: true,
             url: finalUrl,
             autoplay: true,
             playsinline: true,
