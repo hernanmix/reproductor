@@ -57,6 +57,15 @@
         }
       });
     });
+   
+   player.on('ready', async () => {
+  try {
+    await player.video.requestPictureInPicture();
+  } catch (err) {
+    console.warn("No se pudo activar PiP automático:", err);
+  }
+});
+   
   </script>
 
   <style>
