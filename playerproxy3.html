@@ -42,6 +42,7 @@
     P2pEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
         var player = new window.Player({
             id: 'mse',
+            // isLive: true,
             url: finalUrl,
             autoplay: true,
             playsinline: true,
