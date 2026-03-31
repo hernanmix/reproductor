@@ -56,15 +56,15 @@
           playerInstance.setConfig({ stretching: "uniform" });
         }
       });
-    });
-   
-   player.on('ready', async () => {
+
+     player.on('ready', async () => {
   try {
     await player.video.requestPictureInPicture();
   } catch (err) {
     console.warn("No se pudo activar PiP automático:", err);
   }
-});
+    });
+   
    
   </script>
 
