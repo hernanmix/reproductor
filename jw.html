@@ -84,36 +84,7 @@
   <div id="player"></div>
 
 
- <div id="mse"></div>
-<div id="viewerOverlay" 
-     style="position:absolute;top:10px;right:10px;
-            background:rgba(0,0,0,0.6);color:#fff;
-            padding:5px 10px;border-radius:6px;
-            font-family:Arial,sans-serif;font-size:14px;z-index:9999;">
-  👀 0 viendo
-</div>
-
-<script>
-  // Al entrar
-  fetch("https://hsportsec.42web.io/join.php");
-
-  // Al salir
-  window.addEventListener("beforeunload", () => {
-    fetch("https://hsportsec.42web.io/leave.php");
-  });
-
-  // Actualizar contador cada 5 segundos
-  function updateViewers() {
-    fetch("https://hsportsec.42web.io/count.php")
-      .then(res => res.text())
-      .then(num => {
-        document.getElementById("viewerOverlay").innerText = "👀 " + num + " viendo";
-      });
-  }
-
-  setInterval(updateViewers, 5000);
-  updateViewers();
-</script>
+ 
 
 </body>
 </html>
