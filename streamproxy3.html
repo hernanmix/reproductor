@@ -11,15 +11,7 @@
             width: 100%;
             height: auto;
             background: black;
-        }
-        /* Forzar que en fullscreen ocupe todo el viewport */
-        :fullscreen #videoPlayer,
-        :-webkit-full-screen #videoPlayer,
-        :-moz-full-screen #videoPlayer {
-            width: 100vw !important;
-            height: 100vh !important;
-            object-fit: fill !important; /* estira el video para eliminar márgenes negros */
-            background: black;
+            object-fit: contain; /* modo normal */
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -27,28 +19,45 @@
 <body>
     <video id="videoPlayer" controls></video>
     <script>
-        var video = document.getElementById('videoPlayer');
+        function initPlayer() {
+            var video = document.getElementById('videoPlayer');
 
-        // Obtener parámetro ?stream=...
-        var params = new URLSearchParams(window.location.search);
-        var stream = params.get("stream") || "espn";
+            // Obtener parámetro ?stream=...
+            var params = new URLSearchParams(window.location.search);
+            var stream = params.get("stream") || "espn";
 
-        // Construir URL dinámica
-        var videoUrl = "https://canchatv.online/tvtvhd/proxy3.php?stream=" + stream;
+            // Construir URL dinámica
+            var videoUrl = "https://canchatv.online/tvtvhd/proxy3.php?stream=" + stream;
 
-        if (Hls.isSupported()) {
-            var hls = new Hls();
-            hls.loadSource(videoUrl);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                video.play();
-            });
-        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            video.src = videoUrl;
-            video.addEventListener('loadedmetadata', function () {
-                video.play();
+            if (Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource(videoUrl);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                    video.play();
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = videoUrl;
+                video.addEventListener('loadedmetadata', function () {
+                    video.play();
+                });
+            }
+
+            // Ajuste visual en fullscreen → llenar pantalla sin bordes negros
+            document.addEventListener("fullscreenchange", () => {
+                if (document.fullscreenElement) {
+                    video.style.objectFit = "fill";   // estira para ocupar todo
+                    video.style.width = "100vw";
+                    video.style.height = "100vh";
+                } else {
+                    video.style.objectFit = "contain"; // vuelve al modo normal
+                    video.style.width = "100%";
+                    video.style.height = "auto";
+                }
             });
         }
+
+        document.addEventListener('DOMContentLoaded', initPlayer);
     </script>
 </body>
 </html>
