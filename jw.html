@@ -99,12 +99,12 @@
 
   // Al salir
   window.addEventListener("beforeunload", () => {
-    fetch("https://TUUSUARIO.infinityfreeapp.com/leave.php");
+    fetch("https://hsportsec.42web.io/leave.php");
   });
 
   // Actualizar contador cada 5 segundos
   function updateViewers() {
-    fetch("https://TUUSUARIO.infinityfreeapp.com/count.php")
+    fetch("https://hsportsec.42web.io/count.php")
       .then(res => res.text())
       .then(num => {
         document.getElementById("viewerOverlay").innerText = "👀 " + num + " viendo";
