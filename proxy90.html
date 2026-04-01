@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OvenPlayer Demo</title>
+  <title>OvenPlayer Fullscreen</title>
   <script src="https://cdn.jsdelivr.net/npm/@swarmcloud/hls/hls.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/ovenplayer/dist/ovenplayer.js"></script>
   <style>
@@ -18,9 +18,14 @@
       width: 100%;
       height: 100%;
     }
-    :fullscreen #player_id {
+    /* Forzar que en fullscreen ocupe todo */
+    :fullscreen #player_id,
+    :-webkit-full-screen #player_id,
+    :-moz-full-screen #player_id {
       width: 100vw !important;
       height: 100vh !important;
+      object-fit: fill !important; /* estira el video */
+      background: black;
     }
   </style>
 </head>
