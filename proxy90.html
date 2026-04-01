@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Clappr Player</title>
-  <script src="//cdn.jsdelivr.net/npm/@clappr/player@latest/dist/clappr.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OvenPlayer Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/@swarmcloud/hls/hls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ovenplayer/dist/ovenplayer.js"></script>
   <style>
     html, body {
       margin: 0;
@@ -13,18 +14,18 @@
       width: 100%;
       background: black;
     }
-    #player {
+    #player_id {
       width: 100%;
       height: 100%;
     }
-    :fullscreen #player {
+    :fullscreen #player_id {
       width: 100vw !important;
       height: 100vh !important;
     }
   </style>
 </head>
 <body>
-<div id="player"></div>
+<div id="player_id"></div>
 <script>
   // Obtener parámetro ?stream=...
   const params = new URLSearchParams(window.location.search);
@@ -33,15 +34,28 @@
   // Construir URL del proxy
   const sourceUrl = "https://canchatv.online/tvtvhd/proxy2.php?stream=" + stream;
 
-  // Crear reproductor Clappr
-  var player = new Clappr.Player({
-    source: sourceUrl,
-    parentId: "#player",
-    autoPlay: true,
-    width: "100%",
-    height: "100%",
-    plugins: [LevelSelector],
-    fullscreenEnabled: true,
+  var p2pConfig = {
+    live: true,
+    swFile: './sw.js'
+  };
+
+  if (!Hls.P2pEngine.isMSESupported()) {
+    new Hls.P2pEngine.ServiceWorkerEngine(p2pConfig);
+  }
+
+  Hls.P2pEngine.tryRegisterServiceWorker(p2pConfig).then(() => {
+    OvenPlayer.create('player_id', {
+      sources: [
+        {
+          label: stream,
+          type: 'hls',
+          file: sourceUrl
+        }
+      ],
+      hlsConfig: {
+        p2pConfig
+      }
+    });
   });
 </script>
 </body>
