@@ -18,45 +18,59 @@
       width: 100%;
       height: 100%;
     }
-    :fullscreen #player_id {
-      width: 100vw !important;
-      height: 100vh !important;
-    }
   </style>
 </head>
 <body>
 <div id="player_id"></div>
 <script>
-  // Obtener parámetro ?stream=...
-  const params = new URLSearchParams(window.location.search);
-  const stream = params.get("stream") || "telemundo";
+  function initPlayer() {
+    // Obtener parámetro ?stream=...
+    const params = new URLSearchParams(window.location.search);
+    const stream = params.get("stream") || "telemundo";
 
-  // Construir URL del proxy
-  const sourceUrl = "https://canchatv.online/tvtvhd/proxy3.php?stream=" + stream;
+    // Construir URL del proxy
+    const sourceUrl = "https://canchatv.online/tvtvhd/proxy3.php?stream=" + stream;
 
-  var p2pConfig = {
-    live: true,
-    swFile: './sw.js'
-  };
+    var p2pConfig = {
+      live: true,
+      swFile: './sw.js'
+    };
 
-  if (!Hls.P2pEngine.isMSESupported()) {
-    new Hls.P2pEngine.ServiceWorkerEngine(p2pConfig);
-  }
+    if (!Hls.P2pEngine.isMSESupported()) {
+      new Hls.P2pEngine.ServiceWorkerEngine(p2pConfig);
+    }
 
-  Hls.P2pEngine.tryRegisterServiceWorker(p2pConfig).then(() => {
-    OvenPlayer.create('player_id', {
-      sources: [
-        {
-          label: stream,
-          type: 'hls',
-          file: sourceUrl
+    Hls.P2pEngine.tryRegisterServiceWorker(p2pConfig).then(() => {
+      OvenPlayer.create('player_id', {
+        sources: [
+          {
+            label: stream,
+            type: 'hls',
+            file: sourceUrl
+          }
+        ],
+        hlsConfig: {
+          p2pConfig
         }
-      ],
-      hlsConfig: {
-        p2pConfig
+      });
+    });
+
+    // 🔹 Ajuste visual en fullscreen → llenar pantalla sin bordes negros
+    document.addEventListener("fullscreenchange", () => {
+      const videoEl = document.querySelector("video");
+      if (document.fullscreenElement && videoEl) {
+        videoEl.style.objectFit = "fill";
+        videoEl.style.width = "100vw";
+        videoEl.style.height = "100vh";
+      } else if (videoEl) {
+        videoEl.style.objectFit = "contain";
+        videoEl.style.width = "100%";
+        videoEl.style.height = "auto";
       }
     });
-  });
+  }
+
+  document.addEventListener('DOMContentLoaded', initPlayer);
 </script>
 </body>
 </html>
