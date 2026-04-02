@@ -6,28 +6,24 @@
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="referrer" content="no-referrer">
 
+  <!-- JWPlayer -->
   <script src="https://ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
   <script>
     jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo";
 
-    function getQueryParameter(name) {
-      return new URLSearchParams(window.location.search).get(name);
-    }
-
     document.addEventListener("DOMContentLoaded", function () {
-      // Tomamos todos los parámetros de la URL
       const params = new URLSearchParams(window.location.search);
+      const stream = params.get("stream");
 
-      // Verificamos que exista "canal"
-      if (!params.has("stream")) {
+      if (!stream) {
         console.error("Falta el parámetro ?stream=");
         return;
       }
 
-      // Construimos la URL final con TODOS los parámetros
-      const proxyBase = "https://canchatv.online/la14hd/proxy.php?stream=";
-      const finalUrl = proxyBase + "?" + params.toString();
+      // 🔹 Construir URL final
+      const finalUrl = "https://canchatv.online/la14hd/proxy.php?stream=" + stream;
 
+      // 🔹 Configuración JWPlayer
       const playerInstance = jwplayer("player").setup({
         playlist: [{
           sources: [{
@@ -41,14 +37,14 @@
         stretching: "uniform",
         skin: { name: "cyan" },
         logo: {
-          file: "https://hernanmix.github.io/play.github.io/hsportshd.jpg", // URL del logo
-          position: "top-right",   // esquina superior derecha
-          margin: 20,              // separación del borde
-          link: "https://whatsapp.com/channel/0029VbAtpgq4IBh5G4dGwZ1T" // enlace al hacer clic
+          file: "https://hernanmix.github.io/play.github.io/hsportshd.jpg",
+          position: "top-right",
+          margin: 20,
+          link: "https://whatsapp.com/channel/0029VbAtpgq4IBh5G4dGwZ1T"
         }
       });
 
-      // Al entrar en fullscreen → forzar fill (sin bordes negros)
+      // 🔹 Ajuste fullscreen
       playerInstance.on("fullscreen", function(e) {
         if (e.fullscreen) {
           playerInstance.setConfig({ stretching: "exactfit" });
@@ -57,8 +53,6 @@
         }
       });
     });
-   
-   
   </script>
 
   <style>
@@ -77,14 +71,9 @@
       height: 100%;
       z-index: 9999;
     }
-    
   </style>
 </head>
 <body>
   <div id="player"></div>
-
-
- 
-
 </body>
 </html>
