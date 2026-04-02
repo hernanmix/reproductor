@@ -1,7 +1,7 @@
 {
   "channels": {
     "espn": "https://dw5pdgvk.fubohd.com:443/espn/mono.m3u8?token=cd4d1d5fce4010aea1cf15527f42dc8ffb8bc8c9-83-1775183276-1775165276",
-    "espn2": "https://canchatv.online/tvtvhd/proxy3.php?stream=espn2",
+    "espn2": "https://canchatv.online/tvtvhd/proxy3.php?stream=espn2&target=3&raw=1",
     "foxsports": "https://dw5pdgvk.fubohd.com:443/foxsports/mono.m3u8?token=yyyy"
   }
 }
