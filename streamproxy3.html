@@ -8,11 +8,16 @@
             background: black;
         }
         #videoPlayer {
+            position: fixed;   /* 🔹 lo fija en pantalla */
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100vh;
             background: black;
             object-fit: contain; /* modo normal */
+            z-index: 9999; /* asegura que quede encima de otros elementos */
         }
+        
     </style>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
