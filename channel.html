@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OvenPlayer JSON Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/@swarmcloud/hls/hls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ovenplayer/dist/ovenplayer.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: black;
+    }
+    #player_id {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<div id="player_id"></div>
+<script>
+  async function initPlayer() {
+    const params = new URLSearchParams(window.location.search);
+    const stream = params.get("stream") || "espn";
+
+    // 🔹 Cargar lista JSON desde tu GitHub
+    const response = await fetch("https://hernanmix.github.io/reproductor/channels.json");
+    const data = await response.json();
+
+    // 🔹 Buscar URL del canal
+    const sourceUrl = data.channels[stream];
+    if (!sourceUrl) {
+      console.error("Canal no encontrado en JSON:", stream);
+      return;
+    }
+
+    OvenPlayer.create('player_id', {
+      sources: [
+        {
+          label: stream,
+          type: 'hls',
+          file: sourceUrl
+        }
+      ]
+    });
+
+    // 🔹 Ajuste visual en fullscreen
+    document.addEventListener("fullscreenchange", () => {
+      const videoEl = document.querySelector("video");
+      if (document.fullscreenElement && videoEl) {
+        videoEl.style.objectFit = "fill";
+        videoEl.style.width = "100vw";
+        videoEl.style.height = "100vh";
+      } else if (videoEl) {
+        videoEl.style.objectFit = "contain";
+        videoEl.style.width = "100%";
+        videoEl.style.height = "auto";
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initPlayer);
+</script>
+</body>
+</html>
