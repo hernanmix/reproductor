@@ -47,7 +47,7 @@ async function initPlayer() {
   var player = new window.Player({
     id: 'mse',
     isLive: true,
-    url: proxyData.url,
+    url: proxyData.url,   // 🔹 Aquí va el .m3u8 que contiene los segmentos .ts
     autoplay: true,
     playsinline: true,
     height: window.innerHeight,
