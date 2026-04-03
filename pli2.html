@@ -22,27 +22,32 @@ async function initPlayer() {
   const params = new URLSearchParams(window.location.search);
   const stream = params.get("stream") || "espn";
 
-  // 1. Llamar al proxy
-  const proxyResponse = await fetch("https://hsportshd.kesug.com/proxy.php?stream=" + stream);
-  const proxyData = await proxyResponse.json();
+  try {
+    // 1. Llamar al proxy
+    const proxyResponse = await fetch("https://hsportshd.kesug.com/proxy.php?stream=" + stream);
+    const proxyData = await proxyResponse.json();
 
-  if (!proxyData.url) {
-    console.error("El proxy no devolvió URL válida para", stream);
-    return;
+    if (!proxyData.url) {
+      console.error("El proxy no devolvió URL válida para", stream);
+      return;
+    }
+
+    // 2. Crear reproductor con el .m3u8 real
+    var player = new window.Player({
+      id: 'mse',
+      isLive: true,
+      url: proxyData.url,   // 🔹 Aquí va el .m3u8
+      autoplay: true,
+      playsinline: true,
+      height: window.innerHeight,
+      width: window.innerWidth,
+      plugins: [window.HlsJsPlugin],
+      hlsJsPlugin: { hlsOpts: {} }
+    });
+
+  } catch (err) {
+    console.error("Error al cargar el proxy:", err);
   }
-
-  // 2. Usar solo proxyData.url como fuente
-  var player = new window.Player({
-    id: 'mse',
-    isLive: true,
-    url: proxyData.url,   // 🔹 Aquí va el .m3u8 real
-    autoplay: true,
-    playsinline: true,
-    height: window.innerHeight,
-    width: window.innerWidth,
-    plugins: [window.HlsJsPlugin],
-    hlsJsPlugin: { hlsOpts: {} }
-  });
 }
 
 document.addEventListener('DOMContentLoaded', initPlayer);
