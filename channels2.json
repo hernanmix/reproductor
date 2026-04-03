@@ -1,0 +1,7 @@
+{
+  "channels": {
+    "espn": "https://hsportshd.kesug.com/proxy.php?stream=espn",
+    "tntsportschile": "https://hsportshd.kesug.com/proxy.php?stream=tntsportschile",
+    "foxsports": "https://hsportshd.kesug.com/proxy.php?stream=foxsports"
+  }
+}
