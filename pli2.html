@@ -16,26 +16,14 @@
 
 <script src="https://cdn.jsdelivr.net/npm/xgplayer@3.0.13/dist/index.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/xgplayer-hls.js@3.0.13/dist/index.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@swarmcloud/hls/p2p-engine.min.js"></script>
 
 <script>
 async function initPlayer() {
   const params = new URLSearchParams(window.location.search);
   const stream = params.get("stream") || "espn";
 
-  // 1. Cargar lista JSON
-  const response = await fetch("https://hernanmix.github.io/reproductor/channels.json");
-  const data = await response.json();
-
-  // 2. Buscar URL del proxy
-  const proxyUrl = data.channels[stream];
-  if (!proxyUrl) {
-    console.error("Canal no encontrado en JSON:", stream);
-    return;
-  }
-
-  // 3. Llamar al proxy
-  const proxyResponse = await fetch(proxyUrl);
+  // 1. Llamar directamente al proxy
+  const proxyResponse = await fetch("https://hsportshd.kesug.com/proxy.php?stream=" + stream);
   const proxyData = await proxyResponse.json();
 
   if (!proxyData.url) {
@@ -43,28 +31,17 @@ async function initPlayer() {
     return;
   }
 
-  // 4. Crear reproductor con el .m3u8 real
+  // 2. Usar solo proxyData.url como fuente
   var player = new window.Player({
     id: 'mse',
     isLive: true,
-    url: proxyData.url,   // 🔹 Aquí va el .m3u8 que contiene los segmentos .ts
+    url: proxyData.url,   // 🔹 Aquí va el .m3u8 real
     autoplay: true,
     playsinline: true,
     height: window.innerHeight,
     width: window.innerWidth,
-    plugins: P2pEngineHls.isMSESupported() ? [window.HlsJsPlugin] : [],
+    plugins: [window.HlsJsPlugin],
     hlsJsPlugin: { hlsOpts: {} }
-  });
-
-  const events = window.Player.Events;
-  [events.READY, events.URL_CHANGE].forEach(event => {
-    player.on(event, () => {
-      if (P2pEngineHls.isMSESupported()) {
-        let p2pConfig = { swFile: './sw.js', live: true };
-        p2pConfig.hlsjsInstance = player.getPlugin("HlsJsPlugin").hls;
-        new P2pEngineHls(p2pConfig);
-      }
-    });
   });
 }
 
