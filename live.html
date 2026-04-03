@@ -26,8 +26,10 @@ async function initPlayer() {
 
   try {
     // 1. Llamar al proxy2.php
-    const proxyResponse = await fetch("https://hsportshd.kesug.com/proxy2.php?stream=" + stream);
-    const proxyData = await proxyResponse.json();
+    const proxyResponse = await fetch("https://hsportshd.kesug.com/proxy.php?stream=espn");
+const proxyData = await proxyResponse.json();
+player = new window.Player({ url: proxyData.url, ... });
+
 
     if (!proxyData.url) {
       console.error("El proxy no devolvió URL válida");
