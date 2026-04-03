@@ -1,6 +1,4 @@
 {
-  "channels": {
-    "espn": "https://hsportshd.kesug.com/proxy.php?stream=espn",
-    "espn2": "https://hsportshd.kesug.com/proxy.php?stream=espn2"
-  }
+  "channel": "espn2",
+  "url": "https://a2vlca.fubohd.com:443/espn2/mono.m3u8?token=..."
 }
