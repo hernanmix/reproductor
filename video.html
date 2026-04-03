@@ -23,19 +23,20 @@
         var videoUrl = 'https://wp9xqedt.fubohd.com/espn/mono.m3u8?token=2812c78934886fefd4bd94782ab133205f8c75db-76-1775256832-1775238832';
 
         if (Hls.isSupported()) {
-            var hls = new Hls();
-            hls.loadSource(videoUrl);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                video.play();
-            });
-        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            video.src = videoUrl;
-            video.addEventListener('loadedmetadata', function () {
-                video.play();
-            });
-        }
-        // Ajuste visual en fullscreen → llenar pantalla sin bordes negros
+                var hls = new Hls();
+                hls.loadSource(videoUrl);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                    video.play();
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = videoUrl;
+                video.addEventListener('loadedmetadata', function () {
+                    video.play();
+                });
+            }
+
+            // Ajuste visual en fullscreen → llenar pantalla sin bordes negros
             document.addEventListener("fullscreenchange", () => {
                 if (document.fullscreenElement) {
                     video.style.objectFit = "fill";   // estira para ocupar todo
@@ -48,6 +49,8 @@
                 }
             });
         }
+
+        document.addEventListener('DOMContentLoaded', initPlayer);
     </script>
 </body>
 </html>
