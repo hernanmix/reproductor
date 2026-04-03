@@ -22,7 +22,7 @@ async function initPlayer() {
   const params = new URLSearchParams(window.location.search);
   const stream = params.get("stream") || "espn";
 
-  // 1. Llamar directamente al proxy
+  // 1. Llamar al proxy
   const proxyResponse = await fetch("https://hsportshd.kesug.com/proxy.php?stream=" + stream);
   const proxyData = await proxyResponse.json();
 
@@ -31,11 +31,11 @@ async function initPlayer() {
     return;
   }
 
-  // 2. Usar solo proxyData.url como fuente
+  // 2. Crear reproductor con el .m3u8 real
   var player = new window.Player({
     id: 'mse',
     isLive: true,
-    url: proxyData.url,   // 🔹 Aquí va el .m3u8 real
+    url: proxyData.url,   // 🔹 Aquí se usa solo el campo "url"
     autoplay: true,
     playsinline: true,
     height: window.innerHeight,
