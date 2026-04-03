@@ -27,16 +27,17 @@ async function initPlayer() {
     const proxyResponse = await fetch("https://hsportshd.kesug.com/proxy.php?stream=" + stream);
     const proxyData = await proxyResponse.json();
 
+    // 2. Verificar que exista el campo url
     if (!proxyData.url) {
       console.error("El proxy no devolvió URL válida para", stream);
       return;
     }
 
-    // 2. Crear reproductor con el .m3u8 real
+    // 3. Crear reproductor con el .m3u8 real
     var player = new window.Player({
       id: 'mse',
       isLive: true,
-      url: proxyData.url,   // 🔹 Aquí va el .m3u8
+      url: proxyData.url,   // 🔹 Aquí se usa solo el campo "url"
       autoplay: true,
       playsinline: true,
       height: window.innerHeight,
