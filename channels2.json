@@ -1,7 +1,7 @@
 [
   {
     "channel": "espn",
-    "url": "https://cc324.streamingtv339.com/espn/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=fbdbe3a09b6c4dc69ac35f21115aacdc50266465-15-1775287627-1775233627"
+    "url": "https://cc324.streamingtv339.com:443/espn/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=b4c4b3767e70c8103598447e0d229496930f1463-d1-1775288335-1775234335"
   },
   {
     "channel": "winsportsplus",
