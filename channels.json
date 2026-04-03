@@ -1,8 +1,4 @@
 {
-  "channels": {
-    "espn": "https://dw5pdgvk.fubohd.com:443/espn/mono.m3u8?token=cd4d1d5fce4010aea1cf15527f42dc8ffb8bc8c9-83-1775183276-1775165276",
-    "winsportsplus": "https://rm8zcvk3.fubohd.com:443/winsportsplus/mono.m3u8?token=810492803e3f426e5d22fbf1e8cd864abeabfd2e-cb-1775186217-1775168217",
-    "tntsports": "https://rm8zcvk3.fubohd.com:443/winsportsplus/mono.m3u8?token=810492803e3f426e5d22fbf1e8cd864abeabfd2e-cb-1775186217-1775168217",
-    "foxsports": "https://hsportshd.kesug.com/proxy.php?stream=espn"
-  }
+  "channel": "espn",
+  "url": "https://rm8zcvk3.fubohd.com:443/espn/mono.m3u8?token=e79bcc8421863ce2e8d55c38ee9570b746b12a48-c0-1775201181-1775183181"
 }
