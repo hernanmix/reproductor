@@ -1,1 +1,14 @@
-{"channel":"espn","url":"https:\/\/aw1wcm92zq.fubohd.com:443\/espn\/mono.m3u8?token=94181c71b2e35773630aec77837959eddb3c1c25-12-1775195263-1775177263"}
+[
+  {
+    "channel": "espn",
+    "url": "https://rm8zcvk3.fubohd.com:443/espn/mono.m3u8?token=e79bcc8421863ce2e8d55c38ee9570b746b12a48-c0-1775201181-1775183181"
+  },
+  {
+    "channel": "espn2",
+    "url": "https://rm8zcvk3.fubohd.com:443/espn2/mono.m3u8?token=..."
+  },
+  {
+    "channel": "espn3",
+    "url": "https://rm8zcvk3.fubohd.com:443/espn3/mono.m3u8?token=..."
+  }
+]
