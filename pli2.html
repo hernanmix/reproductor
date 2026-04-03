@@ -33,13 +33,15 @@ async function initPlayer() {
         const response = await fetch("https://hernanmix.github.io/reproductor/channels2.json");
         const data = await response.json();
 
-        // Si el JSON es un objeto único
+        // 2. Buscar el canal en el JSON
         let channelUrl = null;
-        if (data.channel === stream) {
+
+        // Si el JSON es un objeto único
+        if (data.channel && data.url && data.channel === stream) {
             channelUrl = data.url;
         }
 
-        // Si el JSON es un array de canales (ejemplo futuro)
+        // Si el JSON es un array de canales
         if (Array.isArray(data)) {
             const found = data.find(c => c.channel === stream);
             if (found) channelUrl = found.url;
@@ -50,10 +52,10 @@ async function initPlayer() {
             return;
         }
 
-        // 2. Configuración P2P
+        // 3. Configuración P2P
         var p2pConfig = { swFile: './sw.js', live: true };
 
-        // 3. Crear reproductor con el .m3u8 real
+        // 4. Crear reproductor con el .m3u8 real
         P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
             var player = new window.Player({
                 id: 'mse',
