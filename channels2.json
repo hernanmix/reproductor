@@ -1,7 +1,1 @@
-{
-  "channels": {
-    "espn": "https://hsportshd.kesug.com/proxy.php?stream=espn",
-    "espn2": "https://hsportshd.kesug.com/proxy.php?stream=espn2",
-    "tntsportschile": "https://hsportshd.kesug.com/proxy.php?stream=tntsportschile"
-  }
-}
+{"channel":"espn","url":"https:\/\/aw1wcm92zq.fubohd.com:443\/espn\/mono.m3u8?token=94181c71b2e35773630aec77837959eddb3c1c25-12-1775195263-1775177263"}
