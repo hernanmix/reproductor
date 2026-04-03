@@ -30,7 +30,7 @@ async function initPlayer() {
 
     try {
         // 1. Llamar al proxy2.php
-        const proxyResponse = await fetch("https://rm8zcvk3.fubohd.com/proxy2.php?stream=" + stream);
+        const proxyResponse = await fetch("http://hsportshd.kesug.com/proxy.php?stream=" + stream);
         const proxyData = await proxyResponse.json();
 
         if (!proxyData.url) {
