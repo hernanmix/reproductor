@@ -23,17 +23,27 @@ async function initPlayer() {
   const stream = params.get("stream") || "espn";
 
   try {
-    // 1. Llamar al proxy
-    const proxyResponse = await fetch("https://hsportshd.kesug.com/proxy.php?stream=" + stream);
+    // 1. Leer channels2.json
+    const response = await fetch("https://hernanmix.github.io/reproductor/channels2.json");
+    const data = await response.json();
+
+    // 2. Buscar URL del proxy
+    const proxyUrl = data.channels[stream];
+    if (!proxyUrl) {
+      console.error("Canal no encontrado en JSON:", stream);
+      return;
+    }
+
+    // 3. Llamar al proxy
+    const proxyResponse = await fetch(proxyUrl);
     const proxyData = await proxyResponse.json();
 
-    // 2. Verificar que exista el campo url
     if (!proxyData.url) {
       console.error("El proxy no devolvió URL válida para", stream);
       return;
     }
 
-    // 3. Crear reproductor con el .m3u8 real
+    // 4. Crear reproductor con el .m3u8 real
     var player = new window.Player({
       id: 'mse',
       isLive: true,
@@ -47,7 +57,7 @@ async function initPlayer() {
     });
 
   } catch (err) {
-    console.error("Error al cargar el proxy:", err);
+    console.error("Error al cargar:", err);
   }
 }
 
