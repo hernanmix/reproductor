@@ -19,55 +19,54 @@
 <script src="//cdn.jsdelivr.net/npm/xgplayer-hls.js@3.0.13/dist/index.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/@swarmcloud/hls/p2p-engine.min.js"></script>
 
-<script>
+<script type="text/javascript">
 async function initPlayer() {
-  const params = new URLSearchParams(window.location.search);
-  const stream = params.get("stream") || "espn";
+    const params = new URLSearchParams(window.location.search);
+    const stream = params.get("stream") || "espn";
 
-  try {
-    // 1. Llamar al proxy2.php
-    const proxyResponse = await fetch("https://hsportshd.kesug.com/proxy.php?stream=espn");
-const proxyData = await proxyResponse.json();
-player = new window.Player({ url: proxyData.url, ... });
+    try {
+        // 1. Llamar al proxy2.php
+        const proxyResponse = await fetch("https://rm8zcvk3.fubohd.com/proxy2.php?stream=" + stream);
+        const proxyData = await proxyResponse.json();
 
+        if (!proxyData.url) {
+            console.error("El proxy no devolvió URL válida");
+            return;
+        }
 
-    if (!proxyData.url) {
-      console.error("El proxy no devolvió URL válida");
-      return;
-    }
+        // 2. Crear reproductor con el .m3u8 real
+        var p2pConfig = { swFile: './sw.js', live: true };
 
-    // 2. Crear reproductor con el .m3u8 real
-    var p2pConfig = { swFile: './sw.js', live: true };
+        P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
+            var player = new window.Player({
+                id: 'mse',
+                isLive: true,
+                url: proxyData.url,   // 🔹 Aquí va el campo "url" del JSON
+                autoplay: true,
+                playsinline: true,
+                height: window.innerHeight,
+                width: window.innerWidth,
+                plugins: P2pEngineHls.isMSESupported() ? [window.HlsJsPlugin] : [],
+                hlsJsPlugin: { hlsOpts: {} }
+            });
 
-    P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
-      var player = new window.Player({
-        id: 'mse',
-        isLive: true,
-        url: proxyData.url,   // 🔹 Aquí va el campo "url" del JSON
-        autoplay: true,
-        playsinline: true,
-        height: window.innerHeight,
-        width: window.innerWidth,
-        plugins: P2pEngineHls.isMSESupported() ? [window.HlsJsPlugin] : [],
-        hlsJsPlugin: { hlsOpts: {} }
-      });
-
-      const events = window.Player.Events;
-      [events.READY, events.URL_CHANGE].forEach(event => {
-        player.on(event, () => {
-          if (P2pEngineHls.isMSESupported()) {
-            p2pConfig.hlsjsInstance = player.getPlugin("HlsJsPlugin").hls;
-          }
-          new P2pEngineHls(p2pConfig);
+            const events = window.Player.Events;
+            [events.READY, events.URL_CHANGE].forEach(event => {
+                player.on(event, () => {
+                    if (P2pEngineHls.isMSESupported()) {
+                        p2pConfig.hlsjsInstance = player.getPlugin("HlsJsPlugin").hls;
+                    }
+                    new P2pEngineHls(p2pConfig);
+                });
+            });
         });
-      });
-    });
-  } catch (err) {
-    console.error("Error al cargar el proxy:", err);
-  }
+    } catch (err) {
+        console.error("Error al cargar el proxy:", err);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', initPlayer);
 </script>
+
 </body>
 </html>
