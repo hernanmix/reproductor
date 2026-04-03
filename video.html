@@ -35,6 +35,19 @@
                 video.play();
             });
         }
+        // Ajuste visual en fullscreen → llenar pantalla sin bordes negros
+            document.addEventListener("fullscreenchange", () => {
+                if (document.fullscreenElement) {
+                    video.style.objectFit = "fill";   // estira para ocupar todo
+                    video.style.width = "100vw";
+                    video.style.height = "100vh";
+                } else {
+                    video.style.objectFit = "contain"; // vuelve al modo normal
+                    video.style.width = "100%";
+                    video.style.height = "100vh";
+                }
+            });
+        }
     </script>
 </body>
 </html>
