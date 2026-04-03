@@ -1,7 +1,6 @@
 {
   "channels": {
     "espn": "https://hsportshd.kesug.com/proxy.php?stream=espn",
-    "espn2": "https://hsportshd.kesug.com/proxy.php?stream=espn2",
-    "foxsports": "https://hsportshd.kesug.com/proxy.php?stream=foxsports"
+    "espn2": "https://hsportshd.kesug.com/proxy.php?stream=espn2"
   }
 }
