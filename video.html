@@ -1,64 +1,64 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="referrer" content="no-referrer">
+    <style type="text/css">
+        html, body {width:100%;height:100%;margin:0;padding:0;overflow:hidden;background:black;}
+        body {display:flex;}
+        #mse {flex:auto;}
+        video {object-fit:fill;} /* evita márgenes negros en fullscreen horizontal */
+    </style>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xgplayer@3.0.12/dist/index.min.css">
+    <script type="text/javascript">
+        window.addEventListener('resize',function(){
+            document.getElementById('mse').style.height=window.innerHeight+'px';
+            document.getElementById('mse').style.width=window.innerWidth+'px';
+        });
+    </script>
 </head>
 <body>
-<script src="https://cdn.radiantmediatechs.com/rmp/7.8.1/js/rmp.min.js"></script>
-<!-- P2PEngine -->
-<script src="https://cdn.jsdelivr.net/npm/@swarmcloud/hls/p2p-engine.min.js"></script>
-<div id="rmp"></div>
-<p id="version"></p>
-<h3>download info:</h3>
-<p id="info"></p>
-<script>
-    const src = {
-        hls: 'https://ff2srpr7.04334746.net:8443/hls/b9d5tcl59dh2.m3u8?s=sZxjhsUVLt0KVCTqpRE8WA&e=1775352130'
-    };
-    // config for p2p
-    var p2pConfig = {
-        // logLevel: 'debug',
-        live: false,        // set to true in live mode
-        swFile: './sw.js',
-        getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
-            var total = totalHTTPDownloaded + totalP2PDownloaded;
-            document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
-        },
-        // trackerZone: 'hk',        // if using Hongkong tracker
-        // trackerZone: 'us',        // if using USA tracker
-        // token: YOUR_TOKEN
-        // Other p2pConfig options provided by CDNBye
+<div id="mse"></div>
+<script src="//cdn.jsdelivr.net/npm/xgplayer@3.0.13/dist/index.min.js" charset="utf-8"></script>
+<script src="//cdn.jsdelivr.net/npm/xgplayer-hls.js@3.0.13/dist/index.min.js" charset="utf-8"></script>
+<script src="//cdn.jsdelivr.net/npm/@swarmcloud/hls/p2p-engine.min.js"></script>
+<script type="text/javascript">
+    async function getChannelUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const stream = params.get("stream") || "espn"; // por defecto ESPN
+        const res = await fetch("https://hernanmix.github.io/reproductor/channels2.json");
+        const channels = await res.json();
+        return channels[stream] ? channels[stream].url : channels["espn"].url;
     }
-    if (!P2pEngineHls.isMSESupported()) {
-        // use ServiceWorker based p2p engine if hls.js is not supported, need additional file sw.js
-        new P2pEngineHls.ServiceWorkerEngine(p2pConfig)
-    }
-    const elementID = 'rmp';
-    const rmp = new RadiantMP(elementID);
-    const container = document.getElementById(elementID);
-    container.addEventListener('hlsinstancecreated', () => {
-        const hlsjsInstance = rmp.getHlsJSInstance();
-        if (P2PEngineHls.isSupported()) {
-            new P2pEngineHls({
-                hlsjsInstance,
-                ...p2pConfig
-            });
-        }
-    });
-    P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
-        const settings = {
-            licenseKey: 'Kl8lMDQ9b2kzeWNlOHoyZHM3YjgrMnNlP3JvbTVkYXNpczMwZGIwQSVfKg==',  // replace with your own license key
-            src: src,
-            width: 640,
-            height: 360,
-            forceHlsJSOnIpadOS: true,
-            hlsJSCustomConfig: {}
-        };
-        rmp.init(settings);
-    })
 
+    var p2pConfig = {
+        swFile: './sw.js',
+        live: false
+    }
+
+    P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(async () => {
+        const url = await getChannelUrl();
+        var player = new window.Player({
+            id: 'mse',
+            url: url,
+            autoplay: true,
+            playsinline: true,
+            height: window.innerHeight,
+            width: window.innerWidth,
+            plugins: P2pEngineHls.isMSESupported() ? [window.HlsJsPlugin] : [],
+            hlsJsPlugin: { hlsOpts: {} }
+        });
+        const events = window.Player.Events;
+        [events.READY, events.URL_CHANGE].forEach(event => {
+            player.on(event, () => {
+                if (P2pEngineHls.isMSESupported()) {
+                    p2pConfig.hlsjsInstance = player.getPlugin("HlsJsPlugin").hls;
+                }
+                new P2pEngineHls(p2pConfig)
+            })
+        })
+    })
 </script>
 </body>
 </html>
