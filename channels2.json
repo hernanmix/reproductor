@@ -4,11 +4,11 @@
     "url": "https://tyg2mnl9.fubohd.com/espn/mono.m3u8?token=c9ea0965ef121eac2c2efcf22b8bf37bec8b5040-39-1775347800-1775329800"
   },
   "ezon": {
-    "name": "Ezon",
-    "url": "https://ejemplo.com/ezon/stream.m3u8"
+    "name": "ESPN2",
+    "url": "https://244pl.streamingtv339.com:443/foxone3/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=ea886231da1de5b1eae308f7f3c88cc651ae0c6b-1c-1775376195-1775322195"
   },
   "hyper1": {
-    "name": "Hyper 1",
+    "name": "HYPER1",
     "url": "https://streamx339.cloud/global1.php?channel=hyper1"
   }
 }
