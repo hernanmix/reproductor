@@ -1,27 +1,9 @@
-[
-  {
-    "nombre": "AdultIPTV.net Live Cams",
-    "url": "http://live.adultiptv.net/livecams.m3u8",
-    "logo": "https://files.adultiptv.net/adultiptvnet.jpg",
-    "grupo": "XXX"
-  },
-  {
-    "nombre": "AdultIPTV.net MILF",
-    "url": "http://live.adultiptv.net/milf.m3u8",
-    "logo": "https://files.adultiptv.net/adultiptvnet.jpg",
-    "grupo": "XXX"
-  },
-  {
-    "nombre": "AdultIPTV.net Big Dick",
-    "url": "http://live.adultiptv.net/bigdick.m3u8",
-    "logo": "https://files.adultiptv.net/adultiptvnet.jpg",
-    "grupo": "XXX"
-  },
-  {
-    "nombre": "AdultIPTV.net Big Tits",
-    "url": "http://live.adultiptv.net/bigtits.m3u8",
-    "logo": "https://files.adultiptv.net/adultiptvnet.jpg",
-    "grupo": "XXX"
-  }
-  // …continúa con todos los demás canales
-]
+#EXTM3U
+#EXTINF:-1 tvg-id="hyper1" tvg-name="Hyper 1" group-title="Deportes", Hyper 1
+https://streamx339.cloud/global1.php?channel=hyper1
+
+#EXTINF:-1 tvg-id="hyper2" tvg-name="Hyper 2" group-title="Deportes", Hyper 2
+https://streamx339.cloud/global1.php?channel=hyper2
+
+#EXTINF:-1 tvg-id="hyper3" tvg-name="Hyper 3" group-title="Películas", Hyper 3
+https://streamx339.cloud/global1.php?channel=hyper3
