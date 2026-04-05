@@ -218,8 +218,201 @@ document.getElementById('share-link').value   = SRC;
 document.getElementById('share-iframe').value = `<iframe src="${SRC}" width="100%" height="100%" allowfullscreen allow="autoplay; fullscreen" style="border:none;aspect-ratio:16/9;"></iframe>`;
 document.getElementById('share-full').href    = SRC;
 
-// 🔹 Aquí va todo el JS de las partes 4, 5 y 6 (initHls, showPlayBtn, controles, PiP, AirPlay, Cast, doble tap, UI auto-hide)
-// Ya corregido para usar la variable SRC dinámica
+initHls();
+
+setInterval(() => {
+  if (video.paused || video.ended || !hls) return;
+  if (video.buffered.length) {
+    const edge = video.buffered.end(video.buffered.length - 1);
+    if (edge - video.currentTime > 20) {
+      video.currentTime = edge - 1.5;
+      showToast('⚡ Sincronizando con el directo…');
+    }
+  }
+  if (video.readyState === 2) video.currentTime += 0.1;
+}, 10_000);
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden || !video.paused) return;
+  if (video.buffered.length) video.currentTime = video.buffered.end(video.buffered.length - 1) - 0.5;
+  video.play().catch(() => {});
+});
+
+const btnPlay   = document.getElementById('btn-play');
+const iconPlay  = document.getElementById('icon-play');
+const iconPause = document.getElementById('icon-pause');
+btnPlay.addEventListener('click', () => {
+  if (video.paused) video.play().then(() => unmuteGradual()).catch(() => {});
+  else video.pause();
+});
+video.addEventListener('play',    () => { iconPlay.style.display='none'; iconPause.style.display=''; });
+video.addEventListener('pause',   () => { iconPlay.style.display=''; iconPause.style.display='none'; });
+video.addEventListener('waiting', () => spinner.classList.remove('hidden'));
+video.addEventListener('playing', () => { spinner.classList.add('hidden'); errMsg.style.display='none'; });
+
+const seekbar   = document.getElementById('seekbar');
+const seekBar   = document.getElementById('seekbar-bar');
+const seekBuf   = document.getElementById('seekbar-buf');
+const seekThumb = document.getElementById('seekbar-thumb');
+video.addEventListener('timeupdate', () => {
+  if (!isFinite(video.duration) || !video.duration) return;
+  const p = video.currentTime / video.duration * 100;
+  seekBar.style.width  = p + '%';
+  seekThumb.style.left = p + '%';
+});
+video.addEventListener('progress', () => {
+  if (video.buffered.length && isFinite(video.duration))
+    seekBuf.style.width = (video.buffered.end(video.buffered.length-1) / video.duration * 100) + '%';
+});
+let seeking = false;
+const doSeek = e => {
+  if (!isFinite(video.duration)) return;
+  const r = seekbar.getBoundingClientRect();
+  video.currentTime = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)) * video.duration;
+};
+seekbar.addEventListener('mousedown', e => { seeking=true; doSeek(e); });
+document.addEventListener('mousemove', e => { if(seeking) doSeek(e); });
+document.addEventListener('mouseup',   () => { seeking=false; });
+seekbar.addEventListener('touchstart', e => { e.preventDefault(); doSeek(e.touches[0]); });
+seekbar.addEventListener('touchmove',  e => { e.preventDefault(); doSeek(e.touches[0]); });
+
+document.getElementById('btn-rew').addEventListener('click', () => {
+  if (isFinite(video.duration)) video.currentTime = Math.max(0, video.currentTime - 10);
+});
+document.getElementById('btn-fwd').addEventListener('click', () => {
+  if (isFinite(video.duration)) video.currentTime = Math.min(video.duration, video.currentTime + 10);
+});
+
+const volRange = document.getElementById('vol-range');
+const iconVol  = document.getElementById('icon-vol');
+const iconMute = document.getElementById('icon-mute');
+document.getElementById('btn-mute').addEventListener('click', () => {
+  video.muted = !video.muted;
+  iconVol.style.display  = video.muted ? 'none' : '';
+  iconMute.style.display = video.muted ? ''     : 'none';
+});
+volRange.addEventListener('input', () => { video.volume = +volRange.value; });
+
+const btnFs    = document.getElementById('btn-fs');
+const iconFsOn = document.getElementById('icon-fs-on');
+const iconFsOff= document.getElementById('icon-fs-off');
+btnFs.addEventListener('click', () => {
+  const el = document.documentElement;
+  if (!document.fullscreenElement && !document.webkitFullscreenElement)
+    (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
+  else
+    (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+});
+['fullscreenchange','webkitfullscreenchange'].forEach(ev =>
+  document.addEventListener(ev, () => {
+    const fs = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    iconFsOn.style.display  = fs ? 'none' : '';
+    iconFsOff.style.display = fs ? ''     : 'none';
+  })
+);
+
+const btnPip = document.getElementById('btn-pip');
+if (document.pictureInPictureEnabled) {
+  btnPip.classList.remove('btn-hidden');
+  btnPip.addEventListener('click', async () => {
+    try { document.pictureInPictureElement ? await document.exitPictureInPicture() : await video.requestPictureInPicture(); } catch(_) {}
+  });
+}
+
+const btnAP = document.getElementById('btn-airplay');
+if (window.WebKitPlaybackTargetAvailabilityEvent) {
+  video.addEventListener('webkitplaybacktargetavailabilitychanged', e => {
+    btnAP.classList.toggle('btn-hidden', e.availability !== 'available');
+  });
+  btnAP.addEventListener('click', () => video.webkitShowPlaybackTargetPicker());
+  video.addEventListener('webkitcurrentplaybacktargetiswirelesschanged', () => {
+    btnAP.style.color = video.webkitCurrentPlaybackTargetIsWireless ? 'var(--green)' : '';
+  });
+}
+
+const btnCast     = document.getElementById('btn-cast');
+const castOverlay = document.getElementById('cast-overlay');
+const castDevName = document.getElementById('cast-device-name');
+function initCast() {
+  try {
+    const ctx = cast.framework.CastContext.getInstance();
+    ctx.setOptions({
+      receiverApplicationId: chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID,
+      autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED,
+    });
+    btnCast.classList.remove('btn-hidden');
+    ctx.addEventListener(cast.framework.CastContextEventType.CAST_STATE_CHANGED, e => {
+      const CS = cast.framework.CastState;
+      if (e.castState === CS.CONNECTED) {
+        btnCast.classList.add('cast-active');
+        const sess = ctx.getCurrentSession();
+        castDevName.textContent = sess?.getCastDevice().friendlyName ?? 'TV';
+        castOverlay.classList.add('active');
+        loadMediaOnCast(ctx);
+      } else {
+        btnCast.classList.remove('cast-active');
+        castOverlay.classList.remove('active');
+        if (e.castState === CS.NOT_CONNECTED) video.play().catch(() => {});
+      }
+    });
+    btnCast.addEventListener('click', async () => {
+      const CS = cast.framework.CastState;
+      const state = ctx.getCastState();
+      if (state === CS.NOT_CONNECTED || state === CS.NO_DEVICES_AVAILABLE) {
+        try { await ctx.requestSession(); } catch(_) {}
+      } else { ctx.endCurrentSession(true); }
+    });
+  } catch(e) { console.warn('Cast:', e); }
+}
+function loadMediaOnCast(ctx) {
+  try {
+    const sess = ctx.getCurrentSession();
+    if (!sess) return;
+    const mi = new chrome.cast.media.MediaInfo(SRC, 'application/x-mpegURL');
+    mi.streamType = chrome.cast.media.StreamType.LIVE;
+    mi.metadata   = new chrome.cast.media.TvShowMediaMetadata();
+    mi.metadata.title = TITLE;
+    sess.loadMedia(new chrome.cast.media.LoadRequest(mi))
+        .then(() => video.pause(), err => showToast('Cast error: ' + err));
+  } catch(e) {}
+}
+
+let lastTap = 0;
+video.addEventListener('touchend', e => {
+  const now = Date.now();
+  if (now - lastTap < 300 && isFinite(video.duration)) {
+    e.preventDefault();
+    video.currentTime += e.changedTouches[0].clientX < innerWidth/2 ? -10 : 10;
+    video.currentTime = Math.max(0, Math.min(video.duration, video.currentTime));
+  }
+  lastTap = now;
+});
+
+let hideT;
+function showUI() {
+  topbar.classList.remove('hide');
+  controls.classList.remove('hide');
+  qualBadge.classList.remove('hide');
+  clearTimeout(hideT);
+  if (!video.paused)
+    hideT = setTimeout(() => {
+      topbar.classList.add('hide');
+      controls.classList.add('hide');
+      qualBadge.classList.add('hide');
+    }, 3500);
+}
+video.addEventListener('click', showUI);
+document.addEventListener('mousemove', showUI);
+document.addEventListener('touchstart', showUI, { passive:true });
+video.addEventListener('pause', showUI);
+video.addEventListener('play', () => {
+  hideT = setTimeout(() => {
+    topbar.classList.add('hide');
+    controls.classList.add('hide');
+    qualBadge.classList.add('hide');
+  }, 3500);
+});
+showUI();
 </script>
 
 <script>
