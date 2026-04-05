@@ -43,7 +43,7 @@ mux-player {
 const params = new URLSearchParams(location.search);
 const stream = params.get('stream') || 'espn'; // por defecto ESPN
 // URL dinámica de tu proxy HLS/Mux
-const SRC = `https://canchatv.online/tvtvhd/proxy3.php?stream=${stream}`;
+const SRC = `https://aw1wcm92zq.fubohd.com:443/espn/mono.m3u8?token=30df90bea1df175986b11c0eb8468e8f2b538d75-60-1775421474-1775403474${stream}`;
 
 // Inicializar Mux Player
 const player = document.getElementById('player');
