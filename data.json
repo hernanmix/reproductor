@@ -1,11 +1,14 @@
 {
-  "title": "Canal Premium HD",
-  "image": "https://i.imgur.com/8aP6H.jpg",
-  "sources": [
+  "channels": [
     {
-      "file": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-      "label": "HD",
-      "type": "hls"
+      "title": "Canal 1",
+      "image": "https://i.imgur.com/1.jpg",
+      "file": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+    },
+    {
+      "title": "Canal 2",
+      "image": "https://i.imgur.com/2.jpg",
+      "file": "https://test-streams.mux.dev/test_001/stream.m3u8"
     }
   ]
 }
