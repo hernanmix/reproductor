@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CanchaTV Plyr + Mux</title>
+<title>CanchaTV Mux Player</title>
 
-<!-- Plyr CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
+<!-- Mux Player CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mux/mux-player@latest/dist/mux-player.css" />
 
 <style>
 body {
@@ -14,24 +14,27 @@ body {
   background:#000;
   font-family:'Rubik',sans-serif;
 }
-.video-container {
-  position:relative;
+mux-player {
   width:100%;
   height:100vh;
-  background:#000;
+  --controls: auto;
+  --media-background: #000;
 }
 </style>
 </head>
 <body>
 
-<div class="video-container">
-  <video id="player" playsinline controls></video>
-</div>
+<!-- Contenedor del reproductor -->
+<mux-player id="player"
+  autoplay
+  stream-type="live"
+  playsinline
+  muted
+  controls>
+</mux-player>
 
-<!-- Plyr JS -->
-<script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
-<!-- Hls.js (para Mux/HLS) -->
-<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.15/dist/hls.min.js"></script>
+<!-- Mux Player JS -->
+<script src="https://cdn.jsdelivr.net/npm/@mux/mux-player@latest/dist/mux-player.js"></script>
 
 <script>
 'use strict';
@@ -39,36 +42,13 @@ body {
 // 🔹 Detectar parámetro ?stream=
 const params = new URLSearchParams(location.search);
 const stream = params.get('stream') || 'espn'; // por defecto ESPN
-// URL dinámica de Mux o proxy HLS
+// URL dinámica de tu proxy HLS/Mux
 const SRC = `https://canchatv.online/tvtvhd/proxy3.php?stream=${stream}`;
 
-// Inicializar Plyr
-const video = document.getElementById('player');
-const player = new Plyr(video, {
-  autoplay: true,
-  muted: true,
-  ratio: '16:9',
-  controls: [
-    'play-large','play','progress','current-time','mute','volume',
-    'settings','fullscreen'
-  ]
-});
-
-// Integrar Hls.js con Plyr
-if (Hls.isSupported()) {
-  const hls = new Hls();
-  hls.loadSource(SRC);
-  hls.attachMedia(video);
-  hls.on(Hls.Events.MANIFEST_PARSED, () => {
-    video.play().catch(()=>{});
-  });
-} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-  // Safari nativo
-  video.src = SRC;
-  video.addEventListener('loadedmetadata', () => {
-    video.play().catch(()=>{});
-  });
-}
+// Inicializar Mux Player
+const player = document.getElementById('player');
+player.src = SRC;
+player.title = `CanchaTV - ${stream.toUpperCase()}`;
 </script>
 </body>
 </html>
