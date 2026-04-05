@@ -1,0 +1,11 @@
+{
+  "title": "Canal Premium HD",
+  "image": "https://i.imgur.com/8aP6H.jpg",
+  "sources": [
+    {
+      "file": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+      "label": "HD",
+      "type": "hls"
+    }
+  ]
+}
