@@ -1,13 +1,13 @@
 {
   "channels": [
     {
-      "title": "Canal 1",
-      "image": "https://i.imgur.com/1.jpg",
+      "title": "ESPN",
+      "image": "https://hernanmix.github.io/reproductor/Fox-Sports.png",
       "file": "https://a2vlca.fubohd.com/espn/mono.m3u8?token=7e2120b8a9a8faccd5253d019d30dfb0284131b7-59-1775431544-1775413544"
     },
     {
       "title": "Canal 2",
-      "image": "https://i.imgur.com/2.jpg",
+      "image": "https://hernanmix.github.io/reproductor/Fox-Sports.png",
       "file": "https://test-streams.mux.dev/test_001/stream.m3u8"
     }
   ]
