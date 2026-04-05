@@ -1,8 +1,74 @@
-<div class="plyr__video-embed" id="player">
-  <iframe
-    src="https://www.youtube.com/embed/k85_oudwki8?si=ON5QzUNPMvEL9Ai4?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-    allowfullscreen
-    allowtransparency
-    allow="autoplay"
-  ></iframe>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CanchaTV Plyr + Mux</title>
+
+<!-- Plyr CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
+
+<style>
+body {
+  margin:0;
+  background:#000;
+  font-family:'Rubik',sans-serif;
+}
+.video-container {
+  position:relative;
+  width:100%;
+  height:100vh;
+  background:#000;
+}
+</style>
+</head>
+<body>
+
+<div class="video-container">
+  <video id="player" playsinline controls></video>
 </div>
+
+<!-- Plyr JS -->
+<script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
+<!-- Hls.js (para Mux/HLS) -->
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.15/dist/hls.min.js"></script>
+
+<script>
+'use strict';
+
+// 🔹 Detectar parámetro ?stream=
+const params = new URLSearchParams(location.search);
+const stream = params.get('stream') || 'espn'; // por defecto ESPN
+// URL dinámica de Mux o proxy HLS
+const SRC = `https://canchatv.online/tvtvhd/proxy3.php?stream=${stream}`;
+
+// Inicializar Plyr
+const video = document.getElementById('player');
+const player = new Plyr(video, {
+  autoplay: true,
+  muted: true,
+  ratio: '16:9',
+  controls: [
+    'play-large','play','progress','current-time','mute','volume',
+    'settings','fullscreen'
+  ]
+});
+
+// Integrar Hls.js con Plyr
+if (Hls.isSupported()) {
+  const hls = new Hls();
+  hls.loadSource(SRC);
+  hls.attachMedia(video);
+  hls.on(Hls.Events.MANIFEST_PARSED, () => {
+    video.play().catch(()=>{});
+  });
+} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+  // Safari nativo
+  video.src = SRC;
+  video.addEventListener('loadedmetadata', () => {
+    video.play().catch(()=>{});
+  });
+}
+</script>
+</body>
+</html>
