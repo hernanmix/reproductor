@@ -1,13 +1,13 @@
 {
   "channels": [
     {
-      "title": "ESPN",
-      "image": "https://hernanmix.github.io/reproductor/Fox-Sports.png",
-      "file": "https://a2vlca.fubohd.com/espn/mono.m3u8?token=7e2120b8a9a8faccd5253d019d30dfb0284131b7-59-1775431544-1775413544"
+      "title": "TNT Sports",
+      "image": "https://i.imgur.com/1.jpg",
+      "file": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
     },
     {
-      "title": "Canal 2",
-      "image": "https://hernanmix.github.io/reproductor/Fox-Sports.png",
+      "title": "ESPN",
+      "image": "https://i.imgur.com/2.jpg",
       "file": "https://test-streams.mux.dev/test_001/stream.m3u8"
     }
   ]
