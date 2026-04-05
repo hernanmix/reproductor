@@ -1,165 +1,137 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TV Player PRO</title>
 
-<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+<title>Player HLS Pro</title>
+
+<!-- JWPlayer -->
+<script src="https://cdn.jwplayer.com/libraries/ID_DEL_PLAYER.js"></script>
 
 <style>
-  body {
+body {
     margin: 0;
-    background: #000;
+    background: #0f0f0f;
     font-family: Arial, sans-serif;
-    color: white;
-  }
+}
 
-  .player-container {
+/* Contenedor estilo Netflix */
+.player-container {
     position: relative;
     width: 100%;
     height: 100vh;
     background: black;
-  }
+}
 
-  video {
+#player {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 🔥 quita bordes negros */
-  }
+}
 
-  /* Barra tipo Netflix */
-  .channels {
+/* Overlay tipo Netflix */
+.overlay {
     position: absolute;
     bottom: 0;
     width: 100%;
-    overflow-x: auto;
-    display: flex;
-    gap: 10px;
-    padding: 10px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.9));
-  }
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: white;
+}
 
-  .channel {
-    min-width: 120px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+/* Título */
+.title {
+    font-size: 22px;
+    font-weight: bold;
+}
 
-  .channel img {
-    width: 100%;
-    border-radius: 8px;
-  }
+/* Loader */
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
 
-  .channel:hover {
-    transform: scale(1.1);
-  }
+/* Personalización JW */
+.jw-controlbar {
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent) !important;
+}
+
+.jw-button-color {
+    color: #e50914 !important;
+}
+
+.jw-progress {
+    background: #e50914 !important;
+}
 </style>
-</head>
 
+</head>
 <body>
 
 <div class="player-container">
-  <video id="player" playsinline controls></video>
 
-  <div class="channels" id="channels"></div>
+    <div id="player"></div>
+
+    <div class="overlay">
+        <div class="title" id="title">Cargando...</div>
+    </div>
+
+    <div class="loader" id="loader">Cargando video...</div>
+
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-
 <script>
-const video = document.getElementById('player');
-const container = document.getElementById('channels');
 
-const params = new URLSearchParams(window.location.search);
-const currentStream = params.get('stream');
+// 👉 URL de tu JSON
+const JSON_URL = "data.json";
 
-/* 🔥 M3U URL (puedes cambiarla) */
-const M3U_URL = "https://hernanmix.github.io/reproductor/lista.m3u";
+// Cargar JSON
+fetch(JSON_URL)
+.then(res => res.json())
+.then(data => {
 
-let channels = [];
+    document.getElementById("title").innerText = data.title;
+    document.getElementById("loader").style.display = "none";
 
-/* 🔥 Parsear M3U */
-async function loadM3U() {
-  const res = await fetch(M3U_URL);
-  const text = await res.text();
+    jwplayer("player").setup({
+        playlist: [{
+            title: data.title,
+            image: data.image,
+            sources: data.sources
+        }],
 
-  const lines = text.split('\n');
+        width: "100%",
+        height: "100%",
+        aspectratio: "16:9",
 
-  for (let i = 0; i < lines.length; i++) {
-    if (lines[i].startsWith('#EXTINF')) {
-      const name = lines[i].match(/,(.*)/)[1];
-      const url = lines[i + 1];
+        autostart: false,
+        mute: false,
+        controls: true,
 
-      channels.push({
-        name,
-        url,
-        logo: "https://via.placeholder.com/150x80?text=" + encodeURIComponent(name)
-      });
-    }
-  }
+        primary: "html5",
+        preload: "auto",
 
-  renderChannels();
-  loadInitial();
-}
+        stretching: "uniform",
 
-/* 🎬 Render UI */
-function renderChannels() {
-  channels.slice(0, 20).forEach(ch => {
-    const div = document.createElement('div');
-    div.className = 'channel';
+        playbackRateControls: true,
 
-    div.innerHTML = `<img src="${ch.logo}" alt="${ch.name}">`;
+        // HLS optimizado
+        hlshtml: true,
+        androidhls: true,
 
-    div.onclick = () => {
-      window.location.search = "?stream=" + encodeURIComponent(ch.name);
-    };
+        // Estilo
+        displaytitle: false
+    });
 
-    container.appendChild(div);
-  });
-}
-
-/* ▶️ Cargar video */
-function playStream(url) {
-  if (window.hls) window.hls.destroy();
-
-  if (Hls.isSupported()) {
-    const hls = new Hls();
-    window.hls = hls;
-
-    hls.loadSource(url);
-    hls.attachMedia(video);
-
-  } else {
-    video.src = url;
-  }
-
-  video.muted = false;
-
-  video.play().catch(() => {
-    video.muted = true;
-    video.play();
-  });
-}
-
-/* 🔥 Selección inicial */
-function loadInitial() {
-  let ch = channels.find(c => c.name === currentStream) || channels[0];
-  playStream(ch.url);
-}
-
-/* 📱 FULLSCREEN auto horizontal */
-video.addEventListener('enterfullscreen', () => {
-  screen.orientation?.lock('landscape').catch(()=>{});
+})
+.catch(err => {
+    document.getElementById("loader").innerText = "Error cargando JSON";
+    console.error(err);
 });
 
-/* ▶️ Plyr */
-const player = new Plyr(video, {
-  controls: ['play','progress','current-time','mute','volume','fullscreen']
-});
-
-loadM3U();
 </script>
 
 </body>
