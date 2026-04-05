@@ -1,135 +1,181 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netflix IPTV</title>
 
-<title>Player HLS Pro</title>
-
-<!-- JWPlayer -->
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <style>
 body {
-    margin: 0;
-    background: #0f0f0f;
-    font-family: Arial, sans-serif;
+    margin:0;
+    background:#141414;
+    font-family:Arial, sans-serif;
+    color:white;
 }
 
-/* Contenedor estilo Netflix */
-.player-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: black;
+/* PLAYER */
+#player-container {
+    position:relative;
+    width:100%;
+    height:60vh;
+    background:black;
 }
 
-#player {
-    width: 100%;
-    height: 100%;
+video {
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
-/* Overlay tipo Netflix */
-.overlay {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-    color: white;
+/* INFO */
+.info {
+    position:absolute;
+    bottom:20px;
+    left:20px;
 }
 
-/* Título */
-.title {
-    font-size: 22px;
-    font-weight: bold;
+.info h1 {
+    margin:0;
+    font-size:24px;
 }
 
-/* Loader */
-.loader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+/* BUSCADOR */
+.search {
+    padding:15px;
+    background:#111;
 }
 
-/* Personalización JW */
-.jw-controlbar {
-    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent) !important;
+.search input {
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    background:#222;
+    color:white;
 }
 
-.jw-button-color {
-    color: #e50914 !important;
+/* LISTA */
+.row {
+    padding:10px;
 }
 
-.jw-progress {
-    background: #e50914 !important;
+.row h2 {
+    margin-left:10px;
+}
+
+.list {
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+    padding:10px;
+}
+
+.card {
+    min-width:150px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card img {
+    width:100%;
+    border-radius:5px;
+}
+
+.card:hover {
+    transform:scale(1.1);
 }
 </style>
-
 </head>
+
 <body>
 
-<div class="player-container">
-
-    <div id="player"></div>
-
-    <div class="overlay">
-        <div class="title" id="title">Cargando...</div>
+<!-- PLAYER -->
+<div id="player-container">
+    <video id="video" controls></video>
+    <div class="info">
+        <h1 id="title">Cargando...</h1>
     </div>
+</div>
 
-    <div class="loader" id="loader">Cargando video...</div>
+<!-- BUSCADOR -->
+<div class="search">
+    <input type="text" id="search" placeholder="Buscar canal...">
+</div>
 
+<!-- LISTA -->
+<div class="row">
+    <h2>Canales</h2>
+    <div class="list" id="list"></div>
 </div>
 
 <script>
 
-// 👉 URL de tu JSON
-const JSON_URL = "https://hernanmix.github.io/reproductor/data.json";
+let channels = [];
+const video = document.getElementById("video");
+let hls;
 
-// Cargar JSON
-fetch(JSON_URL)
+// 🔥 Cargar JSON
+fetch("data.json")
 .then(res => res.json())
 .then(data => {
+    channels = data.channels;
+    render(channels);
+    play(channels[0]);
+});
 
-    document.getElementById("title").innerText = data.title;
-    document.getElementById("loader").style.display = "none";
+// 🎬 Reproducir canal
+function play(channel){
+    document.getElementById("title").innerText = channel.title;
 
-    jwplayer("player").setup({
-        playlist: [{
-            title: data.title,
-            image: data.image,
-            sources: data.sources
-        }],
+    if(hls){
+        hls.destroy();
+    }
 
-        width: "100%",
-        height: "100%",
-        aspectratio: "16:9",
+    if(Hls.isSupported()){
+        hls = new Hls({
+            maxBufferLength: 20,
+            maxMaxBufferLength: 40
+        });
 
-        autostart: false,
-        mute: false,
-        controls: true,
+        hls.loadSource(channel.file);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+            video.play();
+        });
 
-        primary: "html5",
-        preload: "auto",
+    } else {
+        video.src = channel.file;
+        video.play();
+    }
+}
 
-        stretching: "uniform",
+// 📺 Render lista tipo Netflix
+function render(list){
+    const container = document.getElementById("list");
+    container.innerHTML = "";
 
-        playbackRateControls: true,
+    list.forEach(ch => {
+        const div = document.createElement("div");
+        div.className = "card";
+        div.innerHTML = `<img src="${ch.image}">`;
 
-        // HLS optimizado
-        hlshtml: true,
-        androidhls: true,
+        div.onclick = () => play(ch);
 
-        // Estilo
-        displaytitle: false
+        container.appendChild(div);
     });
+}
 
-})
-.catch(err => {
-    document.getElementById("loader").innerText = "Error cargando JSON";
-    console.error(err);
+// 🔎 Buscador
+document.getElementById("search").addEventListener("input", e => {
+    const value = e.target.value.toLowerCase();
+
+    const filtered = channels.filter(ch =>
+        ch.title.toLowerCase().includes(value)
+    );
+
+    render(filtered);
 });
 
 </script>
