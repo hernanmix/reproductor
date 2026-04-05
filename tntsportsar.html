@@ -370,7 +370,7 @@ video.addEventListener('timeupdate', () => {
   seekBar.style.width = p + '%'; seekThumb.style.left = p + '%';
 });
 video.addEventListener('progress', () => {
-  if (video.buffered.length && isFinite(video.duration))
+  if (video.buffered.length  isFinite(video.duration))
     seekBuf.style.width = (video.buffered.end(video.buffered.length-1) / video.duration * 100) + '%';
 });
 let seeking = false;
@@ -397,7 +397,7 @@ document.getElementById('btn-mute').addEventListener('click', () => {
 });
 volRange.addEventListener('input', () => {
   video.volume = +volRange.value;
-  if (video.muted && +volRange.value > 0) {
+  if (video.muted  +volRange.value > 0) {
     video.muted = false;
     iconVol.style.display  = '';
     iconMute.style.display = 'none';
@@ -410,7 +410,7 @@ const iconFsOn = document.getElementById('icon-fs-on');
 const iconFsOff= document.getElementById('icon-fs-off');
 btnFs.addEventListener('click', () => {
   const el = document.documentElement;
-  if (!document.fullscreenElement && !document.webkitFullscreenElement)
+  if (!document.fullscreenElement  !document.webkitFullscreenElement)
     (el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen).call(el);
   else
     (document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen).call(document);
