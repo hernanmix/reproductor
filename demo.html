@@ -1,114 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Player Pro</title>
+  <meta charset="UTF-8">
+  <title>Reproductor TV</title>
 
-<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-
-<style>
-:root {
-  --plyr-color-main: #ff0000;
-}
-
-body {
-  margin: 0;
-  background: #000;
-}
-
-video {
-  width: 100%;
-  height: 100vh;
-}
-
-/* estilo tipo YouTube */
-.plyr__control--overlaid {
-  background: rgba(0,0,0,0.6);
-}
-</style>
+  <!-- Plyr CSS -->
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 </head>
-<body>
+<body style="margin:0; background:black;">
 
-<video id="player" playsinline controls>
-  <!-- Subtítulos -->
-  <track kind="subtitles" label="Español" srclang="es" src="subs.vtt" default>
-</video>
+  <video id="player" controls autoplay playsinline></video>
 
-<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <!-- HLS.js -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <!-- Plyr -->
+  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 
-<script>
-const video = document.getElementById('player');
-const source = 'https://anvtcax.fubohd.com/espn/mono.m3u8?token=8fae6d12919a5df1d5af26e72d03b554f0b94da9-b9-1775428489-1775410489';
+  <script>
+    const video = document.getElementById('player');
 
-let player;
-let hls;
+    // Obtener parámetro ?stream=
+    const params = new URLSearchParams(window.location.search);
+    const stream = params.get('stream') || 'espn';
 
-if (Hls.isSupported()) {
+    // Lista de streams (ejemplo)
+    const streams = {
+      espn: "https://canchatv.online/tvtvhd/proxy3.php?stream=espn",
+      espn2: "https://anvtcax.fubohd.com/espn/mono.m3u8?token=8fae6d12919a5df1d5af26e72d03b554f0b94da9-b9-1775428489-1775410489",
+      fox: "https://example.com/live/fox.m3u8"
+    };
 
-  hls = new Hls({
-    maxBufferLength: 30
-  });
+    const source = streams[stream];
 
-  hls.loadSource(source);
-  hls.attachMedia(video);
-
-  hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
-
-    // obtener calidades
-    const levels = hls.levels.map((level, index) => ({
-      label: level.height + 'p',
-      value: index
-    }));
-
-    player = new Plyr(video, {
-      controls: [
-        'play-large',
-        'rewind',
-        'play',
-        'fast-forward',
-        'progress',
-        'current-time',
-        'duration',
-        'mute',
-        'volume',
-        'settings',
-        'pip',
-        'fullscreen'
-      ],
-
-      settings: ['quality', 'speed'],
-      speed: {
-        selected: 1,
-        options: [0.5, 1, 1.25, 1.5, 2]
-      },
-
-      quality: {
-        default: 0,
-        options: levels.map(l => l.value),
-        forced: true,
-        onChange: (quality) => {
-          hls.currentLevel = quality;
-        }
-      },
-
-      previewThumbnails: {
-        enabled: true,
-        src: 'thumbnails.vtt' // necesitas generarlo
-      }
-    });
-
-  });
-
-} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-
-  video.src = source;
-
-  player = new Plyr(video, {
-    previewThumbnails: {
-      enabled: true,
-      src: 'thumbnails.vtt'
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(source);
+      hls.attachMedia(video);
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = source;
     }
+
+    const player = new Plyr(video);
+  </script>
+
+</body>
+</html>
   });
 }
 
