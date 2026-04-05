@@ -1,5 +1,10 @@
 [
   {
+    "nombre": "ZAPPING TV",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Logotipo_Zapping.svg",
+    "url": "ecdf.html"
+  },
+  {
     "nombre": "TNT Sports",
     "imagen": "https://hernanmix.github.io/reproductor/tnts.png",
     "url": "tntar.html"
