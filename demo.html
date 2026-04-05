@@ -2,53 +2,153 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CanchaTV Mux Player</title>
+<title>Player Pro</title>
 
-<!-- Mux Player CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mux/mux-player@latest/dist/mux-player.css" />
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
 <style>
-body {
-  margin:0;
-  background:#000;
-  font-family:'Rubik',sans-serif;
+:root {
+  --plyr-color-main: #ff0000;
 }
-mux-player {
-  width:100%;
-  height:100vh;
-  --controls: auto;
-  --media-background: #000;
+
+body {
+  margin: 0;
+  background: #000;
+}
+
+video {
+  width: 100%;
+  height: 100vh;
+}
+
+/* estilo tipo YouTube */
+.plyr__control--overlaid {
+  background: rgba(0,0,0,0.6);
 }
 </style>
 </head>
 <body>
 
-<!-- Contenedor del reproductor -->
-<mux-player id="player"
-  autoplay
-  stream-type="live"
-  playsinline
-  muted
-  controls>
-</mux-player>
+<video id="player" playsinline controls>
+  <!-- Subtítulos -->
+  <track kind="subtitles" label="Español" srclang="es" src="subs.vtt" default>
+</video>
 
-<!-- Mux Player JS -->
-<script src="https://cdn.jsdelivr.net/npm/@mux/mux-player@latest/dist/mux-player.js"></script>
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <script>
-'use strict';
+const video = document.getElementById('player');
+const source = 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
 
-// 🔹 Detectar parámetro ?stream=
-const params = new URLSearchParams(location.search);
-const stream = params.get('stream') || 'espn'; // por defecto ESPN
-// URL dinámica de tu proxy HLS/Mux
-const SRC = `https://aw1wcm92zq.fubohd.com:443/espn/mono.m3u8?token=30df90bea1df175986b11c0eb8468e8f2b538d75-60-1775421474-1775403474${stream}`;
+let player;
+let hls;
 
-// Inicializar Mux Player
-const player = document.getElementById('player');
-player.src = SRC;
-player.title = `CanchaTV - ${stream.toUpperCase()}`;
+if (Hls.isSupported()) {
+
+  hls = new Hls({
+    maxBufferLength: 30
+  });
+
+  hls.loadSource(source);
+  hls.attachMedia(video);
+
+  hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+
+    // obtener calidades
+    const levels = hls.levels.map((level, index) => ({
+      label: level.height + 'p',
+      value: index
+    }));
+
+    player = new Plyr(video, {
+      controls: [
+        'play-large',
+        'rewind',
+        'play',
+        'fast-forward',
+        'progress',
+        'current-time',
+        'duration',
+        'mute',
+        'volume',
+        'settings',
+        'pip',
+        'fullscreen'
+      ],
+
+      settings: ['quality', 'speed'],
+      speed: {
+        selected: 1,
+        options: [0.5, 1, 1.25, 1.5, 2]
+      },
+
+      quality: {
+        default: 0,
+        options: levels.map(l => l.value),
+        forced: true,
+        onChange: (quality) => {
+          hls.currentLevel = quality;
+        }
+      },
+
+      previewThumbnails: {
+        enabled: true,
+        src: 'thumbnails.vtt' // necesitas generarlo
+      }
+    });
+
+  });
+
+} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+
+  video.src = source;
+
+  player = new Plyr(video, {
+    previewThumbnails: {
+      enabled: true,
+      src: 'thumbnails.vtt'
+    }
+  });
+}
+
+
+// ⏩ DOBLE CLICK (tipo YouTube)
+video.addEventListener('dblclick', (e) => {
+  const width = video.clientWidth;
+
+  if (e.offsetX < width / 2) {
+    player.rewind(10);
+  } else {
+    player.forward(10);
+  }
+});
+
+
+// ⌨️ ATAJOS TECLADO
+document.addEventListener('keydown', (e) => {
+  if (!player) return;
+
+  switch (e.key) {
+    case ' ':
+      e.preventDefault();
+      player.togglePlay();
+      break;
+    case 'ArrowRight':
+      player.forward(5);
+      break;
+    case 'ArrowLeft':
+      player.rewind(5);
+      break;
+    case 'f':
+      player.fullscreen.toggle();
+      break;
+    case 'm':
+      player.muted = !player.muted;
+      break;
+  }
+});
 </script>
+
 </body>
 </html>
