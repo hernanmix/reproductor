@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Reproductor HLS P2P</title>
+  <title>Reproductor P2P Mux</title>
   <style>
     body, html {
       margin: 0;
@@ -11,7 +11,7 @@
       height: 100%;
       width: 100%;
     }
-    video {
+    mux-player {
       width: 100%;
       height: 100%;
       object-fit: cover; /* 🔹 llena pantalla sin márgenes negros */
@@ -19,52 +19,61 @@
   </style>
 </head>
 <body>
-  <video id="player" controls autoplay playsinline></video>
-
-  <!-- HLS.js -->
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <!-- P2P Engine -->
+  <!-- P2PEngine -->
   <script src="https://cdn.jsdelivr.net/npm/@swarmcloud/hls/p2p-engine.min.js"></script>
+  <!-- Mux Player -->
+  <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player"></script>
+
+  <!-- Reproductor -->
+  <mux-player id="player" autoplay playsinline></mux-player>
+
+  <p id="info" style="color:white;text-align:center;"></p>
 
   <script>
-    // 🔹 Obtener parámetro ?stream=URL
-    function getStreamUrl() {
-      const params = new URLSearchParams(window.location.search);
-      return params.get("stream");
+    // 🔹 JSON de canales (puedes moverlo a un archivo externo channels.json)
+    const channels = {
+      "espn": "https://anvtcax.fubohd.com:443/ecdf_ligapro/mono.m3u8?token=f45c7a2774c07e1fb0bf55fe29d1c02ee77a8e9e-21-1775536051-1775518051",
+      "fox": "https://ejemplo.com/fox.m3u8",
+      "tnt": "https://ejemplo.com/tnt.m3u8"
+    };
+
+    // 🔹 Obtener parámetro ?stream=nombre
+    const params = new URLSearchParams(window.location.search);
+    const channelKey = params.get("stream");
+    const streamUrl = channels[channelKey] || channels["espn"]; // fallback
+
+    const muxPlayer = document.getElementById("player");
+    muxPlayer.src = streamUrl;
+
+    // 🔹 Configuración P2P
+    const p2pConfig = {
+      live: true,
+      getStats: function (p2pDown, p2pUp, httpDown) {
+        const total = httpDown + p2pDown;
+        document.querySelector('#info').innerText =
+          `P2P ratio: ${Math.round(p2pDown/total*100)}%, saved: ${p2pDown}KB, uploaded: ${p2pUp}KB`;
+      }
+    };
+
+    muxPlayer.addEventListener("loadstart", function () {
+      if (P2PEngineHls.isSupported() && muxPlayer._hls) {
+        new P2PEngineHls({
+          hlsjsInstance: muxPlayer._hls,
+          ...p2pConfig
+        });
+      }
+    });
+
+    if (!P2PEngineHls.isSupported()) {
+      new P2pEngineHls.ServiceWorkerEngine(p2pConfig);
     }
 
-    const streamUrl = getStreamUrl() || "https://anvtcax.fubohd.com:443/ecdf_ligapro/mono.m3u8?token=f45c7a2774c07e1fb0bf55fe29d1c02ee77a8e9e-21-1775536051-1775518051";
-    const video = document.getElementById("player");
-
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      // 🔹 Integrar P2P
-      new P2PEngineHls({
-        hlsjsInstance: hls,
-        live: true,
-        getStats: function (p2pDown, p2pUp, httpDown) {
-          console.log(`P2P ratio: ${Math.round(p2pDown/(httpDown+p2pDown)*100)}%`);
-        }
-      });
-      hls.loadSource(streamUrl);
-      hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        video.play();
-      });
-    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      // 🔹 Soporte nativo en iOS/Safari
-      video.src = streamUrl;
-      video.addEventListener("loadedmetadata", () => {
-        video.play();
-      });
-    }
-
-    // 🔹 Pantalla completa automática en horizontal
-    function goFullscreen() {
-      if (video.requestFullscreen) video.requestFullscreen();
-      else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
-    }
-    video.addEventListener("play", goFullscreen);
+    P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
+      muxPlayer.play();
+      // 🔹 Forzar pantalla completa horizontal
+      if (muxPlayer.requestFullscreen) muxPlayer.requestFullscreen();
+      else if (muxPlayer.webkitEnterFullscreen) muxPlayer.webkitEnterFullscreen();
+    });
   </script>
 </body>
 </html>
