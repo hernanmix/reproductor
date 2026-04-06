@@ -1,148 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>IPTV P2P Player</title>
-
-<!-- P2P -->
-<script src="https://cdn.jsdelivr.net/npm/@swarmcloud/hls/p2p-engine.min.js"></script>
-
-<!-- Mux Player -->
-<script src="https://cdn.jsdelivr.net/npm/@mux/mux-player"></script>
-
-<style>
-body{
-    margin:0;
-    background:black;
-    font-family:Arial;
-}
-
-/* PLAYER FULL */
-mux-player{
-    width:100%;
-    height:100vh;
-    --controls: none;
-    object-fit: cover; /* 🔥 sin bordes negros */
-}
-
-/* CONTROLES CENTRALES */
-.controls{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    display:flex;
-    gap:20px;
-    z-index:999;
-}
-
-.controls button{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    border:none;
-    background:rgba(0,0,0,0.6);
-    color:white;
-    font-size:20px;
-    cursor:pointer;
-}
-
-/* INFO */
-#info{
-    position:absolute;
-    bottom:10px;
-    left:10px;
-    color:white;
-    font-size:12px;
-    background:rgba(0,0,0,0.5);
-    padding:5px;
-}
-</style>
-
+  <meta charset="UTF-8">
+  <title>Reproductor HLS P2P</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      background: black;
+      height: 100%;
+      width: 100%;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 🔹 llena pantalla sin márgenes negros */
+    }
+  </style>
 </head>
-
 <body>
+  <video id="player" controls autoplay playsinline></video>
 
-<mux-player id="player" autoplay muted playsinline></mux-player>
+  <!-- HLS.js -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <!-- P2P Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/@swarmcloud/hls/p2p-engine.min.js"></script>
 
-<div class="controls">
-    <button onclick="rewind()">⏪</button>
-    <button onclick="playPause()">⏯</button>
-    <button onclick="forward()">⏩</button>
-</div>
-
-<p id="info">Cargando...</p>
-
-<script>
-
-// 🔥 obtener parámetro ?stream=espn
-const params = new URLSearchParams(window.location.search);
-const streamName = params.get("stream") || "espn";
-
-// 🔥 cargar JSON
-fetch("https://hernanmix.github.io/reproductor/channels2.json")
-.then(r => r.json())
-.then(data => {
-
-    const channel = data.find(c => c.id === streamName);
-
-    if(!channel){
-        alert("Canal no encontrado");
-        return;
+  <script>
+    // 🔹 Obtener parámetro ?stream=URL
+    function getStreamUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("stream");
     }
 
-    initPlayer(channel.file);
-});
+    const streamUrl = getStreamUrl() || "https://anvtcax.fubohd.com:443/ecdf_ligapro/mono.m3u8?token=f45c7a2774c07e1fb0bf55fe29d1c02ee77a8e9e-21-1775536051-1775518051";
+    const video = document.getElementById("player");
 
-// 🎬 iniciar player
-function initPlayer(url){
-
-    const mux = document.getElementById("player");
-
-    // 🔥 usar src directo (m3u8 o php)
-    mux.src = url;
-
-    mux.addEventListener("loadstart", function () {
-
-        if (P2PEngineHls.isSupported() && mux._hls) {
-
-            new P2PEngineHls({
-                hlsjsInstance: mux._hls,
-
-                live: true,
-
-                getStats: function (p2p, up, http) {
-                    const total = p2p + http;
-                    document.getElementById("info").innerText =
-                        `P2P: ${Math.round(p2p/total*100)}% | ↓${p2p}KB | ↑${up}KB`;
-                }
-            });
-
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      // 🔹 Integrar P2P
+      new P2PEngineHls({
+        hlsjsInstance: hls,
+        live: true,
+        getStats: function (p2pDown, p2pUp, httpDown) {
+          console.log(`P2P ratio: ${Math.round(p2pDown/(httpDown+p2pDown)*100)}%`);
         }
-    });
+      });
+      hls.loadSource(streamUrl);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        video.play();
+      });
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      // 🔹 Soporte nativo en iOS/Safari
+      video.src = streamUrl;
+      video.addEventListener("loadedmetadata", () => {
+        video.play();
+      });
+    }
 
-    mux.play();
-}
-
-// 🎮 controles
-function playPause(){
-    const mux = document.getElementById("player");
-    mux.paused ? mux.play() : mux.pause();
-}
-
-function rewind(){
-    const mux = document.getElementById("player");
-    mux.currentTime -= 10;
-}
-
-function forward(){
-    const mux = document.getElementById("player");
-    mux.currentTime += 10;
-}
-
-</script>
-
+    // 🔹 Pantalla completa automática en horizontal
+    function goFullscreen() {
+      if (video.requestFullscreen) video.requestFullscreen();
+      else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
+    }
+    video.addEventListener("play", goFullscreen);
+  </script>
 </body>
 </html>
