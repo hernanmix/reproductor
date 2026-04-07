@@ -30,50 +30,51 @@
   <p id="info" style="color:white;text-align:center;"></p>
 
   <script>
-    // 🔹 JSON de canales (puedes moverlo a un archivo externo channels.json)
-    const channels = {
-      "espn": "https://anvtcax.fubohd.com:443/ecdf_ligapro/mono.m3u8?token=f45c7a2774c07e1fb0bf55fe29d1c02ee77a8e9e-21-1775536051-1775518051",
-      "fox": "https://ejemplo.com/fox.m3u8",
-      "tnt": "https://ejemplo.com/tnt.m3u8"
-    };
+    async function initPlayer() {
+      // 🔹 Cargar JSON de canales
+      const response = await fetch("https://hernanmix.github.io/reproductor/channels2.json");
+      const channels = await response.json();
 
-    // 🔹 Obtener parámetro ?stream=nombre
-    const params = new URLSearchParams(window.location.search);
-    const channelKey = params.get("stream");
-    const streamUrl = channels[channelKey] || channels["espn"]; // fallback
+      // 🔹 Obtener parámetro ?stream=nombre
+      const params = new URLSearchParams(window.location.search);
+      const channelKey = params.get("stream");
+      const streamUrl = channels[channelKey] || channels["espn"]; // fallback
 
-    const muxPlayer = document.getElementById("player");
-    muxPlayer.src = streamUrl;
+      const muxPlayer = document.getElementById("player");
+      muxPlayer.src = streamUrl;
 
-    // 🔹 Configuración P2P
-    const p2pConfig = {
-      live: true,
-      getStats: function (p2pDown, p2pUp, httpDown) {
-        const total = httpDown + p2pDown;
-        document.querySelector('#info').innerText =
-          `P2P ratio: ${Math.round(p2pDown/total*100)}%, saved: ${p2pDown}KB, uploaded: ${p2pUp}KB`;
+      // 🔹 Configuración P2P
+      const p2pConfig = {
+        live: true,
+        getStats: function (p2pDown, p2pUp, httpDown) {
+          const total = httpDown + p2pDown;
+          document.querySelector('#info').innerText =
+            `P2P ratio: ${Math.round(p2pDown/total*100)}%, saved: ${p2pDown}KB, uploaded: ${p2pUp}KB`;
+        }
+      };
+
+      muxPlayer.addEventListener("loadstart", function () {
+        if (P2PEngineHls.isSupported() && muxPlayer._hls) {
+          new P2PEngineHls({
+            hlsjsInstance: muxPlayer._hls,
+            ...p2pConfig
+          });
+        }
+      });
+
+      if (!P2PEngineHls.isSupported()) {
+        new P2pEngineHls.ServiceWorkerEngine(p2pConfig);
       }
-    };
 
-    muxPlayer.addEventListener("loadstart", function () {
-      if (P2PEngineHls.isSupported() && muxPlayer._hls) {
-        new P2PEngineHls({
-          hlsjsInstance: muxPlayer._hls,
-          ...p2pConfig
-        });
-      }
-    });
-
-    if (!P2PEngineHls.isSupported()) {
-      new P2pEngineHls.ServiceWorkerEngine(p2pConfig);
+      P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
+        muxPlayer.play();
+        // 🔹 Forzar pantalla completa horizontal
+        if (muxPlayer.requestFullscreen) muxPlayer.requestFullscreen();
+        else if (muxPlayer.webkitEnterFullscreen) muxPlayer.webkitEnterFullscreen();
+      });
     }
 
-    P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
-      muxPlayer.play();
-      // 🔹 Forzar pantalla completa horizontal
-      if (muxPlayer.requestFullscreen) muxPlayer.requestFullscreen();
-      else if (muxPlayer.webkitEnterFullscreen) muxPlayer.webkitEnterFullscreen();
-    });
+    initPlayer();
   </script>
 </body>
 </html>
