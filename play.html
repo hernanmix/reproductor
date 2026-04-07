@@ -72,6 +72,25 @@
     P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
       muxPlayer.play();
     });
+    // 🔹 Al entrar en fullscreen → forzar horizontal y llenar pantalla
+muxPlayer.addEventListener("fullscreenchange", async () => {
+  if (document.fullscreenElement) {
+    // Forzar orientación horizontal
+    if (screen.orientation && screen.orientation.lock) {
+      try {
+        await screen.orientation.lock("landscape");
+      } catch (err) {
+        console.log("No se pudo forzar landscape:", err);
+      }
+    }
+    // Llenar pantalla sin márgenes negros
+    muxPlayer.style.objectFit = "fill";   // exactfit
+  } else {
+    // Volver a modo normal
+    muxPlayer.style.objectFit = "cover";  // uniform
+  }
+
+
 
     // 🔹 Al entrar en fullscreen → forzar fill (sin bordes negros)
     muxPlayer.addEventListener("fullscreenchange", () => {
