@@ -89,16 +89,6 @@ muxPlayer.addEventListener("fullscreenchange", async () => {
     // Volver a modo normal
     muxPlayer.style.objectFit = "cover";  // uniform
   }
-
-
-
-    // 🔹 Al entrar en fullscreen → forzar fill (sin bordes negros)
-    muxPlayer.addEventListener("fullscreenchange", () => {
-      if (document.fullscreenElement) {
-        muxPlayer.style.objectFit = "fill";   // exactfit: llena todo
-      } else {
-        muxPlayer.style.objectFit = "cover";  // uniform: mantiene proporción
-      }
     });
   }
 
