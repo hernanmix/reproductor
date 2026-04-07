@@ -1,9 +1,9 @@
 {
   "ecdf": "https://a2vlca.fubohd.com/ecdf_ligapro/mono.m3u8?token=171a280e73bcb9036641135913c99d29ad2da1e1-0-1775607863-1775589863",
-  "espn": "https://ag9wzq.fubohd.com/espn/mono.m3u8?token=119b20642dbeaf65e07e8afe625aca62c4de6b6b-33-1775607899-1775589899",
-  "espn2": "https://ag9wzq.fubohd.com:443/espn2/mono.m3u8?token=767758dd6bf752e4f7f444763466357abe83a13e-37-1775607950-1775589950",
-  "fox1ar": "https://ym9yzq.fubohd.com/foxsports/mono.m3u8?token=253e0b672bf870e0621cf2e00d363dfa027f94b3-a4-1775607990-1775589990",
-  "fox2ar": "https://ag9wzq.fubohd.com/foxsports2/mono.m3u8?token=4c67f32dce51300fe80fcf85a646ac9c641cb45c-7d-1775608030-1775590030"
+  "espn": "https://244pl.streamingtv339.com/espn/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=a17397aaeb442659dcb92c6699a4fb47198075e4-65-1775638423-1775584423",
+  "espn2": "https://244pl.streamingtv339.com:443/espn2/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=8a3e763a8bcfde67ae0ae2c86f4351172733d222-ca-1775638487-1775584487",
+  "fox1ar": "https://cc324.streamingtv339.com/fox1ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=b15b5bede15d0b924e55e6dcbf4e38e72560795a-dd-1775638533-1775584533",
+  "fox2ar": "https://244pl.streamingtv339.com:443/fox2ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=ebba076899f70e0b727ef1057488a0b898a88ab0-3e-1775638577-1775584577"
   
 }
 
