@@ -30,61 +30,61 @@
   <p id="info" style="color:white;text-align:center;"></p>
 
   <script>
-    async function initPlayer() {
-      // 🔹 Cargar JSON desde GitHub Pages
-      const response = await fetch("https://hernanmix.github.io/reproductor/channels2.json");
-      const channels = await response.json();
+  async function initPlayer() {
+    const response = await fetch("https://hernanmix.github.io/reproductor/channels2.json");
+    const channels = await response.json();
 
-      // 🔹 Obtener parámetro ?stream=nombre
-      const params = new URLSearchParams(window.location.search);
-      const channelKey = params.get("stream");
-      const streamUrl = channels[channelKey];
+    const params = new URLSearchParams(window.location.search);
+    const channelKey = params.get("stream");
+    const streamUrl = channels[channelKey];
 
-      if (!streamUrl) {
-        document.getElementById("info").innerText = "Canal no encontrado en channels2.json";
-        return;
-      }
-
-      const muxPlayer = document.getElementById("player");
-      muxPlayer.src = streamUrl;
-
-      // 🔹 Configuración P2P
-      const p2pConfig = {
-        live: true,
-        getStats: function (p2pDown, p2pUp, httpDown) {
-          const total = httpDown + p2pDown;
-          document.querySelector('#info').innerText =
-            `P2P ratio: ${Math.round(p2pDown/total*100)}%, saved: ${p2pDown}KB, uploaded: ${p2pUp}KB`;
-        }
-      };
-
-      muxPlayer.addEventListener("loadstart", function () {
-        if (P2PEngineHls.isSupported() && muxPlayer._hls) {
-          new P2PEngineHls({
-            hlsjsInstance: muxPlayer._hls,
-            ...p2pConfig
-          });
-        }
-      });
-
-      if (!P2PEngineHls.isSupported()) {
-        new P2pEngineHls.ServiceWorkerEngine(p2pConfig);
-      }
-
-      P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
-        muxPlayer.play();
-        // 🔹 Forzar pantalla completa horizontal
-        if (muxPlayer.requestFullscreen) {
-          muxPlayer.requestFullscreen().then(() => {
-            if (screen.orientation && screen.orientation.lock) {
-              screen.orientation.lock("landscape").catch(err => console.log("No se pudo forzar landscape:", err));
-            }
-          });
-        }
-      });
+    if (!streamUrl) {
+      document.getElementById("info").innerText = "Canal no encontrado en channels2.json";
+      return;
     }
 
-    initPlayer();
-  </script>
+    const muxPlayer = document.getElementById("player");
+    muxPlayer.src = streamUrl;
+
+    // Configuración P2P
+    const p2pConfig = {
+      live: true,
+      getStats: function (p2pDown, p2pUp, httpDown) {
+        const total = httpDown + p2pDown;
+        document.querySelector('#info').innerText =
+          `P2P ratio: ${Math.round(p2pDown/total*100)}%, saved: ${p2pDown}KB, uploaded: ${p2pUp}KB`;
+      }
+    };
+
+    muxPlayer.addEventListener("loadstart", function () {
+      if (P2PEngineHls.isSupported() && muxPlayer._hls) {
+        new P2PEngineHls({
+          hlsjsInstance: muxPlayer._hls,
+          ...p2pConfig
+        });
+      }
+    });
+
+    if (!P2PEngineHls.isSupported()) {
+      new P2pEngineHls.ServiceWorkerEngine(p2pConfig);
+    }
+
+    P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
+      muxPlayer.play();
+    });
+
+    // 🔹 Al entrar en fullscreen → forzar fill (sin bordes negros)
+    muxPlayer.addEventListener("fullscreenchange", () => {
+      if (document.fullscreenElement) {
+        muxPlayer.style.objectFit = "fill";   // exactfit: llena todo
+      } else {
+        muxPlayer.style.objectFit = "cover";  // uniform: mantiene proporción
+      }
+    });
+  }
+
+  initPlayer();
+</script>
+
 </body>
 </html>
