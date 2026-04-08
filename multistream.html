@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Multistream - A Puro Fútbol</title>
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="A Puro Fútbol" />
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://apurofutbol.net/favicon.png">
+    <meta name="description" content="En A Puro Fútbol mira todos los partidos gratis por Internet">
+    <meta property="og:title" content="Click para ver Multistream en DIRECTO por Internet gratis - A Puro Fútbol" />
+    <meta property="og:description" content="A Puro Fútbol. Ver Multistream en VIVO y en directo ONLINE gratis por Internet" />
+    <meta property="og:url" content="https://apurofutbol.net/en-vivo/multistream /" />
+    <link rel="canonical" href="https://apurofutbol.net/en-vivo/espn-1/" />
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $.get("https://apurofutbol.net/html/head.html", function (data) {
+                $("head").append(data);
+            });
+
+            function agregarIframe(src) {
+                const numIframes = $('#iframes-container iframe').length;
+
+                if (numIframes >= 4) {
+                    alert("Solo se permite un máximo de 4 canales.");
+                    return;
+                }
+
+                const newIframeDiv = $(`<div class="col-6 col-sm-6 embed-responsive embed-responsive-16by9" style="position: relative;">
+                    <button class="close-btn" style="position: absolute; top: 5px; right: 5px; z-index: 10;">×</button>
+                    <iframe class="embed-responsive-item" src="${src}" allow="autoplay *; encrypted-media *;" frameborder="0" allowfullscreen=""></iframe>
+                </div>`);
+
+                $('#iframes-container').append(newIframeDiv);
+                actualizarAnchoIframes();
+
+                newIframeDiv.find('.close-btn').on('click', function () {
+                    $(this).closest('div').remove();
+                    actualizarAnchoIframes();
+                });
+            }
+
+            function actualizarAnchoIframes() {
+                const numIframes = $('#iframes-container iframe').length;
+
+                $('#iframes-container div').each(function (index) {
+                    $(this).removeClass('col-12 col-sm-6');
+
+                    if (index < numIframes / 2) {
+                        $(this).addClass('col-6 col-sm-6');
+                    }
+                });
+            }
+
+            const defaultIframes = [
+                "https://apurofutbol.net/star_jwp.html?get=https://live-ftc-na-south-2.media.starott.com/gru1/qb01/starplus/event/2024/04/21/River_Plate_vs_Boca_Junio_20240421_1713717902030/ctr-all-complete.m3u8&amp;img=https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/C1F774565545E5B567410345E755C20DF26A4F99F9A5BF80102D9F2027176E4E/scale?width=1920&amp;aspectRatio=1.78&amp;format=jpeg&amp;key=c2192070a0494e6aba36abe10b4ca3ce&amp;key2=212c91c6d763ec2baf75296e3e1bf739",
+                "https://apurofutbol.net/embed/dtv.php",
+                "https://apurofutbol.net/embed/telecentro.php?get=espnpremium",
+                "https://apurofutbol.net/cobo.html?id=TSN3_CA",
+            ];
+
+            defaultIframes.forEach((src) => {
+                agregarIframe(src);
+            });
+
+            $('.options a').on('click', function (e) {
+                e.preventDefault();
+                const src = $(this).attr('href');
+                agregarIframe(src);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <script>
+        $(document).ready(function () {
+            $("#header").load("https://apurofutbol.net/html/header.html");
+        });
+    </script>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9 col-sm-12 order-sm-1 p-0 m-0 col-custom col-main" style="background-color: #f0f0f0;">
+
+                <div class="options"><span id="fullscreenBtn"><i class="fa-solid fa-up-right-and-down-left-from-center" style="color: #ffffff;" aria-hidden="true"></i></span>
+                    <!-- Comienzo Botones OPCIONES -->
+                    <a class="btn" href="https://apurofutbol.net/star_jwp.html?get=https://live-ftc-na-south-2.media.starott.com/gru1/qb01/starplus/event/2024/04/21/River_Plate_vs_Boca_Junio_20240421_1713717902030/ctr-all-complete.m3u8&amp;img=https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/C1F774565545E5B567410345E755C20DF26A4F99F9A5BF80102D9F2027176E4E/scale?width=1920&amp;aspectRatio=1.78&amp;format=jpeg&amp;key=c2192070a0494e6aba36abe10b4ca3ce&amp;key2=212c91c6d763ec2baf75296e3e1bf739" target="_blank">Boca vs River</a>
+                    <a class="btn" href="https://apurofutbol.net/embed/telecentro.php?get=espnpremium" target="_blank">Boca vs River (op2)</a>
+                    <a class="btn" href="https://apurofutbol.net/embed/dtv.php" target="_blank">Real Madrid vs Barcelona</a>
+                    <a class="btn" href="https://apurofutbol.net/cobo.html?id=TSN3_CA" target="_blank">Real Madrid vs Barcelona (op2)</a>
+                    <!-- Fin Botones -->
+                </div>
+
+
+
+
+               <!-- Columna principal REPRODUCTOR -->
+                <div id="iframes-container" class="row">
+                    <!-- Iframes se agregarán aquí -->
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+            <!-- Columna secundaria CHAT -->
+            <div class="col-md-3 col-sm-12 order-sm-2 p-0 m-0 col-custom col-sidebar" style="background-color: #dcdcdc; height: 100vh">
+                <iframe id="miIframe" scrolling="no" width="100%" height="100%" allowfullscreen="" src=""></iframe>
+
+                <script>
+                        function obtenerParametroUrl(nombre) {
+                        const urlParams = new URLSearchParams(window.location.search);
+                        return urlParams.get(nombre);
+                    }
+
+                    
+                    var videoId = obtenerParametroUrl("id");
+
+                    
+                    $("#miIframe").attr("src", "https://apurofutbol.net/chat/chatsmart.html?id=" + encodeURIComponent(videoId));
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <div id="ads"></div>
+    <script>
+        $(document).ready(function () {
+            $("#ads").load("https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db");
+        });
+    </script>
+
+    <br /><br /><br />
+
+    <div class="container">
+
+        <br />
+
+        <p align="center">
+            <img src="../img/logo-canal/ESPN.webp" alt="Logo de TyC Sports Online" title="Ver TyC Sports en VIVO y en directo" />
+        </p>
+
+        <br />
+
+        <p><strong>ESPN</strong> es un canal de televisión por suscripción latinoamericano de origen estadounidense especializado en deportes, es propiedad de ESPN Inc. y es operado por The Walt Disney Company Latin America, disponible a lo largo de toda América Latina.</p>
+    </div>
+
+    <div id="ads"></div>
+    <script>
+        $(document).ready(function () {
+            $("#ads").load("https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db");
+        });
+    </script>
+
+    <div id="footer"></div>
+    <script>
+        $(document).ready(function () {
+            $("#footer").load("https://apurofutbol.net/html/footer.html");
+        });
+    </script>
+
+</body>
+
+</html>
