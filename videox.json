@@ -1,0 +1,22 @@
+[
+  {
+    "id": "espn",
+    "title": "ESPN",
+    "url": "https://ejemplo.com/espn/playlist.m3u8"
+  },
+  {
+    "id": "espn2",
+    "title": "ESPN2",
+    "url": "https://ejemplo.com/espn2/playlist.m3u8"
+  },
+  {
+    "id": "fox1ar",
+    "title": "FOX1AR",
+    "url": "https://ejemplo.com/fox1ar/playlist.m3u8"
+  },
+  {
+    "id": "fox2ar",
+    "title": "FOX2AR",
+    "url": "https://ejemplo.com/fox2ar/playlist.m3u8"
+  }
+]
