@@ -83,50 +83,51 @@
     <button class="close-btn" id="closeBtn">Cerrar</button>
   </div>
 
-  <script>
-    async function loadVideos() {
-      try {
-        const res = await fetch("https://hernanmix.github.io/reproductor/videox.json"); // 🔹 tu JSON externo
-        const videos = await res.json();
+<script>
+    const JSON_URL = "https://hernanmix.github.io/reproductor/videox.json"; // 🔹 tu archivo JSON
 
-        const buttonsDiv = document.getElementById("buttons");
-        const overlay = document.getElementById("overlay");
-        const videoEl = document.getElementById("video");
-        const labelEl = document.getElementById("videoLabel");
-        const closeBtn = document.getElementById("closeBtn");
+    const PROXIES = [
+      u => u,
+      u => `https://corsproxy.io/?${encodeURIComponent(u)}`,
+      u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+      u => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`
+    ];
 
-        videos.forEach(v => {
-          const btn = document.createElement("button");
-          btn.innerText = v.title;
-          btn.addEventListener("click", () => playVideo(v));
-          buttonsDiv.appendChild(btn);
-        });
+    async function loadStream() {
+      for (const proxy of PROXIES) {
+        try {
+          const res = await fetch(proxy(JSON_URL), { cache: "no-store" });
+          if (!res.ok) continue;
+          const data = await res.json(); // 🔹 ahora sí parseamos JSON
 
-        function playVideo(v) {
-          labelEl.innerText = v.title;
-          overlay.style.display = "flex";
-          if (Hls.isSupported()) {
-            const hls = new Hls();
-            hls.loadSource(v.url);
-            hls.attachMedia(videoEl);
-            hls.on(Hls.Events.MANIFEST_PARSED, () => videoEl.play());
-          } else if (videoEl.canPlayType("application/vnd.apple.mpegurl")) {
-            videoEl.src = v.url;
-            videoEl.addEventListener("loadedmetadata", () => videoEl.play());
+          if (Array.isArray(data)) {
+            const buttonsDiv = document.getElementById("buttons");
+            data.forEach(ch => {
+              const btn = document.createElement("button");
+              btn.innerText = ch.title;
+              btn.onclick = () => initPlayer(ch.url);
+              buttonsDiv.appendChild(btn);
+            });
           }
+          return;
+        } catch (e) {
+          console.warn("proxy error", e);
         }
-
-        closeBtn.addEventListener("click", () => {
-          overlay.style.display = "none";
-          videoEl.pause();
-          videoEl.src = "";
-        });
-      } catch(e) {
-        console.error("Error cargando JSON", e);
       }
+      console.error("No se pudo cargar el JSON");
     }
 
-    loadVideos();
+    function initPlayer(streamUrl) {
+      new Clappr.Player({
+        source: streamUrl,
+        parentId: "#player",
+        autoPlay: true,
+        width: "100%",
+        height: "360px"
+      });
+    }
+
+    loadStream();
   </script>
 </body>
 </html>
