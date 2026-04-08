@@ -10,21 +10,23 @@
       height: 100%;
       width: 100%;
       background: #000;
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 🔹 dos columnas */
+      grid-template-rows: 1fr 1fr;    /* 🔹 dos filas */
+      gap: 2px; /* pequeño espacio entre pantallas */
     }
     video {
-      flex: 1 1 50%; /* 🔹 por defecto 4 pantallas (2x2) */
-      min-width: 50%;
-      min-height: 50%;
-      object-fit: fill; /* ocupa todo el espacio sin márgenes negros */
-      border: 1px solid #000;
+      width: 100%;
+      height: 100%;
+      object-fit: fill; /* 🔹 ocupa todo el espacio sin márgenes negros */
+      background: #000;
     }
-    .five video {
-      flex: 1 1 33%; /* 🔹 para 5 pantallas */
-      min-width: 33%;
-      min-height: 50%;
+    /* 🔹 Para 5 pantallas: ajusta en grid 3 columnas */
+    .five {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
     }
+  </style>
   </style>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
