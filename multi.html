@@ -2,35 +2,61 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Multi Reproductor Simultáneo</title>
+  <title>Simultáneo HD</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       width: 100%;
-      background: #000;
+      background: #0a0a1a; /* 🔹 negro azulado */
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      text-align: center;
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px;
+      background: #000814;
+    }
+    .grid {
+      flex: 1;
       display: grid;
-      grid-template-columns: 1fr 1fr; /* 🔹 dos columnas */
-      grid-template-rows: 1fr 1fr;    /* 🔹 dos filas */
-      gap: 2px; /* pequeño espacio entre pantallas */
+      grid-template-columns: 1fr 1fr; /* 🔹 2 columnas */
+      grid-template-rows: 1fr 1fr;    /* 🔹 2 filas */
+      gap: 4px;
+      padding: 4px;
+    }
+    .cell {
+      position: relative;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+    }
+    .label {
+      text-align: center;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 4px;
+      background: rgba(0,0,0,0.6);
     }
     video {
+      flex: 1;
       width: 100%;
       height: 100%;
       object-fit: fill; /* 🔹 ocupa todo el espacio sin márgenes negros */
       background: #000;
     }
-    /* 🔹 Para 5 pantallas: ajusta en grid 3 columnas */
-    .five {
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: auto auto;
-    }
-  </style>
   </style>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 <body>
+  <header>Simultáneo HD</header>
+  <div class="grid" id="grid"></div>
+
   <script>
     async function initMultiPlayer() {
       // 🔹 Cargar JSON de canales
@@ -44,44 +70,50 @@
       let selectedChannels = [];
 
       if (mode === "simultaneo") {
-        // 🔹 Define los canales que quieres simultáneos
+        // 🔹 Define los canales simultáneos con sus nombres
         selectedChannels = [
-          channels["espn"],
-          channels["espn2"],
-          channels["fox1ar"],
-          channels["fox2ar"]
-          // puedes añadir más aquí, ej: channels["tnt"]
+          {name: "ESPN", url: channels["espn"]},
+          {name: "ESPN2", url: channels["espn2"]},
+          {name: "FOX1AR", url: channels["fox1ar"]},
+          {name: "FOX2AR", url: channels["fox2ar"]}
         ];
       } else {
         // 🔹 Reproduce solo un canal normal
-        const streamUrl = channels[mode];
-        if (streamUrl) selectedChannels = [streamUrl];
+        if (channels[mode]) {
+          selectedChannels = [{name: mode.toUpperCase(), url: channels[mode]}];
+        }
       }
 
-      // 🔹 Crear reproductores
-      selectedChannels.forEach(url => {
-        if (!url) return;
+      const grid = document.getElementById("grid");
+
+      selectedChannels.forEach(ch => {
+        if (!ch.url) return;
+        const cell = document.createElement("div");
+        cell.className = "cell";
+
+        const label = document.createElement("div");
+        label.className = "label";
+        label.innerText = ch.name;
+
         const video = document.createElement("video");
         video.controls = true;
         video.autoplay = true;
         video.playsInline = true;
-        document.body.appendChild(video);
+
+        cell.appendChild(label);
+        cell.appendChild(video);
+        grid.appendChild(cell);
 
         if (Hls.isSupported()) {
           const hls = new Hls();
-          hls.loadSource(url);
+          hls.loadSource(ch.url);
           hls.attachMedia(video);
           hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
         } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-          video.src = url;
+          video.src = ch.url;
           video.addEventListener("loadedmetadata", () => video.play());
         }
       });
-
-      // 🔹 Ajustar clase para 5 pantallas
-      if (selectedChannels.length === 5) {
-        document.body.classList.add("five");
-      }
     }
 
     initMultiPlayer();
