@@ -1,22 +1,10 @@
 [
   {
-    "id": "espn",
-    "title": "espn",
-    "url": "https://x4bnd7lq.fubohd.com/foxsports2/mono.m3u8?token=d325c4a5e0c6d0deaa3c96dd3d5368a9e552051a-70-1775644984-1775626984hdl=-1&hash=pgrgb2EyfqT9sZwlSo%2B89Atrs%2Bk%3D"
+    "title": "ESPN",
+    "url": "https://wp9xqedt.fubohd.com:443/foxsports2/mono.m3u8?token=516cb2c6becc3170895ea08f9264a78da0a7e176-c5-1775645995-1775627995"
   },
   {
-    "id": "espn2",
-    "title": "ESPN2",
-    "url": "https://ejemplo.com/espn2/playlist.m3u8"
-  },
-  {
-    "id": "fox1ar",
-    "title": "FOX1AR",
-    "url": "https://ejemplo.com/fox1ar/playlist.m3u8"
-  },
-  {
-    "id": "fox2ar",
-    "title": "FOX2AR",
-    "url": "https://ejemplo.com/fox2ar/playlist.m3u8"
+    "title": "FOX Sports",
+    "url": "https://agvyby.fubohd.com/espn/mono.m3u8?token=3cb70098fac3df3f81d7ad579508fe5ad9dbb453-d-1775646024-1775628024"
   }
 ]
