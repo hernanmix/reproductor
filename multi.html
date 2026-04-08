@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi Reproductor Simultáneo</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: #000;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    video {
+      flex: 1 1 50%; /* 🔹 por defecto 4 pantallas (2x2) */
+      min-width: 50%;
+      min-height: 50%;
+      object-fit: fill; /* ocupa todo el espacio sin márgenes negros */
+      border: 1px solid #000;
+    }
+    .five video {
+      flex: 1 1 33%; /* 🔹 para 5 pantallas */
+      min-width: 33%;
+      min-height: 50%;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+  <script>
+    async function initMultiPlayer() {
+      // 🔹 Cargar JSON de canales
+      const response = await fetch("https://hernanmix.github.io/reproductor/channels2.json");
+      const channels = await response.json();
+
+      // 🔹 Obtener parámetro ?stream=...
+      const params = new URLSearchParams(window.location.search);
+      const mode = params.get("stream");
+
+      let selectedChannels = [];
+
+      if (mode === "simultaneo") {
+        // 🔹 Define los canales que quieres simultáneos
+        selectedChannels = [
+          channels["espn"],
+          channels["espn2"],
+          channels["fox1ar"],
+          channels["fox2ar"]
+          // puedes añadir más aquí, ej: channels["tnt"]
+        ];
+      } else {
+        // 🔹 Reproduce solo un canal normal
+        const streamUrl = channels[mode];
+        if (streamUrl) selectedChannels = [streamUrl];
+      }
+
+      // 🔹 Crear reproductores
+      selectedChannels.forEach(url => {
+        if (!url) return;
+        const video = document.createElement("video");
+        video.controls = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        document.body.appendChild(video);
+
+        if (Hls.isSupported()) {
+          const hls = new Hls();
+          hls.loadSource(url);
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
+        } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+          video.src = url;
+          video.addEventListener("loadedmetadata", () => video.play());
+        }
+      });
+
+      // 🔹 Ajustar clase para 5 pantallas
+      if (selectedChannels.length === 5) {
+        document.body.classList.add("five");
+      }
+    }
+
+    initMultiPlayer();
+  </script>
+</body>
+</html>
