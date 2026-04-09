@@ -24,10 +24,10 @@
     z-index:999;
   `;
 
-  // Botón de cerrar ❌
+  // Botón de cerrar ⛶
   const closeBtn = document.createElement("button");
   closeBtn.id = "closeBtn";
-  closeBtn.textContent = "❌";
+  closeBtn.textContent = "⛶";
   closeBtn.style.cssText = `
     position:absolute; top:10px; right:20px;
     padding:10px 15px; font-size:22px; font-weight:bold;
