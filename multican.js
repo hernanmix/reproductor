@@ -31,7 +31,7 @@
   closeBtn.style.cssText = `
     position:absolute; top:10px; right:20px;
     padding:10px 15px; font-size:22px; font-weight:bold;
-    color:#fff; background: rgba(255,0,0,0.1);
+    color:#fff; background: rgba(255,0,0,0.0);
     border:none; border-radius:50%; cursor:pointer;
     z-index:1000;
   `;
