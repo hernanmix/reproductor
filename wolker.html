@@ -1,0 +1,44 @@
+export default {
+  async fetch(request) {
+    const url = new URL(request.url);
+    const target = url.searchParams.get("get");
+
+    if (!target) {
+      return new Response("Falta ?get=", { status: 400 });
+    }
+
+    try {
+      const res = await fetch(target, {
+        headers: {
+          "User-Agent": "Mozilla/5.0",
+          "Referer": target,
+          "Origin": target
+        }
+      });
+
+      const text = await res.text();
+
+      let match = text.match(/https?:\/\/.*?\.m3u8.*?/);
+
+      if (!match) {
+        match = text.match(/source\s*:\s*["'](.*?)["']/);
+      }
+
+      if (!match) {
+        return new Response("No se encontró m3u8", { status: 404 });
+      }
+
+      const m3u8 = match[1] || match[0];
+
+      return fetch(m3u8, {
+        headers: {
+          "User-Agent": "Mozilla/5.0",
+          "Referer": target
+        }
+      });
+
+    } catch (err) {
+      return new Response("Error: " + err.message, { status: 500 });
+    }
+  }
+};
