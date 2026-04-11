@@ -1,76 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
-  <meta name="referrer" content="no-referrer">
+  <meta charset="UTF-8">
+  <title>Reproductor Fullscreen</title>
   <style>
-    html, body {width:100%;height:100%;margin:0;overflow:hidden;background:#000;}
-    body {display:flex;}
-    #mse {flex:auto;}
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
+    #playerContainer {
+      position: fixed; /* siempre fijo en pantalla */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      z-index: 999;
+    }
+    #playerContainer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
   </style>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xgplayer@3.0.12/dist/index.min.css">
-  <script>
-    window.addEventListener('resize',function(){
-      document.getElementById('mse').style.height=window.innerHeight+'px';
-    });
-  </script>
 </head>
 <body>
-<div id="mse"></div>
+  <div id="playerContainer">
+    <iframe id="liveFrame"
+      src=""
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
 
-<!-- Librerías -->
-<script src="//cdn.jsdelivr.net/npm/xgplayer@3.0.13/dist/index.min.js" charset="utf-8"></script>
-<script src="//cdn.jsdelivr.net/npm/xgplayer-hls.js@3.0.13/dist/index.min.js" charset="utf-8"></script>
-<script src="//cdn.jsdelivr.net/npm/@swarmcloud/hls/p2p-engine.min.js"></script>
+  <script>
+    (function(){
+      // URL base de tu proxy/reproductor
+      const baseURL = "https://f3433694-8980-4fbe-a913-a50439d0a518-00-3m9827lqnlnjp.kirk.replit.dev/?get=https%3A%2F%2Fstreamx339.cloud%2Fglobal1.php";
 
-<script>
-  // Configuración P2P
-  var p2pConfig = {
-    swFile: './sw.js',
-    live: true // modo live
-  };
+      // Obtener parámetro ?channel=xxx de la URL
+      const params = new URLSearchParams(window.location.search);
+      const channel = params.get("channel") || "disney1"; // valor por defecto
 
-  // Obtener parámetro ?channel=
-  const params = new URLSearchParams(window.location.search);
-  const channel = params.get("channel");
+      // Construir URL final
+      const streamURL = `${baseURL}&channel=${channel}`;
 
-  if (!stream) {
-    console.error("Falta el parámetro ?channel=");
-  } else {
-    const finalUrl = "https://f3433694-8980-4fbe-a913-a50439d0a518-00-3m9827lqnlnjp.kirk.replit.dev/?get=https%3A%2F%2Fstreamx339.cloud%2Fglobal1.php%3Fchannel%3Ddsports&channel=" + stream;
-
-    P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
-      var player = new window.Player({
-        id: 'mse',
-        isLive: true,
-        url: finalUrl,
-        autoplay: true,
-        playsinline: true,
-        height: window.innerHeight,
-        width: window.innerWidth,
-        plugins: P2pEngineHls.isMSESupported() ? [window.HlsJsPlugin] : [],
-        hlsJsPlugin: {
-          hlsOpts: {
-            maxBufferLength: 30,
-            maxMaxBufferLength: 60,
-            liveSyncDuration: 10,
-            liveMaxLatencyDuration: 60
-          }
-        }
-      });
-
-      const events = window.Player.Events;
-      [events.READY, events.URL_CHANGE].forEach(event => {
-        player.on(event, () => {
-          if (P2pEngineHls.isMSESupported()) {
-            p2pConfig.hlsjsInstance = player.getPlugin("HlsJsPlugin").hls;
-          }
-          new P2pEngineHls(p2pConfig);
-        });
-      });
-    });
-  }
-</script>
+      // Asignar al iframe
+      document.getElementById("liveFrame").src = streamURL;
+    })();
+  </script>
 </body>
 </html>
