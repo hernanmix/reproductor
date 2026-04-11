@@ -31,14 +31,14 @@
     live: true // modo live
   };
 
-  // Obtener parámetro ?stream=
+  // Obtener parámetro ?channel=
   const params = new URLSearchParams(window.location.search);
-  const stream = params.get("stream");
+  const channel = params.get("channel");
 
   if (!stream) {
-    console.error("Falta el parámetro ?stream=");
+    console.error("Falta el parámetro ?channel=");
   } else {
-    const finalUrl = "https://canchatv.online/tvtvhd/proxy2.php?stream=" + stream;
+    const finalUrl = "https://f3433694-8980-4fbe-a913-a50439d0a518-00-3m9827lqnlnjp.kirk.replit.dev/?get=https%3A%2F%2Fstreamx339.cloud%2Fglobal1.php%3Fchannel%3Ddsports&channel=" + stream;
 
     P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
       var player = new window.Player({
