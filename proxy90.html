@@ -24,12 +24,50 @@
 <div id="player_id"></div>
 <script>
   function initPlayer() {
-    // Obtener parámetro ?stream=...
+    // Obtener parámetro ?channel=...
     const params = new URLSearchParams(window.location.search);
-    const stream = params.get("stream") || "telemundo";
+    const stream = params.get("channel") || "telemundo";
 
     // Construir URL del proxy
-    const sourceUrl = "https://canchatv.online/tvtvhd/proxy3.php?stream=espn" + stream;
+    const sourceUrl = "
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reproductor de video HLS</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #videoPlayer {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+    <video id="videoPlayer" controls></video>
+    <script>
+        var video = document.getElementById('videoPlayer');
+        var videoUrl = 'https://f3433694-8980-4fbe-a913-a50439d0a518-00-3m9827lqnlnjp.kirk.replit.dev/stream/espn';
+
+        if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(videoUrl);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                video.play();
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = videoUrl;
+            video.addEventListener('loadedmetadata', function () {
+                video.play();
+            });
+        }
+    </script>
+</body>
+</html>" + stream;
 
     var p2pConfig = {
       live: true,
