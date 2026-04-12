@@ -24,9 +24,9 @@
 <div id="player_id"></div>
 <script>
   function initPlayer() {
-    // Obtener parámetro ?channel=...
+    // Obtener parámetro ?stream=...
     const params = new URLSearchParams(window.location.search);
-    const stream = params.get("channel") || "telemundo";
+    const stream = params.get("stream") || "telemundo";
 
     // Construir URL del proxy
     const sourceUrl = "
