@@ -39,7 +39,7 @@
 
   // Configuración
   const adUrl = "https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db";
-  const showInterval = 5 * 60 * 1000; // cada 5 minutos
+  const showInterval = 3 * 60 * 1000; // cada 3 minutos
   const showDuration = 15; // segundos visibles
 
   function showAd() {
@@ -59,8 +59,8 @@
     }, 1000);
   }
 
-  // Primera aparición después de 5 minutos
+  // Primera aparición después de 3 minutos
   setTimeout(showAd, showInterval);
-  // Repetir cada 5 minutos
+  // Repetir cada 3 minutos
   setInterval(showAd, showInterval);
 })();
