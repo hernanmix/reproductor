@@ -15,6 +15,26 @@
     "url": "espnpremium.html"
   },
   {
+    "nombre": "ESPN ",
+    "imagen": "https://hernanmix.github.io/reproductor/ESPN.png",
+    "url": "espn.html"
+  },
+  {
+    "nombre": "ESPN 2",
+    "imagen": "https://hernanmix.github.io/reproductor/ESPN_2.png",
+    "url": "espnp2.html"
+  },
+  {
+    "nombre": "ESPN 3",
+    "imagen": "https://hernanmix.github.io/reproductor/ESPN_3.wep",
+    "url": "espnpremium.html"
+  },
+  {
+    "nombre": "ESPN 4",
+    "imagen": "https://hernanmix.github.io/reproductor/ESPN_4.wep",
+    "url": "espn4.html"
+  },
+  {
     "nombre": "TyC Sports",
     "imagen": "https://r2.thesportsdb.com/images/media/channel/logo/8wjzn31605555626.png",
     "url": "tycar.html"
