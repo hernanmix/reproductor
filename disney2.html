@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Reproductor HLS DRM</title>
+  <title>Disney+ Evento 1080p</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <style>
@@ -28,7 +28,7 @@
   <video id="videoPlayer" controls autoplay></video>
 
   <script>
-    // 🔹 URL de tu transmisión
+    // 🔹 URL del evento Disney 1080p
     var videoUrl = "https://linear-akc-sa-west-1.media.dssott.com/dvt2=exp=1776278734~url=%2Fclt1%2Fva02%2Fdisneyplus%2Fchannel%2F921e1311-bb26-43dd-84a6-9e2284959712-1773070527132%2F~psid=6f25ff00-39f1-4849-9678-31dc1853347f~aid=fe6f40ef-342c-4e9c-b4d1-9a50e4aeb9e1~did=55b5227b-d9b3-46cc-b367-194e29e5c730~country=EC~kid=k02~hmac=ae8c0d14f959cfa3d648ca26a410ce26385ea1ade5be9120ff283e458ab5d353/clt1/va02/disneyplus/channel/921e1311-bb26-43dd-84a6-9e2284959712-1773070527132/ctr-all-sliding-alt1.m3u8?r=1080&v=1&hash=82b614d9e6d93224b1eaa1442cd6e5c07d9789e9";
 
     // 🔹 ClearKey DRM
@@ -40,6 +40,7 @@
 
     if (Hls.isSupported()) {
       var hls = new Hls({
+        emeEnabled: true, // habilitar DRM
         drmSystemOptions: {
           'org.w3.clearkey': {
             clearkeys: clearKeys
