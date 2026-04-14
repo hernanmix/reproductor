@@ -13,10 +13,12 @@
       background:#000;
     }
     video {
-      position:fixed;
+      position:fixed;   /* 🔹 siempre fijo en pantalla */
+      top:0;
+      left:0;
       width:100%;
-      height:100vh;
-      object-fit:fill;   /* ocupa todo el espacio, sin márgenes negros */
+      height:100%;
+      object-fit:cover; /* 🔹 rellena todo el espacio sin márgenes negros */
       background:#000;
     }
   </style>
@@ -49,7 +51,7 @@
     // Forzar fullscreen horizontal al entrar en modo pantalla completa
     video.addEventListener("fullscreenchange", () => {
       if (document.fullscreenElement) {
-        video.style.objectFit = "fill";   // ocupa todo el ancho y alto
+        video.style.objectFit = "cover";   // 🔹 rellena todo el ancho y alto
       } else {
         video.style.objectFit = "contain"; // vuelve al modo normal
       }
@@ -58,4 +60,3 @@
 
 </body>
 </html>
-
