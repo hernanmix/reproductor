@@ -2,7 +2,7 @@
   // Crear el botón
   const btn = document.createElement("button");
   btn.id = "multiBtn";
-  btn.textContent = "MultiCanHD";
+  btn.textContent = "MultiCanHD📳";
   btn.style.cssText = `
     padding:15px 40px;
     font-size:24px;
