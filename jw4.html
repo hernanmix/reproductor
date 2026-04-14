@@ -1,58 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
-    <meta name="referrer" content="no-referrer">
-    <style type="text/css">
-        html, body {width:100%;height:100%;margin:auto;overflow: hidden;}
-        body {display:flex;}
-        #mse {flex:auto;}
-    </style>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xgplayer@3.0.12/dist/index.min.css">
-    <script type="text/javascript">
-        window.addEventListener('resize',function(){document.getElementById('mse').style.height=window.innerHeight+'px';});
-    </script>
+  <meta charset="utf-8">
+  <title>Reproductor dinámico</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+  <meta name="referrer" content="no-referrer">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xgplayer@3.0.12/dist/index.min.css">
+  <style>
+    html, body {
+      width:100%;
+      height:100%;
+      margin:0;
+      background:#000;
+      overflow:hidden;
+    }
+    body {display:flex;}
+    #mse {flex:auto;}
+    video {
+      width:100%;
+      height:100%;
+      object-fit:cover; /* 🔹 rellena pantalla sin márgenes negros */
+      background:#000;
+    }
+  </style>
 </head>
 <body>
 <div id="mse"></div>
-<script src="//cdn.jsdelivr.net/npm/xgplayer@3.0.13/dist/index.min.js" charset="utf-8"></script>
-<script src="//cdn.jsdelivr.net/npm/xgplayer-hls.js@3.0.13/dist/index.min.js" charset="utf-8"></script>
-<script src="//cdn.jsdelivr.net/npm/@swarmcloud/hls/p2p-engine.min.js"></script>
-<script type="text/javascript">
-    var p2pConfig = {
-        swFile: './sw.js',
-        live: false,        // set to true in live mode
-        // trackerZone: 'hk',        // if using Hongkong tracker
-        // trackerZone: 'us',        // if using USA tracker
-        // token: YOUR_TOKEN
-        // Other p2pConfig options if applicable
-    }
-    P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
-        var player = new window.Player({
-            id: 'mse',
-            // isLive: true,
-            url: 'https://canchatv.online/tvtvhd/proxy.php?stream=universo',
-            autoplay: true,
-            playsinline: true,
-            height: window.innerHeight,
-            width: window.innerWidth,
-            plugins: P2pEngineHls.isMSESupported() ? [window.HlsJsPlugin] : [],
-            hlsJsPlugin: {
-                hlsOpts: {}
-            }
-        });
-        const events = window.Player.Events;
-        [events.READY, events.URL_CHANGE].forEach(event => {
-            player.on(event, () => {
-                if (P2pEngineHls.isMSESupported()) {
-                    p2pConfig.hlsjsInstance = player.getPlugin("HlsJsPlugin").hls;        // set hlsjs instance to SDK
-                }
-                new P2pEngineHls(p2pConfig)
-            })
-        })
-    })
 
+<script src="//cdn.jsdelivr.net/npm/xgplayer@3.0.13/dist/index.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/xgplayer-hls.js@3.0.13/dist/index.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/@swarmcloud/hls/p2p-engine.min.js"></script>
+
+<script>
+  // 🔹 Obtener parámetro ?stream=xxx de la URL
+  function getParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+
+  const stream = getParam("stream") || "dsportsplus"; // valor por defecto
+  const baseURL = "https://f3433694-8980-4fbe-a913-a50439d0a518-00-3m9827lqnlnjp.kirk.replit.dev/stream/";
+  const videoUrl = baseURL + stream;
+
+  var p2pConfig = {
+    swFile: './sw.js',
+    live: true
+  };
+
+  P2PEngineHls.tryRegisterServiceWorker(p2pConfig).then(() => {
+    var player = new window.Player({
+      id: 'mse',
+      isLive: true,
+      url: videoUrl,
+      autoplay: true,
+      playsinline: true,
+      height: window.innerHeight,
+      width: window.innerWidth,
+      plugins: P2pEngineHls.isMSESupported() ? [window.HlsJsPlugin] : [],
+      hlsJsPlugin: {
+        hlsOpts: {}
+      }
+    });
+
+    const events = window.Player.Events;
+    [events.READY, events.URL_CHANGE].forEach(event => {
+      player.on(event, () => {
+        if (P2pEngineHls.isMSESupported()) {
+          p2pConfig.hlsjsInstance = player.getPlugin("HlsJsPlugin").hls;
+        }
+        new P2pEngineHls(p2pConfig);
+      });
+    });
+
+    // 🔹 Forzar landscape y rellenar al entrar en fullscreen
+    player.on('fullscreenChange', (isFullscreen) => {
+      const videoEl = document.querySelector('video');
+      if (isFullscreen) {
+        videoEl.style.objectFit = "cover";
+        if (screen.orientation && screen.orientation.lock) {
+          screen.orientation.lock("landscape").catch(err => console.log(err));
+        }
+      } else {
+        videoEl.style.objectFit = "contain";
+      }
+    });
+  });
 </script>
 </body>
 </html>
