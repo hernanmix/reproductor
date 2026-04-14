@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DISNEY+1</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.compiled.js"></script>
+  <style>
+    html, body {
+      margin:0;
+      padding:0;
+      height:100%;
+      width:100%;
+      background:#000;
+    }
+    video {
+      position:fixed;
+      width:100%;
+      height:100vh;
+      object-fit:fill;   /* ocupa todo el espacio, sin márgenes negros */
+      background:#000;
+    }
+  </style>
+</head>
+<body>
+
+  <video id="video" autoplay controls></video>
+
+  <script>
+    const manifestUri = "https://linear-akc-sa-west-1.media.dssott.com/dvt2=exp=1776278734~url=%2Fclt1%2Fva02%2Fdisneyplus%2Fchannel%2F921e1311-bb26-43dd-84a6-9e2284959712-1773070527132%2F~psid=6f25ff00-39f1-4849-9678-31dc1853347f~aid=fe6f40ef-342c-4e9c-b4d1-9a50e4aeb9e1~did=55b5227b-d9b3-46cc-b367-194e29e5c730~country=EC~kid=k02~hmac=ae8c0d14f959cfa3d648ca26a410ce26385ea1ade5be9120ff283e458ab5d353/clt1/va02/disneyplus/channel/921e1311-bb26-43dd-84a6-9e2284959712-1773070527132/ctr-all-sliding-alt1.m3u8?r=1080&v=1&hash=82b614d9e6d93224b1eaa1442cd6e5c07d9789e9";
+
+    const video = document.getElementById('video');
+    const player = new shaka.Player(video);
+
+    // Configuración DRM ClearKey
+    player.configure({
+      drm: {
+        clearKeys: {
+          "8535b94608cf48f6bc821fd0c50670a2": "c3a912c60d086f3fcac805602168e2f8"
+        }
+      }
+    });
+
+    // Autoplay fluido
+    player.load(manifestUri).then(() => {
+      video.play();
+      console.log("Reproducción iniciada automáticamente");
+    }).catch(err => console.error(err));
+
+    // Forzar fullscreen horizontal al entrar en modo pantalla completa
+    video.addEventListener("fullscreenchange", () => {
+      if (document.fullscreenElement) {
+        video.style.objectFit = "fill";   // ocupa todo el ancho y alto
+      } else {
+        video.style.objectFit = "contain"; // vuelve al modo normal
+      }
+    });
+  </script>
+
+</body>
+</html>
+
