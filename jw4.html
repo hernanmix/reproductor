@@ -32,14 +32,14 @@
 <script src="//cdn.jsdelivr.net/npm/@swarmcloud/hls/p2p-engine.min.js"></script>
 
 <script>
-  // 🔹 Obtener parámetro ?stream=xxx de la URL
+  // 🔹 Obtener parámetro ?channel=xxx de la URL
   function getParam(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
   }
 
-  const stream = getParam("stream") || "dsportsplus"; // valor por defecto
-  const baseURL = "https://f3433694-8980-4fbe-a913-a50439d0a518-00-3m9827lqnlnjp.kirk.replit.dev/stream/";
+  const stream = getParam("channel") || "dsportsplus"; // valor por defecto
+  const baseURL = "https://ae541d06-2e73-4892-b24d-6be4c0b945f4-00-2cm2leecmph52.kirk.replit.dev/?channel=";
   const videoUrl = baseURL + stream;
 
   var p2pConfig = {
