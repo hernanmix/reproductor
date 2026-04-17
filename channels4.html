@@ -1,1 +1,525 @@
 
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HSPORTSEC | Cinematic Player</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#006783",
+                        "error-container": "#9f0519",
+                        "outline": "#70767e",
+                        "primary-fixed-dim": "#00bcec",
+                        "secondary-fixed-dim": "#c9d6e6",
+                        "surface-bright": "#232d37",
+                        "on-secondary-fixed-variant": "#505d6a",
+                        "on-tertiary": "#351182",
+                        "on-primary": "#00485c",
+                        "on-primary-container": "#003e50",
+                        "tertiary-fixed-dim": "#ad92ff",
+                        "surface-container-low": "#0d141b",
+                        "on-error": "#490006",
+                        "tertiary-fixed": "#b9a3ff",
+                        "on-tertiary-fixed-variant": "#40218d",
+                        "secondary-fixed": "#d7e4f4",
+                        "on-secondary": "#465360",
+                        "primary-container": "#00cbfe",
+                        "inverse-surface": "#f7f9ff",
+                        "on-surface-variant": "#a5acb4",
+                        "surface-variant": "#1e272f",
+                        "primary": "#6ad6ff",
+                        "surface-container-lowest": "#000000",
+                        "tertiary": "#b79fff",
+                        "secondary": "#d7e4f4",
+                        "on-secondary-fixed": "#34414d",
+                        "on-error-container": "#ffa8a3",
+                        "on-secondary-container": "#c5d2e2",
+                        "primary-fixed": "#00cbfe",
+                        "error-dim": "#d7383b",
+                        "tertiary-container": "#aa8ffd",
+                        "surface-tint": "#6ad6ff",
+                        "on-surface": "#e8eef7",
+                        "surface-container-highest": "#1e272f",
+                        "surface-container": "#131a22",
+                        "secondary-container": "#3c4855",
+                        "surface-dim": "#080f15",
+                        "tertiary-dim": "#a78cfa",
+                        "on-tertiary-fixed": "#1d0054",
+                        "primary-dim": "#00bcec",
+                        "on-background": "#e8eef7",
+                        "surface-container-high": "#182028",
+                        "on-primary-fixed-variant": "#00485b",
+                        "outline-variant": "#424950",
+                        "on-tertiary-container": "#290071",
+                        "inverse-on-surface": "#4f565d",
+                        "secondary-dim": "#c9d6e6",
+                        "background": "#020d18",
+                        "surface": "#020d18",
+                        "on-primary-fixed": "#002733",
+                        "error": "#ff716c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "8px",
+                        "lg": "8px",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        /* Force object-fit fill in fullscreen to remove bars */
+        #hls-video:fullscreen,
+        #hls-video:-webkit-full-screen,
+        #player-shell:fullscreen video {
+            object-fit: fill !important;
+            width: 100vw !important;
+            height: 100vh !important;
+        }
+        video {
+            object-fit: fill; /* Ensure no black bars */
+        }
+        .hide-controls {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .show-controls {
+            opacity: 1;
+            pointer-events: auto;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .glass-panel {
+            background: rgba(30, 39, 47, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            background: rgba(60, 72, 85, 0.4);
+            height: 4px;
+            border-radius: 9999px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 14px;
+            width: 14px;
+            border-radius: 50%;
+            background: #6ad6ff;
+            box-shadow: 0 0 10px rgba(106, 214, 255, 0.4);
+            margin-top: -5px;
+        }
+        body {
+            min-height: 100dvh;
+            margin: 0;
+            padding: 0;
+            background-color: #020d18;
+        }
+        /* Centering adjustment for main HUD */
+        .absolute-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-hidden select-none">
+<!-- Main Video Canvas -->
+<div class="relative w-screen h-screen group overflow-hidden bg-surface-container-lowest" id="player-shell">
+<!-- Video Element -->
+<video autoplay="" class="w-full h-full cursor-pointer" id="hls-video" playsinline=""></video>
+<!-- UI Overlay Layer -->
+<div class="absolute inset-0 z-10 flex flex-col show-controls" id="controls-overlay">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center px-6 py-6 w-full z-50 bg-gradient-to-b from-black/70 to-transparent absolute top-0 left-0">
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200" onclick="exitFs()">
+
+<span class="material-symbols-outlined text-white text-3xl">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline font-bold text-lg tracking-tight text-white leading-tight" id="stream-title">Live Stream</h1>
+<span class="text-xs text-white/60 font-label uppercase tracking-widest">Disney+ </span>
+</div>
+</div>
+</header>
+<!-- Central Playback HUD - Vertically and Horizontally Centered -->
+<main class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="flex items-center gap-12 md:gap-24 pointer-events-auto">
+<button class="text-white hover:text-primary transition-all active:scale-90 duration-150" id="rewind-btn">
+<span class="material-symbols-outlined text-5xl md:text-6xl">replay_10</span>
+</button>
+<button class="w-20 h-20 md:w-24 md:h-24 glass-panel border border-white/10 rounded-full flex items-center justify-center text-white hover:text-primary hover:bg-white/10 transition-all active:scale-95 duration-150" id="play-pause-btn">
+<span class="material-symbols-outlined text-6xl" id="play-icon">pause</span>
+</button>
+<button class="text-white hover:text-primary transition-all active:scale-90 duration-150" id="forward-btn">
+<span class="material-symbols-outlined text-5xl md:text-6xl">forward_10</span>
+</button>
+</div>
+</main>
+<!-- Bottom Control Shell -->
+<footer class="w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent px-6 pb-10 pt-20 mt-auto">
+<!-- Progress Bar -->
+<div class="w-full mb-6 relative group/progress cursor-pointer">
+<div class="h-1.5 w-full bg-white/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-0 relative transition-[width] duration-300" id="progress-bar">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow-lg opacity-0 group-hover/progress:opacity-100 transition-opacity"></div>
+</div>
+</div>
+</div>
+<!-- Icons Tray -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-8">
+<!-- Volume Control -->
+<div class="flex items-center gap-3 group/volume">
+<button class="text-white hover:text-primary transition-colors" id="volume-toggle">
+<span class="material-symbols-outlined" id="volume-icon">volume_up</span>
+</button>
+<input class="w-24 accent-primary opacity-0 group-hover/volume:opacity-100 transition-opacity duration-300 cursor-pointer" id="volume-slider" max="100" min="0" type="range" value="100"/>
+</div>
+<div class="hidden md:flex items-center text-white/70 font-label text-sm gap-2">
+<span id="current-time">0:00</span>
+<span>/</span>
+<span id="duration-time">0:00</span>
+</div>
+</div>
+<!-- Right Controls -->
+<div class="flex items-center gap-6 relative">
+<!-- Quality Menu Container -->
+<div class="relative">
+<button class="flex items-center gap-2 px-3 py-1.5 glass-panel border border-white/10 rounded-lg text-xs font-semibold uppercase tracking-wider hover:bg-white/10 transition-all active:scale-95 text-white" id="quality-btn">
+<span class="material-symbols-outlined text-sm">settings</span>
+<span id="current-quality">Auto</span>
+</button>
+<!-- Quality Dropdown -->
+<div class="hidden absolute bottom-full mb-4 right-0 w-32 glass-panel border border-white/10 rounded-xl overflow-hidden shadow-2xl" id="quality-menu">
+<div class="p-1 space-y-1">
+<button class="w-full text-left px-4 py-2 hover:bg-primary/20 hover:text-primary text-sm font-medium transition-colors rounded-lg text-white" onclick="setQuality('1080p')">1080p</button>
+<button class="w-full text-left px-4 py-2 hover:bg-primary/20 hover:text-primary text-sm font-medium transition-colors rounded-lg text-white" onclick="setQuality('720p')">720p</button>
+<button class="w-full text-left px-4 py-2 hover:bg-primary/20 hover:text-primary text-sm font-medium transition-colors rounded-lg text-white" onclick="setQuality('480p')">480p</button>
+<button class="w-full text-left px-4 py-2 bg-primary/10 text-primary text-sm font-medium transition-colors rounded-lg" onclick="setQuality('Auto')">Auto</button>
+</div>
+</div>
+</div>
+<!-- CC Menu Container -->
+<div class="relative">
+<button class="text-white hover:text-primary transition-all" id="cc-btn">
+<span class="material-symbols-outlined">closed_caption</span>
+</button>
+<!-- CC Dropdown -->
+<div class="hidden absolute bottom-full mb-4 right-0 w-40 glass-panel border border-white/10 rounded-xl overflow-hidden shadow-2xl" id="cc-menu">
+<div class="p-2 border-b border-white/10 flex justify-between items-center">
+<span class="text-[10px] uppercase tracking-widest text-white/50 font-bold px-2">Subtitles</span>
+<button class="text-white/40 hover:text-white" onclick="toggleCcMenu(false)">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<div class="p-1 space-y-1" id="cc-track-list">
+<button class="cc-option w-full text-left px-4 py-2 bg-primary/10 text-primary text-sm font-medium transition-colors rounded-lg" onclick="setSubtitle('off')">Off</button>
+<button class="cc-option w-full text-left px-4 py-2 hover:bg-primary/20 hover:text-primary text-sm font-medium transition-colors rounded-lg text-white" onclick="setSubtitle('en')">English</button>
+<button class="cc-option w-full text-left px-4 py-2 hover:bg-primary/20 hover:text-primary text-sm font-medium transition-colors rounded-lg text-white" onclick="setSubtitle('es')">Spanish</button>
+</div>
+</div>
+</div>
+<button class="text-white hover:text-primary transition-all active:scale-95" id="fullscreen-btn">
+<span class="material-symbols-outlined" id="fs-icon">fullscreen</span>
+</button>
+</div>
+</div>
+</footer>
+</div>
+<!-- Persistent Brand Identity - Fixed Top Right -->
+<div class="fixed top-4 right-6 z-[60] bg-[#e50914] px-4 py-1.5 rounded-full shadow-lg shadow-black/40 pointer-events-none">
+<span class="font-headline font-black text-white text-sm uppercase tracking-widest">HSPORTSEC</span>
+</div>
+</div>
+<script>
+        const video = document.getElementById('hls-video');
+        const overlay = document.getElementById('controls-overlay');
+        const playBtn = document.getElementById('play-pause-btn');
+        const playIcon = document.getElementById('play-icon');
+        const streamTitle = document.getElementById('stream-title');
+        const rewindBtn = document.getElementById('rewind-btn');
+        const forwardBtn = document.getElementById('forward-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const qualityBtn = document.getElementById('quality-btn');
+        const qualityMenu = document.getElementById('quality-menu');
+        const ccBtn = document.getElementById('cc-btn');
+        const ccMenu = document.getElementById('cc-menu');
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const fsIcon = document.getElementById('fs-icon');
+        const playerShell = document.getElementById('player-shell');
+        const volumeSlider = document.getElementById('volume-slider');
+        const volumeToggle = document.getElementById('volume-toggle');
+        const volumeIcon = document.getElementById('volume-icon');
+        
+        let controlsTimeout;
+
+        // 1. Fetch Channel Data with URL Params
+        async function initPlayer() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const channelId = urlParams.get('channel') || 'espn2'; 
+            
+            try {
+                const response = await fetch('https://hernanmix.github.io/reproductor/channels3.json');
+                const data = await response.json();
+                
+                let channelData;
+                if (Array.isArray(data)) {
+                    channelData = data.find(c => (c.id === channelId || c.name?.toLowerCase() === channelId.toLowerCase() || c.slug === channelId));
+                } else {
+                    channelData = data[channelId];
+                }
+                
+                if (channelData) {
+                    streamTitle.textContent = channelData.title || channelData.name || 'Live Stream';
+                    setupHls(channelData.url);
+                } else {
+                    setupHls('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
+                }
+            } catch (error) {
+                console.error('Error fetching JSON:', error);
+                setupHls('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
+            }
+        }
+
+        // 2. HLS Setup with Autoplay & Audio Logic
+        function setupHls(url) {
+            video.volume = 1.0; 
+            video.muted = false; 
+
+            if (Hls.isSupported()) {
+                const hls = new Hls();
+                hls.loadSource(url);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                    forcePlayWithAudio();
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = url;
+                video.addEventListener('loadedmetadata', () => {
+                    forcePlayWithAudio();
+                });
+            }
+        }
+
+        async function forcePlayWithAudio() {
+            try {
+                video.muted = false;
+                await video.play();
+                updatePlayIcon();
+            } catch (err) {
+                console.log("Autoplay unmuted blocked, trying muted...");
+                video.muted = true;
+                await video.play();
+                updatePlayIcon();
+                
+                const unmuteOnInteraction = () => {
+                    video.muted = false;
+                    video.volume = 1.0;
+                    volumeSlider.value = 100;
+                    volumeIcon.textContent = 'volume_up';
+                    document.removeEventListener('click', unmuteOnInteraction);
+                    document.removeEventListener('touchstart', unmuteOnInteraction);
+                };
+                document.addEventListener('click', unmuteOnInteraction);
+                document.addEventListener('touchstart', unmuteOnInteraction);
+            }
+        }
+
+        function updatePlayIcon() {
+            playIcon.textContent = video.paused ? 'play_arrow' : 'pause';
+        }
+
+        // Interaction Listeners
+        playBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+            updatePlayIcon();
+            showControls();
+        });
+
+        rewindBtn.addEventListener('click', (e) => { 
+            e.stopPropagation(); 
+            video.currentTime -= 10; 
+            showControls(); 
+        });
+        
+        forwardBtn.addEventListener('click', (e) => { 
+            e.stopPropagation(); 
+            video.currentTime += 10; 
+            showControls(); 
+        });
+
+        // Volume Logic
+        volumeSlider.addEventListener('input', (e) => {
+            video.volume = e.target.value / 100;
+            video.muted = video.volume === 0;
+            volumeIcon.textContent = video.muted ? 'volume_off' : (video.volume < 0.5 ? 'volume_down' : 'volume_up');
+        });
+
+        volumeToggle.addEventListener('click', () => {
+            video.muted = !video.muted;
+            if (!video.muted && video.volume === 0) {
+                video.volume = 1;
+                volumeSlider.value = 100;
+            }
+            volumeIcon.textContent = video.muted ? 'volume_off' : (video.volume < 0.5 ? 'volume_down' : 'volume_up');
+            volumeSlider.value = video.muted ? 0 : video.volume * 100;
+        });
+
+        // Progress Update
+        video.addEventListener('timeupdate', () => {
+            const progress = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = `${progress}%`;
+            
+            document.getElementById('current-time').textContent = formatTime(video.currentTime);
+            document.getElementById('duration-time').textContent = isNaN(video.duration) ? '0:00' : formatTime(video.duration);
+        });
+
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const h = Math.floor(seconds / 3600);
+            const m = Math.floor((seconds % 3600) / 60);
+            const s = Math.floor(seconds % 60);
+            return h > 0 
+                ? `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`
+                : `${m}:${s.toString().padStart(2, '0')}`;
+        }
+
+        // Fullscreen Logic
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+        async function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                try {
+                    await playerShell.requestFullscreen();
+                    if (screen.orientation && screen.orientation.lock) {
+                        await screen.orientation.lock('landscape').catch(e => console.log("Orientation lock not supported:", e));
+                    }
+                    fsIcon.textContent = 'fullscreen_exit';
+                } catch (err) {
+                    console.error(`Error enabling fullscreen: ${err.message}`);
+                }
+            } else {
+                document.exitFullscreen();
+                if (screen.orientation && screen.orientation.unlock) {
+                    screen.orientation.unlock();
+                }
+                fsIcon.textContent = 'fullscreen';
+            }
+        }
+
+        // UI Auto-hide Logic (3 Seconds)
+        function showControls() {
+            overlay.classList.remove('hide-controls');
+            overlay.classList.add('show-controls');
+            document.body.style.cursor = 'default';
+            
+            clearTimeout(controlsTimeout);
+            
+            if (video.paused || !qualityMenu.classList.contains('hidden') || !ccMenu.classList.contains('hidden')) return;
+
+            controlsTimeout = setTimeout(() => {
+                if (!video.paused) {
+                    overlay.classList.remove('show-controls');
+                    overlay.classList.add('hide-controls');
+                    document.body.style.cursor = 'none';
+                }
+            }, 3000);
+        }
+
+        playerShell.addEventListener('mousemove', showControls);
+        playerShell.addEventListener('touchstart', showControls);
+        video.addEventListener('play', showControls);
+        
+        // Quality Menu
+        qualityBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            ccMenu.classList.add('hidden');
+            qualityMenu.classList.toggle('hidden');
+            showControls();
+        });
+
+        window.setQuality = (label) => {
+            document.getElementById('current-quality').textContent = label;
+            qualityMenu.classList.add('hidden');
+            showControls();
+        };
+
+        // CC Menu Logic
+        ccBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            qualityMenu.classList.add('hidden');
+            ccMenu.classList.toggle('hidden');
+            showControls();
+        });
+
+        window.toggleCcMenu = (show) => {
+            if (show) ccMenu.classList.remove('hidden');
+            else ccMenu.classList.add('hidden');
+        };
+
+        window.setSubtitle = (track) => {
+            const options = document.querySelectorAll('.cc-option');
+            options.forEach(opt => {
+                opt.classList.remove('bg-primary/10', 'text-primary');
+                opt.classList.add('text-white', 'hover:bg-primary/20', 'hover:text-primary');
+            });
+            
+            const selected = Array.from(options).find(opt => opt.textContent.toLowerCase() === (track === 'off' ? 'off' : (track === 'en' ? 'english' : 'spanish')));
+            if (selected) {
+                selected.classList.remove('text-white', 'hover:bg-primary/20', 'hover:text-primary');
+                selected.classList.add('bg-primary/10', 'text-primary');
+            }
+
+            // Logic to actually toggle text tracks if they exist in stream
+            for (let i = 0; i < video.textTracks.length; i++) {
+                if (track === 'off') {
+                    video.textTracks[i].mode = 'hidden';
+                } else {
+                    // This is a mock selection logic for the UI demonstration
+                    video.textTracks[i].mode = (video.textTracks[i].language === track) ? 'showing' : 'disabled';
+                }
+            }
+            
+            ccMenu.classList.add('hidden');
+            showControls();
+        };
+
+        document.addEventListener('click', (e) => {
+            if (!qualityBtn.contains(e.target) && !qualityMenu.contains(e.target)) {
+                qualityMenu.classList.add('hidden');
+            }
+            if (!ccBtn.contains(e.target) && !ccMenu.contains(e.target)) {
+                ccMenu.classList.add('hidden');
+            }
+        });
+
+        // Initialize
+        initPlayer();
+    </script>
+</body></html>
