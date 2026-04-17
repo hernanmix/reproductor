@@ -1,315 +1,139 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HSPORTSEC - Obsidian Cinema Player</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Scripts -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                "on-primary-fixed-variant": "#930100",
-                "background": "#131313",
-                "surface-container": "#201f1f",
-                "on-secondary": "#690003",
-                "on-error": "#690005",
-                "on-secondary-container": "#ff9f93",
-                "error-container": "#93000a",
-                "outline-variant": "#5e3f3b",
-                "on-error-container": "#ffdad6",
-                "on-primary-container": "#fff7f6",
-                "surface-container-high": "#2a2a2a",
-                "surface-tint": "#ffb4a8",
-                "surface-container-low": "#1c1b1b",
-                "on-tertiary-fixed": "#001b3c",
-                "on-primary": "#690100",
-                "on-primary-fixed": "#410000",
-                "surface-dim": "#131313",
-                "on-tertiary": "#003061",
-                "primary-fixed": "#ffdad4",
-                "primary-container": "#e60000",
-                "on-background": "#e5e2e1",
-                "on-tertiary-container": "#f8f9ff",
-                "on-tertiary-fixed-variant": "#004689",
-                "error": "#ffb4ab",
-                "primary": "#ffb4a8",
-                "inverse-on-surface": "#313030",
-                "secondary": "#ffb4aa",
-                "inverse-primary": "#c00100",
-                "secondary-fixed-dim": "#ffb4aa",
-                "surface-bright": "#3a3939",
-                "surface": "#131313",
-                "secondary-container": "#921512",
-                "outline": "#af8782",
-                "inverse-surface": "#e5e2e1",
-                "on-secondary-fixed": "#410001",
-                "surface-container-lowest": "#0e0e0e",
-                "primary-fixed-dim": "#ffb4a8",
-                "on-secondary-fixed-variant": "#8e1210",
-                "on-surface": "#e5e2e1",
-                "tertiary-fixed": "#d5e3ff",
-                "secondary-fixed": "#ffdad5",
-                "tertiary-container": "#0072d7",
-                "surface-variant": "#353534",
-                "tertiary-fixed-dim": "#a7c8ff",
-                "surface-container-highest": "#353534",
-                "on-surface-variant": "#e9bcb6",
-                "tertiary": "#a7c8ff"
-            },
-            "borderRadius": {
-                "DEFAULT": "0.125rem",
-                "lg": "0.25rem",
-                "xl": "0.5rem",
-                "full": "0.75rem"
-            },
-            "fontFamily": {
-                "headline": ["Space Grotesk"],
-                "body": ["Manrope"],
-                "label": ["Manrope"]
-            }
-          }
-        }
-      }
-    </script>
-<style>
-        body { background-color: #131313; overflow: hidden; margin: 0; padding: 0; height: 100vh; font-family: 'Manrope', sans-serif; }
-        .video-gradient-overlay {
-            background: linear-gradient(0deg, rgba(19,19,19,0.9) 0%, rgba(19,19,19,0) 40%, rgba(19,19,19,0) 60%, rgba(19,19,19,0.8) 100%);
-        }
-        .progress-bar-glow {
-            background: linear-gradient(to right, #e60000, #ffb4a8);
-            box-shadow: 0 0 12px rgba(230, 0, 0, 0.4);
-        }
-        .glass-ui {
-            background: rgba(42, 42, 42, 0.4);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .ui-fade-out { opacity: 0; transition: opacity 0.3s ease-in-out; pointer-events: none; }
-        .ui-fade-in { opacity: 1; transition: opacity 0.3s ease-in-out; pointer-events: auto; }
-        .logo-watermark { opacity: 1; transition: opacity 0.3s ease-in-out; }
-        .logo-idle { opacity: 0.2; }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background group">
-<!-- Video Canvas -->
-<div class="relative w-full h-full flex items-center justify-center overflow-hidden">
-<video class="w-full h-full object-contain bg-surface-container-lowest" id="video-player" playsinline=""></video>
-<!-- UI Overlays Container -->
-<div class="absolute inset-0 z-10 ui-fade-in" id="ui-wrapper">
-<!-- Shadow/Gradient Frame -->
-<div class="absolute inset-0 video-gradient-overlay pointer-events-none"></div>
-<!-- Top App Bar -->
-<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-12 pt-12">
-<button class="group flex items-center justify-center w-12 h-12 glass-ui rounded-full hover:bg-white/10 transition-all duration-300 active:scale-95" onclick="exitFs()">
-<span class="material-symbols-outlined text-white/70" data-icon="arrow_back">arrow_back</span>
-</button>
-<div class="fixed top-12 right-12 text-[#E50914] font-['Space_Grotesk'] font-black text-2xl uppercase tracking-wider logo-watermark" id="brand-logo">
-                    HSPORTSEC
-                </div>
-</header>
-<!-- Center Play/Pause Button -->
-<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-<button class="pointer-events-auto w-24 h-24 flex items-center justify-center glass-ui rounded-full border border-white/10 hover:border-white/20 transition-all duration-300 active:scale-90 group" id="center-play-btn">
-<span class="material-symbols-outlined text-white text-5xl transition-all" data-icon="play_arrow" id="play-icon" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
-</button>
-</div>
-<!-- Bottom Navigation Shell -->
-<div class="fixed bottom-0 left-0 w-full z-50 flex flex-col items-center pb-8 gap-4 px-12">
-<!-- Progress Bar Area -->
-<div class="w-full max-w-4xl px-4 group/progress">
-<div class="relative h-1.5 w-full bg-surface-variant/30 rounded-full cursor-pointer overflow-hidden">
-<div class="absolute top-0 left-0 h-full progress-bar-glow rounded-full" id="video-progress" style="width: 0%"></div>
-</div>
-</div>
-<!-- Control Bar -->
-<div class="bg-[#2a2a2a]/40 backdrop-blur-xl rounded-[0.75rem] mx-auto w-fit flex items-center gap-2 p-1.5 border border-white/5">
-<button class="text-white/80 p-3 hover:bg-white/20 transition-all rounded-full flex items-center justify-center ease-in-out duration-300 hover:scale-105 active:scale-95" id="mute-btn">
-<span class="material-symbols-outlined" data-icon="volume_up">volume_up</span>
-</button>
-<div class="w-px h-6 bg-white/10 mx-1"></div>
-<button class="text-white/80 p-3 hover:bg-white/20 transition-all rounded-full flex items-center justify-center ease-in-out duration-300 hover:scale-105 active:scale-95" id="fs-btn">
-<span class="material-symbols-outlined" data-icon="fullscreen">fullscreen</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Buffer/Loading State -->
-<div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none hidden" id="loader">
-<div class="w-16 h-16 border-4 border-primary-container/20 border-t-primary-container rounded-full animate-spin"></div>
-</div>
-</div>
-<!-- HLS Implementation -->
-<script>
-        const video = document.getElementById('video-player');
-        const playBtn = document.getElementById('center-play-btn');
-        const playIcon = document.getElementById('play-icon');
-        const muteBtn = document.getElementById('mute-btn');
-        const fsBtn = document.getElementById('fs-btn');
-        const progressBar = document.getElementById('video-progress');
-        const uiWrapper = document.getElementById('ui-wrapper');
-        const brandLogo = document.getElementById('brand-logo');
-        const loader = document.getElementById('loader');
-
-        // 1. BACK BUTTON: Must call 'exitFs()'
-        function exitFs() {
-            if (document.exitFullscreen) {
-                document.exitFullscreen().catch(() => {
-                    // Fallback for non-FS mode or mobile bridge
-                    window.history.back();
-                });
-            } else {
-                window.history.back();
-            }
-        }
-
-        // 2. DYNAMIC URL & 3. PLAYER ENGINE
-        const urlParams = new URLSearchParams(window.location.search);
-        const streamParam = urlParams.get('stream') || 'telemundo';
-        const videoSrc = `https://canchatv.online/la14hd/proxy.php?stream=${streamParam}`;
-
-        function initPlayer() {
-            if (Hls.isSupported()) {
-                const hls = new Hls({
-                    manifestLoadingMaxRetry: 10,
-                    manifestLoadingRetryDelay: 3000
-                });
-                hls.loadSource(videoSrc);
-                hls.attachMedia(video);
-                
-                // 5. AUTO-RELOAD on stall/error
-                hls.on(Hls.Events.ERROR, function (event, data) {
-                    if (data.fatal) {
-                        console.error('Fatal error, reloading in 3s...');
-                        setTimeout(() => {
-                            hls.recoverMediaError();
-                            hls.loadSource(videoSrc);
-                        }, 3000);
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>HSPORTSEC | Cinematic Player</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#6ad6ff",
+                        "background": "#020d18",
+                        "surface": "#020d18",
+                        "on-surface": "#e8eef7",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "8px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"]
                     }
-                });
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                video.src = videoSrc;
-            }
-        }
-
-        // Interactions
-        playBtn.addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-                playIcon.textContent = 'pause';
-            } else {
-                video.pause();
-                playIcon.textContent = 'play_arrow';
-            }
-        });
-
-        muteBtn.addEventListener('click', () => {
-            video.muted = !video.muted;
-            muteBtn.querySelector('span').textContent = video.muted ? 'volume_off' : 'volume_up';
-        });
-
-        fsBtn.addEventListener('click', () => {
-            if (!document.fullscreenElement) {
-                video.parentElement.requestFullscreen();
-            } else {
-                document.exitFullscreen();
-            }
-        });
-
-        video.addEventListener('timeupdate', () => {
-            const percentage = (video.currentTime / video.duration) * 100;
-            progressBar.style.width = percentage + '%';
-        });
-
-        video.addEventListener('waiting', () => loader.classList.remove('hidden'));
-        video.addEventListener('playing', () => loader.classList.add('hidden'));
-
-        // UI Idle Logic (7. Interaction Pattern: "The Fade")
-        let idleTimer;
-        function resetIdleTimer() {
-            uiWrapper.classList.remove('ui-fade-out');
-            uiWrapper.classList.add('ui-fade-in');
-            brandLogo.classList.remove('logo-idle');
-            
-            clearTimeout(idleTimer);
-            idleTimer = setTimeout(() => {
-                if (!video.paused) {
-                    uiWrapper.classList.remove('ui-fade-in');
-                    uiWrapper.classList.add('ui-fade-out');
-                    brandLogo.classList.add('logo-idle');
                 }
-            }, 3000);
-        }
-
-        document.addEventListener('mousemove', resetIdleTimer);
-        document.addEventListener('touchstart', resetIdleTimer);
-        video.addEventListener('play', resetIdleTimer);
-
-        initPlayer();
-    </script>
-</body></html>                        
-                hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                video.src = url;
-                video.addEventListener('loadedmetadata', () => video.play());
             }
         }
-
-        playBtn.addEventListener('click', () => {
-            if (video.paused) video.play(); else video.pause();
-            playIcon.textContent = video.paused ? 'play_arrow' : 'pause';
-        });
-
-        rewindBtn.addEventListener('click', () => video.currentTime -= 10);
-        forwardBtn.addEventListener('click', () => video.currentTime += 10);
-
-        volumeSlider.addEventListener('input', (e) => {
-            video.volume = e.target.value / 100;
-            volumeIcon.textContent = video.volume === 0 ? 'volume_off' : 'volume_up';
-        });
-
-        video.addEventListener('timeupdate', () => {
-            const progress = (video.currentTime / video.duration) * 100;
-            progressBar.style.width = `${progress}%`;
-            document.getElementById('current-time').textContent = formatTime(video.currentTime);
-            document.getElementById('duration-time').textContent = formatTime(video.duration);
-        });
-
-        function formatTime(s) {
-            if (isNaN(s)) return '0:00';
-            const min = Math.floor(s / 60);
-            const sec = Math.floor(s % 60);
-            return `${min}:${sec.toString().padStart(2, '0')}`;
-        }
-
-        fullscreenBtn.addEventListener('click', () => {
-            if (!document.fullscreenElement) {
-                playerShell.requestFullscreen();
-                fsIcon.textContent = 'fullscreen_exit';
-            } else {
-                document.exitFullscreen();
-                fsIcon.textContent = 'fullscreen';
-            }
-        });
-
-        initPlayer();
     </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; display: inline-block; line-height: 1; }
+        #hls-video:fullscreen { object-fit: fill !important; width: 100vw !important; height: 100vh !important; }
+        video { object-fit: fill; }
+        .glass-panel { background: rgba(30, 39, 47, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        body { min-height: 100dvh; margin: 0; padding: 0; background-color: #020d18; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-hidden select-none">
+<div class="relative w-screen h-screen group overflow-hidden bg-black" id="player-shell">
+    <video autoplay class="w-full h-full cursor-pointer" id="hls-video" playsinline></video>
+    <div class="absolute inset-0 z-10 flex flex-col" id="controls-overlay">
+        <header class="flex justify-between items-center px-6 py-6 w-full z-50 bg-gradient-to-b from-black/70 to-transparent absolute top-0 left-0">
+            <div class="flex items-center gap-4">
+                <button onclick="exitFs()" class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+                    <span class="material-symbols-outlined text-white text-3xl">arrow_back</span>
+                </button>
+                <div class="flex flex-col">
+                    <h1 class="font-headline font-bold text-lg tracking-tight text-white leading-tight" id="stream-title">Live Stream</h1>
+                    <span class="text-xs text-white/60 font-label uppercase tracking-widest">HSPORTSEC TV</span>
+                </div>
+            </div>
+        </header>
+        <main class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="flex items-center gap-12 pointer-events-auto">
+                <button class="text-white hover:text-primary transition-all active:scale-90" id="rewind-btn"><span class="material-symbols-outlined text-5xl">replay_10</span></button>
+                <button class="w-20 h-20 glass-panel border border-white/10 rounded-full flex items-center justify-center text-white" id="play-pause-btn"><span class="material-symbols-outlined text-6xl" id="play-icon">pause</span></button>
+                <button class="text-white hover:text-primary transition-all active:scale-90" id="forward-btn"><span class="material-symbols-outlined text-5xl">forward_10</span></button>
+            </div>
+        </main>
+        <footer class="w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent px-6 pb-10 pt-20 mt-auto">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-8">
+                    <button class="text-white hover:text-primary" id="volume-toggle"><span class="material-symbols-outlined" id="volume-icon">volume_up</span></button>
+                </div>
+                <button class="text-white hover:text-primary" id="fullscreen-btn"><span class="material-symbols-outlined" id="fs-icon">fullscreen</span></button>
+            </div>
+        </footer>
+    </div>
+    <div class="fixed top-4 right-6 z-[60] bg-[#e50914] px-4 py-1.5 rounded-full shadow-lg pointer-events-none">
+        <span class="font-headline font-black text-white text-sm uppercase tracking-widest">HSPORTSEC</span>
+    </div>
+</div>
+
+<script>
+    const video = document.getElementById('hls-video');
+    const playIcon = document.getElementById('play-icon');
+    const streamTitle = document.getElementById('stream-title');
+
+    function exitFs() {
+        if (window.exitFs) {
+            window.exitFs();
+        } else {
+            console.log("exitFs function called - returning to APK home");
+            // Fallback for browser testing
+            window.history.back();
+        }
+    }
+
+    async function initPlayer() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const stream = urlParams.get('stream') || 'telemundo';
+        const hlsUrl = `https://canchatv.online/la14hd/proxy.php?stream=${stream}`;
+        streamTitle.textContent = stream.toUpperCase();
+        
+        if (Hls.isSupported()) {
+            const hls = new Hls();
+            hls.loadSource(hlsUrl);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
+            hls.on(Hls.Events.ERROR, function (event, data) {
+                if (data.fatal) {
+                    switch (data.type) {
+                        case Hls.ErrorTypes.NETWORK_ERROR:
+                            console.log("Network error, retrying...");
+                            hls.startLoad();
+                            break;
+                        case Hls.ErrorTypes.MEDIA_ERROR:
+                            console.log("Media error, recovering...");
+                            hls.recoverMediaError();
+                            break;
+                        default:
+                            hls.destroy();
+                            initPlayer();
+                            break;
+                    }
+                }
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = hlsUrl;
+        }
+    }
+
+    document.getElementById('play-pause-btn').onclick = () => {
+        if (video.paused) video.play(); else video.pause();
+        playIcon.textContent = video.paused ? 'play_arrow' : 'pause';
+    };
+
+    document.getElementById('fullscreen-btn').onclick = () => {
+        if (!document.fullscreenElement) document.getElementById('player-shell').requestFullscreen();
+        else document.exitFullscreen();
+    };
+
+    initPlayer();
+</script>
 </body>
 </html>
