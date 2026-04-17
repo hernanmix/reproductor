@@ -22,6 +22,11 @@
   "dsportsplus": {
     "title": "DSports plus",
     "url": "https://cc324.streamingtv339.com/dsportsplus/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=8048067e2a22dcc17e4e96f863c1cea1a30f98b7-e1-1776434183-1776380183"
+  },
+  },
+  "disney": {
+    "title": "Disney+ - Super Lig: Fenerbahçe vs Rizespor",
+    "url": ""
   }
 }
 
