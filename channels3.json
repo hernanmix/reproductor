@@ -4,23 +4,23 @@
     "url": "https://cgxheq.fubohd.com:443/ecdf_ligapro/mono.m3u8?token=6afc14aa3ffdcb97a5c3f17b77a8ba01e4e17656-e-1775706575-1775688575"
   },
   "espn": {
-    "title": "ESPN-Copa Libertadores: Flamengo vs Medellín",
+    "title": "ESPN-Serie A: Inter vs Cagliari",
     "url": "https://cc324.streamingtv339.com:443/espn2/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=15350b126593b7cd4d9d6bb4375b662e4f0d94ba-99-1776438053-1776384053"
   },
   "espn2": {
-    "title": "ESPN2-Copa Libertadores: Peñarol vs Platense",
+    "title": "ESPN2",
     "url": "https://cc324.streamingtv339.com:443/espn2/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=15350b126593b7cd4d9d6bb4375b662e4f0d94ba-99-1776438053-1776384053"
   },
   "fox1ar": {
-    "title": "Fox Sports 1 Argentina",
+    "title": "Fox Sports 1 Ar",
     "url": "https://cc324.streamingtv339.com/fox1ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=064fc43b57b56fb21a8a05e95721a217e156b751-59-1776437960-1776383960"
   },
   "fox2ar": {
-    "title": "Copa Libertadores: Flamengo vs Medellín",
+    "title": "Fox sports 2",
     "url": "https://cc324.streamingtv339.com:443/fox2ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=7fce019fe29f8df43fc2204243e118babc76a857-5c-1776437875-1776383875"
   },
   "dsportsplus": {
-    "title": "DSports Plus - LigaPro",
+    "title": "DSports plus",
     "url": "https://cc324.streamingtv339.com/dsportsplus/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=8048067e2a22dcc17e4e96f863c1cea1a30f98b7-e1-1776434183-1776380183"
   }
 }
