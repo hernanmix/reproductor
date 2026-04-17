@@ -5,23 +5,23 @@
   },
   "espn": {
     "title": "ESPN-Copa Libertadores: Flamengo vs Medellín",
-    "url": "https://cc324.streamingtv339.com:443/espn/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=468166b4c6ea0d8d47c222fb5965c455d0cc6b4a-4c-1776408258-1776354258"
+    "url": "https://cc324.streamingtv339.com/espn/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=462d9fe3dddaf009de0067bf1f07beb56475fd4e-36-1776434203-1776380203"
   },
   "espn2": {
     "title": "ESPN2-Copa Libertadores: Peñarol vs Platense",
-    "url": "https://244pl.streamingtv339.com/espn2/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=8928c0cd1020875d2bc11313ec2bc9aa66b9b2af-cf-1776408291-1776354291"
+    "url": "https://cc324.streamingtv339.com/espn2/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=abce6bf96d7e39355b8d30305448678d4e4708c7-43-1776434268-1776380268"
   },
   "fox1ar": {
     "title": "Fox Sports 1 Argentina",
-    "url": "https://cc324.streamingtv339.com/fox1ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=1fc1ed72d57a58dd002edebf184e56c065bf6955-4e-1776408160-1776354160"
+    "url": "https://cc324.streamingtv339.com/fox1ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=0af05df8c63203222d5e8e2647288e3c3cbba4dc-ea-1776434331-1776380331"
   },
   "fox2ar": {
     "title": "Copa Libertadores: Flamengo vs Medellín",
-    "url": "https://244pl.streamingtv339.com/fox2ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=aae0a5f29b1d434eb4a63a1b457a7db536928d57-8f-1776408229-1776354229"
+    "url": "https://cc324.streamingtv339.com/fox2ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=c5a839676135108881916d6532295c62847b91ef-7e-1776434369-1776380369"
   },
   "dsportsplus": {
     "title": "DSports Plus - LigaPro",
-    "url": "https://244pl.streamingtv339.com:443/dsportsplus/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=114be0a07dc02f5408ada6b3bc39187e2b537320-d6-1776408329-1776354329"
+    "url": "https://cc324.streamingtv339.com/dsportsplus/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=8048067e2a22dcc17e4e96f863c1cea1a30f98b7-e1-1776434183-1776380183"
   }
 }
 
