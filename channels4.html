@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HSPORTSEC Cinematic Player</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#004689",
+                    "on-primary": "#690003",
+                    "tertiary": "#a7c8ff",
+                    "surface-variant": "#353534",
+                    "on-primary-fixed-variant": "#930007",
+                    "primary-fixed": "#ffdad5",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "on-background": "#e5e2e1",
+                    "inverse-on-surface": "#313030",
+                    "surface-container-high": "#2a2a2a",
+                    "on-secondary": "#690003",
+                    "on-secondary-container": "#ff9f93",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-tint": "#ffb4aa",
+                    "surface-container-lowest": "#0e0e0e",
+                    "tertiary-container": "#0072d7",
+                    "surface": "#131313",
+                    "surface-container-low": "#1c1b1b",
+                    "outline-variant": "#5e3f3b",
+                    "surface-dim": "#131313",
+                    "surface-bright": "#3a3939",
+                    "surface-container": "#201f1f",
+                    "on-error": "#690005",
+                    "secondary-container": "#921512",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#c0000c",
+                    "on-surface-variant": "#e9bcb6",
+                    "background": "#131313",
+                    "tertiary-fixed-dim": "#a7c8ff",
+                    "on-secondary-fixed-variant": "#8e1210",
+                    "on-primary-fixed": "#410001",
+                    "secondary": "#ffb4aa",
+                    "surface-container-highest": "#353534",
+                    "secondary-fixed": "#ffdad5",
+                    "on-tertiary-fixed": "#001b3c",
+                    "on-tertiary-container": "#f8f9ff",
+                    "secondary-fixed-dim": "#ffb4aa",
+                    "outline": "#af8782",
+                    "on-primary-container": "#fff7f6",
+                    "on-tertiary": "#003061",
+                    "on-surface": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#d5e3ff",
+                    "primary": "#ffb4aa",
+                    "primary-container": "#e50914",
+                    "on-secondary-fixed": "#410001"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .video-fill { object-fit: fill !important; }
+        .video-fit { object-fit: contain; }
+        .video-auto { object-fit: cover; }
+        
+        body::-webkit-scrollbar { display: none; }
+        body { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        input[type=range] {
+            -webkit-appearance: none;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            background: #5e3f3b4d;
+            border-radius: 2px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            background: #ffdad5;
+            -webkit-appearance: none;
+            margin-top: -4px;
+        }
+        body {
+            min-height: 100dvh;
+            background: black;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        #player-container {
+            width: 100vw;
+            height: 100dvh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .ui-hidden {
+            opacity: 0 !important;
+            pointer-events: none;
+            cursor: none;
+        }
+        .ui-visible {
+            opacity: 1 !important;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-hidden">
+<div class="fixed inset-0 bg-black flex items-center justify-center overflow-hidden" id="player-container">
+<video autoplay="" class="w-full h-full video-fill" id="video" playsinline=""></video>
+<div class="absolute inset-0 z-10 flex items-center justify-center bg-surface/40 backdrop-blur-sm hidden" id="loader">
+<div class="w-12 h-12 border-4 border-primary-container border-t-transparent rounded-full animate-spin"></div>
+</div>
+<!-- Autoplay Notification (Muted Fallback) -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-[60] bg-zinc-900/90 text-white px-4 py-2 rounded-full text-xs font-label border border-white/10 hidden" id="autoplay-notif">
+        Tap to unmute
+    </div>
+<!-- Header UI (Fades) -->
+<div class="fixed top-0 left-0 w-full z-50 transition-opacity duration-500 ui-visible" id="header-ui">
+<header class="flex justify-between items-center px-6 py-4 bg-gradient-to-b from-black/80 to-transparent">
+<div class="flex items-center space-x-4">
+<a class="group flex items-center justify-center w-12 h-12 rounded-full hover:bg-surface-variant/30 transition-all duration-300" href="https://hsports4hd.blogspot.com/p/hsportstv.html?m=1">
+<span class="material-symbols-outlined text-on-surface text-3xl group-active:scale-90 duration-300">arrow_back</span>
+</a>
+<!-- Disney+ Style Channel Title -->
+<div class="flex flex-col">
+<span class="text-white font-headline font-bold text-lg tracking-tight leading-tight uppercase" id="event-title">...</span>
+<span class="text-primary text-[10px] font-label font-bold uppercase tracking-widest flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span> LIVE
+                    </span>
+</div>
+</div>
+</header>
+</div>
+<!-- Persistent Logo (Doesn't fade) -->
+<div class="fixed top-4 right-6 bg-primary-container text-on-primary-container px-5 py-1.5 rounded-full flex items-center justify-center shadow-lg border border-white/20 z-50 pointer-events-auto">
+<span class="font-headline font-extrabold text-sm tracking-tighter uppercase">HSPORTSEC</span>
+</div>
+<!-- Footer Controls (Fades) -->
+<div class="absolute inset-0 flex flex-col justify-end p-6 z-40 transition-opacity duration-500 ui-visible bg-gradient-to-t from-black/80 via-transparent to-transparent" id="footer-ui">
+<div class="absolute bottom-32 right-6 hidden bg-surface-container-highest/90 backdrop-blur-xl rounded-xl p-2 min-w-[140px] shadow-2xl border border-white/10" id="quality-menu">
+<div class="flex flex-col space-y-1" id="quality-list">
+<!-- Quality buttons will be injected here -->
+</div>
+</div>
+<div class="w-full max-w-4xl mx-auto flex flex-col space-y-4">
+<nav class="bg-zinc-900/80 backdrop-blur-xl rounded-2xl px-6 py-3 flex items-center justify-between shadow-[0_0_40px_rgba(229,9,20,0.06)] border border-white/5">
+<div class="flex items-center space-x-6">
+<button class="text-on-surface hover:text-red-500 transition-colors active:scale-90 duration-200 flex items-center justify-center" id="play-btn">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<div class="flex items-center space-x-2 group">
+<button class="text-on-surface hover:text-red-500 transition-colors" id="mute-btn">
+<span class="material-symbols-outlined text-2xl">volume_up</span>
+</button>
+<input class="w-20 accent-primary-container" id="volume-slider" max="1" min="0" step="0.1" type="range" value="1"/>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<button class="flex flex-col items-center group transition-transform active:scale-95" id="scaling-btn">
+<span class="material-symbols-outlined text-zinc-100 group-hover:text-red-500">hd</span>
+<span class="text-[8px] font-label font-bold uppercase tracking-widest text-zinc-400 group-hover:text-red-600" id="scaling-label">FILL</span>
+</button>
+<button class="text-zinc-100 hover:text-red-500 transition-colors active:scale-90 duration-200" id="settings-btn">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</button>
+<button class="text-zinc-100 hover:text-red-500 transition-colors active:scale-90 duration-200" id="fullscreen-btn">
+<span class="material-symbols-outlined text-2xl">fullscreen</span>
+</button>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<script>
+    const video = document.getElementById('video');
+    const container = document.getElementById('player-container');
+    const playBtn = document.getElementById('play-btn');
+    const muteBtn = document.getElementById('mute-btn');
+    const volumeSlider = document.getElementById('volume-slider');
+    const scalingBtn = document.getElementById('scaling-btn');
+    const scalingLabel = document.getElementById('scaling-label');
+    const settingsBtn = document.getElementById('settings-btn');
+    const qualityMenu = document.getElementById('quality-menu');
+    const qualityList = document.getElementById('quality-list');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    const loader = document.getElementById('loader');
+    const headerUI = document.getElementById('header-ui');
+    const footerUI = document.getElementById('footer-ui');
+    const autoplayNotif = document.getElementById('autoplay-notif');
+    const eventTitle = document.getElementById('event-title');
+
+    let hls = null;
+
+    function updateQualityMenu() {
+        if (!hls) return;
+        const levels = hls.levels;
+        let html = '';
+        
+        levels.forEach((level, index) => {
+            const label = level.height + 'p';
+            const isActive = hls.currentLevel === index;
+            html += `<button class="px-4 py-2 text-left rounded-lg text-white transition-colors font-label text-sm ${isActive ? 'bg-primary-container font-semibold' : 'hover:bg-primary-container/20'}" onclick="setQuality(${index})">${label}</button>`;
+        });
+        
+        const isAuto = hls.loadLevel === -1;
+        html += `<button class="px-4 py-2 text-left rounded-lg text-white transition-colors font-label text-sm ${isAuto ? 'bg-primary-container font-semibold' : 'hover:bg-primary-container/20'}" onclick="setQuality(-1)">Auto</button>`;
+        
+        qualityList.innerHTML = html;
+    }
+
+    window.setQuality = function(level) {
+        if (hls) {
+            hls.currentLevel = level;
+            updateQualityMenu();
+        }
+        qualityMenu.classList.add('hidden');
+    };
+
+    function attemptAutoplay() {
+        // High priority: Start with audio enabled
+        video.muted = false;
+        video.volume = 1;
+        volumeSlider.value = 1;
+        updateMuteUI();
+        
+        video.play().catch((error) => {
+            console.log("Autoplay unmuted blocked by browser policy, falling back to muted autoplay.");
+            video.muted = true;
+            updateMuteUI();
+            video.play().then(() => {
+                autoplayNotif.classList.remove('hidden');
+            });
+        });
+    }
+
+    async function initPlayer() {
+        const params = new URLSearchParams(window.location.search);
+        const requestedChannel = params.get('channel')?.toLowerCase() || 'espn';
+        
+        try {
+            const response = await fetch('https://hernanmix.github.io/reproductor/channels3.json');
+            const data = await response.json();
+            
+            let streamUrl = '';
+            let channelTitle = requestedChannel.toUpperCase();
+
+            // Handle the updated JSON structure where each key maps to an object {title, url}
+            if (data[requestedChannel]) {
+                streamUrl = data[requestedChannel].url;
+                channelTitle = data[requestedChannel].title;
+            } else {
+                // Fallback to first available channel if requested not found
+                const firstKey = Object.keys(data)[0];
+                streamUrl = data[firstKey].url;
+                channelTitle = data[firstKey].title;
+            }
+
+            eventTitle.textContent = channelTitle;
+
+            if (Hls.isSupported()) {
+                hls = new Hls({
+                    capLevelToPlayerSize: true,
+                    startLevel: -1,
+                    enableWorker: true
+                });
+                hls.loadSource(streamUrl);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                    updateQualityMenu();
+                    attemptAutoplay();
+                });
+                hls.on(Hls.Events.BUFFERING_STALLED, () => {
+                    loader.classList.remove('hidden');
+                });
+                hls.on(Hls.Events.BUFFER_APPENDED, () => {
+                    loader.classList.add('hidden');
+                });
+                hls.on(Hls.Events.LEVEL_SWITCHED, () => {
+                    updateQualityMenu();
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = streamUrl;
+                video.addEventListener('loadedmetadata', () => attemptAutoplay());
+            }
+        } catch (error) {
+            console.error('Error loading channel source:', error);
+            eventTitle.textContent = "CHANNEL UNAVAILABLE";
+        }
+    }
+
+    initPlayer();
+
+    playBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (video.paused) {
+            video.play();
+            playBtn.innerHTML = '<span class="material-symbols-outlined text-4xl" style="font-variation-settings: \'FILL\' 1;">pause</span>';
+        } else {
+            video.pause();
+            playBtn.innerHTML = '<span class="material-symbols-outlined text-4xl" style="font-variation-settings: \'FILL\' 1;">play_arrow</span>';
+        }
+    });
+
+    muteBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        video.muted = !video.muted;
+        if (!video.muted) autoplayNotif.classList.add('hidden');
+        updateMuteUI();
+    });
+
+    function updateMuteUI() {
+        muteBtn.innerHTML = video.muted ? '<span class="material-symbols-outlined text-2xl">volume_off</span>' : '<span class="material-symbols-outlined text-2xl">volume_up</span>';
+    }
+
+    autoplayNotif.addEventListener('click', () => {
+        video.muted = false;
+        updateMuteUI();
+        autoplayNotif.classList.add('hidden');
+    });
+
+    volumeSlider.addEventListener('input', (e) => {
+        video.volume = e.target.value;
+        if (video.volume > 0) {
+            video.muted = false;
+            autoplayNotif.classList.add('hidden');
+        }
+        updateMuteUI();
+    });
+
+    let scaling = 0;
+    const scalingModes = ['video-fill', 'video-fit', 'video-auto'];
+    const scalingLabels = ['FILL', 'FIT', 'COVER'];
+    scalingBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        video.classList.remove(...scalingModes);
+        scaling = (scaling + 1) % 3;
+        video.classList.add(scalingModes[scaling]);
+        scalingLabel.textContent = scalingLabels[scaling];
+    });
+
+    settingsBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        qualityMenu.classList.toggle('hidden');
+    });
+
+    fullscreenBtn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        if (!document.fullscreenElement) {
+            try {
+                if (container.requestFullscreen) {
+                    await container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    await container.webkitRequestFullscreen();
+                }
+                // Lock to landscape if supported
+                if (screen.orientation && screen.orientation.lock) {
+                    await screen.orientation.lock('landscape').catch(() => {});
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }
+        }
+    });
+
+    document.addEventListener('click', () => qualityMenu.classList.add('hidden'));
+
+    let uiTimeout;
+    function showUI() {
+        headerUI.classList.remove('ui-hidden');
+        headerUI.classList.add('ui-visible');
+        footerUI.classList.remove('ui-hidden');
+        footerUI.classList.add('ui-visible');
+        container.style.cursor = 'default';
+        resetTimer();
+    }
+
+    function hideUI() {
+        if (!video.paused && qualityMenu.classList.contains('hidden')) {
+            headerUI.classList.add('ui-hidden');
+            headerUI.classList.remove('ui-visible');
+            footerUI.classList.add('ui-hidden');
+            footerUI.classList.remove('ui-visible');
+            container.style.cursor = 'none';
+        }
+    }
+
+    function resetTimer() {
+        clearTimeout(uiTimeout);
+        uiTimeout = setTimeout(hideUI, 3000);
+    }
+
+    ['mousemove', 'mousedown', 'touchstart', 'touchmove', 'keydown'].forEach(event => {
+        container.addEventListener(event, showUI);
+    });
+
+    video.addEventListener('play', resetTimer);
+    video.addEventListener('pause', showUI);
+
+    resetTimer();
+</script>
+</body></html>
