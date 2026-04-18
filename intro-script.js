@@ -6,16 +6,19 @@
     font-size:clamp(2rem, 6vw, 4rem); /* se adapta a cualquier pantalla */
     font-weight:bold;
     padding:20px 40px;
-    border-radius:30px;
+    border-radius:30px; /* esquinas redondeadas */
     text-align:center;
     box-shadow:0 0 30px rgba(0,0,0,0.8);
-    max-width:90%;
+    max-width:90%; /* evita que se corte en pantallas pequeñas */
     word-wrap:break-word;
+    display:flex;
+    align-items:center;
+    justify-content:center;
   ">
     HSP⚽RTSEC
   </div>
   <!-- Audio en mp3 -->
-  <audio id="intro-audio" src="https://hernanmix.github.io/reproductor/audio.mp3" autoplay muted></audio>
+  <audio id="intro-audio" src="https://hernanmix.github.io/reproductor/audio.mp3" autoplay></audio>
 </div>
 
 <script>
@@ -23,14 +26,8 @@
     const intro = document.getElementById("intro");
     const audio = document.getElementById("intro-audio");
 
-    // Intenta reproducir (en web arranca en silencio, en app sí suena)
+    // Reproduce automáticamente (en app nativa sí funciona, en web puede requerir interacción)
     audio.play().catch(err => console.log("Autoplay bloqueado:", err));
-
-    // Al primer clic/tap, habilita sonido
-    document.body.addEventListener("click", () => {
-      audio.muted = false;
-      audio.play();
-    }, { once: true });
 
     // Oculta la intro después de 4 segundos
     setTimeout(() => {
@@ -42,4 +39,3 @@
     }, 4000);
   });
 </script>
-
