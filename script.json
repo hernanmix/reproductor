@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@100;300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                "colors": {
+                        "tertiary-container": "#171919",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-lowest": "#060e20",
+                        "on-background": "#dae2fd",
+                        "surface-dim": "#0b1326",
+                        "surface-bright": "#31394d",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-surface-variant": "#c5c6cd",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#0b1326",
+                        "primary": "#00e55b",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "inverse-surface": "#dae2fd",
+                        "surface-container-highest": "#2d3449",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#002107",
+                        "surface-tint": "#00e55b",
+                        "primary-container": "#001e06",
+                        "outline-variant": "#44474d",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "secondary-container": "#3c4962",
+                        "on-primary-container": "#009639",
+                        "primary-fixed-dim": "#00e55b",
+                        "primary-fixed": "#6bff83",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#283044",
+                        "surface-container-low": "#131b2e",
+                        "surface-container-high": "#222a3d",
+                        "tertiary": "#c6c6c7",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-primary": "#003911",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#006e27",
+                        "secondary": "#b9c7e4",
+                        "on-primary-fixed-variant": "#00531b",
+                        "on-tertiary": "#2f3131",
+                        "on-secondary-container": "#abb9d6",
+                        "on-tertiary-container": "#808282",
+                        "on-surface": "#dae2fd",
+                        "background": "#0b1326",
+                        "on-secondary-fixed": "#0d1c32",
+                        "outline": "#8f9097",
+                        "surface-variant": "#2d3449",
+                        "surface-container": "#171f33",
+                        "on-secondary": "#233148"
+                },
+                "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                },
+                "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                }
+              },
+            },
+          }
+    </script>
+<style>
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .4; }
+        }
+        .card-overlay {
+            background: linear-gradient(to bottom, rgba(11, 19, 38, 0.4) 0%, rgba(11, 19, 38, 0.9) 100%);
+        }
+        body {
+            min-height: 100vh;
+        }
+        @media (min-width: 2560px) {
+            html { font-size: 24px; }
+        }
+        .skeleton {
+            background: linear-gradient(90deg, #131b2e 25%, #1d263b 50%, #131b2e 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary w-full overflow-x-hidden">
+<header class="w-full fixed top-0 z-50 bg-[#0b1326]/90 backdrop-blur-lg border-b border-surface-container-highest/50 py-4 md:py-6 lg:py-8">
+<div class="w-full flex items-center justify-center gap-4 md:gap-6">
+<span class="text-2xl md:text-4xl lg:text-5xl font-black text-[#00e55b] italic font-headline tracking-[0.2em]">HSPORTSEC HD</span>
+<a class="flex items-center justify-center w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-[#26A5E4] hover:scale-110 transition-transform shadow-xl shadow-[#26A5E4]/30" href="https://t.me/hsportsec">
+<svg class="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 fill-white" viewbox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.91-1.27 4.85-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"></path>
+</svg>
+</a>
+</div>
+</header>
+<main class="pt-24 md:pt-36 lg:pt-48 pb-16 px-4 md:px-12 lg:px-24 w-full max-w-[1920px] mx-auto min-h-screen flex flex-col items-center">
+<section class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12 lg:gap-16 w-full" id="events-container">
+<!-- Skeleton Loaders -->
+<div class="flex flex-col gap-6 w-full items-center">
+<div class="w-full aspect-[16/9] rounded-2xl skeleton"></div>
+<div class="w-[90%] h-16 rounded-full skeleton"></div>
+</div>
+<div class="flex flex-col gap-6 w-full items-center">
+<div class="w-full aspect-[16/9] rounded-2xl skeleton"></div>
+<div class="w-[90%] h-16 rounded-full skeleton"></div>
+</div>
+<div class="flex flex-col gap-6 w-full items-center">
+<div class="w-full aspect-[16/9] rounded-2xl skeleton"></div>
+<div class="w-[90%] h-16 rounded-full skeleton"></div>
+</div>
+</section>
+</main>
+<footer class="w-full flex flex-col justify-center items-center py-16 px-6 font-label text-sm md:text-base lg:text-lg font-light tracking-widest text-slate-400 bg-surface text-center">
+<p class="font-bold opacity-60">HSPORTSEC COPYRIGHT © 2026</p>
+</footer>
+<script>
+    // URL de ejemplo para el fetch. Reemplazar con la URL real de GitHub Raw.
+    const API_URL = 'https://raw.githubusercontent.com/example/repo/main/events.json';
+
+    // Datos de ejemplo en caso de que el fetch falle o para demostración
+    const mockData = [
+        {
+            "id": 1,
+            "title": "Emelec vs Católica",
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCj0HZitmiwdbPZ8qJfPykAIskaeACZzoFz-WckaQCUWFDFT_kql6y4o4JXfiA9XK9D-pNiz-_rqaxvDyynjk7wlrQUwiTK6IeLi7y5Fpentg3lCsdBHTtY1vMh750WTmT5byKxjCwzpSJu4-aaIpXRdD9haToXXRWy2cI7uNC9CnWuDeCQAsHjWFHWp0uBy0KCtU7Mw6FF7h0u5mWmkmKQVuN2CctFhyAxifXWBznKWOp31tDuo3qkPCc_OFa_77c-iEvkNF0FclFo",
+            "startTime": "2024-05-20T19:00:00",
+            "url": "https://t.me/hsportsec"
+        },
+        {
+            "id": 2,
+            "title": "Barcelona vs LDU",
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC1KkIPCihILKZz8GKWco3pLHWcAzgXOjM_pIp6jJwZXIVZ9cKsjvJjwz_JzA--dUTYNNRUwwqUoEzqaL14l8YjsEpaQYovLDz0qEooJswUwiI0i5V2qDaUyoJQ13Ig_eSq7E7P9MZ1qj9cYACDEDf3sFlZSJxi1QTwPzRVrJQoToFtTk3epYNpGbP7ZZKjHQLe2CBwXoYHWDDwr-GtQx6i_tikN7zobWI0JpX9PX--VfqcWQuxO61a7BrRRyNV2WmsrYe67ShgTDEf",
+            "startTime": "2024-05-20T21:00:00",
+            "url": "https://t.me/hsportsec"
+        },
+        {
+            "id": 3,
+            "title": "Real Madrid vs AC Milan",
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDagxrmOBlqCyY5jpyLybcpRP8H5By7OQUvOJ3VFBzh06EGvfT-96YGiEq0wznl7apf1QplAG0KfdE1AqZ8cXcmglG8__Z4hWyTHqdJGp90qEPgnS_nBO37ngE47qvSf7tcOU6ZUP1_r_tw2iicgAPajCNXaQPq0JOiBcoD5FLmr3dWMMIx6BEcM57G-CGGOPjbd3xcbinTcW0yB4PdoLrPIKNI7jgYoQgyZY4_7VnFfxSkcxBEScsc9biOA3PNrGU0T-VrV1ASoT3-",
+            "startTime": "2024-05-20T23:30:00",
+            "url": "https://t.me/hsportsec"
+        }
+    ];
+
+    async function fetchEvents() {
+        try {
+            // Intento de fetch real
+            // const response = await fetch(API_URL);
+            // const events = await response.json();
+            
+            // Usamos mockData para esta demostración dinámica
+            renderEvents(mockData);
+        } catch (error) {
+            console.error('Error fetching events:', error);
+            // Fallback en caso de error
+            renderEvents(mockData);
+        }
+    }
+
+    function getStatusInfo(startTimeStr) {
+        const now = new Date();
+        const start = new Date(startTimeStr);
+        const end = new Date(start.getTime() + (2 * 60 * 60 * 1000)); // +2 horas
+
+        if (now >= end) {
+            return { label: 'FINALIZADO', classes: 'text-slate-400 opacity-80', pulse: false };
+        } else if (now >= start) {
+            return { label: 'EN VIVO', classes: 'text-primary pulse-animation', pulse: true };
+        } else {
+            const timeString = start.toLocaleTimeString('es-ES', { 
+                hour: '2-digit', 
+                minute: '2-digit',
+                hour12: true 
+            }).toUpperCase();
+            return { label: timeString, classes: 'text-white/90 font-light', pulse: false };
+        }
+    }
+
+    function renderEvents(events) {
+        const container = document.getElementById('events-container');
+        container.innerHTML = '';
+
+        events.forEach(event => {
+            const status = getStatusInfo(event.startTime);
+            
+            const eventHtml = `
+                <div class="flex flex-col gap-6 w-full items-center match-card">
+                    <div class="relative w-full aspect-[16/9] md:aspect-[21/9] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] group">
+                        <img alt="${event.title}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="${event.image}"/>
+                        <div class="absolute inset-0 card-overlay"></div>
+                        <div class="absolute top-6 right-8 z-10">
+                            <span class="text-white font-headline font-black text-xs md:text-sm lg:text-base tracking-[0.3em]">HSPORTSEC</span>
+                        </div>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 gap-2 md:gap-4">
+                            <span class="status-label font-headline font-black text-2xl md:text-4xl lg:text-5xl tracking-tighter ${status.classes}">
+                                ${status.label}
+                            </span>
+                            <h2 class="text-white font-headline font-bold text-2xl md:text-4xl lg:text-5xl tracking-tight drop-shadow-2xl max-w-[90%] leading-tight">
+                                ${event.title}
+                            </h2>
+                        </div>
+                    </div>
+                    <a class="w-[90%] md:w-[85%] bg-[#26A5E4] text-white py-4 md:py-6 rounded-full font-black text-lg md:text-xl lg:text-2xl tracking-widest hover:brightness-110 active:scale-[0.97] transition-all shadow-2xl shadow-[#26A5E4]/40 flex items-center justify-center uppercase" href="${event.url}" target="_blank">
+                        QUIERO VER
+                    </a>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', eventHtml);
+        });
+    }
+
+    // Inicialización y refresco cada minuto
+    fetchEvents();
+    setInterval(fetchEvents, 60000);
+</script>
+</body></html>
