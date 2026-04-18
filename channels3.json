@@ -9,15 +9,15 @@
   },
   "espn2": {
     "title": "ESPN2",
-    "url": "https://cc324.streamingtv339.com/espn2/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=c47b3a023388fb1b22af2445960438f0780cfd60-fc-1776489006-1776435006"
+    "url": "https://244pl.streamingtv339.com/espn2/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=088c1f0b7ace7d4436699149cdee793eb2556782-6a-1776569715-1776515715"
   },
   "fox1ar": {
     "title": "Fox Sports 1 Ar",
-    "url": "https://cc324.streamingtv339.com:443/fox1ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=c86e169a471e2d94c1c5d07cc785e906a2a5001e-a6-1776488935-1776434935"
+    "url": "https://244pl.streamingtv339.com:443/fox1ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=4bb3cf3028b955a7fc74ae8dd239b827db076325-0d-1776569640-1776515640"
   },
   "fox2ar": {
     "title": "Fox sports 2",
-    "url": "https://cc324.streamingtv339.com:443/fox2ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=1f41b9a24ab534dc66256e97823296cac011640e-8d-1776488708-1776434708"
+    "url": "https://cc324.streamingtv339.com/fox2ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=e55dce0780a8c506491098ef1682957bd2e31b2a-98-1776569615-1776515615"
   },
   "dsportsplus": {
     "title": "DSports plus",
