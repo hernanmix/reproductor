@@ -1,130 +1,31 @@
-// Inyectar estilos CSS directamente desde JavaScript
-const estilo = document.createElement("style");
-estilo.textContent = `
-  .marcador-container {
-    position: relative;
-    width: 100%;
-    height: 48px;
-    margin-top: 6px;
-  }
-  .barra-progreso {
-    position: absolute;
-    top: 30px;
-    left: 0;
-    height: 8px;
-    background-color: #00ff00;
-    width: 0%;
-    transition: width 1s linear;
-    border-radius: 4px;
-  }
-  .minuto-overlay {
-    position: absolute;
-    top: 0;
-    font-size: 14px;
-    font-weight: bold;
-    color: white;
-    background-color: red;
-    padding: 4px 8px;
-    border-radius: 50%;
-    text-align: center;
-    min-width: 32px;
-    transition: left 1s linear;
-    display: none; /* oculto hasta que empiece */
-  }
-  .hora-evento {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 14px;
-    font-weight: bold;
-    color: #ffffff;
-  }
-  .estado {
-    display: none !important;
-  }
-`;
-document.head.appendChild(estilo);
+async function loadEvents() {
+  const container = document.querySelector("#events");
+  const res = await fetch("events.json");
+  const events = await res.json();
 
-// Lógica de rayita + marcador
-document.addEventListener("DOMContentLoaded", function () {
-  const eventos = document.querySelectorAll(".evento");
+  events.forEach(ev => {
+    const card = document.createElement("div");
+    card.className = "flex flex-col gap-6 w-full items-center match-card";
+    card.dataset.startTime = ev.start;
 
-  eventos.forEach((evento, index) => {
-    const hora = new Date(evento.getAttribute("data-hora")).getTime();
-
-    const estadoSpan = evento.querySelector(".estado");
-    if (estadoSpan) estadoSpan.style.display = "none";
-
-    const marcador = document.createElement("div");
-    marcador.className = "marcador-container";
-    marcador.innerHTML = `
-      <div class="hora-evento" id="hora-${index}"></div>
-      <div class="barra-progreso" id="barra-${index}"></div>
-      <div class="minuto-overlay" id="minuto-${index}">1'</div>
+    card.innerHTML = `
+      <div class="relative w-full aspect-[16/9] md:aspect-[21/9] lg:aspect-[16/9] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] group">
+        <img alt="" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" src="${ev.img}"/>
+        <div class="absolute inset-0 card-overlay"></div>
+        <div class="absolute top-6 right-8 z-10">
+          <span class="text-white font-headline font-black text-xs md:text-sm lg:text-base tracking-[0.3em]">HSPORTSEC</span>
+        </div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 gap-2 md:gap-4">
+          <span class="status-label text-primary font-headline font-black text-2xl md:text-4xl lg:text-5xl tracking-tighter pulse-animation">Pendiente</span>
+          <h2 class="text-white font-headline font-bold text-2xl md:text-4xl lg:text-5xl tracking-tight drop-shadow-2xl max-w-[90%] leading-tight">${ev.title}</h2>
+        </div>
+      </div>
+      <a class="w-[90%] md:w-[85%] bg-[#26A5E4] text-white py-4 md:py-6 rounded-full font-black text-lg md:text-xl lg:text-2xl tracking-widest hover:brightness-110 active:scale-[0.97] transition-all shadow-2xl shadow-[#26A5E4]/40 flex items-center justify-center uppercase" href="${ev.url}" target="_blank">
+        QUIERO VER
+      </a>
     `;
-    evento.appendChild(marcador);
-
-    const barra = document.getElementById(`barra-${index}`);
-    const minuto = document.getElementById(`minuto-${index}`);
-    const horaEl = document.getElementById(`hora-${index}`);
-    let ultimaPosicionET = null;
-
-    // Mostrar la hora programada del evento
-    const fecha = new Date(hora);
-    let h = fecha.getHours();
-    let m = fecha.getMinutes().toString().padStart(2, "0");
-    const ampm = h >= 12 ? "pm" : "am";
-    h = h % 12 || 12;
-    horaEl.textContent = `${h}:${m}${ampm}`;
-
-    function actualizarMinuto() {
-      const ahora = Date.now();
-      const minutosPasados = Math.floor((ahora - hora) / 60000);
-      let porcentaje = 0;
-      let texto = "";
-
-      if (minutosPasados < 0) {
-        porcentaje = 0;
-        texto = "";
-        minuto.style.display = "none"; // antes de empezar, oculto
-      } else if (minutosPasados <= 45) {
-        // Primer tiempo
-        porcentaje = (minutosPasados / 120) * 100;
-        texto = minutosPasados + "'";
-        minuto.style.display = "block"; // mostrar bolita al iniciar
-      } else if (minutosPasados <= 60) {
-        // Entretiempo: bolita se mantiene en 45'
-        porcentaje = (45 / 120) * 100;
-        texto = "ET";
-        minuto.style.display = "block"; // mantener visible en ET
-        if (ultimaPosicionET === null) {
-          ultimaPosicionET = porcentaje;
-        }
-      } else if (minutosPasados <= 120) {
-        // Segundo tiempo y prórroga
-        const segundoTiempo = minutosPasados - 15; // restamos 15 min de ET
-        porcentaje = (segundoTiempo / 120) * 100;
-        texto = segundoTiempo + "'";
-        minuto.style.display = "block";
-      } else {
-        // Final
-        porcentaje = 100;
-        texto = "FT";
-        minuto.style.display = "block";
-      }
-
-      barra.style.width = porcentaje + "%";
-      minuto.textContent = texto;
-
-      if (texto === "ET" && ultimaPosicionET !== null) {
-        minuto.style.left = `calc(${ultimaPosicionET}% - 16px)`; // fija en 45'
-      } else {
-        minuto.style.left = `calc(${porcentaje}% - 16px)`;
-      }
-    }
-
-    actualizarMinuto();
-    setInterval(actualizarMinuto, 1000);
+    container.appendChild(card);
   });
-});
+}
 
+loadEvents();
