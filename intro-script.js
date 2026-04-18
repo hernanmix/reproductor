@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   intro.appendChild(audio);
   document.body.appendChild(intro);
 
-  // Intentar reproducir
+  // Intentar reproducir (en AppCreator24 sí suena, en web puede requerir interacción)
   audio.play().catch(err => console.log("Autoplay bloqueado:", err));
 
   // Ocultar intro después de 4 segundos
