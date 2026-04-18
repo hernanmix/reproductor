@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const audio = document.createElement("audio");
   audio.id = "intro-audio";
-  audio.src = "https://hernanmix.github.io/reproductor/intro.mp3";
+  audio.src = "https://hernanmix.github.io/reproductor/audio.mp3";
   audio.autoplay = true;
 
   intro.appendChild(box);
