@@ -50,7 +50,33 @@
 <!-- Librería HLS.js -->
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
-  <script src="https://hernanmix.github.io/reproductor/intro-script.js"></script>
-  
+  <!-- Intro -->
+<div id="intro" style="position:fixed;top:0;left:0;width:100%;height:100%;background:black;display:flex;align-items:center;justify-content:center;z-index:9999;">
+  <div style="background:#b91c1c;color:white;font-size:3rem;font-weight:bold;padding:20px 40px;border-radius:20px;box-shadow:0 0 30px rgba(0,0,0,0.8);">
+    HSP⚽RTSEC
+  </div>
+  <!-- Audio en mp3 -->
+  <audio id="intro-audio" src="https://hernanmix.github.io/reproductor/audio.mp3" autoplay></audio>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const intro = document.getElementById("intro");
+    const audio = document.getElementById("intro-audio");
+
+    // Reproduce automáticamente (en app nativa sí funciona)
+    audio.play();
+
+    // Oculta la intro después de 4 segundos
+    setTimeout(() => {
+      intro.style.transition = "opacity 1s ease";
+      intro.style.opacity = "0";
+      setTimeout(() => {
+        intro.style.display = "none";
+      }, 1000);
+    }, 4000);
+  });
+</script>
+
 </body>
 </html>
