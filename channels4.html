@@ -527,5 +527,51 @@
         // Initialize
         initPlayer();
     </script>
+
+
+
+<script>
+async function updateStreamInfo() {
+  try {
+    const res = await fetch("apk.json");
+    const events = await res.json();
+    const now = new Date();
+
+    let currentEvent = null;
+
+    events.forEach(ev => {
+      const start = new Date(ev.start);
+      const end = new Date(start.getTime() + 2*60*60*1000);
+      if (now >= start && now <= end) {
+        currentEvent = ev;
+      }
+    });
+
+    const titleEl = document.getElementById("stream-title");
+    const channelEl = document.getElementById("stream-channel");
+
+    if (currentEvent) {
+      const hora = new Date(currentEvent.start).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+      titleEl.textContent = `${hora} - ${currentEvent.title}`;
+      // Extraer canal del parámetro ?channel= en la URL
+      const urlParams = new URL(currentEvent.url).searchParams;
+      const channel = urlParams.get("channel") || "Canal";
+      channelEl.textContent = channel.toUpperCase();
+    } else {
+      titleEl.textContent = "Sin evento en vivo";
+      channelEl.textContent = "";
+    }
+  } catch (err) {
+    console.error("Error cargando apk.json:", err);
+  }
+}
+
+// Ejecutar al cargar y actualizar cada minuto
+updateStreamInfo();
+setInterval(updateStreamInfo, 60000);
+</script>
+
+
+        
 </body></html>                        
         
