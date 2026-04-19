@@ -1,4 +1,4 @@
-async function loadEvents() {
+async function loadApk() {
   const container = document.querySelector("#apk");
   const res = await fetch("apk.json");
   const apk = await res.json();
@@ -30,7 +30,7 @@ async function loadEvents() {
   updateApk();
 }
 
-function updateEvents() {
+function updateApk() {
   const now = new Date();
   document.querySelectorAll(".match-card").forEach(card => {
     const startTime = new Date(card.dataset.startTime);
@@ -40,17 +40,18 @@ function updateEvents() {
 
     if (now < startTime) {
       statusEl.textContent = "Pendiente";
-      btn.classList.add("opacity-50","pointer-apk-none");
+      btn.classList.add("opacity-50","pointer-events-none");
     } else if (now >= startTime && now <= endTime) {
       statusEl.textContent = "EN VIVO";
       statusEl.classList.add("pulse-animation");
-      btn.classList.remove("opacity-50","pointer-apk-none");
+      btn.classList.remove("opacity-50","pointer-events-none");
     } else {
       statusEl.textContent = "Finalizado";
-      btn.classList.add("opacity-50","pointer-apk-none");
+      btn.classList.add("opacity-50","pointer-events-none");
     }
   });
 }
 
+// Ejecutar carga inicial y actualizar cada minuto
 loadApk();
-setInterval(updateEvents, 60000);
+setInterval(updateApk, 60000);
