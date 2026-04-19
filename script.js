@@ -1,6 +1,6 @@
 async function loadEvents() {
   const container = document.querySelector("#events");
-  const res = await fetch("events.json");
+  const res = await fetch("apk.json");
   const events = await res.json();
 
   events.forEach(ev => {
