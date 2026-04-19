@@ -163,6 +163,8 @@
     <!-- Aquí se mostrará el evento actual -->
     <span id="event-info" class="text-white font-bold text-lg"></span>
   </div>
+</header>
+
 
 
 
@@ -534,35 +536,34 @@
     </script>
 
 
-
-  <script>
+<script>
 async function showCurrentEvent() {
-  const res = await fetch("apk.json");
-  const events = await res.json();
-  const now = new Date();
+  try {
+    const res = await fetch("apk.json");
+    const events = await res.json();
+    const now = new Date();
 
-  let currentEvent = null;
+    let currentEvent = null;
 
-  events.forEach(ev => {
-    const start = new Date(ev.start);
-    const end = new Date(start.getTime() + 2*60*60*1000);
+    events.forEach(ev => {
+      const start = new Date(ev.start);
+      const end = new Date(start.getTime() + 2*60*60*1000);
+      if (now >= start && now <= end) {
+        currentEvent = ev;
+      }
+    });
 
-    if (now >= start && now <= end) {
-      currentEvent = ev;
+    const info = document.getElementById("event-info");
+    if (info) {
+      if (currentEvent) {
+        const hora = new Date(currentEvent.start).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+        info.textContent = `${hora} - ${currentEvent.title}`;
+      } else {
+        info.textContent = "";
+      }
     }
-  });
-
-  const info = document.getElementById("event-info");
-  if (currentEvent) {
-    const hora = new Date(currentEvent.start).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
-    info.textContent = `${hora} - ${currentEvent.title}`;
-    // Opcional: cambiar el reproductor al canal correcto
-    const playerFrame = document.getElementById("player-frame");
-    if (playerFrame) {
-      playerFrame.src = currentEvent.url;
-    }
-  } else {
-    info.textContent = "No hay evento en vivo";
+  } catch (err) {
+    console.error("Error cargando apk.json:", err);
   }
 }
 
@@ -570,6 +571,8 @@ async function showCurrentEvent() {
 showCurrentEvent();
 setInterval(showCurrentEvent, 60000);
 </script>
+
+  
 
 </body></html>                        
         
