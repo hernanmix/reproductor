@@ -168,6 +168,7 @@
 
 
 
+
 <div class="flex flex-col">
 <h1 class="font-headline font-bold text-lg tracking-tight text-white leading-tight" id="stream-title">Live Stream</h1>
 <span class="text-xs text-white/60 font-label uppercase tracking-widest">Disney+ </span>
@@ -535,42 +536,22 @@
         initPlayer();
     </script>
 
+<!-- Top App Bar -->
+<header class="flex justify-between items-center px-6 py-6 w-full z-50 bg-gradient-to-b from-black/70 to-transparent absolute top-0 left-0">
+  <div class="flex items-center gap-4">
+    <a 
+      class="group flex items-center justify-center w-12 h-12 rounded-full hover:bg-surface-variant/30 transition-all duration-300" 
+      href="go:exitFs"
+    >
+      <span class="material-symbols-outlined text-on-surface text-3xl group-active:scale-90 duration-300">
+        arrow_back
+      </span>
+    </a>
+    <!-- Aquí se mostrará el evento actual -->
+    <span id="event-info" class="text-white font-bold text-lg"></span>
+  </div>
+</header>
 
-<script>
-async function showCurrentEvent() {
-  try {
-    const res = await fetch("apk.json");
-    const events = await res.json();
-    const now = new Date();
-
-    let currentEvent = null;
-
-    events.forEach(ev => {
-      const start = new Date(ev.start);
-      const end = new Date(start.getTime() + 2*60*60*1000);
-      if (now >= start && now <= end) {
-        currentEvent = ev;
-      }
-    });
-
-    const info = document.getElementById("event-info");
-    if (info) {
-      if (currentEvent) {
-        const hora = new Date(currentEvent.start).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
-        info.textContent = `${hora} - ${currentEvent.title}`;
-      } else {
-        info.textContent = "";
-      }
-    }
-  } catch (err) {
-    console.error("Error cargando apk.json:", err);
-  }
-}
-
-// Ejecutar al cargar y actualizar cada minuto
-showCurrentEvent();
-setInterval(showCurrentEvent, 60000);
-</script>
 
   
 
