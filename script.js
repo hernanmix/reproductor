@@ -1,9 +1,9 @@
 async function loadEvents() {
-  const container = document.querySelector("#events");
+  const container = document.querySelector("#apk");
   const res = await fetch("apk.json");
-  const events = await res.json();
+  const apk = await res.json();
 
-  events.forEach(ev => {
+  apk.forEach(ev => {
     const card = document.createElement("div");
     card.className = "flex flex-col gap-6 w-full items-center match-card";
     card.dataset.startTime = ev.start;
@@ -27,7 +27,7 @@ async function loadEvents() {
     container.appendChild(card);
   });
 
-  updateEvents();
+  updateApk();
 }
 
 function updateEvents() {
@@ -40,17 +40,17 @@ function updateEvents() {
 
     if (now < startTime) {
       statusEl.textContent = "Pendiente";
-      btn.classList.add("opacity-50","pointer-events-none");
+      btn.classList.add("opacity-50","pointer-apk-none");
     } else if (now >= startTime && now <= endTime) {
       statusEl.textContent = "EN VIVO";
       statusEl.classList.add("pulse-animation");
-      btn.classList.remove("opacity-50","pointer-events-none");
+      btn.classList.remove("opacity-50","pointer-apk-none");
     } else {
       statusEl.textContent = "Finalizado";
-      btn.classList.add("opacity-50","pointer-events-none");
+      btn.classList.add("opacity-50","pointer-apk-none");
     }
   });
 }
 
-loadEvents();
+loadApk();
 setInterval(updateEvents, 60000);
