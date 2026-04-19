@@ -536,21 +536,47 @@
         initPlayer();
     </script>
 
-<!-- Top App Bar -->
-<header class="flex justify-between items-center px-6 py-6 w-full z-50 bg-gradient-to-b from-black/70 to-transparent absolute top-0 left-0">
-  <div class="flex items-center gap-4">
-    <a 
-      class="group flex items-center justify-center w-12 h-12 rounded-full hover:bg-surface-variant/30 transition-all duration-300" 
-      href="go:exitFs"
-    >
-      <span class="material-symbols-outlined text-on-surface text-3xl group-active:scale-90 duration-300">
-        arrow_back
-      </span>
-    </a>
-    <!-- Aquí se mostrará el evento actual -->
-    <span id="event-info" class="text-white font-bold text-lg"></span>
-  </div>
-</header>
+<script>
+async function updateStreamInfo() {
+  try {
+    const res = await fetch("apk.json");
+    const events = await res.json();
+    const now = new Date();
+
+    let currentEvent = null;
+
+    events.forEach(ev => {
+      const start = new Date(ev.start);
+      const end = new Date(start.getTime() + 2*60*60*1000);
+      if (now >= start && now <= end) {
+        currentEvent = ev;
+      }
+    });
+
+    const titleEl = document.getElementById("stream-title");
+    const channelEl = document.getElementById("stream-channel");
+
+    if (currentEvent) {
+      const hora = new Date(currentEvent.start).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+      titleEl.textContent = `${hora} - ${currentEvent.title}`;
+      // Extraer canal del parámetro ?channel= en la URL
+      const urlParams = new URL(currentEvent.url).searchParams;
+      const channel = urlParams.get("channel") || "Canal";
+      channelEl.textContent = channel.toUpperCase();
+    } else {
+      titleEl.textContent = "Sin evento en vivo";
+      channelEl.textContent = "";
+    }
+  } catch (err) {
+    console.error("Error cargando apk.json:", err);
+  }
+}
+
+// Ejecutar al cargar y actualizar cada minuto
+updateStreamInfo();
+setInterval(updateStreamInfo, 60000);
+</script>
+
 
 
   
