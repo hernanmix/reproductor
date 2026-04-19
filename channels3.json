@@ -8,31 +8,31 @@
     "url": ""
   },
   "espn": {
-    "title": "ESPN- Cremonese vs Torino",
-    "url": "https://244pl.streamingtv339.com:443/espn/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=6729707275c639ac9d454dd74622b35ae8e4eba5-25-1776573156-1776519156"
+    "title": "ESPN- Manchester City vs Arsenal",
+    "url": "https://m-3-u-player--hermixervdj94.replit.app/api/stream/proxy?url=https%3A%2F%2F244pl.streamingtv339.com%2Fespn%2Ftracks-v1a1%2Fmono.m3u8%3Fip%3D136.124.32.33%26token%3D3ffa9ae5b29e9e68677e62904515470326fd78d5-e2-1776656531-1776602531"
   },
   "espn2": {
     "title": "ESPN2",
-    "url": "https://244pl.streamingtv339.com/espn2/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=088c1f0b7ace7d4436699149cdee793eb2556782-6a-1776569715-1776515715"
+    "url": ""
   },
   "fox1ar": {
     "title": "Fox Sports 1 Ar",
-    "url": "https://244pl.streamingtv339.com:443/fox1ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=4bb3cf3028b955a7fc74ae8dd239b827db076325-0d-1776569640-1776515640"
+    "url": ""
   },
   "fox2ar": {
     "title": "Fox sports 2",
-    "url": "https://cc324.streamingtv339.com/fox2ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=e55dce0780a8c506491098ef1682957bd2e31b2a-98-1776569615-1776515615"
+    "url": ""
   },
   "dsportsplus": {
     "title": "DSports plus",
     "url": ""
   },
   "disney1": {
-    "title": "Disney+ Primera División: Albion vs Central Español",
-    "url": "https://cc324.streamingtv339.com:443/disney1/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=a2026860f06eeb575ee82c79673f154fce9e13fb-f2-1776511471-1776457471"
+    "title": "Disney+ ",
+    "url": ""
   },
   "disney2": {
-    "title": "Disney+ Primera División: Albion vs Emelec",
-    "url": "https://ae541d06-2e73-4892-b24d-6be4c0b945f4-00-2cm2leecmph52.kirk.replit.dev/api/stream/proxy?url=https%3A%2F%2Fcc324.streamingtv339.com%2Fdisney1%2Ftracks-v1a1%2Fmono.m3u8%3Fip%3D136.117.205.13%26token%3Dd9d9fb5b97689f1e323ef4020c1324b12a995893-f3-1776511938-1776457938"
+    "title": "Disney+ ",
+    "url": ""
   }
 }
