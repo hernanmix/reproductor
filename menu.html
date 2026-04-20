@@ -41,7 +41,7 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         
-        /* Shimmer effect for Header Logo & Nav - 4 seconds */
+        /* Synchronized Shimmer effect - 4 seconds */
         @keyframes shimmer-effect {
             0% { background-position: -200% 0; }
             100% { background-position: 200% 0; }
@@ -65,7 +65,7 @@
 
         /* Green soccer ball icon style */
         .soccer-green {
-            color: #22c55e; /* Tailwind green-500 */
+            color: #22c55e;
             -webkit-text-fill-color: #22c55e;
             display: inline-block;
         }
@@ -90,18 +90,18 @@
         }
     </style>
 </head>
-<body class="flex flex-col bg-black">
+<body class="flex flex-col bg-black w-full overflow-hidden">
 <!-- TopAppBar: Solid Black, Centered Title with 4s shimmer -->
 <header class="h-16 w-full z-[9999] bg-black flex items-center justify-center shrink-0 border-b border-white/5">
 <h1 class="font-['Manrope'] font-extrabold tracking-tighter text-2xl md:text-3xl select-none shimmer-text">
-        HSP<span class="soccer-green">⚽</span>RTSEC
-    </h1>
+            HSP<span class="soccer-green">⚽</span>RTSEC
+        </h1>
 </header>
 <!-- Main Content: Full width and height between bars -->
 <main class="flex-grow w-full relative bg-black">
 <iframe class="w-full h-full" id="content-frame" src="https://hsports4hd.blogspot.com/p/hsportstv.html?m=1" title="Main Content Container"></iframe>
 </main>
-<!-- Bottom Navigation: Full width, Fixed bottom, background #131313 -->
+<!-- Bottom Navigation: Full width, Fixed bottom, background with shimmer -->
 <nav class="fixed bottom-0 left-0 w-full h-[64px] sm:h-[72px] z-[9999] shimmer-nav border-t border-white/5">
 <div class="flex justify-around items-center h-full w-full max-w-none px-2">
 <!-- Inicio -->
@@ -129,11 +129,11 @@
 <span class="material-symbols-outlined">ad_units</span>
 <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Ads</span>
 </button>
-<!-- Salir -->
-<button class="nav-item flex-1 h-full flex flex-col items-center justify-center text-[#8d90a2] hover:text-red-400 transition-all" onclick="exitApp()">
+<!-- Salir: Direct link to http://action_exit for AppCreator24 -->
+<a class="nav-item flex-1 h-full flex flex-col items-center justify-center text-[#8d90a2] hover:text-red-400 transition-all decoration-0" href="http://action_exit">
 <span class="material-symbols-outlined">logout</span>
 <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Salir</span>
-</button>
+</a>
 </div>
 </nav>
 <!-- Modal Ads -->
@@ -156,7 +156,7 @@
 <span class="absolute text-white font-black text-4xl tabular-nums" id="countdown-text">15</span>
 </div>
 <div class="mt-12 space-y-2">
-<p class="text-white text-lg font-bold">Ayudanos con el anuncio 15 segundos</p>
+<p class="text-white text-lg font-bold">Ayúdanos con el anuncio 15 segundos</p>
 <p class="text-[10px] uppercase font-bold tracking-[0.4em] text-white/30">Cerrando automáticamente</p>
 </div>
 </div>
@@ -164,85 +164,54 @@
 </div>
 </div>
 <script>
-    function changeSource(url, element) {
-        const iframe = document.getElementById('content-frame');
-        if (iframe.src !== url) {
-            iframe.src = url;
-        }
-        const items = document.querySelectorAll('.nav-item');
-        items.forEach(item => {
-            item.classList.remove('bg-[#2e4287]', 'text-[#b0c6ff]');
-            item.classList.add('text-[#8d90a2]');
-        });
-        element.classList.add('bg-[#2e4287]', 'text-[#b0c6ff]');
-        element.classList.remove('text-[#8d90a2]');
-    }
-
-    let countdownInterval;
-    function showAdsModal() {
-        const modal = document.getElementById('ads-modal');
-        const adsIframe = document.getElementById('ads-iframe');
-        const countdownText = document.getElementById('countdown-text');
-        const timerProgress = document.getElementById('timer-progress');
-        
-        modal.classList.remove('hidden');
-        adsIframe.src = "https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db";
-        
-        let count = 15;
-        const total = 15;
-        countdownText.innerText = count;
-        const circumference = 2 * Math.PI * 44;
-        timerProgress.style.strokeDashoffset = 0;
-        
-        clearInterval(countdownInterval);
-        countdownInterval = setInterval(() => {
-            count--;
-            countdownText.innerText = count;
-            const offset = circumference - (count / total) * circumference;
-            timerProgress.style.strokeDashoffset = offset;
-            if (count <= 0) {
-                clearInterval(countdownInterval);
-                closeAdsModal();
+        function changeSource(url, element) {
+            const iframe = document.getElementById('content-frame');
+            if (iframe.src !== url) {
+                iframe.src = url;
             }
-        }, 1000);
-    }
-
-    function closeAdsModal() {
-        const modal = document.getElementById('ads-modal');
-        const adsIframe = document.getElementById('ads-iframe');
-        modal.classList.add('hidden');
-        adsIframe.src = "";
-    }
-
-    /**
-     * Correct implementation for 'Salir' across AppCreator24, Blogger, and GitHub.
-     */
-    function exitApp() {
-        // AppCreator24 Specific Exit
-        if (window.AppCreator24 && typeof window.AppCreator24.exit === 'function') {
-            window.AppCreator24.exit();
-        } 
-        // Chrome/Modern Browser Fallback
-        else if (window.android && typeof window.android.closeApp === 'function') {
-            window.android.closeApp();
+            const items = document.querySelectorAll('.nav-item');
+            items.forEach(item => {
+                item.classList.remove('bg-[#2e4287]', 'text-[#b0c6ff]');
+                item.classList.add('text-[#8d90a2]');
+            });
+            element.classList.add('bg-[#2e4287]', 'text-[#b0c6ff]');
+            element.classList.remove('text-[#8d90a2]');
         }
-        else {
-            try {
-                // Blogger/GitHub/PWA Fallback
-                window.open('', '_self', ''); 
-                window.close();
-                // If it's a web view and window.close() is restricted, redirect to home or blank
-                if (!window.closed) {
-                    window.location.href = "about:blank";
-                }
-            } catch(e) {
-                console.log("Exit routine failed, redirecting...");
-                window.location.href = "about:blank";
-            }
-        }
-    }
-</script>
-</body></html>
 
-
+        let countdownInterval;
+        function showAdsModal() {
+            const modal = document.getElementById('ads-modal');
+            const adsIframe = document.getElementById('ads-iframe');
+            const countdownText = document.getElementById('countdown-text');
+            const timerProgress = document.getElementById('timer-progress');
             
+            modal.classList.remove('hidden');
+            adsIframe.src = "https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db";
+            
+            let count = 15;
+            const total = 15;
+            countdownText.innerText = count;
+            const circumference = 2 * Math.PI * 44;
+            timerProgress.style.strokeDashoffset = 0;
+            
+            clearInterval(countdownInterval);
+            countdownInterval = setInterval(() => {
+                count--;
+                countdownText.innerText = count;
+                const offset = circumference - (count / total) * circumference;
+                timerProgress.style.strokeDashoffset = offset;
+                if (count <= 0) {
+                    clearInterval(countdownInterval);
+                    closeAdsModal();
+                }
+            }, 1000);
+        }
+
+        function closeAdsModal() {
+            const modal = document.getElementById('ads-modal');
+            const adsIframe = document.getElementById('ads-iframe');
+            modal.classList.add('hidden');
+            adsIframe.src = "";
+        }
+    </script>
+</body></html>
