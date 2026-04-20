@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Inserta el menú inferior dinámicamente
   const menuHTML = `
     <nav class="fixed bottom-0 left-0 w-full h-[64px] sm:h-[72px] z-[9999] shimmer-nav border-t border-white/5">
       <div class="flex justify-around items-center h-full w-full max-w-none px-2">
