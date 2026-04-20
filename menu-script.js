@@ -1,82 +1,175 @@
 document.addEventListener("DOMContentLoaded", () => {
   const menuHTML = `
-    <header class="h-16 w-full z-[9999] bg-black flex items-center justify-center shrink-0 border-b border-white/5">
-      <h1 class="font-['Manrope'] font-extrabold tracking-tighter text-2xl md:text-3xl select-none shimmer-text">
-        HSP<span class="soccer-green">⚽</span>RTSEC
-      </h1>
-    </header>
-    <main class="flex-grow w-full relative bg-black">
-      <iframe class="w-full h-full" id="content-frame" src="https://hsports4hd.blogspot.com/p/hsportstv.html?m=1" title="Main Content Container"></iframe>
-    </main>
-    <nav class="fixed bottom-0 left-0 w-full h-[64px] sm:h-[72px] z-[9999] shimmer-nav border-t border-white/5">
-      <div class="flex justify-around items-center h-full w-full max-w-none px-2">
-        <button class="nav-item flex-1 h-full flex flex-col items-center justify-center bg-[#2e4287] text-[#b0c6ff]" onclick="changeSource('https://hsports4hd.blogspot.com/p/hsportstv.html?m=1', this)">
-          <span class="material-symbols-outlined">home</span>
-          <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Inicio</span>
-        </button>
-        <button class="nav-item flex-1 h-full flex flex-col items-center justify-center text-[#8d90a2]" onclick="changeSource('https://hsports4hd.blogspot.com/2026/02/tv.html', this)">
-          <span class="material-symbols-outlined">live_tv</span>
-          <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">TV</span>
-        </button>
-        <button class="nav-item flex-1 h-full flex flex-col items-center justify-center text-[#8d90a2]" onclick="changeSource('https://hsports4hd.blogspot.com/2026/02/donar.html', this)">
-          <span class="material-symbols-outlined">volunteer_activism</span>
-          <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Donar</span>
-        </button>
-        <button class="nav-item flex-1 h-full flex flex-col items-center justify-center text-[#8d90a2]" onclick="changeSource('https://hsports4hd.blogspot.com/2026/02/disney2.html', this)">
-          <span class="material-symbols-outlined">subscriptions</span>
-          <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Disney+</span>
-        </button>
-        <button class="nav-item flex-1 h-full flex flex-col items-center justify-center text-[#8d90a2]" onclick="showAdsModal()">
-          <span class="material-symbols-outlined">ad_units</span>
-          <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Ads</span>
-        </button>
-        <a class="nav-item flex-1 h-full flex flex-col items-center justify-center text-[#8d90a2]" href="http://action_exit">
-          <span class="material-symbols-outlined">logout</span>
-          <span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Salir</span>
-        </a>
+    <style>
+      .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 64px;
+        background: #050b18;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        z-index: 9999;
+        overflow: hidden;
+      }
+      .bottom-nav::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          transparent 0%,
+          rgba(255, 255, 255, 0.1) 50%,
+          transparent 100%
+        );
+        transform: skewX(-25deg);
+        animation: shimmer 4s infinite;
+        pointer-events: none;
+      }
+      @keyframes shimmer {
+        0% { left: -150%; }
+        30% { left: 150%; }
+        100% { left: 150%; }
+      }
+      .nav-btn {
+        flex: 1;
+        text-align: center;
+        color: #8d90a2;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        padding: 6px 0;
+        position: relative;
+        z-index: 1;
+      }
+      .nav-btn.active {
+        color: #ffffff;
+        font-weight: bold;
+      }
+      .nav-btn i {
+        font-size: 22px;
+        display: block;
+      }
+      .nav-btn span {
+        font-size: 11px;
+        text-transform: uppercase;
+        margin-top: 2px;
+        display: block;
+      }
+      #exit-btn { display: none; }
+      #ads-modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.9);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+      }
+      #ads-box {
+        background: #1a1a1a;
+        border-radius: 16px;
+        padding: 20px;
+        text-align: center;
+        color: white;
+        max-width: 400px;
+        width: 90%;
+        box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      }
+      #countdown {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+    </style>
+
+    <nav class="bottom-nav">
+      <div class="nav-btn active" onclick="changeSource('URL_INICIO', this)">
+        <i class="material-symbols-outlined">menu</i>
+        <span>MENU</span>
+      </div>
+      <div class="nav-btn" onclick="changeSource('URL_TV', this)">
+        <i class="material-symbols-outlined">live_tv</i>
+        <span>TV</span>
+      </div>
+      <div class="nav-btn" onclick="changeSource('URL_DONAR', this)">
+        <i class="material-symbols-outlined">volunteer_activism</i>
+        <span>DONAR</span>
+      </div>
+      <div class="nav-btn" onclick="changeSource('URL_DISNEY', this)">
+        <i class="material-symbols-outlined">movie</i>
+        <span>DISNEY</span>
+      </div>
+      <div class="nav-btn" onclick="showAdsModal()">
+        <i class="material-symbols-outlined">ad_units</i>
+        <span>ADS</span>
+      </div>
+      <div class="nav-btn" id="exit-btn" onclick="window.location.href='http://action_exit';">
+        <i class="material-symbols-outlined">logout</i>
+        <span>SALIR</span>
       </div>
     </nav>
-    <div class="hidden fixed inset-0 z-[10000] bg-black/95 backdrop-blur-3xl flex items-center justify-center p-4" id="ads-modal">
-      <div class="bg-[#0a0a0a] rounded-3xl w-full max-w-xl shadow-2xl border border-white/10 overflow-hidden">
-        <div class="p-6 md:p-8 text-center space-y-8">
-          <h2 class="text-xl md:text-2xl font-extrabold text-[#b0c6ff] tracking-tight uppercase">HSP⚽RTSEC Premium</h2>
-          <p class="text-white/60 font-medium text-sm md:text-base">Espera un momento para continuar</p>
-          <div class="aspect-video w-full rounded-2xl overflow-hidden bg-black shadow-inner relative border border-white/5">
-            <iframe allow="autoplay" class="w-full h-full" frameborder="0" id="ads-iframe" src=""></iframe>
-          </div>
-          <div class="flex flex-col items-center justify-center py-6">
-            <span class="absolute text-white font-black text-4xl tabular-nums" id="countdown-text">15</span>
-          </div>
-        </div>
+
+    <div id="ads-modal">
+      <div id="ads-box">
+        <h2>Publicidad</h2>
+        <p>Este anuncio se cerrará en:</p>
+        <div id="countdown">15</div>
+        <iframe frameborder="0" height="200" id="ads-iframe" src="https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db" width="100%"></iframe>
       </div>
     </div>
   `;
-  document.body.innerHTML += menuHTML;
+  document.body.insertAdjacentHTML("beforeend", menuHTML);
 });
 
 // Funciones
+function checkEnvironment() {
+  const userAgent = navigator.userAgent;
+  const exitBtn = document.getElementById('exit-btn');
+  const isAppCreator24 = userAgent.toLowerCase().includes("android") && (window.location.href.includes("appcreator24") || typeof Android !== 'undefined');
+  const tvKeywords = ['SmartTV','Tizen','Web0S','LG','Sony','Samsung','HbbTV','googletv','appletv','roku','firetv'];
+  const isSmartTV = tvKeywords.some(keyword => userAgent.includes(keyword) || userAgent.toLowerCase().includes(keyword.toLowerCase()));
+  if (isAppCreator24 || isSmartTV) {
+    exitBtn.style.display = 'block';
+  } else {
+    exitBtn.style.display = 'none';
+  }
+}
+window.onload = checkEnvironment;
+
 function changeSource(url, element) {
   const iframe = document.getElementById('content-frame');
   if (iframe && iframe.src !== url) {
     iframe.src = url;
   }
-  const items = document.querySelectorAll('.nav-item');
-  items.forEach(item => {
-    item.classList.remove('bg-[#2e4287]', 'text-[#b0c6ff]');
-    item.classList.add('text-[#8d90a2]');
-  });
-  element.classList.add('bg-[#2e4287]', 'text-[#b0c6ff]');
-  element.classList.remove('text-[#8d90a2]');
+  document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+  element.classList.add('active');
 }
 
 function showAdsModal() {
   const modal = document.getElementById('ads-modal');
-  if (!modal) return;
-  modal.classList.remove('hidden');
+  const countdown = document.getElementById('countdown');
+  modal.style.display = 'flex';
+  let timeLeft = 15;
+  countdown.textContent = timeLeft;
+  const timer = setInterval(() => {
+    timeLeft--;
+    countdown.textContent = timeLeft;
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      closeAdsModal();
+    }
+  }, 1000);
 }
 
 function closeAdsModal() {
   const modal = document.getElementById('ads-modal');
-  if (!modal) return;
-  modal.classList.add('hidden');
+  modal.style.display = 'none';
+  document.getElementById('ads-iframe').src = "";
 }
+
