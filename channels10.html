@@ -78,38 +78,20 @@ tailwind.config = {
   <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0d1321] to-transparent pointer-events-none"></div>
 </main>
 
+
 <script>
-function showEventHeader() {
-  const header = document.getElementById("event-header");
-  header.style.display = "flex"; 
-  header.style.opacity = "1";    
-
-  // Ocultar con fade-out después de 3 segundos
-  setTimeout(() => {
-    header.style.transition = "opacity 0.5s ease";
-    header.style.opacity = "0";
-  }, 2500);
-
-  setTimeout(() => {
-    header.style.display = "none";
-    header.style.transition = "";
-  }, 3000);
-}
-
 async function updateSchedule() {
   try {
     const res = await fetch("https://hernanmix.github.io/reproductor/channels9.json");
     const events = await res.json();
 
     const now = new Date();
+    const currentTime = now.getHours().toString().padStart(2, '0') + ":" +
+                        now.getMinutes().toString().padStart(2, '0');
 
-    // Buscar evento actual (duración fija de 2 horas)
+    // Buscar evento actual según start y end
     const currentEvent = events.find(item => {
-      const [h, m] = item.start.split(":").map(Number);
-      const start = new Date();
-      start.setHours(h, m, 0, 0);
-      const end = new Date(start.getTime() + 2 * 60 * 60 * 1000); // +2 horas
-      return now >= start && now < end;
+      return currentTime >= item.start && currentTime < item.end;
     });
 
     if (currentEvent) {
@@ -118,7 +100,7 @@ async function updateSchedule() {
 
       // Detectar canal por URL
       const channelName = currentEvent.url.includes("espn") ? "ESPN" :
-                          currentEvent.url.includes("fox") ? "FOX" :
+                          currentEvent.url.includes("espn2") ? "ESPN 2" :
                           currentEvent.url.includes("dsports") ? "DSports" : "Canal";
       document.getElementById('channel-name').innerText = channelName;
 
@@ -127,18 +109,20 @@ async function updateSchedule() {
         playerFrame.src = currentEvent.url;
       }
 
+      // Mostrar overlay
       showEventHeader();
 
-      // Programar actualización automática al terminar el partido (2 horas)
-      const [h, m] = currentEvent.start.split(":").map(Number);
-      const start = new Date();
-      start.setHours(h, m, 0, 0);
-      const end = new Date(start.getTime() + 2 * 60 * 60 * 1000);
-      const msUntilEnd = end.getTime() - now.getTime();
+      // Calcular cuánto falta para que termine el evento
+      const [endH, endM] = currentEvent.end.split(":").map(Number);
+      const endTime = new Date();
+      endTime.setHours(endH, endM, 0, 0);
 
-      // Actualizar justo al terminar el evento
+      const msUntilEnd = endTime.getTime() - now.getTime();
+
+      // Programar actualización justo al terminar
       setTimeout(updateSchedule, msUntilEnd);
     } else {
+      // Si no hay evento vigente
       document.getElementById('event-title').innerText = "Sin evento en vivo";
       document.getElementById('channel-name').innerText = "";
       document.getElementById('player-frame').src = "";
@@ -148,25 +132,9 @@ async function updateSchedule() {
   }
 }
 
-// Mostrar header al entrar en fullscreen
-document.addEventListener("fullscreenchange", () => {
-  if (document.fullscreenElement) {
-    showEventHeader();
-  }
-});
-
-// Mostrar header al tocar el reproductor (capturando el contenedor <main>)
-const playerContainer = document.querySelector("main");
-if (playerContainer) {
-  playerContainer.addEventListener("click", () => {
-    showEventHeader();
-  });
-}
-
 // Ejecutar al cargar
 updateSchedule();
 </script>
-
 
   
   
