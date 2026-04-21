@@ -195,7 +195,9 @@ async function updateSchedule() {
       start.setHours(h, m, 0, 0);
       const end = new Date(start.getTime() + 2 * 60 * 60 * 1000);
       const msUntilEnd = end.getTime() - now.getTime();
-      setTimeout(updateSchedule, msUntilEnd); // actualizar justo al terminar
+
+      // Actualizar justo al terminar el evento
+      setTimeout(updateSchedule, msUntilEnd);
     } else {
       document.getElementById('event-title').innerText = "Sin evento en vivo";
       document.getElementById('channel-name').innerText = "";
