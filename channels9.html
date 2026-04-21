@@ -44,13 +44,13 @@ tailwind.config = {
 <body class="text-on-surface">
 
 <!-- TopAppBar -->
-<header id="event-header" class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 h-20 header-gradient bg-[#0d1321]/80 backdrop-blur-xl" style="display:none;">
+<header id="event-header" class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-transparent" style="display:none; opacity:0;">
   <div class="flex flex-col gap-1">
     <div class="flex items-center gap-4">
       <button onclick="goBack()" class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-blue-500/10 transition-all scale-95 active:opacity-80">
-        <span class="material-symbols-outlined text-on-surface text-base">arrow_back</span>
+        <span class="material-symbols-outlined text-on-surface text-sm">arrow_back</span>
       </button>
-      <h1 class="font-headline text-sm md:text-base font-semibold italic text-on-surface tracking-tight uppercase" id="event-title">
+      <h1 class="font-headline text-xs md:text-sm font-semibold italic text-on-surface tracking-tight uppercase" id="event-title">
         Cargando evento...
       </h1>
     </div>
@@ -63,6 +63,7 @@ tailwind.config = {
     </div>
   </div>
 </header>
+
 
 
 <!-- Main Player Canvas -->
@@ -105,22 +106,20 @@ updateSchedule();
 setInterval(updateSchedule, 60000);
 </script>
 
-
 <script>
 function showEventHeader() {
   const header = document.getElementById("event-header");
   header.style.display = "flex"; // mostrar
+  header.style.opacity = "1";    // visible
 
-  // efecto fade-out suave
-  header.style.opacity = "1";
+  // Ocultar con fade-out después de 3 segundos
   setTimeout(() => {
     header.style.transition = "opacity 0.5s ease";
     header.style.opacity = "0";
   }, 2500);
 
   setTimeout(() => {
-    header.style.display = "none"; // ocultar después de 3 segundos
-    header.style.opacity = "1"; // reset para la próxima vez
+    header.style.display = "none";
     header.style.transition = "";
   }, 3000);
 }
@@ -195,6 +194,8 @@ function goBack() {
   window.location.href = "https://hsports4hd.blogspot.com/p/universohd1.html?m=1";
 }
 </script>
+
+
 
   
 </body>
