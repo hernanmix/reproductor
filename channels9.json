@@ -12,15 +12,21 @@
     "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=espn2"
   },
   {
+   "event": "Ptemier League: Brighton & Hove Albion vs Chelsea",
+    "start": "14:00",
+    "end": "16:03",
+    "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=espn"
+  },
+  {
     "event": "LA LIGA: Girona vs Real Betis",
     "start": "14:30",
     "end": "16:32",
     "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=espn2"
   },
   {
-    "event": "PREMIER LEAGUE: Chelsea vs Arsenal",
-    "start": "02:45",
+    "event": "ESPN:",
+    "start": "00:45",
     "end": "07:00",
-    "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=fox1ar"
+    "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=espn"
   }
 ]
