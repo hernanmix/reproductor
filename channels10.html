@@ -146,7 +146,7 @@ async function updateSchedule() {
 
     // Buscar evento actual (duración fija de 2 horas)
     const currentEvent = events.find(item => {
-      // Convertir hora de inicio del JSON a objeto Date
+      // item.start debe ser "HH:MM"
       const [h, m] = item.start.split(":").map(Number);
       const start = new Date();
       start.setHours(h, m, 0, 0);
@@ -158,21 +158,31 @@ async function updateSchedule() {
     });
 
     if (currentEvent) {
+      // Mostrar nombre del evento
       document.getElementById('event-title').innerText = currentEvent.event;
+
+      // Detectar canal por URL
       const channelName = currentEvent.url.includes("espn") ? "ESPN" :
                           currentEvent.url.includes("fox") ? "FOX" :
                           currentEvent.url.includes("dsports") ? "DSports" : "Canal";
       document.getElementById('channel-name').innerText = channelName;
 
       const playerFrame = document.getElementById('player-frame');
-      // Solo recargar si cambió el evento
       if (playerFrame.src !== currentEvent.url) {
         playerFrame.src = currentEvent.url;
       }
 
       showEventHeader();
+
+      // Programar actualización automática al terminar el partido (2 horas)
+      const [h, m] = currentEvent.start.split(":").map(Number);
+      const start = new Date();
+      start.setHours(h, m, 0, 0);
+      const end = new Date(start.getTime() + 2 * 60 * 60 * 1000);
+
+      const msUntilEnd = end.getTime() - now.getTime();
+      setTimeout(updateSchedule, msUntilEnd); // actualizar justo al terminar
     } else {
-      // Si no hay evento vigente
       document.getElementById('event-title').innerText = "Sin evento en vivo";
       document.getElementById('channel-name').innerText = "";
       document.getElementById('player-frame').src = "";
@@ -182,9 +192,8 @@ async function updateSchedule() {
   }
 }
 
-// Ejecutar al cargar y cada minuto
+// Ejecutar al cargar
 updateSchedule();
-setInterval(updateSchedule, 60000);
 </script>
 
   
