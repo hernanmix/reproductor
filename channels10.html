@@ -79,64 +79,6 @@ tailwind.config = {
 </main>
 
 <script>
-async function updateSchedule() {
-  try {
-    const res = await fetch("https://hernanmix.github.io/reproductor/channels9.json");
-    const events = await res.json();
-
-    const now = new Date();
-    const currentTime = now.getHours().toString().padStart(2, '0') + ":" +
-                        now.getMinutes().toString().padStart(2, '0');
-
-    const currentEvent = events.find(item => {
-      return currentTime >= item.start && currentTime < item.end;
-    });
-
-    if (currentEvent) {
-      document.getElementById('event-title').innerText = currentEvent.event;
-      document.getElementById('channel-name').innerText = currentEvent.url.includes("espn") ? "ESPN" :
-                                                          currentEvent.url.includes("fox") ? "FOX" : "Canal";
-      document.getElementById('player-frame').src = currentEvent.url;
-    } else {
-      document.getElementById('event-title').innerText = "Sin evento en vivo";
-      document.getElementById('channel-name').innerText = "";
-      document.getElementById('player-frame').src = "";
-    }
-  } catch (err) {
-    console.error("Error cargando channels9.json", err);
-  }
-}
-
-// Ejecutar al cargar
-updateSchedule();
-
-
-// Lógica de retroceso
-function goBack() {
-  const isWebView = navigator.userAgent.includes("wv") || navigator.userAgent.includes("AppCreator24");
-  if (isWebView) {
-    window.location.href = "go:exitFs"; // salir en APK
-    return;
-  }
-
-  const playerFrame = document.getElementById("player-frame");
-  if (playerFrame && playerFrame.src) {
-    const url = playerFrame.src;
-    const match = url.match(/channel=([^&]+)/);
-    if (match) {
-      const channelName = match[1]; // ej: espn2
-      window.location.href = `https://hsports4hd.blogspot.com/p/${channelName}.html?m=1`;
-      return;
-    }
-  }
-
-  // Fallback → inicio general
-  window.location.href = "https://hsports4hd.blogspot.com/p/universohd1.html?m=1";
-}
-</script>
-
-
-<script>
 function showEventHeader() {
   const header = document.getElementById("event-header");
   header.style.display = "flex"; 
