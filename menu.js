@@ -9,21 +9,50 @@ document.write(`
     z-index:9999;
   }
   .nav-btn { flex:1; text-align:center; color:#aaa; }
-  .nav-btn svg { width:22px; height:22px; display:block; margin:0 auto; }
+  .nav-btn svg { width:24px; height:24px; display:block; margin:0 auto; }
   .nav-btn span { font-size:11px; display:block; margin-top:2px; }
 </style>
 
 <nav class="bottom-menu">
+  <!-- MENU -->
   <a href="URL_INICIO" class="nav-btn">
     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path d="M4 6h16M4 12h16M4 18h16" stroke-width="2"/>
+      <path d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg>
     <span>MENU</span>
   </a>
-  <a href="URL_TV" class="nav-btn">…</a>
-  <a href="URL_DONAR" class="nav-btn">…</a>
-  <a href="URL_DISNEY" class="nav-btn">…</a>
-  <button class="nav-btn" onclick="startAds();">ADS</button>
+
+  <!-- TV -->
+  <a href="URL_TV" class="nav-btn">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>TV</span>
+  </a>
+
+  <!-- DONAR -->
+  <a href="URL_DONAR" class="nav-btn">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>DONAR</span>
+  </a>
+
+  <!-- DISNEY -->
+  <a href="URL_DISNEY" class="nav-btn">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>DISNEY</span>
+  </a>
+
+  <!-- ADS -->
+  <button class="nav-btn" onclick="startAds();">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>ADS</span>
+  </button>
 </nav>
 
 <div id="ads-modal" class="hidden" style="position:fixed; inset:0; background:rgba(0,0,0,.9); z-index:10000;">
