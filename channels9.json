@@ -32,6 +32,12 @@
   {
     "event": "ESPN: Estas Viendo EN VIVO",
     "start": "16:30",
+    "end": "17:30",
+    "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=espn"
+  },
+  {
+    "event": "ESPN: En VIVO",
+    "start": "17:30",
     "end": "18:00",
     "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=espn"
   }
