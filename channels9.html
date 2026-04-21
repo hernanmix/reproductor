@@ -44,28 +44,26 @@ tailwind.config = {
 <body class="text-on-surface">
 
 <!-- TopAppBar -->
-<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 h-24 header-gradient bg-[#0d1321]/80 backdrop-blur-xl">
+<header id="event-header" class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 h-20 header-gradient bg-[#0d1321]/80 backdrop-blur-xl" style="display:none;">
   <div class="flex flex-col gap-1">
     <div class="flex items-center gap-4">
-      <button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-blue-500/10 transition-all scale-95 active:opacity-80">
-        <span class="material-symbols-outlined text-on-surface">arrow_back</span>
+      <button onclick="goBack()" class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-blue-500/10 transition-all scale-95 active:opacity-80">
+        <span class="material-symbols-outlined text-on-surface text-base">arrow_back</span>
       </button>
       <h1 class="font-headline text-sm md:text-base font-semibold italic text-on-surface tracking-tight uppercase" id="event-title">
-  Cargando evento...
-</h1>
+        Cargando evento...
+      </h1>
     </div>
-    <div id="event-info" class="flex items-center gap-2 ml-14" style="display:none;">
-  <span class="font-headline font-semibold italic text-primary tracking-tight text-sm leading-none" id="channel-name">Canal</span>
-  <div class="flex items-center gap-1">
-    <span class="w-1 h-1 rounded-full bg-error"></span>
-    <span class="font-label text-[9px] font-semibold tracking-wide text-error uppercase">EN VIVO</span>
-  </div>
-</div>
-
-
+    <div class="flex items-center gap-2 ml-12">
+      <span class="font-headline font-semibold italic text-primary tracking-tight text-xs leading-none" id="channel-name">Canal</span>
+      <div class="flex items-center gap-1">
+        <span class="w-1 h-1 rounded-full bg-error"></span>
+        <span class="font-label text-[8px] font-semibold tracking-wide text-error uppercase">EN VIVO</span>
+      </div>
     </div>
   </div>
 </header>
+
 
 <!-- Main Player Canvas -->
 <main class="relative w-screen h-screen bg-black">
@@ -107,17 +105,26 @@ updateSchedule();
 setInterval(updateSchedule, 60000);
 </script>
 
+
 <script>
-function showEventInfo() {
-  const info = document.getElementById("event-info");
-  info.style.display = "flex"; // mostrar
+function showEventHeader() {
+  const header = document.getElementById("event-header");
+  header.style.display = "flex"; // mostrar
+
+  // efecto fade-out suave
+  header.style.opacity = "1";
+  setTimeout(() => {
+    header.style.transition = "opacity 0.5s ease";
+    header.style.opacity = "0";
+  }, 2500);
 
   setTimeout(() => {
-    info.style.display = "none"; // ocultar después de 3 segundos
+    header.style.display = "none"; // ocultar después de 3 segundos
+    header.style.opacity = "1"; // reset para la próxima vez
+    header.style.transition = "";
   }, 3000);
 }
 
-// Cada vez que actualices el evento desde el JSON, llama a showEventInfo()
 async function updateSchedule() {
   try {
     const res = await fetch("https://hernanmix.github.io/reproductor/channels9.json");
@@ -139,8 +146,8 @@ async function updateSchedule() {
       document.getElementById('channel-name').innerText = channelName;
       document.getElementById('player-frame').src = currentEvent.url;
 
-      // Mostrar info por 3 segundos
-      showEventInfo();
+      // Mostrar header por 3 segundos
+      showEventHeader();
     } else {
       document.getElementById('event-title').innerText = "Sin evento en vivo";
       document.getElementById('channel-name').innerText = "";
@@ -151,10 +158,43 @@ async function updateSchedule() {
   }
 }
 
+// Mostrar header al entrar en fullscreen
+document.addEventListener("fullscreenchange", () => {
+  if (document.fullscreenElement) {
+    showEventHeader();
+  }
+});
+
+// Mostrar header al tocar el reproductor
+const playerFrame = document.getElementById("player-frame");
+playerFrame.addEventListener("click", () => {
+  showEventHeader();
+});
+
+// Ejecutar al cargar y cada minuto
 updateSchedule();
 setInterval(updateSchedule, 60000);
-</script>
 
+// Retroceso dinámico
+function goBack() {
+  const isWebView = navigator.userAgent.includes("wv") || navigator.userAgent.includes("AppCreator24");
+  if (isWebView) {
+    window.location.href = "go:exitFs";
+    return;
+  }
+  const playerFrame = document.getElementById("player-frame");
+  if (playerFrame && playerFrame.src) {
+    const url = playerFrame.src;
+    const match = url.match(/channel=([^&]+)/);
+    if (match) {
+      const channelName = match[1];
+      window.location.href = `https://hsports4hd.blogspot.com/p/${channelName}.html?m=1`;
+      return;
+    }
+  }
+  window.location.href = "https://hsports4hd.blogspot.com/p/universohd1.html?m=1";
+}
+</script>
 
   
 </body>
