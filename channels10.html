@@ -80,6 +80,23 @@ tailwind.config = {
 
 
 <script>
+function showEventHeader() {
+  const header = document.getElementById("event-header");
+  header.style.display = "flex"; 
+  header.style.opacity = "1";    
+
+  // Ocultar con fade-out después de 4 segundos
+  setTimeout(() => {
+    header.style.transition = "opacity 0.5s ease";
+    header.style.opacity = "0";
+  }, 3500);
+
+  setTimeout(() => {
+    header.style.display = "none";
+    header.style.transition = "";
+  }, 4000);
+}
+
 async function updateSchedule() {
   try {
     const res = await fetch("https://hernanmix.github.io/reproductor/channels9.json");
@@ -99,8 +116,8 @@ async function updateSchedule() {
       document.getElementById('event-title').innerText = currentEvent.event;
 
       // Detectar canal por URL
-      const channelName = currentEvent.url.includes("espn") ? "ESPN" :
-                          currentEvent.url.includes("espn2") ? "ESPN 2" :
+      const channelName = currentEvent.url.includes("espn2") ? "ESPN 2" :
+                          currentEvent.url.includes("espn") ? "ESPN" :
                           currentEvent.url.includes("dsports") ? "DSports" : "Canal";
       document.getElementById('channel-name').innerText = channelName;
 
