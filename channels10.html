@@ -139,6 +139,23 @@ function goBack() {
 
 
 <script>
+function showEventHeader() {
+  const header = document.getElementById("event-header");
+  header.style.display = "flex"; 
+  header.style.opacity = "1";    
+
+  // Ocultar con fade-out después de 3 segundos
+  setTimeout(() => {
+    header.style.transition = "opacity 0.5s ease";
+    header.style.opacity = "0";
+  }, 2500);
+
+  setTimeout(() => {
+    header.style.display = "none";
+    header.style.transition = "";
+  }, 3000);
+}
+
 async function updateSchedule() {
   try {
     const res = await fetch("https://hernanmix.github.io/reproductor/channels9.json");
@@ -148,14 +165,10 @@ async function updateSchedule() {
 
     // Buscar evento actual (duración fija de 2 horas)
     const currentEvent = events.find(item => {
-      // item.start debe ser "HH:MM"
       const [h, m] = item.start.split(":").map(Number);
       const start = new Date();
       start.setHours(h, m, 0, 0);
-
-      // Fin = inicio + 2 horas
-      const end = new Date(start.getTime() + 2 * 60 * 60 * 1000);
-
+      const end = new Date(start.getTime() + 2 * 60 * 60 * 1000); // +2 horas
       return now >= start && now < end;
     });
 
@@ -181,7 +194,6 @@ async function updateSchedule() {
       const start = new Date();
       start.setHours(h, m, 0, 0);
       const end = new Date(start.getTime() + 2 * 60 * 60 * 1000);
-
       const msUntilEnd = end.getTime() - now.getTime();
       setTimeout(updateSchedule, msUntilEnd); // actualizar justo al terminar
     } else {
@@ -194,9 +206,25 @@ async function updateSchedule() {
   }
 }
 
+// Mostrar header al entrar en fullscreen
+document.addEventListener("fullscreenchange", () => {
+  if (document.fullscreenElement) {
+    showEventHeader();
+  }
+});
+
+// Mostrar header al tocar el reproductor (capturando el contenedor <main>)
+const playerContainer = document.querySelector("main");
+if (playerContainer) {
+  playerContainer.addEventListener("click", () => {
+    showEventHeader();
+  });
+}
+
 // Ejecutar al cargar
 updateSchedule();
 </script>
+
 
   
   
