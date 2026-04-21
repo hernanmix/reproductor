@@ -40,7 +40,37 @@ document.write(`
 <nav class="bottom-menu">
   <div class="shine-effect"></div>
 
-  <!-- otros botones ... -->
+  <!-- MENU -->
+  <a href="URL_INICIO" class="nav-btn">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>MENU</span>
+  </a>
+
+  <!-- TV -->
+  <a href="URL_TV" class="nav-btn">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>TV</span>
+  </a>
+
+  <!-- DONAR -->
+  <a href="URL_DONAR" class="nav-btn">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>DONAR</span>
+  </a>
+
+  <!-- DISNEY -->
+  <a href="URL_DISNEY" class="nav-btn">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>DISNEY</span>
+  </a>
 
   <!-- ADS -->
   <button class="ads-btn" onclick="startAds();">
@@ -87,10 +117,11 @@ function startAds() {
   if (timerInterval) clearInterval(timerInterval);
 
   timerInterval = setInterval(() => {
-    timeLeft--;
     countdownEl.innerText = timeLeft;
     progressRing.style.strokeDashoffset = circumference * (1 - timeLeft/15);
-    if (timeLeft <= 0) {
+    timeLeft--;
+
+    if (timeLeft < 0) {
       clearInterval(timerInterval);
       closeAds();
     }
