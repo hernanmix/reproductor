@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
           transparent 100%
         );
         transform: skewX(-25deg);
-        animation: shimmer 4s infinite;
+        animation: shimmer 4s infinite linear;
         pointer-events: none;
       }
       @keyframes shimmer {
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </style>
 
     <nav class="bottom-nav">
-      <div class="nav-btn active" onclick="changeSource('URL_INICIO', this)">
+      <div class="nav-btn active" onclick="changeSource('URL_MENU', this)">
         <i class="material-symbols-outlined">menu</i>
         <span>MENU</span>
       </div>
@@ -129,12 +129,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Funciones
 function checkEnvironment() {
-  const userAgent = navigator.userAgent;
+  const ua = navigator.userAgent;
   const exitBtn = document.getElementById('exit-btn');
-  const isAppCreator24 = userAgent.toLowerCase().includes("android") && (window.location.href.includes("appcreator24") || typeof Android !== 'undefined');
-  const tvKeywords = ['SmartTV','Tizen','Web0S','LG','Sony','Samsung','HbbTV','googletv','appletv','roku','firetv'];
-  const isSmartTV = tvKeywords.some(keyword => userAgent.includes(keyword) || userAgent.toLowerCase().includes(keyword.toLowerCase()));
-  if (isAppCreator24 || isSmartTV) {
+  const tvKeywords = ['SmartTV','Tizen','Web0S','WebOS','LG','Sony','Samsung','HbbTV','GoogleTV','AppleTV','Pov_TV'];
+  const isSmartTV = tvKeywords.some(keyword => ua.includes(keyword));
+  const isAppCreator24 = ua.includes("Android") && (ua.includes("wv") || window.location.protocol === "file:" || window.external);
+  if (isSmartTV || isAppCreator24) {
     exitBtn.style.display = 'block';
   } else {
     exitBtn.style.display = 'none';
@@ -170,6 +170,6 @@ function showAdsModal() {
 function closeAdsModal() {
   const modal = document.getElementById('ads-modal');
   modal.style.display = 'none';
-  document.getElementById('ads-iframe').src = "";
+  const iframe = document.getElementById('ads-iframe');
+  if (iframe) iframe.src = "";
 }
-
