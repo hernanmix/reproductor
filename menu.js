@@ -35,6 +35,9 @@ document.write(`
   .ads-btn { flex:1; text-align:center; color:#fff; background:#007BFF; border-radius:6px; }
   .ads-btn svg { width:24px; height:24px; display:block; margin:0 auto; }
   .ads-btn span { font-size:11px; display:block; margin-top:2px; }
+  .exit-btn { flex:1; text-align:center; color:#fff; background:#d9534f; border-radius:6px; }
+  .exit-btn svg { width:24px; height:24px; display:block; margin:0 auto; }
+  .exit-btn span { font-size:11px; display:block; margin-top:2px; }
 </style>
 
 <nav class="bottom-menu">
@@ -80,22 +83,15 @@ document.write(`
     </svg>
     <span>ADS</span>
   </button>
-</nav>
 
-<!-- Modal flotante ADS -->
-<div id="ads-modal" class="hidden" style="position:fixed; inset:0; background:rgba(0,0,0,.9); z-index:10000; display:none; align-items:center; justify-content:center;">
-  <div style="background:#111; padding:20px; border-radius:10px; max-width:400px; width:90%; text-align:center;">
-    <h2 style="color:#4af; margin-bottom:10px;">Publicidad</h2>
-    <p style="color:#ccc; margin-bottom:10px;">El anuncio se cerrará automáticamente…</p>
-    <div style="position:relative; display:inline-flex; align-items:center; justify-content:center; margin-bottom:10px;">
-      <svg class="absolute w-24 h-24 transform -rotate-90">
-        <circle id="progress-ring" cx="48" cy="48" r="44" stroke="#4af" stroke-width="4" fill="transparent" stroke-dasharray="276" stroke-dashoffset="0"></circle>
-      </svg>
-      <span id="countdown-timer" style="font-size:28px; font-weight:bold; color:#fff;">15</span>
-    </div>
-    <iframe id="ads-iframe" src="" width="100%" height="250" frameborder="0" style="border-radius:8px;"></iframe>
-  </div>
-</div>
+  <!-- EXIT (solo AppCreator24/SmartTV) -->
+  <button id="exit-btn" class="exit-btn" style="display:none;" onclick="exitApp();">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <span>SALIR</span>
+  </button>
+</nav>
 `);
 
 const adsModal = document.getElementById('ads-modal');
@@ -133,3 +129,15 @@ function closeAds() {
   adsModal.style.display = "none"; // Ocultar modal
   adsIframe.src = "";              // Limpiar anuncio
 }
+
+// Detectar entorno y mostrar botón SALIR solo en AppCreator24/SmartTV
+const ua = navigator.userAgent.toLowerCase();
+if (ua.includes("appcreator24") || ua.includes("smarttv")) {
+  document.getElementById("exit-btn").style.display = "block";
+}
+
+function exitApp() {
+  // Acción de salida en AppCreator24/SmartTV
+  window.location.href = "go:exitFs";
+}
+</script>
