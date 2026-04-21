@@ -54,13 +54,14 @@ tailwind.config = {
   Cargando evento...
 </h1>
     </div>
-    <div class="flex items-center gap-2 ml-14">
+    <div id="event-info" class="flex items-center gap-2 ml-14" style="display:none;">
   <span class="font-headline font-semibold italic text-primary tracking-tight text-sm leading-none" id="channel-name">Canal</span>
   <div class="flex items-center gap-1">
     <span class="w-1 h-1 rounded-full bg-error"></span>
     <span class="font-label text-[9px] font-semibold tracking-wide text-error uppercase">EN VIVO</span>
   </div>
 </div>
+
 
     </div>
   </div>
@@ -106,5 +107,55 @@ updateSchedule();
 setInterval(updateSchedule, 60000);
 </script>
 
+<script>
+function showEventInfo() {
+  const info = document.getElementById("event-info");
+  info.style.display = "flex"; // mostrar
+
+  setTimeout(() => {
+    info.style.display = "none"; // ocultar después de 3 segundos
+  }, 3000);
+}
+
+// Cada vez que actualices el evento desde el JSON, llama a showEventInfo()
+async function updateSchedule() {
+  try {
+    const res = await fetch("https://hernanmix.github.io/reproductor/channels9.json");
+    const events = await res.json();
+
+    const now = new Date();
+    const currentTime = now.getHours().toString().padStart(2, '0') + ":" +
+                        now.getMinutes().toString().padStart(2, '0');
+
+    const currentEvent = events.find(item => {
+      return currentTime >= item.start && currentTime < item.end;
+    });
+
+    if (currentEvent) {
+      document.getElementById('event-title').innerText = currentEvent.event;
+      const channelName = currentEvent.url.includes("espn") ? "ESPN" :
+                          currentEvent.url.includes("fox") ? "FOX" :
+                          currentEvent.url.includes("dsports") ? "DSports" : "Canal";
+      document.getElementById('channel-name').innerText = channelName;
+      document.getElementById('player-frame').src = currentEvent.url;
+
+      // Mostrar info por 3 segundos
+      showEventInfo();
+    } else {
+      document.getElementById('event-title').innerText = "Sin evento en vivo";
+      document.getElementById('channel-name').innerText = "";
+      document.getElementById('player-frame').src = "";
+    }
+  } catch (err) {
+    console.error("Error cargando channels9.json", err);
+  }
+}
+
+updateSchedule();
+setInterval(updateSchedule, 60000);
+</script>
+
+
+  
 </body>
 </html>
