@@ -139,8 +139,8 @@ function goBack() {
 <script>
 function showEventHeader() {
   const header = document.getElementById("event-header");
-  header.style.display = "flex"; // mostrar
-  header.style.opacity = "1";    // visible
+  header.style.display = "flex"; 
+  header.style.opacity = "1";    
 
   // Ocultar con fade-out después de 3 segundos
   setTimeout(() => {
@@ -175,7 +175,6 @@ async function updateSchedule() {
       document.getElementById('channel-name').innerText = channelName;
       document.getElementById('player-frame').src = currentEvent.url;
 
-      // Mostrar header por 3 segundos
       showEventHeader();
     } else {
       document.getElementById('event-title').innerText = "Sin evento en vivo";
@@ -194,37 +193,16 @@ document.addEventListener("fullscreenchange", () => {
   }
 });
 
-// Mostrar header al tocar el reproductor
-const playerFrame = document.getElementById("player-frame");
-playerFrame.addEventListener("click", () => {
+// Mostrar header al tocar el reproductor (capturando el contenedor <main>)
+const playerContainer = document.querySelector("main");
+playerContainer.addEventListener("click", () => {
   showEventHeader();
 });
 
 // Ejecutar al cargar y cada minuto
 updateSchedule();
 setInterval(updateSchedule, 60000);
-
-// Retroceso dinámico
-function goBack() {
-  const isWebView = navigator.userAgent.includes("wv") || navigator.userAgent.includes("AppCreator24");
-  if (isWebView) {
-    window.location.href = "go:exitFs";
-    return;
-  }
-  const playerFrame = document.getElementById("player-frame");
-  if (playerFrame && playerFrame.src) {
-    const url = playerFrame.src;
-    const match = url.match(/channel=([^&]+)/);
-    if (match) {
-      const channelName = match[1];
-      window.location.href = `https://hsports4hd.blogspot.com/p/${channelName}.html?m=1`;
-      return;
-    }
-  }
-  window.location.href = "https://hsports4hd.blogspot.com/p/universohd1.html?m=1";
-}
 </script>
-
   
   
   
