@@ -94,40 +94,8 @@ document.write(`
 </nav>
 `);
 
-const adsModal = document.getElementById('ads-modal');
-const countdownEl = document.getElementById('countdown-timer');
-const adsIframe = document.getElementById('ads-iframe');
-const progressRing = document.getElementById('progress-ring');
-let timerInterval;
-
-function startAds() {
-  adsModal.style.display = "flex"; // Mostrar modal
-  adsIframe.src = "https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db";
-
-  let timeLeft = 15;
-  countdownEl.innerText = timeLeft;
-
-  const circumference = 2 * Math.PI * 44;
-  progressRing.style.strokeDasharray = circumference;
-  progressRing.style.strokeDashoffset = 0;
-
-  if (timerInterval) clearInterval(timerInterval);
-
-  timerInterval = setInterval(() => {
-    countdownEl.innerText = timeLeft;
-    progressRing.style.strokeDashoffset = circumference * (1 - timeLeft/15);
-    timeLeft--;
-
-    if (timeLeft < 0) {
-      clearInterval(timerInterval);
-      closeAds();
-    }
-  }, 1000);
-}
-
-function closeAds() {
-  adsModal.style.display = "none"; // Ocultar modal
-  adsIframe.src = "";              // Limpiar anuncio
+function exitApp() {
+  window.location.href = "go:exitFs"; // acción de salida en AppCreator24/SmartTV
 }
 
 // Detectar entorno y mostrar botón SALIR solo en AppCreator24/SmartTV
@@ -135,9 +103,3 @@ const ua = navigator.userAgent.toLowerCase();
 if (ua.includes("appcreator24") || ua.includes("smarttv")) {
   document.getElementById("exit-btn").style.display = "block";
 }
-
-function exitApp() {
-  // Acción de salida en AppCreator24/SmartTV
-  window.location.href = "go:exitFs";
-}
-</script>
