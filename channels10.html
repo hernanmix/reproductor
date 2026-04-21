@@ -107,8 +107,10 @@ async function updateSchedule() {
   }
 }
 
-// Ejecutar al cargar y cada minuto
+// Ejecutar al cargar
 updateSchedule();
+
+// Revisar cada minuto si terminó el evento
 setInterval(updateSchedule, 60000);
 
 // Lógica de retroceso
