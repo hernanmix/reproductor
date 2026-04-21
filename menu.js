@@ -83,7 +83,7 @@ document.write(`
 </nav>
 
 <!-- Modal flotante ADS -->
-<div id="ads-modal" class="hidden" style="position:adsolute; inset:0; background:rgba(0,0,0,.9); z-index:10000; display:flex; align-items:center; justify-content:center;">
+<div id="ads-modal" class="hidden" style="position:fixed; inset:0; background:rgba(0,0,0,.9); z-index:10000; display:none; align-items:center; justify-content:center;">
   <div style="background:#111; padding:20px; border-radius:10px; max-width:400px; width:90%; text-align:center;">
     <h2 style="color:#4af; margin-bottom:10px;">Publicidad</h2>
     <p style="color:#ccc; margin-bottom:10px;">El anuncio se cerrará automáticamente…</p>
@@ -105,8 +105,9 @@ const progressRing = document.getElementById('progress-ring');
 let timerInterval;
 
 function startAds() {
-  adsModal.classList.remove('hidden');
+  adsModal.style.display = "flex"; // Mostrar modal
   adsIframe.src = "https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db";
+
   let timeLeft = 15;
   countdownEl.innerText = timeLeft;
 
@@ -129,6 +130,6 @@ function startAds() {
 }
 
 function closeAds() {
-  adsModal.classList.add('hidden');
-  adsIframe.src = "";
+  adsModal.style.display = "none"; // Ocultar modal
+  adsIframe.src = "";              // Limpiar anuncio
 }
