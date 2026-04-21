@@ -1,3 +1,4 @@
+// menu.js - copia esto tal cual en tu repo y enlázalo desde GitHub
 document.write(`
 <style>
   @keyframes shine {
@@ -29,15 +30,18 @@ document.write(`
     z-index:9999;
     overflow:hidden;
   }
-  .nav-btn { flex:1; text-align:center; color:#aaa; }
+  .nav-btn { flex:1; text-align:center; color:#aaa; text-decoration:none; }
   .nav-btn svg { width:24px; height:24px; display:block; margin:0 auto; }
   .nav-btn span { font-size:11px; display:block; margin-top:2px; }
-  .ads-btn { flex:1; text-align:center; color:#fff; background:#007BFF; border-radius:6px; }
+  .ads-btn { flex:1; text-align:center; color:#fff; background:#007BFF; border-radius:6px; border:none; padding:8px; cursor:pointer; }
   .ads-btn svg { width:24px; height:24px; display:block; margin:0 auto; }
   .ads-btn span { font-size:11px; display:block; margin-top:2px; }
-  .exit-btn { flex:1; text-align:center; color:#fff; background:#d9534f; border-radius:6px; }
+  .exit-btn { flex:1; text-align:center; color:#fff; background:#d9534f; border-radius:6px; border:none; padding:8px; cursor:pointer; display:none; }
   .exit-btn svg { width:24px; height:24px; display:block; margin:0 auto; }
   .exit-btn span { font-size:11px; display:block; margin-top:2px; }
+  /* Modal styles */
+  #ads-modal { display:none; align-items:center; justify-content:center; }
+  #ads-modal .modal-inner { max-width:400px; width:90%; }
 </style>
 
 <nav class="bottom-menu">
@@ -76,30 +80,141 @@ document.write(`
   </a>
 
   <!-- ADS -->
-  <button class="ads-btn" onclick="startAds();">
+  <button class="ads-btn" id="ads-btn">
     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg>
     <span>ADS</span>
   </button>
 
   <!-- EXIT (solo AppCreator24/SmartTV) -->
-  <button id="exit-btn" class="exit-btn" style="display:none;" onclick="exitApp();">
+  <button id="exit-btn" class="exit-btn" onclick="exitApp();">
     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg>
     <span>SALIR</span>
   </button>
 </nav>
+
+<!-- Modal flotante ADS -->
+<div id="ads-modal" style="position:fixed; inset:0; background:rgba(0,0,0,.9); z-index:10000; display:none; align-items:center; justify-content:center;">
+  <div class="modal-inner" style="background:#111; padding:20px; border-radius:10px; text-align:center;">
+    <h2 style="color:#4af; margin-bottom:10px;">Publicidad</h2>
+    <p style="color:#ccc; margin-bottom:10px;">El anuncio se cerrará automáticamente…</p>
+    <div style="position:relative; display:inline-flex; align-items:center; justify-content:center; margin-bottom:10px;">
+      <svg style="position:absolute; width:96px; height:96px;" viewBox="0 0 96 96">
+        <circle id="progress-ring" cx="48" cy="48" r="44" stroke="#4af" stroke-width="4" fill="transparent" stroke-dasharray="276" stroke-dashoffset="0"></circle>
+      </svg>
+      <span id="countdown-timer" style="font-size:28px; font-weight:bold; color:#fff; z-index:1;">15</span>
+    </div>
+    <iframe id="ads-iframe" src="" width="100%" height="250" frameborder="0" style="border-radius:8px;"></iframe>
+  </div>
+</div>
 `);
 
-function exitApp() {
-  window.location.href = "go:exitFs"; // acción de salida en AppCreator24/SmartTV
-}
+// Esperar a que el DOM se actualice tras document.write
+requestAnimationFrame(() => {
+  // Elementos del modal y botones
+  const adsModal = document.getElementById('ads-modal');
+  const countdownEl = document.getElementById('countdown-timer');
+  const adsIframe = document.getElementById('ads-iframe');
+  const progressRing = document.getElementById('progress-ring');
+  const adsBtn = document.getElementById('ads-btn');
+  const exitBtn = document.getElementById('exit-btn');
 
-// Detectar entorno y mostrar botón SALIR solo en AppCreator24/SmartTV
-const ua = navigator.userAgent.toLowerCase();
-if (ua.includes("appcreator24") || ua.includes("smarttv")) {
-  document.getElementById("exit-btn").style.display = "block";
-}
+  let timerInterval = null;
+
+  // Inicializar progreso (por si el SVG no tiene atributos)
+  const R = 44;
+  const circumference = 2 * Math.PI * R;
+  if (progressRing) {
+    progressRing.style.strokeDasharray = circumference;
+    progressRing.style.strokeDashoffset = circumference;
+  }
+
+  function startAds() {
+    if (!adsModal || !adsIframe || !countdownEl || !progressRing) return;
+
+    adsModal.style.display = "flex";
+    // Cargar anuncio en iframe
+    adsIframe.src = "https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db";
+
+    let timeLeft = 15;
+    countdownEl.innerText = timeLeft;
+    progressRing.style.strokeDashoffset = circumference;
+
+    if (timerInterval) clearInterval(timerInterval);
+
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      if (timeLeft < 0) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        closeAds();
+        return;
+      }
+      countdownEl.innerText = timeLeft;
+      // stroke offset: 0 = full circle shown, circumference = empty
+      const progress = (timeLeft) / 15; // 1 -> 0
+      progressRing.style.strokeDashoffset = circumference * (1 - progress);
+    }, 1000);
+  }
+
+  function closeAds() {
+    if (!adsModal || !adsIframe || !countdownEl || !progressRing) return;
+    adsModal.style.display = "none";
+    adsIframe.src = "";
+    countdownEl.innerText = "15";
+    progressRing.style.strokeDashoffset = circumference;
+    if (timerInterval) {
+      clearInterval(timerInterval);
+      timerInterval = null;
+    }
+  }
+
+  // Conectar botón ADS
+  if (adsBtn) {
+    adsBtn.addEventListener('click', startAds);
+  }
+
+  // Cerrar modal si el usuario hace click fuera del inner
+  if (adsModal) {
+    adsModal.addEventListener('click', (e) => {
+      if (e.target === adsModal) {
+        // permitir cerrar manualmente si se desea
+        closeAds();
+      }
+    });
+  }
+
+  // Detectar entorno y mostrar botón SALIR solo en AppCreator24/SmartTV
+  (function detectAndShowExit() {
+    const ua = (navigator && navigator.userAgent) ? navigator.userAgent.toLowerCase() : '';
+    // Algunas SmartTVs usan "smart-tv", "smarttv", "smarttv", o marcas específicas.
+    // AppCreator24 suele incluir "appcreator24" en el UA; si no, puedes añadir más checks.
+    const isAppCreator = ua.includes('appcreator24');
+    const isSmartTV = ua.includes('smarttv') || ua.includes('smart-tv') || ua.includes('smarttv') || ua.includes('tizen') || ua.includes('webos');
+    if ((isAppCreator || isSmartTV) && exitBtn) {
+      exitBtn.style.display = 'block';
+    } else if (exitBtn) {
+      exitBtn.style.display = 'none';
+    }
+  })();
+
+  // Acción de salida
+  window.exitApp = function() {
+    // Para AppCreator24 la acción suele ser un esquema personalizado
+    // Si "go:exitFs" no funciona en tu entorno, cámbialo por la acción que use tu APK.
+    try {
+      // Intentar esquema personalizado
+      window.location.href = "go:exitFs";
+    } catch (e) {
+      // Fallback: intentar cerrar ventana
+      try { window.close(); } catch (err) {}
+    }
+  };
+
+  // Exponer funciones globales por si las necesitas
+  window.startAds = startAds;
+  window.closeAds = closeAds;
+});
