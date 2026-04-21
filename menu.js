@@ -1,40 +1,65 @@
 document.write(`
 <style>
-  @keyframes shine {
-    0% { left: -100%; }
-    20% { left: 100%; }
-    100% { left: 100%; }
+  nav.bottom-menu {
+    position:fixed; bottom:0; left:0; right:0;
+    width:100%; height:64px;
+    background:#050b18;
+    display:flex; justify-content:space-around; align-items:center;
+    border-top:1px solid #333;
+    z-index:9999;
   }
-  .shine-effect {
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-      to right,
-      rgba(255,255,255,0) 0%,
-      rgba(255,255,255,0.1) 50%,
-      rgba(255,255,255,0) 100%
-    );
-    transform: skewX(-25deg);
-    animation: shine 4s infinite;
-    pointer-events: none;
-  }
-  .bg-custom-dark { background-color: #050b18; }
+  .nav-btn { flex:1; text-align:center; color:#aaa; }
+  .nav-btn svg { width:22px; height:22px; display:block; margin:0 auto; }
+  .nav-btn span { font-size:11px; display:block; margin-top:2px; }
 </style>
 
-<nav class="fixed bottom-0 left-0 w-full bg-custom-dark border-t border-gray-800 shadow-2xl z-40 overflow-hidden">
-  <div class="shine-effect"></div>
-  <div class="flex justify-around items-center h-16 relative z-10">
-    <a href="URL_INICIO" class="nav-btn">…</a>
-    <a href="URL_TV" class="nav-btn">…</a>
-    <a href="URL_DONAR" class="nav-btn">…</a>
-    <a href="URL_DISNEY" class="nav-btn">…</a>
-    <button class="nav-btn" onclick="startAds();">ADS</button>
-  </div>
+<nav class="bottom-menu">
+  <a href="URL_INICIO" class="nav-btn">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path d="M4 6h16M4 12h16M4 18h16" stroke-width="2"/>
+    </svg>
+    <span>MENU</span>
+  </a>
+  <a href="URL_TV" class="nav-btn">…</a>
+  <a href="URL_DONAR" class="nav-btn">…</a>
+  <a href="URL_DISNEY" class="nav-btn">…</a>
+  <button class="nav-btn" onclick="startAds();">ADS</button>
 </nav>
 
-<div id="ads-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
-  … contenido del modal …
+<div id="ads-modal" class="hidden" style="position:fixed; inset:0; background:rgba(0,0,0,.9); z-index:10000;">
+  <div style="background:#111; padding:20px; border-radius:10px; max-width:300px; margin:auto; text-align:center;">
+    <h2 style="color:#4af;">Publicidad</h2>
+    <p style="color:#ccc;">El anuncio se cerrará automáticamente…</p>
+    <span id="countdown-timer" style="font-size:32px; font-weight:bold; color:#fff;">15</span>
+    <iframe id="ads-iframe" src="" width="100%" height="200" frameborder="0"></iframe>
+  </div>
 </div>
 `);
+
+const adsModal = document.getElementById('ads-modal');
+const countdownEl = document.getElementById('countdown-timer');
+const adsIframe = document.getElementById('ads-iframe');
+let timerInterval;
+
+function startAds() {
+  adsModal.classList.remove('hidden');
+  adsIframe.src = "https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db";
+  let timeLeft = 15;
+  countdownEl.innerText = timeLeft;
+
+  if (timerInterval) clearInterval(timerInterval);
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    countdownEl.innerText = timeLeft;
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      closeAds();
+    }
+  }, 1000);
+}
+
+function closeAds() {
+  adsModal.classList.add('hidden');
+  adsIframe.src = "";
+}
