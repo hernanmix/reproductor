@@ -5,8 +5,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Sports Live Player</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
 tailwind.config = {
   darkMode: "class",
@@ -37,7 +37,7 @@ tailwind.config = {
     min-height: max(884px, 100dvh);
   }
   .header-gradient {
-    background: linear-gradient(to bottom, rgba(13,19,33,0.95) 0%, rgba(13,19,33,0.6) 70%, transparent 100%);
+    background: linear-gradient(to bottom, rgba(13, 19, 33, 0.95) 0%, rgba(13, 19, 33, 0.6) 70%, transparent 100%);
   }
 </style>
 </head>
@@ -47,7 +47,7 @@ tailwind.config = {
 <header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 h-24 header-gradient bg-[#0d1321]/80 backdrop-blur-xl">
   <div class="flex flex-col gap-1">
     <div class="flex items-center gap-4">
-      <button onclick="goBack()" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-blue-500/10 transition-all scale-95 active:opacity-80">
+      <button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-blue-500/10 transition-all scale-95 active:opacity-80">
         <span class="material-symbols-outlined text-on-surface">arrow_back</span>
       </button>
       <h1 class="font-headline text-xl md:text-2xl font-black italic text-on-surface tracking-tighter uppercase" id="event-title">
@@ -68,34 +68,15 @@ tailwind.config = {
 
 <!-- Main Player Canvas -->
 <main class="relative w-screen h-screen bg-black">
-  <iframe allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" class="w-full h-full border-0" src="https://m-3-u-player--hermixervdj94.replit.app/?channel=espn">
+  <iframe allow="autoplay; fullscreen; picture-in-picture" allowfullscreen class="w-full h-full border-0" id="player-frame" src="">
+  </iframe>
   <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0d1321] to-transparent pointer-events-none"></div>
 </main>
-
-<!-- Overlay en fullscreen -->
-<div id="fullscreen-overlay" style="
-  position:fixed; top:0; left:0; width:100%;
-  background:rgba(13,19,33,0.85);
-  color:#fff; font-family:'Manrope',sans-serif;
-  padding:12px 20px; display:none;
-  z-index:99999;
-  align-items:center; justify-content:space-between;">
-  <div style="display:flex; align-items:center; gap:12px;">
-    <span class="material-symbols-outlined">arrow_back</span>
-    <div>
-      <div id="overlay-event" style="font-weight:bold; font-size:16px;">Evento</div>
-      <div style="display:flex; gap:8px; align-items:center;">
-        <span id="overlay-channel" style="color:#4af; font-weight:bold;">Canal</span>
-        <span style="color:#f33; font-size:12px; font-weight:bold;">● EN VIVO</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script>
 async function updateSchedule() {
   try {
-    const res = await fetch("https://hernanmix.github.io/reproductor/channels9.json");
+    const res = await fetch("channels9.json"); // tu JSON externo
     const events = await res.json();
 
     const now = new Date();
@@ -108,13 +89,9 @@ async function updateSchedule() {
 
     if (currentEvent) {
       document.getElementById('event-title').innerText = currentEvent.event;
-      const channelName = currentEvent.url.includes("espn") ? "ESPN" :
-                          currentEvent.url.includes("fox") ? "FOX" : "Canal";
-      document.getElementById('channel-name').innerText = channelName;
+      document.getElementById('channel-name').innerText = currentEvent.url.includes("espn") ? "ESPN" :
+                                                          currentEvent.url.includes("fox") ? "FOX" : "Canal";
       document.getElementById('player-frame').src = currentEvent.url;
-
-      // Mostrar overlay en fullscreen
-      showOverlay(currentEvent.event, channelName);
     } else {
       document.getElementById('event-title').innerText = "Sin evento en vivo";
       document.getElementById('channel-name').innerText = "";
@@ -125,50 +102,11 @@ async function updateSchedule() {
   }
 }
 
-function showOverlay(eventName, channelName) {
-  document.getElementById("overlay-event").innerText = eventName;
-  document.getElementById("overlay-channel").innerText = channelName;
-  const overlay = document.getElementById("fullscreen-overlay");
-  overlay.style.display = "flex";
-
-  setTimeout(() => {
-    overlay.style.display = "none";
-  }, 3000); // Ocultar después de 3 segundos
-}
-
-// Mostrar overlay al entrar en fullscreen
-document.addEventListener("fullscreenchange", () => {
-  if (document.fullscreenElement) {
-    const eventName = document.getElementById("event-title").innerText;
-    const channelName = document.getElementById("channel-name").innerText;
-    showOverlay(eventName, channelName);
-  }
-});
-
 // Ejecutar al cargar y cada minuto
 updateSchedule();
 setInterval(updateSchedule, 60000);
-
-// Retroceso dinámico
-function goBack() {
-  const isWebView = navigator.userAgent.includes("wv") || navigator.userAgent.includes("AppCreator24");
-  if (isWebView) {
-    window.location.href = "go:exitFs";
-    return;
-  }
-  const playerFrame = document.getElementById("player-frame");
-  if (playerFrame && playerFrame.src) {
-    const url = playerFrame.src;
-    const match = url.match(/channel=([^&]+)/);
-    if (match) {
-      const channelName = match[1];
-      window.location.href = `https://hsports4hd.blogspot.com/p/${channelName}.html?m=1`;
-      return;
-    }
-  }
-  window.location.href = "https://hsports4hd.blogspot.com/p/universohd1.html?m=1";
-}
 </script>
 
 </body>
 </html>
+    
