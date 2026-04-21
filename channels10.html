@@ -137,34 +137,24 @@ function goBack() {
 
 
 <script>
-function showEventHeader() {
-  const header = document.getElementById("event-header");
-  header.style.display = "flex"; 
-  header.style.opacity = "1";    
-
-  // Ocultar con fade-out después de 3 segundos
-  setTimeout(() => {
-    header.style.transition = "opacity 0.5s ease";
-    header.style.opacity = "0";
-  }, 2500);
-
-  setTimeout(() => {
-    header.style.display = "none";
-    header.style.transition = "";
-  }, 3000);
-}
-
 async function updateSchedule() {
   try {
     const res = await fetch("https://hernanmix.github.io/reproductor/channels9.json");
     const events = await res.json();
 
     const now = new Date();
-    const currentTime = now.getHours().toString().padStart(2, '0') + ":" +
-                        now.getMinutes().toString().padStart(2, '0');
 
+    // Buscar evento actual (duración fija de 2 horas)
     const currentEvent = events.find(item => {
-      return currentTime >= item.start && currentTime < item.end;
+      // Convertir hora de inicio del JSON a objeto Date
+      const [h, m] = item.start.split(":").map(Number);
+      const start = new Date();
+      start.setHours(h, m, 0, 0);
+
+      // Fin = inicio + 2 horas
+      const end = new Date(start.getTime() + 2 * 60 * 60 * 1000);
+
+      return now >= start && now < end;
     });
 
     if (currentEvent) {
@@ -173,10 +163,16 @@ async function updateSchedule() {
                           currentEvent.url.includes("fox") ? "FOX" :
                           currentEvent.url.includes("dsports") ? "DSports" : "Canal";
       document.getElementById('channel-name').innerText = channelName;
-      document.getElementById('player-frame').src = currentEvent.url;
+
+      const playerFrame = document.getElementById('player-frame');
+      // Solo recargar si cambió el evento
+      if (playerFrame.src !== currentEvent.url) {
+        playerFrame.src = currentEvent.url;
+      }
 
       showEventHeader();
     } else {
+      // Si no hay evento vigente
       document.getElementById('event-title').innerText = "Sin evento en vivo";
       document.getElementById('channel-name').innerText = "";
       document.getElementById('player-frame').src = "";
@@ -186,23 +182,11 @@ async function updateSchedule() {
   }
 }
 
-// Mostrar header al entrar en fullscreen
-document.addEventListener("fullscreenchange", () => {
-  if (document.fullscreenElement) {
-    showEventHeader();
-  }
-});
-
-// Mostrar header al tocar el reproductor (capturando el contenedor <main>)
-const playerContainer = document.querySelector("main");
-playerContainer.addEventListener("click", () => {
-  showEventHeader();
-});
-
 // Ejecutar al cargar y cada minuto
 updateSchedule();
 setInterval(updateSchedule, 60000);
 </script>
+
   
   
   <script>
