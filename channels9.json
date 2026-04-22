@@ -25,8 +25,14 @@
   },
   {
     "event": "WINSOORYS-LigaBerPlay:Medellín vs Boyacá Chicó",
-    "start": "18:10",
-    "end": "20:00",
+    "start": "18:20",
+    "end": "20:20",
     "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=winsports"
+  },
+  {
+    "event": "TVPASS-MLS: Real Salt Lake vs Inter Miami",
+    "start": "20:30",
+    "end": "22:30",
+    "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=mls9"
   }
 ]
