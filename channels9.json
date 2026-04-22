@@ -1,24 +1,24 @@
 [
   {
-    "event": "TUDNUSA-Liga MX Monterrey vs Puebla",
+    "event": "TUDNUSA-LigaMX:Monterrey vs Puebla",
     "start": "22:00",
     "end": "00:03",
     "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=tudnus"
   },
   {
-    "event": "Ligue1:PSG vs Nantes ",
+    "event": "ESPN2-Ligue1:PSG vs Nantes ",
     "start": "12:00",
     "end": "14:00",
     "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=espn2"
   },
   {
-    "event": "LA LIGA:Barcelona vs Celta de Vigo",
+    "event": "ESPN2+LA LIGA:Barcelona vs Celta de Vigo",
     "start": "14:00",
     "end": "16:00",
     "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=espn2"
   },
   {
-    "event": "LigaBerPlay:Medellín vs Boyacá Chicó",
+    "event": "WINSOORYS-LigaBerPlay:Medellín vs Boyacá Chicó",
     "start": "18:10",
     "end": "20:00",
     "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=winsports"
