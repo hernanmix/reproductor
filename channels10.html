@@ -160,18 +160,6 @@ updateSchedule();
 </script>
 
 
-
-  
-  
-  <script>
-// Detectar toque en el reproductor interno
-document.querySelector("main").addEventListener("click", () => {
-  // Avisar a la página padre (plantilla externa)
-  window.parent.postMessage({ action: "showEvent" }, "*");
-});
-</script>
-
-
 </body>
 </html>
 
