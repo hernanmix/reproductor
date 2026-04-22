@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sports Live Player</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "background": "#0d1321",
+        "on-surface": "#dce2f5",
+        "primary": "#adc7ff",
+        "error": "#ffb4ab",
+        "error-container": "#93000a"
+      },
+      fontFamily: {
+        headline: ["Plus Jakarta Sans"],
+        body: ["Manrope"],
+        label: ["Manrope"]
+      }
+    }
+  }
+}
+</script>
+<style>
+  body {
+    background-color: #0d1321;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Manrope', sans-serif;
+    min-height: max(884px, 100dvh);
+  }
+  .header-gradient {
+    background: linear-gradient(to bottom, rgba(13, 19, 33, 0.95) 0%, rgba(13, 19, 33, 0.6) 70%, transparent 100%);
+  }
+  
+  #channel-menu button {
+  background-color: transparent;
+  border: 1px solid #adc7ff;
+  color: #adc7ff;
+  padding: 6px 10px;
+  margin: 4px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#channel-menu button:hover {
+  background-color: rgba(173,199,255,0.1);
+}
+#channel-menu button.active {
+  background-color: rgba(173,199,255,0.2);
+}
+
+
+</style>
+</head>
+<body class="text-on-surface">
+
+<!-- TopAppBar -->
+<header id="event-header" class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-transparent" style="display:none; opacity:0;">
+  <div class="flex flex-col gap-1">
+    <div class="flex items-center gap-4">
+      <button onclick="goBack()" class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-blue-500/10 transition-all scale-95 active:opacity-80">
+        <span class="material-symbols-outlined text-on-surface text-sm">arrow_back</span>
+      </button>
+      <h1 class="font-headline text-xs md:text-sm font-semibold italic text-on-surface tracking-tight uppercase" id="event-title">
+        Cargando evento...
+      </h1>
+    </div>
+    <div class="flex items-center gap-2 ml-12">
+      <span class="font-headline font-semibold italic text-primary tracking-tight text-xs leading-none" id="channel-name">Canal</span>
+      <div class="flex items-center gap-1">
+        <span class="w-1 h-1 rounded-full bg-error"></span>
+        <span class="font-label text-[8px] font-semibold tracking-wide text-error uppercase">EN VIVO</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- Main Player Canvas -->
+<main class="relative w-screen h-screen bg-black">
+  <iframe id="player-frame" class="embed-responsive-item w-full h-full border-0"
+          frameborder="0"
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+          allowfullscreen
+          scrolling="no"
+          src="">
+  </iframe>
+  <div id="channel-menu" class="flex flex-wrap p-2 bg-[#0d1321]"></div>
+
+  
+  <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0d1321] to-transparent pointer-events-none"></div>
+</main>
+<script>
+async function updateSchedule() {
+  try {
+    const res = await fetch("https://hernanmix.github.io/reproductor/channels_test.json");
+    const events = await res.json();
+
+    const now = new Date();
+
+    // Buscar todos los eventos que están activos en este momento
+    const currentEvents = events.filter(item => {
+      const [sH, sM] = item.start.split(":").map(Number);
+      const [eH, eM] = item.end.split(":").map(Number);
+
+      const startTime = new Date();
+      startTime.setHours(sH, sM, 0, 0);
+
+      const endTime = new Date();
+      endTime.setHours(eH, eM, 0, 0);
+      if (endTime < startTime) endTime.setDate(endTime.getDate() + 1);
+
+      return now >= startTime && now < endTime;
+    });
+
+    if (currentEvents.length > 0) {
+      // Mostrar el primero por defecto
+      const defaultEvent = currentEvents[0];
+      document.getElementById('event-title').innerText = defaultEvent.event;
+
+      let channelName = "CANAL";
+      try {
+        const urlParams = new URLSearchParams(defaultEvent.url.split("?")[1]);
+        if (urlParams.has("channel")) {
+          channelName = urlParams.get("channel").toUpperCase();
+        }
+      } catch(e) {}
+      document.getElementById('channel-name').innerText = channelName;
+
+      const playerFrame = document.getElementById('player-frame');
+      playerFrame.src = defaultEvent.url;
+
+      // Construir menú de selección
+      const menu = document.getElementById('channel-menu');
+      menu.innerHTML = "";
+      currentEvents.forEach(ev => {
+        const urlParams = new URLSearchParams(ev.url.split("?")[1]);
+        const chName = urlParams.has("channel") ? urlParams.get("channel").toUpperCase() : "CANAL";
+        const btn = document.createElement("button");
+        btn.innerText = ev.event + " (" + chName + ")";
+        btn.className = "px-2 py-1 m-1 bg-blue-600 text-white rounded text-xs";
+        btn.onclick = () => {
+          playerFrame.src = ev.url;
+          document.getElementById('event-title').innerText = ev.event;
+          document.getElementById('channel-name').innerText = chName;
+        };
+        menu.appendChild(btn);
+      });
+
+      // Mostrar overlay
+      showEventHeader();
+
+      // Programar actualización al terminar el primero
+      const [endH, endM] = defaultEvent.end.split(":").map(Number);
+      const endTime = new Date();
+      endTime.setHours(endH, endM, 0, 0);
+      if (endTime < now) endTime.setDate(endTime.getDate() + 1);
+
+      const msUntilEnd = endTime.getTime() - now.getTime();
+      setTimeout(updateSchedule, msUntilEnd);
+    } else {
+      document.getElementById('event-title').innerText = "Sin evento en vivo";
+      document.getElementById('channel-name').innerText = "";
+      document.getElementById('player-frame').src = "";
+      document.getElementById('channel-menu').innerHTML = "";
+    }
+  } catch (err) {
+    console.error("Error cargando channels9.json", err);
+  }
+}
+
+updateSchedule();
+  
+  
+  btn.onclick = () => {
+  // Cambiar el reproductor al canal seleccionado
+  playerFrame.src = ev.url;
+
+  // Actualizar overlay con evento y canal
+  document.getElementById('event-title').innerText = ev.event;
+  const urlParams = new URLSearchParams(ev.url.split("?")[1]);
+  const chName = urlParams.has("channel") ? urlParams.get("channel").toUpperCase() : "CANAL";
+  document.getElementById('channel-name').innerText = chName;
+
+  // Marcar botón activo y desmarcar los demás
+  document.querySelectorAll('#channel-menu button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  // Mostrar overlay al lado de la flecha
+  showEventHeader();
+};
+
+  
+  
+</script>
+
+
+      
+      
+
+</body>
+</html>
+
+
+
+
+<div class="flex items-center gap-2 ml-14">
+  <span class="font-headline font-semibold italic text-primary tracking-tight text-sm leading-none" id="channel-name">Canal</span>
+  <div class="flex items-center gap-1">
+    <span class="w-1 h-1 rounded-full bg-error"></span>
+    <span class="font-label text-[9px] font-semibold tracking-wide text-error uppercase">EN VIVO</span>
+  </div>
+</div>
