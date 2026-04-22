@@ -1,20 +1,20 @@
 [
   {
     "event": "PRUEBA: Evento 1",
-    "start": "22:44",
-    "end": "22:47",
+    "start": "23:44",
+    "end": "00:47",
     "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=espn"
   },
   {
     "event": "PRUEBA: Evento 2",
-    "start": "22:47",
-    "end": "22:50",
+    "start": "23:47",
+    "end": "00:50",
     "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=espn2"
   },
   {
     "event": "PRUEBA: Evento 3",
-    "start": "22:50",
-    "end": "22:53",
+    "start": "00:50",
+    "end": "00:53",
     "url": "https://m-3-u-player--hermixervdj94.replit.app/?channel=winsports"
   }
 ]
