@@ -118,6 +118,7 @@ async function updateSchedule() {
       // Detectar canal por URL
       const channelName = currentEvent.url.includes("espn2") ? "ESPN 2" :
                           currentEvent.url.includes("espn") ? "ESPN" :
+                          currentEvent.url.includes("esportvbr") ? "ESPORTVBR" :
                           currentEvent.url.includes("dsports") ? "DSports" : "Canal";
       document.getElementById('channel-name').innerText = channelName;
 
