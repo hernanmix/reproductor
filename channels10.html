@@ -97,8 +97,7 @@ function showEventHeader() {
 
 async function updateSchedule() {
   try {
-    const res = await fetch("https://hernanmix.github.io/reproductor/channels_test.json");
-
+    const res = await fetch("https://hernanmix.github.io/reproductor/channels9.json");
     const events = await res.json();
 
     const now = new Date();
