@@ -78,7 +78,6 @@ tailwind.config = {
   <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0d1321] to-transparent pointer-events-none"></div>
 </main>
 
-
 <script>
 function showEventHeader() {
   const header = document.getElementById("event-header");
@@ -124,7 +123,7 @@ async function updateSchedule() {
         }
       } catch(e) {}
 
-      // Mostrar canal + EN VIVO
+      // Mostrar canal debajo del evento con EN VIVO
       document.getElementById('channel-name').innerText = channelName + " EN VIVO";
 
       // Actualizar reproductor
@@ -159,6 +158,7 @@ async function updateSchedule() {
 // Ejecutar al cargar
 updateSchedule();
 </script>
+
 
 
   
