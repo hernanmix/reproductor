@@ -115,13 +115,19 @@ async function updateSchedule() {
       // Mostrar nombre del evento
       document.getElementById('event-title').innerText = currentEvent.event;
 
-      // Detectar canal por URL
-      const channelName = currentEvent.url.includes("espn2") ? "ESPN 2" :
-                          currentEvent.url.includes("espn") ? "ESPN" :
-                          currentEvent.url.includes("esportvbr") ? "ESPORTVBR" :
-                          currentEvent.url.includes("dsports") ? "DSports" : "Canal";
-      document.getElementById('channel-name').innerText = channelName;
+      // Extraer canal directamente de la URL (?channel=xxx)
+      let channelName = "CANAL";
+      try {
+        const urlParams = new URLSearchParams(currentEvent.url.split("?")[1]);
+        if (urlParams.has("channel")) {
+          channelName = urlParams.get("channel").toUpperCase();
+        }
+      } catch(e) {}
 
+      // Mostrar canal + EN VIVO
+      document.getElementById('channel-name').innerText = channelName + " EN VIVO";
+
+      // Actualizar reproductor
       const playerFrame = document.getElementById('player-frame');
       if (playerFrame.src !== currentEvent.url) {
         playerFrame.src = currentEvent.url;
@@ -153,6 +159,7 @@ async function updateSchedule() {
 // Ejecutar al cargar
 updateSchedule();
 </script>
+
 
   
   
