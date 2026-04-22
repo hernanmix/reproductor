@@ -1,7 +1,11 @@
 {
   "ecuavisa": {
-    "title": "Liga Pro:Cuenca vs Orrnse",
+    "title": "",
     "url": "https://jireh-5-hls-video-us-isp.dps.live/hls-video/c54ac2799874375c81c1672abb700870537c5223/ecuavisa/ecuavisa.smil/ecuavisa/livestream2/chunks.m3u8?dpssid=b13118599230866673999fdb969&ndvc=0&sid=ba5t1l1xb4922708609667399a247f4a"
+  },
+  "teleamazona": {
+    "title": "Teleamazona-LDU Quito vs Aucas",
+    "url": "https://teleamazonas-live.cdn.vustreams.com/live/b545dc57-91af-4f6b-bac7-8d9337166407/live.isml/live.m3u8"
   },
   "dsports": {
     "title": "Dsports-  ",
