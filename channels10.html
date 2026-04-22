@@ -77,7 +77,6 @@ tailwind.config = {
   </iframe>
   <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0d1321] to-transparent pointer-events-none"></div>
 </main>
-
 <script>
 function showEventHeader() {
   const header = document.getElementById("event-header");
@@ -102,12 +101,24 @@ async function updateSchedule() {
     const events = await res.json();
 
     const now = new Date();
-    const currentTime = now.getHours().toString().padStart(2, '0') + ":" +
-                        now.getMinutes().toString().padStart(2, '0');
 
-    // Buscar evento actual según start y end
+    // Buscar evento actual según start y end usando Date
     const currentEvent = events.find(item => {
-      return currentTime >= item.start && currentTime < item.end;
+      const [sH, sM] = item.start.split(":").map(Number);
+      const [eH, eM] = item.end.split(":").map(Number);
+
+      const startTime = new Date();
+      startTime.setHours(sH, sM, 0, 0);
+
+      const endTime = new Date();
+      endTime.setHours(eH, eM, 0, 0);
+
+      // Si el evento cruza medianoche (ej: 22:00 a 00:03)
+      if (endTime < startTime) {
+        endTime.setDate(endTime.getDate() + 1);
+      }
+
+      return now >= startTime && now < endTime;
     });
 
     if (currentEvent) {
@@ -124,7 +135,7 @@ async function updateSchedule() {
       } catch(e) {}
 
       // Mostrar canal debajo del evento con EN VIVO
-      document.getElementById('channel-name').innerText = channelName + " EN VIVO";
+      document.getElementById('channel-name').innerText = channelName;
 
       // Actualizar reproductor
       const playerFrame = document.getElementById('player-frame');
@@ -139,6 +150,7 @@ async function updateSchedule() {
       const [endH, endM] = currentEvent.end.split(":").map(Number);
       const endTime = new Date();
       endTime.setHours(endH, endM, 0, 0);
+      if (endTime < now) endTime.setDate(endTime.getDate() + 1);
 
       const msUntilEnd = endTime.getTime() - now.getTime();
 
@@ -158,7 +170,6 @@ async function updateSchedule() {
 // Ejecutar al cargar
 updateSchedule();
 </script>
-
 
 </body>
 </html>
