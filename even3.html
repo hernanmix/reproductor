@@ -331,7 +331,7 @@ async function getStream() {
   }
 }
 
-getStream();
+getStream();{
   if (!Hls.isSupported()) {
     video.src = SRC;
     video.addEventListener('loadedmetadata', () => {
