@@ -243,7 +243,8 @@ video::-webkit-media-controls{display:none!important;}
 <script>
 'use strict';
 
-const SRC       = "https://m-3-u-player--hermixervdj94.replit.app/?channel=espn7";
+const API_URL = "https://m-3-u-player--hermixervdj94.replit.app/?channel=espn7";
+let SRC = null;
 const TITLE     = "CanchaTV - ESPN7";
 const video     = document.getElementById('video');
 const spinner   = document.getElementById('spinner');
@@ -303,23 +304,34 @@ function buildHls() {
   });
 }
 
-function unmuteGradual() {
-  if (!video.muted) return;
-  video.muted  = false;
-  video.volume = 0;
-  iconVol.style.display  = '';
-  iconMute.style.display = 'none';
-  const steps = 20, inc = 1 / steps;
-  let v = 0;
-  const t = setInterval(() => {
-    v = Math.min(1, v + inc);
-    video.volume = v;
-    volRange.value = v;
-    if (v >= 1) clearInterval(t);
-  }, 800 / steps);
+async function getStream() {
+  try {
+    spinner.classList.remove('hidden');
+
+    const res = await fetch(API_URL);
+    const text = await res.text();
+
+    // 🔍 EXTRAER M3U8
+    const match = text.match(/https?:\/\/[^"' ]+\.m3u8[^"' ]*/);
+
+    if (!match) {
+      throw new Error("No se encontró m3u8");
+    }
+
+    SRC = match[0];
+
+    console.log("M3U8 detectado:", SRC);
+
+    initHls();
+
+  } catch (err) {
+    spinner.classList.add('hidden');
+    errMsg.textContent = "❌ " + err.message;
+    errMsg.style.display = 'block';
+  }
 }
 
-function initHls() {
+getStream();
   if (!Hls.isSupported()) {
     video.src = SRC;
     video.addEventListener('loadedmetadata', () => {
