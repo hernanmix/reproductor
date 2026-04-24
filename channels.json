@@ -1,19 +1,19 @@
 [
   {
     "channel": "espn",
-    "url": "https://cc324.streamingtv339.com/espn/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=fbdbe3a09b6c4dc69ac35f21115aacdc50266465-15-1775287627-1775233627"
+    "url": "https://pr745.streamingtv339.com/espn/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=f4535bbaa1d396c7e347014fd9579843e8c71ae9-b7-1777095365-1777041365"
   },
   {
     "channel": "winsportsplus",
-    "url": "https://c2nvdxq.fubohd.com/winsportsplus/mono.m3u8?token=77a722b57c45e9784eeb12435fae6c17707ae08e-30-1775204121-1775186121"
+    "url": "https://pr745.streamingtv339.com/winplus/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=dcca48783c2fbe2bb5a5d30c7cc5e5c6fdd4a92f-22-1777095393-1777041393"
   },
   {
     "channel": "espn2",
-    "url": "https://a2vlca.fubohd.com/espn2/mono.m3u8?token=c749e0eb6735bb40d1aea992f5a4cf5412dfae0a-4b-1775203402-1775185402"
+    "url": "https://bg622.streamingtv339.com/espn2/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=42c479c396be0cd364b9a769470e4a1b26fb1d7a-e1-1777095417-1777041417"
   },
   {
     "channel": "foxsports",
-    "url": "https://ym9yzq.fubohd.com/foxsports/mono.m3u8?token=172a6b60b5426d060983aeb337e852f6ba8e77a6-49-1775204595-1775186595"
+    "url": ""
   }
 ]
 
