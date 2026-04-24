@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       transition:opacity 1s ease;
     `;
 
-   // Imagen centrada (reemplaza el texto anterior)
+    // Imagen centrada (reemplaza el texto HSP⚽RTSEC)
     const img = document.createElement("img");
     img.src = "https://hernanmix.github.io/reproductor/fifa2026.jpg";
     img.alt = "Intro FIFA 2026";
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     audio.autoplay = true;
 
     // Insertar en DOM
-    intro.appendChild(box);
+    intro.appendChild(img);
     intro.appendChild(audio);
     document.body.appendChild(intro);
 
