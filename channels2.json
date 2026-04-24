@@ -1,8 +1,8 @@
 
 {
   "ecdf": "",
-  "espn": "https://bg622.streamingtv339.com/espn/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=de11f844fb19eb530eef7a6169a5a5e5286d7308-39-1777094821-1777040821",
-  "espn2": "https://pr745.streamingtv339.com/espn2/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=4ea8cd56e4f9a0e78d5f93b7656844ba9569fb7f-c5-1777094787-1777040787",
+  "espn": "https://smarthard.click/hls/sabrouchespn1col/index.m3u8?st=KhF9rmHQM-GgI5wusI5Glw&e=1777074646",
+  "espn2": "https://smarthard.click/hls/sabrouchespn2col/index.m3u8?st=u4DAzBRwPSM7KFZA46W9eQ&e=1777074332",
   "fox1ar": "",
   "fox2ar": "https://pr745.streamingtv339.com/fox2ar/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=06901c6d00be697fd9f9e10e16de97075d83ba14-31-1777094878-1777040878",
   "dsports": "https://bg622.streamingtv339.com/dsports/tracks-v1a1/mono.m3u8?ip=45.224.153.13&token=3916b76488b00a029cd2b6e05db5f90eff22ad51-c2-1777094909-1777040909",
