@@ -1,12 +1,11 @@
 [
   {
-    "event": "Liga Profesional: Deportivo Riestra vs Independiente",
-    "start": "15:00",
-    "flag": "AR",
+    "event": "Liga MX: Puebla vs Querétaro",
+    "start": "22:00",
+    "flag": "MX",
     "channels": [
-      { "name": "Fanatiz 1", "url": "https://...", "quality": "Calidad 720p" },
-      { "name": "ESPN Premium", "url": "https://...", "quality": "Calidad 720p" },
-      { "name": "TyC Sports Internacional", "url": "https://...", "quality": "Calidad 720p" }
+      { "name": "Fanatiz 1", "url": "https://hsports4hd.blogspot.com/p/espn.html?channel=fanatiz1", "quality": "Calidad 720p" },
+      { "name": "ESPN", "url": "https://hsports4hd.blogspot.com/p/espn.html?channel=espn", "quality": "Calidad 720p" }
     ]
   }
 ]
