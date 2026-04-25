@@ -1,0 +1,22 @@
+[
+  {
+    "name": "ESPN",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/ESPN_wordmark.svg",
+    "url": "player.html?get=https://streamx339.cloud/global1.php?channel=ESPN"
+  },
+  {
+    "name": "FOX Sports",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fox_Sports_logo.svg",
+    "url": "player.html?get=https://streamx339.cloud/global1.php?channel=foxone1"
+  },
+  {
+    "name": "Star Channel",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Star_Channel_logo_2021.svg",
+    "url": "#"
+  },
+  {
+    "name": "HBO",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/17/HBO_Logo.svg",
+    "url": "#"
+  }
+]
