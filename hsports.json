@@ -1,11 +1,38 @@
 [
   {
+    "event": "Liga Profesional: Deportivo Riestra vs Independiente",
+    "start": "15:00",
+    "flag": "AR",
+    "channels": [
+      { "name": "Fanatiz 1", "url": "https://hsports4hd.blogspot.com/p/espn.html?channel=fanatiz1", "quality": "Calidad 720p" },
+      { "name": "ESPN Premium", "url": "https://hsports4hd.blogspot.com/p/espn.html?channel=espnpremium", "quality": "Calidad 720p" },
+      { "name": "TyC Sports Internacional", "url": "https://hsports4hd.blogspot.com/p/espn.html?channel=tycint", "quality": "Calidad 720p" }
+    ]
+  },
+  {
+    "event": "Copa de Primera: Nacional Asunción vs Deportivo Recoleta",
+    "start": "15:45",
+    "flag": "PY",
+    "channels": [
+      { "name": "Fanatiz 2", "url": "https://hsports4hd.blogspot.com/p/espn.html?channel=fanatiz2", "quality": "Calidad 720p" }
+    ]
+  },
+  {
+    "event": "Liga BetPlay: Cúcuta Deportivo vs Junior",
+    "start": "16:00",
+    "flag": "COL",
+    "channels": [
+      { "name": "Win+ Fútbol", "url": "https://hsports4hd.blogspot.com/p/tudnus.html?channel=winplus", "quality": "Calidad 720p" },
+      { "name": "Win+ Fútbol OP.2", "url": "https://hsports4hd.blogspot.com/p/tudnus.html?channel=winplus2", "quality": "Calidad 720p" }
+    ]
+  },
+  {
     "event": "Liga MX: Puebla vs Querétaro",
     "start": "22:00",
     "flag": "MX",
     "channels": [
-      { "name": "Fanatiz 1", "url": "https://hsports4hd.blogspot.com/p/espn.html?channel=fanatiz1", "quality": "Calidad 720p" },
-      { "name": "ESPN", "url": "https://hsports4hd.blogspot.com/p/espn.html?channel=espn", "quality": "Calidad 720p" }
+      { "name": "Fanatiz MX", "url": "https://hsports4hd.blogspot.com/p/espn.html?channel=fanatizmx", "quality": "Calidad 720p" },
+      { "name": "TUDN", "url": "https://hsports4hd.blogspot.com/p/tudnus.html?channel=tudn", "quality": "Calidad 720p" }
     ]
   }
 ]
