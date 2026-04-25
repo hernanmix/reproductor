@@ -1,0 +1,62 @@
+// ================= CARRUSEL DE CANALES =================
+function renderChannels(channels) {
+  const container = document.getElementById('channelsContainer');
+  const isGridView = container.classList.contains('grid-view');
+
+  container.innerHTML = channels.map(channel => {
+    const cardWidthClass = isGridView ? 'card-grid-width' : 'card-carousel-width';
+
+    return `
+      <a href="${channel.url}" class="${cardWidthClass} group">
+        <div class="relative aspect-video rounded-xl overflow-hidden mb-sm ring-1 ring-white/10 group-hover:ring-white/50 transition-all duration-300 bg-black flex items-center justify-center p-4">
+          
+          <img src="${channel.image}" 
+               class="max-h-12 object-contain group-hover:scale-110 transition duration-300"/>
+
+          <div class="absolute bottom-2 left-2">
+            <span class="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-sm uppercase">
+              EN VIVO
+            </span>
+          </div>
+        </div>
+
+        <h4 class="font-label-bold text-label-bold text-white px-1 group-hover:text-primary transition-colors">
+          ${channel.name}
+        </h4>
+      </a>
+    `;
+  }).join('');
+}
+
+// ================= FETCH JSON =================
+fetch("https://TU-USUARIO.github.io/TU-REPO/channels.json")
+  .then(res => res.json())
+  .then(data => {
+    renderChannels(data);
+  })
+  .catch(err => console.error("Error cargando canales:", err));
+
+// ================= TOGGLE CANALES =================
+const toggleChannelsBtn = document.getElementById('toggleChannels');
+const channelsContainer = document.getElementById('channelsContainer');
+
+let isChannelsGrid = false;
+
+toggleChannelsBtn.addEventListener('click', () => {
+  isChannelsGrid = !isChannelsGrid;
+
+  if (isChannelsGrid) {
+    channelsContainer.classList.remove('carousel-view');
+    channelsContainer.classList.add('grid-view');
+    toggleChannelsBtn.innerText = 'CERRAR';
+  } else {
+    channelsContainer.classList.add('carousel-view');
+    channelsContainer.classList.remove('grid-view');
+    toggleChannelsBtn.innerText = 'VER TODO';
+  }
+
+  // Re-render con nuevo layout
+  fetch("https://TU-USUARIO.github.io/TU-REPO/channels.json")
+    .then(res => res.json())
+    .then(data => renderChannels(data));
+});
