@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#adc7ff",
+                    "surface-container-high": "#272a32",
+                    "on-surface": "#e0e2ed",
+                    "error-container": "#93000a",
+                    "on-primary": "#002e68",
+                    "primary": "#adc7ff",
+                    "surface-dim": "#10131b",
+                    "primary-container": "#4a8eff",
+                    "outline-variant": "#414754",
+                    "surface-container-low": "#181c23",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed": "#410000",
+                    "on-background": "#e0e2ed",
+                    "tertiary-fixed-dim": "#ffb695",
+                    "on-secondary-fixed-variant": "#930100",
+                    "inverse-primary": "#005bc0",
+                    "inverse-surface": "#e0e2ed",
+                    "secondary-container": "#ff5540",
+                    "surface-bright": "#363942",
+                    "tertiary-fixed": "#ffdbcc",
+                    "surface-variant": "#31353d",
+                    "on-error": "#690005",
+                    "tertiary-container": "#ef6719",
+                    "on-surface-variant": "#c1c6d7",
+                    "error": "#ffb4ab",
+                    "on-secondary-container": "#5c0000",
+                    "on-secondary": "#690100",
+                    "secondary-fixed-dim": "#ffb4a8",
+                    "secondary": "#ffb4a8",
+                    "on-primary-fixed": "#001a41",
+                    "inverse-on-surface": "#2d3039",
+                    "background": "#10131b",
+                    "surface-container-lowest": "#0b0e16",
+                    "surface-container": "#1c2027",
+                    "surface-container-highest": "#31353d",
+                    "on-tertiary": "#571e00",
+                    "on-primary-container": "#00285b",
+                    "on-tertiary-fixed-variant": "#7c2e00",
+                    "outline": "#8b90a0",
+                    "on-primary-fixed-variant": "#004493",
+                    "surface": "#10131b",
+                    "on-tertiary-fixed": "#351000",
+                    "tertiary": "#ffb695",
+                    "primary-fixed-dim": "#adc7ff",
+                    "on-tertiary-container": "#4c1a00",
+                    "secondary-fixed": "#ffdad4",
+                    "primary-fixed": "#d8e2ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "safe-margin": "5%",
+                    "unit": "4px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xl": "40px",
+                    "xxl": "64px",
+                    "md": "16px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "label-sm": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Manrope"],
+                    "label-bold": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0d1321;
+        }
+        .header-bg {
+            background-color: #991b1b;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .scrim-gradient {
+            background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+        }
+        /* Grid Toggle Classes */
+        .carousel-view {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        .grid-view {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        @media (min-width: 1024px) {
+            .grid-view {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+        .card-carousel-width {
+            flex-shrink: 0;
+            width: 280px;
+        }
+        .card-grid-width {
+            width: 100% !important;
+        }
+        /* Clickability and pointer handling */
+        .event-card {
+            display: block;
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+            z-index: 10;
+            position: relative;
+            cursor: pointer;
+        }
+        /* When disabled, visual feedback */
+        .event-card.disabled {
+            cursor: default;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="text-on-background selection:bg-primary/30">
+<header class="fixed top-0 left-0 w-full z-[100] flex justify-center items-center px-[5%] h-16 header-bg shadow-lg border-b border-white/10">
+<div class="text-2xl font-black tracking-tighter text-white italic font-['Plus_Jakarta_Sans'] uppercase">
+            HSPORTSEC
+        </div>
+</header>
+<main class="pt-20 pb-32">
+<section class="mb-xxl">
+<div class="px-[5%] flex justify-between items-end mb-md">
+<h3 class="font-headline-md text-headline-md text-white">Destacados en vivo y próximamente</h3>
+<button class="font-label-bold text-label-bold text-white hover:opacity-80 underline underline-offset-4 decoration-white/30" id="toggleView">VER TODO</button>
+</div>
+<div class="carousel-view px-[5%] hide-scrollbar" id="contentContainer">
+<!-- Events will be rendered here by JavaScript -->
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-6 pt-3 bg-slate-950/90 backdrop-blur-2xl border-t border-white/10 shadow-[0_-10px_25px_rgba(0,0,0,0.5)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-widest">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">sports_soccer</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-widest">Deportes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-widest">Agenda</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-widest">Cuenta</span>
+</a>
+</nav>
+<script>
+        // Data management: Sample array of events
+        const events = [
+            {
+                id: 1,
+                title: "Stuttgart vs. SC Freiburg",
+                startTime: "06:00",
+                endTime: "06:00",
+                league: "Español",
+                image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAmfxW9Lnm-s7QO38j8KouJ-9u1LAL7pT1NP_P_ATNoX1nVNYc4XSBWzZ8o1OFWaUd_zC3QYLaC6XAoTp0zc8hhfvRoTQHtS74BbIFksmxW3qJfsfMroHVsrZ4gGIRtIHfGxAwN2KzTuOeT1TVae-m1Uxcmfh7jm254h0HoeWfqa_7ykY1O8HUjcKtqY_qWN8z17-reztSog9tmLbPrwfdSYPzqsQNgenlrARYazCJk11DLEDsuVdXiSXyJQEp4ulHD3MWq-fwOJnAk",
+                url: "go:espn1"
+            },
+            {
+                id: 2,
+                title: "Golden State vs. Lakers",
+                startTime: "19:00",
+                endTime: "21:30",
+                league: "NBA Basketball",
+                image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB_4QnA4s03t12CKAo7gKy5bvabJmAYq9YIvmdPrnXTDdb5d0-k6Y5jyVp5pI87_10FnufT5XCplCQaEOYLKVLCnnsTd3RbK8jSmrT99Yh7yyK71gk3qaKuAgpdTx3PtDvA84bGhcj-yIdZMI3QkS-k8uK3woj6eJ7rd4ijEY8VK1G5UOAbmmvJWGekAhPELpnmWnMKC_hyWugG8E3b7VT8AZI-mzCCBHkAXbQ1xA2p1bAisbfpMTjM69YBRadX7APiH_JVVrNs0HW_",
+                url: "https://hsports4hd.blogspot.com/p/hsportstv.html?m=1"
+            },
+            {
+                id: 3,
+                title: "Global Music Festival Live",
+                startTime: "00:00", 
+                endTime: "23:59", 
+                league: "Entertainment",
+                image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCzRmERSM_HsefdKMTcZ8iVa4e96GpjO89faZ-sio4E69cKljCDqhd7LYWlQ7kDAiQe-dnRn81TMFMy17DNYk11Xvvd_9EGGcT9LmmGdx5Dvp6Zc3GOWqUIZwCJ0mLvtTBEK0yZMJW3BmlxtBKQO-L2q64ytmUKAo7KDWmOoR44o1a9gvaEaxTxdOwx6ZTzeoJG7C1oInlTQqe7eomwztdH0Zin_k1gHMdfKoKGoj66ZXmsUfR0PHtf3v9A9PIr5_Wz0kpWOU-JitqK",
+                url: "https://hsports4hd.blogspot.com/p/hsportstv.html?m=1"
+            },
+            {
+                id: 4,
+                title: "Alcaraz vs. Sinner",
+                startTime: "10:00",
+                endTime: "13:00",
+                league: "ATP Tour",
+                image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDB1UPPCrpUQY9HfaYQdG6Keg9rnKViI1_5UJjKJ4mSCbeS0OZ8qC1WuNF-YeSYswNbiN2ySpJEqBH246rylNwlNe6dT3p4Swv2EN7sQeJn6Y-xIh2znzwAq4KUevm5M4PVvnMPICo1kxeBd8PPC1_qiZ_UyZs-Nsyujh6kit5bVXJJnnzkdJL2WLufPOnuRvBuOGRIRXZB1lgiPLfQYK0TDkEHU4TPQdY-Ah_HWZ22gfvC6REZgKZyQ-hs5zgN1CcVHz0MoQZUS40r",
+                url: "https://hsports4hd.blogspot.com/p/hsportstv.html?m=1"
+            }
+        ];
+
+        /**
+         * Reliable Live detection across timezones.
+         */
+        function isEventLive(startStr, endStr) {
+            const now = new Date();
+            const currentTimeValue = now.getHours() * 60 + now.getMinutes();
+
+            const [startH, startM] = startStr.split(':').map(Number);
+            const startTimeValue = startH * 60 + startM;
+
+            const [endH, endM] = endStr.split(':').map(Number);
+            const endTimeValue = endH * 60 + endM;
+
+            if (endTimeValue < startTimeValue) {
+                return currentTimeValue >= startTimeValue || currentTimeValue <= endTimeValue;
+            }
+
+            return currentTimeValue >= startTimeValue && currentTimeValue <= endTimeValue;
+        }
+
+        function handleCardClick(event, url, isLive) {
+            if (!isLive) {
+                event.preventDefault();
+                return false;
+            }
+            window.location.href = url;
+        }
+
+        function renderEvents() {
+            const container = document.getElementById('contentContainer');
+            const isGridView = container.classList.contains('grid-view');
+            
+            container.innerHTML = events.map(event => {
+                const live = isEventLive(event.startTime, event.endTime);
+                const badgeText = live ? 'VIVO' : 'PRÓXIMAMENTE';
+                const badgeColor = live ? 'bg-red-600' : 'bg-blue-600';
+                const cardWidthClass = isGridView ? 'card-grid-width' : 'card-carousel-width';
+                const hrefAttr = live ? `href="${event.url}"` : 'href="javascript:void(0)"';
+                const disabledClass = live ? '' : 'disabled';
+
+                return `
+                    <a class="event-card ${cardWidthClass} ${disabledClass} group relative" ${hrefAttr} onclick="return handleCardClick(event, '${event.url}', ${live})">
+                        <div class="relative aspect-video rounded-xl overflow-hidden mb-sm ring-1 ring-white/10 ${live ? 'group-hover:ring-white/50' : ''} transition-all duration-300">
+                            <img class="w-full h-full object-cover ${live ? 'group-hover:scale-105' : ''} transition-transform duration-500" alt="${event.title}" src="${event.image}"/>
+                            <div class="absolute inset-0 scrim-gradient"></div>
+                            <div class="absolute bottom-3 left-3 flex gap-2">
+                                <span class="${badgeColor} text-white text-[10px] font-black px-2 py-0.5 rounded-sm tracking-tighter uppercase">
+                                    ${badgeText}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="px-1">
+                            <h4 class="font-label-bold text-label-bold text-white mb-1 ${live ? 'group-hover:text-primary' : ''} transition-colors">${event.title}</h4>
+                            <p class="font-label-sm text-label-sm text-slate-400">${event.startTime} - ${event.endTime} (Local)</p>
+                            <p class="font-label-sm text-label-sm text-slate-500 mt-1 uppercase tracking-widest">${event.league}</p>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+        }
+
+        // View Toggling Logic
+        const toggleBtn = document.getElementById('toggleView');
+        const container = document.getElementById('contentContainer');
+        let isGrid = false;
+
+        toggleBtn.addEventListener('click', () => {
+            isGrid = !isGrid;
+            if (isGrid) {
+                container.classList.remove('carousel-view');
+                container.classList.add('grid-view');
+                toggleBtn.innerText = 'CERRAR';
+            } else {
+                container.classList.add('carousel-view');
+                container.classList.remove('grid-view');
+                toggleBtn.innerText = 'VER TODO';
+            }
+            renderEvents();
+        });
+
+        // Initial render
+        renderEvents();
+
+        // Refresh dynamic states every minute
+        setInterval(renderEvents, 60000);
+    </script>
+</body></html>
