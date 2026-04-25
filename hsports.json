@@ -1,45 +1,12 @@
-
 [
   {
     "event": "Liga Profesional: Deportivo Riestra vs Independiente",
-    "start": "01:00",
-    "end": "17:00",
-    "url": "https://hsports4hd.blogspot.com/p/espn.html?channel=fanatiz1",
-    "flag": "AR"
-  },
-  {
-    "event": "Liga Profesional: Deportivo Riestra vs Independiente",
     "start": "15:00",
-    "end": "17:00",
-    "url": "https://hsports4hd.blogspot.com/p/espn.html?channel=espnpremium",
-    "flag": "AR"
-  },
-  {
-    "event": "Liga BetPlay: Cúcuta Deportivo vs Junior",
-    "start": "16:00",
-    "end": "18:00",
-    "url": "https://hsports4hd.blogspot.com/p/tudnus.html?channel=winplus",
-    "flag": "COL"
-  },
-  {
-    "event": "Liga BetPlay: Cúcuta Deportivo vs Junior",
-    "start": "16:00",
-    "end": "18:00",
-    "url": "https://hsports4hd.blogspot.com/p/tudnus.html?channel=winplus2",
-    "flag": "COL"
-  },
-  {
-    "event": "Liga Profesional: Racing Club vs Barracas Central",
-    "start": "19:30",
-    "end": "21:30",
-    "url": "https://hsports4hd.blogspot.com/p/espn.html?channel=fanatiz7",
-    "flag": "AR"
-  },
-  {
-    "event": "Liga Profesional: Racing Club vs Barracas Central",
-    "start": "19:30",
-    "end": "21:30",
-    "url": "https://hsports4hd.blogspot.com/p/espn.html?channel=tntar",
-    "flag": "AR"
+    "flag": "AR",
+    "channels": [
+      { "name": "Fanatiz 1", "url": "https://...", "quality": "Calidad 720p" },
+      { "name": "ESPN Premium", "url": "https://...", "quality": "Calidad 720p" },
+      { "name": "TyC Sports Internacional", "url": "https://...", "quality": "Calidad 720p" }
+    ]
   }
 ]
