@@ -1,22 +1,19 @@
 [
   {
-    "name": "ESPN",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/ESPN_wordmark.svg",
-    "url": "player.html?get=https://streamx339.cloud/global1.php?channel=ESPN"
+    "logo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8lA6i4eio_KOMG5RZpfqupY5BRodHVkeLlOpjAib_457gHTaVzVVEsrVT&s=10",
+    "nombre":"Barcelona vs Real Madrid",
+    "liga":"LaLiga",
+    "inicio":"2026-04-25T22:00:00",
+    "duracion":120,
+    "url":"https://hsports4hd.blogspot.com/?stream=espn"
   },
   {
-    "name": "FOX Sports",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fox_Sports_logo.svg",
-    "url": "player.html?get=https://streamx339.cloud/global1.php?channel=foxone1"
-  },
-  {
-    "name": "Star Channel",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Star_Channel_logo_2021.svg",
-    "url": "#"
-  },
-  {
-    "name": "HBO",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/17/HBO_Logo.svg",
-    "url": "#"
+    "logo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8lA6i4eio_KOMG5RZpfqupY5BRodHVkeLlOpjAib_457gHTaVzVVEsrVT&s=10",
+    "nombre":"Chelsea vs Arsenal",
+    "liga":"Premier League",
+    "inicio":"2026-04-25T22:00:00",
+    "duracion":120,
+    "url":"https://hsports4hd.blogspot.com/?stream=espn2"
   }
 ]
+
