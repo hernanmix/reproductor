@@ -1,0 +1,32 @@
+[
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/20/ESPN_logo.svg",
+    "nombre": "ESPN",
+    "url": "https://example.com/espn"
+  },
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/20/ESPN_logo.svg",
+    "nombre": "ESPN 2",
+    "url": "https://example.com/espn2"
+  },
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/20/ESPN_logo.svg",
+    "nombre": "ESPN 3",
+    "url": "https://example.com/espn3"
+  },
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/65/Fox_Sports_logo.svg",
+    "nombre": "FOX Sports",
+    "url": "https://example.com/foxsports"
+  },
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5a/TNT_Sports_logo.svg",
+    "nombre": "TNT Sports",
+    "url": "https://example.com/tntsports"
+  },
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Directv_logo.svg",
+    "nombre": "DirecTV Sports",
+    "url": "https://example.com/directvsports"
+  }
+]
