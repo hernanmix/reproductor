@@ -23,25 +23,45 @@ body {
 }
 
 .card {
-  min-width: 250px;
+  min-width: 260px;
   background: #111;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
+  position: relative;
+}
+
+.img-container {
+  position: relative;
 }
 
 .card img {
   width: 100%;
-  height: 140px;
+  height: 150px;
   object-fit: cover;
 }
 
+/* Badge general (eventos abajo izquierda ya lo tienes) */
 .badge {
   position: absolute;
-  padding: 5px 10px;
+  padding: 6px 10px;
   font-size: 12px;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
-.live { background: red; }
-.upcoming { background: deepskyblue; }
-.finished { background: gray; opacity: 0.5; }
+/* Eventos (abajo izquierda) */
+.badge.bottom-left {
+  bottom: 10px;
+  left: 10px;
+}
+
+/* Canales (ARRIBA izquierda) */
+.badge.top-left {
+  top: 10px;
+  left: 10px;
+}
+
+.live {
+  background: #e50914;
+  color: #fff;
+}
