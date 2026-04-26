@@ -1,0 +1,27 @@
+[
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/en/f/f9/Avengers_Endgame_poster.jpg",
+    "nombre": "Avengers Endgame",
+    "url": "https://example.com/avengers"
+  },
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/en/e/e1/Joker_%282019_film%29_poster.jpg",
+    "nombre": "Joker",
+    "url": "https://example.com/joker"
+  },
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/en/7/7e/Jumanji_Welcome_to_the_Jungle.png",
+    "nombre": "Jumanji",
+    "url": "https://example.com/jumanji"
+  },
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/en/d/d6/Avatar_%282009_film%29_poster.jpg",
+    "nombre": "Avatar",
+    "url": "https://example.com/avatar"
+  },
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/en/9/9a/John_Wick_TeaserPoster.jpg",
+    "nombre": "John Wick",
+    "url": "https://example.com/johnwick"
+  }
+]
