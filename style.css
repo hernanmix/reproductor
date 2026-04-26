@@ -73,3 +73,14 @@ body {
   display: inline-block;
   vertical-align: middle;
 }
+
+.img-container img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 10px;
+}
