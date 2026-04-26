@@ -6,7 +6,32 @@
   },
   {
     "name": "ESPN 2",
-    "image": "https://hernanmix.github.io/reproductor/ESPN.webp",
+    "image": "https://hernanmix.github.io/reproductor/ESPN_2.webp",
+    "url": "https://tulink.com/espn2"
+  },
+  {
+    "name": "ESPN 3",
+    "image": "https://hernanmix.github.io/reproductor/ESPN_3.webp",
+    "url": "https://tulink.com/espn2"
+  },
+  {
+    "name": "ESPN 4",
+    "image": "https://hernanmix.github.io/reproductor/ESPN4.png",
+    "url": "https://tulink.com/espn2"
+  },
+  {
+    "name": "ESPN 5",
+    "image": "https://hernanmix.github.io/reproductor/espn5.png",
+    "url": "https://tulink.com/espn2"
+  },
+  {
+    "name": "ESPN 6",
+    "image": "https://hernanmix.github.io/reproductor/espn6.png",
+    "url": "https://tulink.com/espn2"
+  },
+  {
+    "name": "ESPN 7",
+    "image": "https://hernanmix.github.io/reproductor/espn7.png",
     "url": "https://tulink.com/espn2"
   }
 ]
