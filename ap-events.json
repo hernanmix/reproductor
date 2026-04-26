@@ -1,0 +1,26 @@
+[
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg",
+    "nombre": "Barcelona vs Real Madrid",
+    "liga": "LaLiga",
+    "inicio": "2026-04-25T23:00:00",
+    "duracion": 120,
+    "url": "https://example.com/barcelona-real-madrid"
+  },
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/en/7/7c/Chelsea_FC.svg",
+    "nombre": "Chelsea vs Manchester United",
+    "liga": "Premier League",
+    "inicio": "2026-04-25T23:00:00",
+    "duracion": 120,
+    "url": "https://example.com/chelsea-man-utd"
+  },
+  {
+    "logo": "https://upload.wikimedia.org/wikipedia/en/3/3e/Rafael_Nadal_logo.svg",
+    "nombre": "Djokovic vs Nadal",
+    "liga": "ATP",
+    "inicio": "2026-04-25T21:00:00",
+    "duracion": 120,
+    "url": "https://example.com/djokovic-nadal"
+  }
+]
