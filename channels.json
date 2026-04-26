@@ -1,12 +1,12 @@
 [
   {
     "name": "ESPN",
-    "image": "https://tuimagen.com/espn.jpg",
+    "image": "https://hernanmix.github.io/reproductor/ESPN.webp",
     "url": "https://tulink.com/espn1"
   },
   {
     "name": "ESPN 2",
-    "image": "https://tuimagen.com/espn2.jpg",
+    "image": "https://hernanmix.github.io/reproductor/ESPN.webp",
     "url": "https://tulink.com/espn2"
   }
 ]
