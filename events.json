@@ -24,6 +24,30 @@
     "url": "go:espn"
   },
   {
+    "title": "Lanús vs LDU Quito",
+    "league": "2026 • Copa Libertadores",
+    "start": "2026-04-28T17:00:00",
+    "end": "2026-04-28T19:005:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019db5f7-5ef9-7ff5-a1f5-afd25f49f2dd/compose?format=webp&width=600",
+    "url": "go:espn2"
+  },
+   {
+    "title": "UCV vs Rosario Central",
+    "league": "2026 • Copa Libertadores",
+    "start": "2026-04-28T19:00:00",
+    "end": "2026-04-28T21:05:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019db5dd-7acf-7eeb-96ee-6dd801e40f0c/compose?format=webp&width=600",
+    "url": "go:espn2"
+  },
+  {
+    "title": "Cruzeiro vs Boca Juniors",
+    "league": "2026 • Copa Libertadores",
+    "start": "2026-04-28T19:30:00",
+    "end": "2026-04-28T21:35:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dba8a-6f9d-7f7a-a825-2ee42fcb0363/compose?format=webp&width=600",
+    "url": "go:espn2"
+  },
+  {
     "title": "Sporting Cristal vs Junior",
     "league": "2026 • Copa Libertadores",
     "start": "2026-04-28T21:00:00",
@@ -31,6 +55,14 @@
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d3f28-0b7e-7beb-a1a7-cf2b8cac2b43/compose?format=webp&width=2560",
     "url": "go:espn"
   },
+  {
+    "title": "Deportes Tolima vs Coquimbo Unido",
+    "league": "2026 • Copa Libertadores",
+    "start": "2026-04-28T21:00:00",
+    "end": "2026-04-28T23:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbaa6-0995-798c-8019-e9c9d3ec88a3/compose?format=webp&width=600",
+    "url": "go:espn2"
+  }
   {
     "title": "Atlético Madrid vs Arsenal",
     "league": "2026 • UEFA Champions League",
