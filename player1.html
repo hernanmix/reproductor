@@ -3,37 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reproductor con Exit Fullscreen</title>
+<title>Reproductor con Exit FS</title>
 <style>
-    body, html {
+    html, body {
         margin: 0;
         padding: 0;
         width: 100%;
         height: 100%;
         background-color: #000;
-        font-family: Arial, sans-serif;
         overflow: hidden;
+        font-family: Arial, sans-serif;
     }
-
     .player-container {
         position: relative;
         width: 100%;
         height: 100%;
     }
-
     iframe {
         width: 100%;
         height: 100%;
         border: none;
     }
-
+    /* Botón retroceso fijo y transparente */
     .exit-button {
-        position: absolute;
+        position: fixed; /* fijo incluso en fullscreen */
         top: 20px;
         left: 20px;
         width: 50px;
         height: 50px;
-        background-color: rgba(0,0,0,0.4);
+        background-color: rgba(0,0,0,0.3);
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -41,13 +39,10 @@
         cursor: pointer;
         z-index: 9999;
         transition: background-color 0.3s;
-        display: none; /* Oculto por defecto */
     }
-
     .exit-button:hover {
-        background-color: rgba(0,0,0,0.7);
+        background-color: rgba(0,0,0,0.6);
     }
-
     .exit-button svg {
         width: 24px;
         height: 24px;
@@ -56,15 +51,16 @@
 </style>
 </head>
 <body>
+
 <div class="player-container">
     <iframe id="videoPlayer" allowfullscreen allow="autoplay; fullscreen"></iframe>
+</div>
 
-    <!-- Botón salir fullscreen -->
-    <div class="exit-button" id="exitBtn" onclick="exitToHome()">
-        <svg viewBox="0 0 24 24">
-            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
-        </svg>
-    </div>
+<!-- Botón de retroceso siempre visible -->
+<div class="exit-button" onclick="exitFs()">
+    <svg viewBox="0 0 24 24">
+        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+    </svg>
 </div>
 
 <script>
@@ -78,31 +74,24 @@
     const iframe = document.getElementById('videoPlayer');
     iframe.src = `https://m-3-u-player--hermixervdj94.replit.app/?channel=${channel}`;
 
-    const exitBtn = document.getElementById('exitBtn');
-
-    // Función para salir a inicio
-    function exitToHome() {
+    // Función para salir de fullscreen y volver al inicio
+    function exitFs() {
         // Salir de fullscreen si está activo
         if (document.fullscreenElement) {
             document.exitFullscreen();
-        } 
-        // Redirigir a página de inicio
-        window.location.href = "/"; // Cambia "/" a tu URL de inicio
-    }
-
-    // Detectar fullscreen
-    document.addEventListener('fullscreenchange', () => {
-        if (document.fullscreenElement) {
-            exitBtn.style.display = 'flex'; // Mostrar botón
-        } else {
-            exitBtn.style.display = 'none'; // Ocultar botón
         }
-    });
 
-    // También mostrar al iniciar si iframe es fullscreen automáticamente
-    if (document.fullscreenElement) {
-        exitBtn.style.display = 'flex';
+        // Redirigir a inicio de AppCreator24
+        // Aquí debes usar la función o URL de tu app
+        // Por ejemplo, si tu AppCreator24 usa go:exitFs:
+        if (typeof goExitFs === "function") {
+            goExitFs(); // Llamar la función de AppCreator24
+        } else {
+            // Alternativa: ir a página de inicio
+            window.location.href = "/"; // Cambia "/" por tu inicio real
+        }
     }
 </script>
+
 </body>
 </html>
