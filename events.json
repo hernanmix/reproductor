@@ -62,6 +62,38 @@
     "end": "2026-04-29T23:00:00",
     "image": "https://imgmedia.libero.pe/600x330/libero/original/2026/04/26/69ee0d3a5788eeeccc072d77.webp",
     "url": "go:espn"
+  },
+  {
+    "title": "Nottingham Forest vs Aston Villa",
+    "league": "2026 • Liga Europa de la UEFA",
+    "start": "2026-04-30T14:00:00",
+    "end": "2026-04-30T16:00:00",
+    "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.13c181aa-7e6a-4f97-8e13-ca498844ab49/2/BOXART-16X9/en-US/1920x1080._UR1920,1080_.png",
+    "url": "go:espn"
+  },
+  {
+    "title": "Vasco da Gama vs Olimpia",
+    "league": "2026 • Copa Sudamericana",
+    "start": "2026-04-30T17:00:00",
+    "end": "2026-04-30T19:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbc6e-9740-7621-bb76-f24f189b5285/compose?format=webp&width=600",
+    "url": "go:espn"
+  },
+  {
+    "title": "Tigre vs América de Cali",
+    "league": "2026 • Copa Sudamericana",
+    "start": "2026-04-30T19:00:00",
+    "end": "2026-04-30T21:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbb00-1e95-739a-aedf-fb71242e0883/compose?format=webp&width=600",
+    "url": "go:espn"
+  },
+{
+    "title": "Medellín vs Cusco",
+    "league": "2026 • Copa Libertadores",
+    "start": "2026-04-30T21:00:00",
+    "end": "2026-04-30T23:00:00",
+    "image": "https://www.semana.com/resizer/v2/TZTKNR5PZZE5FAOV3VDLCNWNVA.png?auth=d6ff6ff77be84a18fd5a98477badcda185c83883f4a63f88a7025f58524b3ee8&smart=true&quality=75&width=1280",
+    "url": "go:espn"
   }
   
 ]
