@@ -84,3 +84,9 @@ body {
   overflow: hidden;
   border-radius: 10px;
 }
+
+.badge.upcoming {
+  background-color: #87CEEB; /* celeste */
+  color: #000; /* opcional: texto oscuro para que se lea mejor */
+}
+
