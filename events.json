@@ -80,6 +80,22 @@
     "url": "go:espn"
   },
   {
+    "title": "Caracas vs Racing Club":,
+    "2026 • Copa sudamericana",
+    "start": "2026-04-29T17:00:00",
+    "end": "2026-04-29T19:35:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbadd-9218-7ba3-8b17-bf6f1ded770c/compose?format=webp&width=600",
+    "url": "go:espn2"
+  },
+  {
+    "title": "Deportivo Riestra vs Torque",
+    "league": "2026 • Sudamericana",
+    "start": "2026-04-29T17:00:00",
+    "end": "2026-04-29T19:00:00",
+    "image": "https://www.elrancaguino.cl/wp-content/uploads/2026/04/797774_0-1024x576.png",
+    "url": "go:dsports"
+  },
+  {
     "title": "Platense vs Santa Fe",
     "league": "2026 • Copa Libertadores",
     "start": "2026-04-29T17:00:00",
@@ -94,6 +110,14 @@
     "end": "2026-04-29T19:35:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019db614-b9ca-7763-9faf-a6c610db6f4b/compose?format=webp&width=600",
     "url": "go:espn5"
+  },
+  {
+    "title": "Palestino vs Grêmio",
+    "league": "2026 • Copa Libertadores",
+    "start": "2026-04-29T19:30:00",
+    "end": "2026-04-29T21:35:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019db614-b9ca-7763-9faf-a6c610db6f4b/compose?format=webp&width=600",
+    "url": "go:"
   },
   {
     "title": "Barcelona vs Universidad Católica",
