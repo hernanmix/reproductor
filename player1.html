@@ -26,7 +26,7 @@
     }
     /* Botón retroceso fijo y transparente */
     .exit-button {
-        position: fixed; /* fijo incluso en fullscreen */
+        position: fixed; /* fijo sobre toda la pantalla */
         top: 20px;
         left: 20px;
         width: 50px;
@@ -72,6 +72,8 @@
 
     const channel = getChannelFromURL();
     const iframe = document.getElementById('videoPlayer');
+
+    // Cargar URL del reproductor
     iframe.src = `https://m-3-u-player--hermixervdj94.replit.app/?channel=${channel}`;
 
     // Función para salir de fullscreen y volver al inicio
@@ -82,15 +84,19 @@
         }
 
         // Redirigir a inicio de AppCreator24
-        // Aquí debes usar la función o URL de tu app
-        // Por ejemplo, si tu AppCreator24 usa go:exitFs:
-        if (typeof goExitFs === "function") {
-            goExitFs(); // Llamar la función de AppCreator24
-        } else {
-            // Alternativa: ir a página de inicio
-            window.location.href = "/"; // Cambia "/" por tu inicio real
-        }
+        // Aquí usamos go:exitFs como referencia de tu app
+        window.location.href = "go:exitFs"; 
     }
+
+    // Detectar fullscreen del iframe y mantener botón visible
+    document.addEventListener('fullscreenchange', () => {
+        const exitBtn = document.querySelector('.exit-button');
+        if (document.fullscreenElement) {
+            exitBtn.style.display = 'flex';
+        } else {
+            exitBtn.style.display = 'flex'; // siempre visible
+        }
+    });
 </script>
 
 </body>
