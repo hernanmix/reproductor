@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reproductor de Canales</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+    }
+    .player-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    .back-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0,0,0,0.5);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        z-index: 10;
+    }
+    .back-button:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+    .back-button svg {
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+    }
+</style>
+</head>
+<body>
+<div class="player-container">
+    <!-- Botón regresar -->
+    <div class="back-button" onclick="regresarInicio()">
+        <svg viewBox="0 0 24 24">
+            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+        </svg>
+    </div>
+
+    <!-- Iframe dinámico -->
+    <iframe id="videoPlayer" allowfullscreen allow="autoplay; fullscreen"></iframe>
+</div>
+
+<script>
+    // Función para leer parámetro de URL
+    function getChannelFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('channel') || 'dsportsplus'; // canal por defecto
+    }
+
+    // Configurar iframe dinámico
+    const channel = getChannelFromURL();
+    const iframe = document.getElementById('videoPlayer');
+    iframe.src = `https://m-3-u-player--hermixervdj94.replit.app/?channel=${channel}`;
+
+    function regresarInicio() {
+        window.location.href = "/"; // Cambiar por la URL de tu inicio
+    }
+</script>
+</body>
+</html>
