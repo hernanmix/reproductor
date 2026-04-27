@@ -126,8 +126,15 @@
     "end": "2026-04-30T21:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbb00-1e95-739a-aedf-fb71242e0883/compose?format=webp&width=600",
     "url": "go:espn"
+    {
+    "title": "RB Bragantino vs River Plate",
+    "league": "2026 • Copa Sudamericana",
+    "start": "2026-04-30T19:30:00",
+    "end": "2026-04-30T21:35:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbafe-eff8-7baf-93e5-c087bfab691f/compose?format=webp&width=600",
+    "url": "go:espn"
   },
-{
+  {
     "title": "Medellín vs Cusco",
     "league": "2026 • Copa Libertadores",
     "start": "2026-04-30T21:00:00",
