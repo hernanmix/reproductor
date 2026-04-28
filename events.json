@@ -168,6 +168,14 @@
     "url": "go:espn5"
   },
   {
+    "title": "Barcelona vs Universidad Católica",
+    "league": "2026 • Copa Libertadores",
+    "start": "2026-04-29T19:00:00",
+    "end": "2026-04-29T21:00:00",
+    "image": "https://www.semana.com/resizer/v2/5KWYNVQ4JFBDVET7AX5UZSH2YI.png?auth=d38e60d3fe30e2cc0efb99d2d780d3b127c7ea6bb8f742423d9e049fc72145df&smart=true&quality=75&width=1280",
+    "url": "go:espn"
+  },
+  {
     "title": "Palestino vs Grêmio",
     "league": "2026 • Copa Libertadores",
     "start": "2026-04-29T19:30:00",
@@ -175,13 +183,13 @@
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019db614-b9ca-7763-9faf-a6c610db6f4b/compose?format=webp&width=600",
     "url": "go:"
   },
-  {
-    "title": "Barcelona vs Universidad Católica",
-    "league": "2026 • Copa Libertadores",
-    "start": "2026-04-29T19:00:00",
-    "end": "2026-04-29T21:00:00",
-    "image": "https://www.semana.com/resizer/v2/5KWYNVQ4JFBDVET7AX5UZSH2YI.png?auth=d38e60d3fe30e2cc0efb99d2d780d3b127c7ea6bb8f742423d9e049fc72145df&smart=true&quality=75&width=1280",
-    "url": "go:espn"
+   {
+    "title": "Barracas Central vs Audax Italiano",
+    "league": "2026 • Copa Sudamericana",
+    "start": "2026-04-29T19:30:00",
+    "end": "2026-04-29T21:30:00",
+    "image": "https://imgmedia.libero.pe/640x352/libero/original/2026/04/28/69f128ef572deda0880d119c.webp",
+    "url": "go:dsports"
   },
   {
     "title": "Cerro Porteño vs Palmeiras",
