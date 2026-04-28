@@ -1,7 +1,8 @@
-// menu-pro.js
+// menu-pro.js ajustado
 document.write(`
 <style>
-  html, body { margin:0; padding:0; height:100%; font-family:sans-serif; background:#000022; }
+  html, body { margin:0; padding:0; height:100%; font-family:sans-serif; background:#000022; overflow:hidden; }
+  iframe#mainFrame { width:100%; height:calc(100vh - 60px); border:none; display:block; transition:transform 0.35s ease, opacity 0.35s ease; }
   .bottom-menu {
     display:grid;
     grid-template-columns: repeat(8, 1fr);
@@ -19,11 +20,17 @@ document.write(`
   .menu-btn .material-symbols-outlined { font-size:26px; margin-bottom:4px; }
   .active { color:white; border-top:2px solid #0072FF; }
   .ad-container {
-    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-    width:90%; max-width:600px; height:80%; max-height:400px;
-    background:#111; border:2px solid #00f; display:none; flex-direction:column; z-index:1000;
+    position:fixed; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:90%; max-width:600px; height:60%; background:#111;
+    border:2px solid #00f; display:none; flex-direction:column; z-index:1000; border-radius:10px;
+    align-items:center; justify-content:center; padding:10px;
   }
-  .countdown { position:absolute; top:5px; right:10px; font-size:20px; color:#00f; font-weight:bold; }
+  .ad-container iframe { width:100%; height:calc(100% - 40px); border-radius:8px; border:none; }
+  .countdown {
+    font-size:24px; color:#00f; font-weight:bold; margin-bottom:5px;
+  }
+  .slide-out { transform:translateY(-40px); opacity:0; }
+  .slide-in { transform:translateY(0); opacity:1; transition:transform 0.35s ease, opacity 0.35s ease; }
 </style>
 
 <nav class="bottom-menu" id="bottomMenu">
@@ -63,11 +70,6 @@ document.write(`
   const iframe = document.createElement('iframe');
   iframe.id = 'mainFrame';
   iframe.src = 'https://hernanmix.github.io/reproductor/ap-index.html';
-  iframe.style.width = '100%';
-  iframe.style.height = 'calc(100vh - 60px)';
-  iframe.style.border = 'none';
-  iframe.style.display = 'block';
-  iframe.style.transition = 'transform 0.35s ease, opacity 0.35s ease';
   document.body.insertBefore(iframe, document.getElementById('bottomMenu'));
 
   const adContainer = document.getElementById('adContainer');
@@ -93,7 +95,7 @@ document.write(`
     }
   });
 
-  // Botón ADS
+  // Botón ADS centrado con cuenta regresiva
   const adsBtn = document.getElementById('adsBtn');
   adsBtn.addEventListener('click', () => {
     adContainer.style.display = 'flex';
@@ -111,7 +113,7 @@ document.write(`
     }, 1000);
   });
 
-  // Botón SALIR solo para AppCreator24/SmartTV
+  // Botón SALIR solo en AppCreator24/SmartTV
   const exitBtn = document.getElementById('exitBtn');
   const ua = (navigator.userAgent || '').toLowerCase();
   const isAppCreator = ua.includes('appcreator24');
@@ -122,7 +124,7 @@ document.write(`
     try { window.location.href = 'go:exitFs'; } catch(e){ try{window.close();}catch(err){} }
   });
 
-  // Navegación con flechas (SmartTV)
+  // Navegación con flechas
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight') {
       buttons[currentIndex].classList.remove('active');
