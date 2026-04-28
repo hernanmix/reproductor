@@ -1,8 +1,8 @@
-// menu-pro.js ajustado
+// menu-pro-fix.js
 document.write(`
 <style>
   html, body { margin:0; padding:0; height:100%; font-family:sans-serif; background:#000022; overflow:hidden; }
-  iframe#mainFrame { width:100%; height:calc(100vh - 60px); border:none; display:block; transition:transform 0.35s ease, opacity 0.35s ease; }
+  #mainFrame { width:100%; height:calc(100vh - 60px); border:none; display:block; transition:transform 0.35s ease, opacity 0.35s ease; }
   .bottom-menu {
     display:grid;
     grid-template-columns: repeat(8, 1fr);
@@ -26,9 +26,7 @@ document.write(`
     align-items:center; justify-content:center; padding:10px;
   }
   .ad-container iframe { width:100%; height:calc(100% - 40px); border-radius:8px; border:none; }
-  .countdown {
-    font-size:24px; color:#00f; font-weight:bold; margin-bottom:5px;
-  }
+  .countdown { font-size:24px; color:#00f; font-weight:bold; margin-bottom:5px; }
   .slide-out { transform:translateY(-40px); opacity:0; }
   .slide-in { transform:translateY(0); opacity:1; transition:transform 0.35s ease, opacity 0.35s ease; }
 </style>
@@ -67,9 +65,10 @@ document.write(`
 `);
 
 (function() {
+  // Crear un solo iframe principal
   const iframe = document.createElement('iframe');
   iframe.id = 'mainFrame';
-  iframe.src = 'https://hernanmix.github.io/reproductor/ap-index.html';
+  iframe.src = 'https://hsports4hd.blogspot.com/p/hsportstv.html?m=1';
   document.body.insertBefore(iframe, document.getElementById('bottomMenu'));
 
   const adContainer = document.getElementById('adContainer');
@@ -79,23 +78,19 @@ document.write(`
   const buttons = document.querySelectorAll('.menu-btn');
   let currentIndex = 0;
 
+  // Navegación principal
   buttons.forEach(btn => {
     if (btn.dataset.url) {
       btn.addEventListener('click', () => {
-        iframe.classList.add('slide-out');
-        setTimeout(() => {
-          iframe.src = btn.dataset.url;
-          iframe.classList.remove('slide-out');
-          iframe.classList.add('slide-in');
-          setTimeout(() => { iframe.classList.remove('slide-in'); }, 400);
-          buttons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-        }, 300);
+        // eliminar cualquier iframe adicional
+        iframe.src = btn.dataset.url;
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
       });
     }
   });
 
-  // Botón ADS centrado con cuenta regresiva
+  // Botón ADS
   const adsBtn = document.getElementById('adsBtn');
   adsBtn.addEventListener('click', () => {
     adContainer.style.display = 'flex';
@@ -113,7 +108,7 @@ document.write(`
     }, 1000);
   });
 
-  // Botón SALIR solo en AppCreator24/SmartTV
+  // Botón SALIR solo AppCreator24/SmartTV
   const exitBtn = document.getElementById('exitBtn');
   const ua = (navigator.userAgent || '').toLowerCase();
   const isAppCreator = ua.includes('appcreator24');
@@ -124,18 +119,4 @@ document.write(`
     try { window.location.href = 'go:exitFs'; } catch(e){ try{window.close();}catch(err){} }
   });
 
-  // Navegación con flechas
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight') {
-      buttons[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % buttons.length;
-      buttons[currentIndex].classList.add('active');
-    } else if (e.key === 'ArrowLeft') {
-      buttons[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex - 1 + buttons.length) % buttons.length;
-      buttons[currentIndex].classList.add('active');
-    } else if (e.key === 'Enter') {
-      buttons[currentIndex].click();
-    }
-  });
 })();
