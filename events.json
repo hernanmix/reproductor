@@ -29,7 +29,7 @@
     "start": "2026-04-28T17:00:00",
     "end": "2026-04-28T19:05:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019db5f7-5ef9-7ff5-a1f5-afd25f49f2dd/compose?format=webp&width=600",
-    "url": "go:espn2"
+    "url": "go:disney2"
   },
   {
     "title": "Juventud vs Academia Puerto Cabello",
@@ -45,7 +45,7 @@
     "start": "2026-04-28T17:00:00",
     "end": "2026-04-28T19:02:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbaba-d84e-7714-b7a0-1602af04066a/compose?aspectRatio=1.78&format=webp&width=1200",
-    "url": "go:espn5"
+    "url": "go:disney3"
   },
     {
     "title": "San Lorenzo vs Santos",
@@ -69,7 +69,7 @@
     "start": "2026-04-28T19:00:00",
     "end": "2026-04-28T21:05:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019db5dd-7acf-7eeb-96ee-6dd801e40f0c/compose?format=webp&width=600",
-    "url": "go:espn2"
+    "url": "go:disney4"
   },
   {
     "title": "Cruzeiro vs Boca Juniors",
@@ -77,7 +77,7 @@
     "start": "2026-04-28T19:30:00",
     "end": "2026-04-28T21:35:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dba8a-6f9d-7f7a-a825-2ee42fcb0363/compose?format=webp&width=600",
-    "url": "go:espn2"
+    "url": "go:disney6"
   },
   {
     "title": "Nashville SC vs Tigres UANL", 
@@ -85,7 +85,7 @@
     "start": "2026-04-28T19:30:00",
     "end": "2026-04-28T21:35:00",
     "image": "https://sportal365images.com/process/smp-images-production/record.mx/27042026/0cefda6b-2303-4bae-8e76-4567a717a37b.jpg?operations=autocrop(860:484)",
-    "url": "go:tudnus"
+    "url": "go:disney7"
   },
   {
     "title": "Deportivo Recoleta vs Deportivo Cuenca",
@@ -101,7 +101,7 @@
     "start": "2026-04-28T19:30:00",
     "end": "2026-04-28T19:35:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbaca-9e09-7fa1-a9d5-8ea42367eb81/compose?aspectRatio=1.78&format=webp&width=1200",
-    "url": "go:"
+    "url": "go:dsports"
   },
    {
     "title": "O'Higgins vs Boston River",
