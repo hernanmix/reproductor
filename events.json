@@ -80,6 +80,30 @@
     "url": "go:tudnus"
   },
   {
+    "title": "Deportivo Recoleta vs Deportivo Cuenca",
+    "league": "2026 • Copa Sudamericana",
+    "start": "2026-04-28T19:30:00",
+    "end": "2026-04-28T21:33:00",
+    "image": "https://a2.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0427%2Fr1649928_1296x729_16%2D9.jpg",
+    "url": "go:dsports"
+  },
+  {
+    "title": "Millonarios vs São Paulo",
+    "league": "2026 • Copa Sudamericana",
+    "start": "2026-04-28T19:30:00",
+    "end": "2026-04-28T19:35:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbaca-9e09-7fa1-a9d5-8ea42367eb81/compose?aspectRatio=1.78&format=webp&width=1200",
+    "url": "go:"
+  },
+   {
+    "title": "O'Higgins vs Boston River",
+    "league": "2026 • Copa Sudamericana",
+    "start": "2026-04-28T21:00:00",
+    "end": "2026-04-28T23:05:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbacd-587d-7968-ac73-7d3443b5c71d/compose?format=webp&width=386",
+    "url": "go:espn5"
+  },
+  {
     "title": "Sporting Cristal vs Junior",
     "league": "2026 • Copa Libertadores",
     "start": "2026-04-28T21:00:00",
