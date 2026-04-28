@@ -35,9 +35,25 @@
     "title": "Juventud vs Academia Puerto Cabello",
     "league": "2026 • Copa Sudamericana",
     "start": "2026-04-28T17:00:00",
-    "end": "2026-04-28T19:05:00",
+    "end": "2026-04-28T19:02:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbad8-1864-7206-8599-e214acade4c3/compose?format=webp&width=600",
     "url": "go:espn4"
+  },
+  {
+    "title": "Botafogo vs Independiente Petrolero",
+    "league": "2026 • Copa Sudamericana",
+    "start": "2026-04-28T17:00:00",
+    "end": "2026-04-28T19:02:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbaba-d84e-7714-b7a0-1602af04066a/compose?aspectRatio=1.78&format=webp&width=1200",
+    "url": "go:espn5"
+  }
+    {
+    "title": "San Lorenzo vs Santos",
+    "league": "2026 • Copa Sudamericana",
+    "start": "2026-04-28T17:00:00",
+    "end": "2026-04-28T19:02:00",
+    "image": "https://cdn.eldestapeweb.com/eldestape/042026/1777140237481.webp?cw=720&ch=540&extw=jpeg",
+    "url": "go:dsports"
   },
    {
     "title": "UCV vs Rosario Central",
@@ -54,6 +70,14 @@
     "end": "2026-04-28T21:35:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dba8a-6f9d-7f7a-a825-2ee42fcb0363/compose?format=webp&width=600",
     "url": "go:espn2"
+  },
+  {
+    "title": "Nashville SC vs Tigres UANL", 
+    "lenguaje":"2026 • Copa de Campeones de la Concacaf",
+    "start": "2026-04-28T19:30:00",
+    "end": "2026-04-28T21:35:00",
+    "image": "https://sportal365images.com/process/smp-images-production/record.mx/27042026/0cefda6b-2303-4bae-8e76-4567a717a37b.jpg?operations=autocrop(860:484)",
+    "url": "go:tudnus"
   },
   {
     "title": "Sporting Cristal vs Junior",
@@ -174,6 +198,14 @@
     "end": "2026-04-30T21:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbb00-1e95-739a-aedf-fb71242e0883/compose?format=webp&width=600",
     "url": "go:espn"
+  },
+    {
+    "title": "Vélez Sarsfield vs Gimnasia y Tiro",
+    "league": "2026 • Copa Argentina",
+    "start": "2026-04-30T19:15:00",
+    "end": "2026-04-30T21:16:00",
+    "image": "https://www.ole.com.ar/images/2025/04/25/6WmwcHh2A_1290x760__1.jpg",
+    "url": "go:tycint"
   },
   {
     "title": "RB Bragantino vs River Plate",
