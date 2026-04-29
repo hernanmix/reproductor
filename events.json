@@ -120,6 +120,14 @@
     "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.13c181aa-7e6a-4f97-8e13-ca498844ab49/2/BOXART-16X9/en-US/1920x1080._UR1920,1080_.png",
     "url": "go:espn"
   },
+    {
+    "title": "Carabobo vs Blooming",
+    "league": "2026 • Copa Sudamericana",
+    "start": "2026-05-30T17:00:00",
+    "end": "2026-05-30T18:59:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d9341-edb5-72eb-b169-28b7c0a6867f/compose?format=webp&width=2560",
+    "url": "go:dsports"
+  },
   {
     "title": "Vasco da Gama vs Olimpia",
     "league": "2026 • Copa Sudamericana",
@@ -127,6 +135,30 @@
     "end": "2026-04-30T19:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbc6e-9740-7621-bb76-f24f189b5285/compose?format=webp&width=600",
     "url": "go:espn"
+  },
+    {
+    "title": "Independiente Rivadavia vs Deportivo La Guaira",
+    "league": "2026 • Copa Libertadores",
+    "start": "2026-04-30T17:00:00",
+    "end": "2026-04-30T18:58:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbaf0-7187-745b-8112-95dc14dd7257/compose?aspectRatio=1.78&format=webp&width=1200",
+    "url": "go:espn2"
+  },
+  {
+    "title": "Bolívar vs Fluminense",
+    "league": "2026 • Copa Libertadores",
+    "start": "2026-04-30T17:00:00",
+    "end": "2026-04-30T18:58:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d6e59-aa06-74eb-992c-07cf729eac27/compose?format=webp&width=2880",
+    "url": "goespn5"
+  },
+  {
+    "title": "Corinthians vs Peñarol",
+    "league": "2026 • Copa Libertadores",
+    "start": "2026-04-30T19:00:00",
+    "end": "2026-04-30T20:59:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbb08-1fd8-7809-b62e-8b8afa4bd255/compose?aspectRatio=1.78&format=webp&width=1200",
+    "url": "goespn2"
   },
   {
     "title": "Tigre vs América de Cali",
@@ -151,6 +183,14 @@
     "end": "2026-04-30T21:35:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbafe-eff8-7baf-93e5-c087bfab691f/compose?format=webp&width=600",
     "url": "go:espn"
+  },
+    {
+    "title": "Alianza Atlético vs Macará",
+    "league": "2026 • Copa Sudamericana",
+    "start": "2026-04-30T21:00:00",
+    "end": "2026-04-30T22:59:00",
+    "image": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0427%2Fr1650058_1296x729_16%2D9.jpg",
+    "url": "go:dsports"
   },
   {
     "title": "Medellín vs Cusco",
