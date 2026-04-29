@@ -166,6 +166,14 @@
     "end": "2026-04-30T23:00:00",
     "image": "https://www.semana.com/resizer/v2/TZTKNR5PZZE5FAOV3VDLCNWNVA.png?auth=d6ff6ff77be84a18fd5a98477badcda185c83883f4a63f88a7025f58524b3ee8&smart=true&quality=75&width=1280",
     "url": "go:espn"
+  },
+  {
+    "title": "Girona vs Mallorca",
+    "league": "2026 • LA LIGA",
+    "start": "2026-05-1T14:00:00",
+    "end": "2026-05-1T15:58:00",
+    "image": "https://s2.elespanol.com/2023/05/04/deportes/futbol/761184150_232890436_1706x960.jpg",
+    "url": "go:espndeportes"
   }
   
 ]
