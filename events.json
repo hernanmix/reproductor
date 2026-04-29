@@ -108,7 +108,7 @@
     "title": "Los Angeles FC vs Toluca",
     "league": "2026 • Copa de Campeones de la Concacaf ( Semifinal De Ida)",
     "start": "2026-04-29T21:30:00",
-    "end": "2026-04-23T23:30:00",
+    "end": "2026-04-29T23:30:00",
     "image": "https://www.informador.mx/__export/1777403350718/sites/elinformador/img/2026/04/28/toluca_vs_lafc-en_vivo-concachampions_2026_version1777403349908.jpg_1480441490.jpg",
     "url": "go:tudnus"
   },
@@ -121,10 +121,18 @@
     "url": "go:espn"
   },
     {
+    "title": "Sporting Braga vs Freiburg",
+    "league": "2026 • Copa Sudamericana",
+    "start": "2026-04-30T14:00:00",
+    "end": "2026-04-30T15:59:00",
+    "image": "https://a.espncdn.com/photo/2026/0427/r1650041_1296x518_5-2.jpg",
+    "url": "espn2"
+  },
+    {
     "title": "Carabobo vs Blooming",
     "league": "2026 • Copa Sudamericana",
-    "start": "2026-05-30T17:00:00",
-    "end": "2026-05-30T18:59:00",
+    "start": "2026-04-30T17:00:00",
+    "end": "2026-04-30T18:59:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d9341-edb5-72eb-b169-28b7c0a6867f/compose?format=webp&width=2560",
     "url": "go:dsports"
   },
