@@ -1,0 +1,126 @@
+<style>
+.tv-grid {
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  grid-gap:10px;
+  padding:20px;
+  background:#000;
+}
+@media (max-width:768px) {
+  .tv-grid { grid-template-columns:repeat(2, 1fr); }
+}
+.tv-grid a {
+  display:block;
+  background:#111;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  padding:15px;
+  border-radius:6px;
+  text-align:center;
+  transition:all 0.3s ease;
+}
+.tv-grid a:hover {
+  background:#333;
+  transform:translateY(-5px);
+  box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Modal aviso */
+#apkModal {
+  display:none;
+  position:fixed;
+  top:0; left:0; right:0; bottom:0;
+  background:rgba(0,0,0,0.7);
+  z-index:10000;
+  justify-content:center;
+  align-items:center;
+}
+#apkModal .content {
+  background:#222;
+  color:#fff;
+  padding:20px;
+  border-radius:8px;
+  text-align:center;
+}
+#apkModal button {
+  margin-top:15px;
+  padding:10px 20px;
+  background:#444;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+#apkModal button:hover {
+  background:#666;
+}
+</style>
+
+<div class="tv-grid">
+  <a href="go:zappintv">ZappinTV Eventos</a>
+  <a href="go:vasm">Zappintv</a>
+  <a href="go:ecdf720p">ECDF</a>
+  <a href="go:dsportsec">Dsports Ec 1080p</a>
+  <a href="go:dsportspwe">Dsports + 720p</a>
+  <a href="go:tc">TC Televisión</a>
+  <a href="go:ecuavisa">Ecuavisa Play</a>
+  <a href="go:tudn"> TUDN 720p</a>
+  <a href="go:espnsur"> ESPN Sur 720p</a>
+  <a href="go:espncol"> ESPN2 Col 720p</a>
+  <a href="go:espnsur2"> ESPN2 Sur 720p</a>
+  <a href="go:espn3"> ESPN3 720p</a>
+  <a href="go:espn4"> ESPN4 720p</a>
+  <a href="go:espn5"> ESPN5 720p</a>
+  <a href="go:espn6"> ESPN6 720p</a>
+  <a href="go:espn7"> ESPN7 720p</a>
+  <a href="go:tudnus"> TUDN USA</a>
+  <a href="go:oromartv">Oromartv</a>
+  <a href="go:rts">RTS</a>
+  <a href="go:rtu">RTU</a>
+  <a href="go:rtu720">RTU 720p</a>
+  <a href="go:teleamazon">Teleamazonas</a>
+  <a href="go:majestadtv">Majestad TV</a>
+  <a href="go:majestadfm">Majestad TV FM</a>
+  <a href="go:canaluno">Canal Uno Ecuador</a>
+  <a href="go:ecuadortv">Ecuador TV</a>
+  <a href="">Vasm</a>
+  <a href="go:telefe">TELEFE</a>
+  <a href="">Vasm</a>
+  <a href="go:telemar">Telemar</a>
+  <a href="go:fmmundo">FM Mundo TV</a>
+</div>
+
+<!-- Modal aviso -->
+<div id="apkModal">
+  <div class="content">
+    <p>Descarga la APK HSPORTS EC para poder visualizar este canal En La APK.</p>
+    <button onclick="window.location.href='https://shre.ink/hsports593'">📥 Descargar aquí</button>
+    <button onclick="document.getElementById('apkModal').style.display='none'">Cancelar</button>
+  </div>
+</div>
+
+<script>
+function isInApp() {
+  // Detecta si estamos dentro de tu APK (AppCreator24 WebView)
+  // "wv" aparece en la mayoría de User-Agent de WebView Android
+  return navigator.userAgent.includes("wv") || navigator.userAgent.includes("AppCreator24");
+}
+
+document.querySelectorAll('.tv-grid a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const appUrl = this.getAttribute('href');
+
+    // Intentar abrir la APK
+    window.location = appUrl;
+
+    // Solo mostrar modal si NO estamos en la app
+    if (!isInApp()) {
+      setTimeout(() => {
+        document.getElementById('apkModal').style.display = 'flex';
+      }, 1000);
+    }
+  });
+});
+</script>
