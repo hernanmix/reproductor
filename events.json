@@ -136,6 +136,14 @@
     "url": "go:espn"
   },
   {
+    "title": "Venezuela Sub-17 vs Uruguay Sub-17",
+    "league": "2026 • Sudamericano Sub17 (Femenina)",
+    "start": "2026-04-29T15:00:00",
+    "end": "2026-04-29T17:00:00",
+    "image": "https://i.ytimg.com/vi/55_TuiUfAhk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC1d37OSGWrF6fSap41yL-NHTkBRg",
+    "url": "go:dsports"
+  },
+  {
     "title": "Caracas vs Racing Club",
     "league": "2026 • Copa sudamericana",
     "start": "2026-04-29T17:00:00",
@@ -166,6 +174,14 @@
     "end": "2026-04-29T19:35:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019db614-b9ca-7763-9faf-a6c610db6f4b/compose?format=webp&width=600",
     "url": "go:espn5"
+  },
+  {
+    "title": "Ecuador Sub-17 vs Perú Sub-17":
+    "league": "2026 • Sudamericano Sub17 (Femenina)",
+    "start": "2026-04-29T18:00:00",
+    "end": "2026-04-29T20:00:00",
+    "image": "https://i.ytimg.com/vi/sIY1-b2ugQo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA4AWjTvAcvp0ifunYKT-Bi3Pq1dw",
+    "url": "go:dsports"
   },
   {
     "title": "Barcelona vs Universidad Católica",
@@ -214,6 +230,14 @@
     "end": "2026-04-29T23:00:00",
     "image": "https://imgmedia.libero.pe/600x330/libero/original/2026/04/26/69ee0d3a5788eeeccc072d77.webp",
     "url": "go:espn"
+  },
+  {
+    "title": "Los Angeles FC vs Toluca",
+    "league": "2026 • Copa de Campeones de la Concacaf ( Semifinal De Ida)",
+    "start": "2026-04-29T21:30:00",
+    "end": "2026-04-23T23:30:00",
+    "image": "https://www.informador.mx/__export/1777403350718/sites/elinformador/img/2026/04/28/toluca_vs_lafc-en_vivo-concachampions_2026_version1777403349908.jpg_1480441490.jpg",
+    "url": "go:tudnus"
   },
   {
     "title": "Nottingham Forest vs Aston Villa",
