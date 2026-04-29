@@ -127,6 +127,14 @@
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbaa6-0995-798c-8019-e9c9d3ec88a3/compose?format=webp&width=600",
     "url": "go:espn2"
   },
+    {
+    "title": "Arsenal vs Leicester City WFC",
+    "league": "2026 • Inglaterra - Women's Super League",
+    "start": "2026-04-29T13:00:00",
+    "end": "2026-04-29T15:00:00",
+    "image": "https://www.arsenal.com/sites/default/files/styles/desktop_16x9/public/images/Mariona-v-Leicester_f3b8l7i0.jpg?h=d5859d4a&auto=webp&itok=LdyIfN3-",
+    "url": "go:sportdigital"
+  },
   {
     "title": "Atlético Madrid vs Arsenal",
     "league": "2026 • UEFA Champions League",
