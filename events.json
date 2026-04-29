@@ -1,61 +1,5 @@
 [
   {
-    "title": "Manchester United vs Brentford",
-    "league": "2026 • Premier League",
-    "start": "2026-04-27T14:00:00",
-    "end": "2026-04-27T16:05:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d77c2-4729-70ed-bb75-7b4980177fc6/compose?format=webp&width=2560",
-    "url": "go:espn"
-  },
-  {
-    "title": "PSG vs Bayern München",
-    "league": "2026 • UEFA Champions League",
-    "start": "2026-04-28T14:00:00",
-    "end": "2026-04-28T16:05:00",
-    "image": "https://image.discovery.indazn.com/ca/v2/ca/image?id=asgd7jxsfl79j1npj6nwl9gfn_image-header_pRow_1751294607000&quality=70",
-    "url": "go:disney2"
-  },
-  {
-    "title": "Libertad vs Independiente del Valle",
-    "league": "2026 • Copa Libertadores",
-    "start": "2026-04-28T17:00:00",
-    "end": "2026-04-28T19:05:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019db603-fbeb-7554-ac7f-d2788fc9e2fa/compose?aspectRatio=1.78&format=webp&width=1200",
-    "url": "go:espn"
-  },
-  {
-    "title": "Lanús vs LDU Quito",
-    "league": "2026 • Copa Libertadores",
-    "start": "2026-04-28T17:00:00",
-    "end": "2026-04-28T19:05:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019db5f7-5ef9-7ff5-a1f5-afd25f49f2dd/compose?format=webp&width=600",
-    "url": "go:disney2"
-  },
-  {
-    "title": "Juventud vs Academia Puerto Cabello",
-    "league": "2026 • Copa Sudamericana",
-    "start": "2026-04-28T17:00:00",
-    "end": "2026-04-28T19:02:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbad8-1864-7206-8599-e214acade4c3/compose?format=webp&width=600",
-    "url": "go:espn4"
-  },
-  {
-    "title": "Botafogo vs Independiente Petrolero",
-    "league": "2026 • Copa Sudamericana",
-    "start": "2026-04-28T17:00:00",
-    "end": "2026-04-28T19:02:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbaba-d84e-7714-b7a0-1602af04066a/compose?aspectRatio=1.78&format=webp&width=1200",
-    "url": "go:disney3"
-  },
-    {
-    "title": "San Lorenzo vs Santos",
-    "league": "2026 • Copa Sudamericana",
-    "start": "2026-04-28T17:00:00",
-    "end": "2026-04-28T19:02:00",
-    "image": "https://cdn.eldestapeweb.com/eldestape/042026/1777140237481.webp?cw=720&ch=540&extw=jpeg",
-    "url": "go:dsports"
-  },
-  {
     "title": "Barracas Central vs Audax Italiano",
     "league": "2026 • Copa Sudamericana",
     "start": "2026-04-28T19:00:00",
@@ -102,6 +46,14 @@
     "end": "2026-04-28T19:35:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbaca-9e09-7fa1-a9d5-8ea42367eb81/compose?aspectRatio=1.78&format=webp&width=1200",
     "url": "go:dsports"
+  },
+  {
+    "title": "Trail Blazers vs Spurs",
+    "league": "2026 • NBA",
+    "start": "2026-04-28T20:30:00",
+    "end": "2026-04-28T22:30:00",
+    "image": "https://s.yimg.com/ny/api/res/1.2/5BLjsrDDB1SU0VWnIRYmaw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNztjZj13ZWJw/https://s.yimg.com/uu/api/res/1.2/M9cA1np7GBdF1x0jbHTVxQ--~B/aD01NDkzO3c9ODIzOTthcHBpZD15dGFjaHlvbg--/https://d29szjachogqwa.cloudfront.net/images/2026-04/41c57e7e-6e80-4b91-8b47-49f917df0cc0",
+    "url": "go:espn3"
   },
    {
     "title": "O'Higgins vs Boston River",
