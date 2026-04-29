@@ -1,51 +1,12 @@
 [
-  {
-    "title": "Barracas Central vs Audax Italiano",
-    "league": "2026 • Copa Sudamericana",
-    "start": "2026-04-28T19:00:00",
-    "end": "2026-04-28T21:00:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbad1-bbd1-7c87-9410-2ad73de1547d/compose?format=webp&width=386",
-    "url": "go:espn5"
-  },
-   {
-    "title": "UCV vs Rosario Central",
-    "league": "2026 • Copa Libertadores",
-    "start": "2026-04-28T19:00:00",
-    "end": "2026-04-28T21:05:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019db5dd-7acf-7eeb-96ee-6dd801e40f0c/compose?format=webp&width=600",
-    "url": "go:disney4"
-  },
-  {
-    "title": "Cruzeiro vs Boca Juniors",
-    "league": "2026 • Copa Libertadores",
-    "start": "2026-04-28T19:30:00",
-    "end": "2026-04-28T21:35:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dba8a-6f9d-7f7a-a825-2ee42fcb0363/compose?format=webp&width=600",
-    "url": "go:disney6"
-  },
+  
   {
     "title": "Nashville SC vs Tigres UANL", 
     "league":"2026 • Copa de Campeones de la Concacaf",
     "start": "2026-04-28T20:20:00",
-    "end": "2026-04-28T22:20:00",
+    "end": "2026-04-28T22:19:00",
     "image": "https://sportal365images.com/process/smp-images-production/record.mx/27042026/0cefda6b-2303-4bae-8e76-4567a717a37b.jpg?operations=autocrop(860:484)",
     "url": "go:disney7"
-  },
-  {
-    "title": "Deportivo Recoleta vs Deportivo Cuenca",
-    "league": "2026 • Copa Sudamericana",
-    "start": "2026-04-28T19:30:00",
-    "end": "2026-04-28T21:33:00",
-    "image": "https://a2.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0427%2Fr1649928_1296x729_16%2D9.jpg",
-    "url": "go:fanatiz8"
-  },
-  {
-    "title": "Millonarios vs São Paulo",
-    "league": "2026 • Copa Sudamericana",
-    "start": "2026-04-28T19:30:00",
-    "end": "2026-04-28T19:35:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbaca-9e09-7fa1-a9d5-8ea42367eb81/compose?aspectRatio=1.78&format=webp&width=1200",
-    "url": "go:dsports"
   },
   {
     "title": "Trail Blazers vs Spurs",
@@ -59,7 +20,7 @@
     "title": "O'Higgins vs Boston River",
     "league": "2026 • Copa Sudamericana",
     "start": "2026-04-28T21:00:00",
-    "end": "2026-04-28T23:05:00",
+    "end": "2026-04-28T23:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbacd-587d-7968-ac73-7d3443b5c71d/compose?format=webp&width=386",
     "url": "go:espn5"
   },
@@ -91,7 +52,7 @@
     "title": "Atlético Madrid vs Arsenal",
     "league": "2026 • UEFA Champions League",
     "start": "2026-04-29T14:00:00",
-    "end": "2026-04-29T16:05:00",
+    "end": "2026-04-29T16:00:00",
     "image": "https://www.ole.com.ar/images/2025/10/20/ACSo4NTuP_2000x1500__1.jpg",
     "url": "go:espn"
   },
