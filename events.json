@@ -225,6 +225,46 @@
     "url": "go:"
   },
   {
+    "title": "Udinese vs Torino",
+    "league": "2026 • Serie A Italia",
+    "start": "2026-05-02T08:00",
+    "end": "2026-05-02T010:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dab35-abbe-71ca-a156-755015d9e8d6/compose?aspectRatio=1.78&format=webp&width=1200",
+    "url": "go:"
+  },
+  {
+    "title": "Werder Bremen vs Augsburg",
+    "league": "2026 • Bundes Liga Alemana",
+    "start": "2026-05-02T08:30:00",
+    "end": "2026-05-02T10:30:00",
+    "image": "https://m.media-amazon.com/images/S/pv-target-images/486449a70f8278758296fee9a73dbdc2fb3ea03048a5ab16dd2cac0043225e19._SX1080_FMpng_.png",
+    "url": "go:"
+  },
+ {
+    "title": "Union Berlin vs Köln",
+    "league": "2026 • Bundes Liga Alemana",
+    "start": "2026-05-02T08:30:00",
+    "end": "2026-05-02T10:30:00",
+    "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401793361/16x9/1280x720_20260421152218.jpg&showBadge=true&package=ESPN_PLUS",
+    "url": "go:"
+  },
+  {
+    "title": "Hoffenheim vs Stuttgart",
+    "league": "2026 • Bundes Liga Alemana",
+    "start": "2026-05-02T08:30:00",
+    "end": "2026-05-02T10:30:00",
+    "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401793362/16x9/1280x720_20260421152344.jpg&showBadge=true&package=ESPN_PLUS",
+    "url": "go:"
+  },
+{
+    "title": "Eintracht Frankfurt vs Hamburger SV",
+    "league": "2026 • Bundes Liga Alemana",
+    "start": "2026-05-02T08:30:00",
+    "end": "2026-05-02T10:30:00",
+    "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401793358/16x9/1280x720_20260421153517.jpg&showBadge=true&package=ESPN_PLUS",
+    "url": "go:"
+  },
+  {
     "title": "Wolverhampton Wanderers vs Sunderland",
  "league": "2026 • Premier League",
     "start": "2026-05-02T09:00",
@@ -257,6 +297,22 @@
     "url": "go:dsports"
   },
   {
+    "title": "Como vs Napoli",
+    "league": "2026 • Serie A Italia",
+    "start": "2026-05-02T11:30:00",
+    "end": "2026-05-02T13:30:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/67c52ed2-f45d-4070-b882-a27555de74ac/compose?aspectRatio=1.78&format=webp&width=1200",
+    "url": "go:espn3"
+  },
+  {
+    "title": "Bayern München vs Heidenheim",
+    "league": "2026 • Bundes Liga Alemana",
+    "start": "2026-05-02T11:30:00",
+    "end": "2026-05-02T13:30:00",
+    "image": "https://image.discovery.indazn.com/ca/v2/ca/image?id=asy2ubohggs7d8wh74ud9bx4k_image-header_pEs_1775739582000&quality=50",
+    "url": "go:"
+  },
+  {
     "title": "Arsenal vs Fulham",
     "league": "2026 • Premier League",
     "start": "2026-05-02T11:30:00",
@@ -271,6 +327,14 @@
     "end": "2026-05-02T13:29:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/ab60cf24-aba1-4a93-acda-81dc3f5d912a/compose?format=webp&width=2560",
     "url": "go:dsports"
+  },
+  {
+    "title": "Atalanta vs Genoa",
+    "league": "2026 • Serie A Italia",
+    "start": "2026-05-02T13:45:00",
+    "end": "2026-05-02T15:44:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/a77a9dc9-6ecf-4304-9697-b81175aaecb4/compose?aspectRatio=2.00&format=webp&width=506",
+    "url": "go:"
   },
   {
     "title": "Osasuna vs Barcelona",
