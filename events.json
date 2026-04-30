@@ -225,6 +225,14 @@
     "url": "go:"
   },
   {
+    "title": "Nantes vs Olympique Marseille",
+ "league": "2026 • Ligue1",
+    "start": "2026-05-02T08:00",
+    "end": "2026-05-02T010:00:00",
+    "image": "https://media.tycsports.com/files/2026/04/30/945433/nantes-vs-olympique-de-marsella-en-vivo-como-llegan-al-partido_416x234.webp",
+    "url": ""
+  },
+  {
     "title": "Udinese vs Torino",
     "league": "2026 • Serie A Italia",
     "start": "2026-05-02T08:00",
@@ -297,6 +305,14 @@
     "url": "go:dsports"
   },
   {
+    "title": "PSG vs Lorient",
+    "league": "2026 • Ligue1",
+    "start": "2026-05-02T10:00:00",
+    "end": "2026-05-02T12:00:00",
+    "image": "https://a.espncdn.com/photo/2026/0428/r1650394_1296x729_16-9.jpg",
+    "url": "go:espn4"
+  },
+  {
     "title": "Como vs Napoli",
     "league": "2026 • Serie A Italia",
     "start": "2026-05-02T11:30:00",
@@ -329,11 +345,27 @@
     "url": "go:dsports"
   },
   {
+    "title": "Metz vs Monaco",
+    "league": "2026 • Ligue1",
+    "start": "2026-05-02T12:00:00",
+    "end": "2026-05-02T13:59:00",
+    "image": "https://cdn.nerdytips.com/public/img/preview-images/Metz-vs-Monaco-prediction-2026-05-02.png",
+    "url": "go:"
+  },
+  {
     "title": "Atalanta vs Genoa",
     "league": "2026 • Serie A Italia",
     "start": "2026-05-02T13:45:00",
     "end": "2026-05-02T15:44:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/a77a9dc9-6ecf-4304-9697-b81175aaecb4/compose?aspectRatio=2.00&format=webp&width=506",
+    "url": "go:"
+  },
+  {
+    "title": "Nice vs Lens",
+    "league": "2026 • Logue1",
+    "start": "2026-05-02T14:05:00",
+    "end": "2026-05-02T16:04:00",
+    "image": "https://foxone.asset.viewlift.com/images/2026/04/23/MATCH-UP-16x9-02052026-LIGUE-1-Nice-vs-Lens-1776919033617.jpg?impolicy=resize&w=1920&h=1080",
     "url": "go:"
   },
   {
