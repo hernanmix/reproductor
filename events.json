@@ -19,8 +19,8 @@
   {
     "title": "Rayo Vallecano vs Strasbourg",
     "league": "2026 • Europa - Liga de la Conferencia de la UEFA",
-    "start": "2026-05-30T14:00:00",
-    "end": "2026-05-30T15:59:00",
+    "start": "2026-04-30T14:00:00",
+    "end": "2026-04-30T15:59:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019daccb-a75d-7fe1-9227-ec3d586e1583/compose?format=webp&width=2880",
     "url": "go:disney3"
   },
@@ -67,8 +67,8 @@
   {
     "title": "Knicks vs Hawks",
     "league": "2026 • NBA",
-    "start": "2026-05-30T18:00:00",
-    "end": "2026-05-30T20:00:00",
+    "start": "2026-04-30T18:00:00",
+    "end": "2026-04-30T20:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019db07f-57fa-75eb-ad63-efe21dd21331/compose?aspectRatio=1.78&format=webp&width=1200",
     "url": "go:espn3"
   },
@@ -136,13 +136,52 @@
     "image": "https://www.semana.com/resizer/v2/TZTKNR5PZZE5FAOV3VDLCNWNVA.png?auth=d6ff6ff77be84a18fd5a98477badcda185c83883f4a63f88a7025f58524b3ee8&smart=true&quality=75&width=1280",
     "url": "go:espn"
   },
+    {
+    "title": "FC Andorra vs Albacete",
+    "league": "2026 • La Liga SmartBank",
+    "start": "2026-05-01T09:15:00",
+    "end": "2026-05-01T11:00:00",
+    "image": "https://image.discovery.indazn.com/ca/v2/ca/image?id=7h3lmhd1h68d1v9kjjrw3jroe_image-header_pEs_1714920869000",
+    "url": "##"
+  },
+ {
+    "title": "Deportivo La Coruña vs Leganés",
+    "league": "2026 • La Liga SmartBank",
+    "start": "2026-05-01T11:30:00",
+    "end": "2026-05-01T13:28:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/0209be73-bed2-4554-87df-1039c4db783f/compose?format=webp&width=2560",
+    "url": "##"
+  },
+  {
+    "title": "Pisa vs Lecce",
+ "league": "2026 • Serie A Italia",
+    "start": "2026-05-01T13:45:00",
+    "end": "2026-05-01T14:58:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019db4f0-2f2a-7f3a-9068-af7f5b0380f6/compose?aspectRatio=1.78&format=webp&width=1200",
+    "url": "##"
+  },
   {
     "title": "Girona vs Mallorca",
     "league": "2026 • LA LIGA",
     "start": "2026-05-01T14:00:00",
     "end": "2026-05-01T15:58:00",
     "image": "https://library.sportingnews.com/styles/twitter_card_120x120/s3/2024-01/Mallorca%20vs.%20Girona.jpeg?itok=wYFwtTBr",
-    "url": "go:espndeport"
+    "url": "g:espndeport"
+  },
+  {
+    "title": "Real Zaragoza vs Granada",
+    "league": "2026 • La Liga SmartBank",
+    "start": "2026-05-01T14:00:00",
+    "end": "2026-05-01T15:58:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbb08-1fd8-7809-b62e-8b8afa4bd255/compose?aspectRatio=1.78&format=webp&width=1200",
+    "url": "##"
+  },
+  {
+    "title": "Leeds United vs Burnley",
+    "league": "2026 • Premier League",
+    "start": "2026-05-01T14:00:00",
+    "end": "2026-05-01T15:57:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d919e-da9e-7c36-9989-e74d39a07b48/compose?format=webp&width=2560",
+    "url": "##"
   }
-  
 ]
