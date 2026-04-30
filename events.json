@@ -353,12 +353,36 @@
     "url": "go:"
   },
   {
+    "title": "Barracas Central vs Banfield",
+ "league": "2026 • Argentina - Liga Profesional",
+    "start": "2026-05-02T12:00",
+    "end": "2026-05-02T014:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d452c-8ad4-7bb6-935c-d2fc65e6fa45/compose?aspectRatio=1.78&format=webp&width=1200",
+    "url": "go:tntar"
+  },
+  {
+    "title": "Lanús vs Deportivo Riestra",
+    "league": "2026 • Argentina - Liga Profesional",
+    "start": "2026-05-02T12:30:00",
+    "end": "2026-05-02T14:30:00",
+    "image": "https://www.ole.com.ar/images/2025/01/22/cGTS-RH18_1290x760__1.jpg",
+    "url": "go:espnpremium"
+  },
+  {
     "title": "Atalanta vs Genoa",
     "league": "2026 • Serie A Italia",
     "start": "2026-05-02T13:45:00",
     "end": "2026-05-02T15:44:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/a77a9dc9-6ecf-4304-9697-b81175aaecb4/compose?aspectRatio=2.00&format=webp&width=506",
     "url": "go:"
+  },
+  {
+    "title": "Osasuna vs Barcelona",
+    "league": "2026 • La Liga",
+    "start": "2026-05-02T14:00:00",
+    "end": "2026-05-02T15:58:00",
+    "image": "https://www.fcbarcelona.com/photo-resources/2025/12/12/b2688a3f-9637-4be8-a841-6666420fdc06/TIMEZONES-escuts-OSASUNA-copia.jpg?width=1200&height=750",
+    "url": "go:espn"
   },
   {
     "title": "Nice vs Lens",
@@ -369,11 +393,36 @@
     "url": "go:"
   },
   {
-    "title": "Osasuna vs Barcelona",
-    "league": "2026 • La Liga",
-    "start": "2026-05-02T14:00:00",
-    "end": "2026-05-02T15:58:00",
-    "image": "https://www.fcbarcelona.com/photo-resources/2025/12/12/b2688a3f-9637-4be8-a841-6666420fdc06/TIMEZONES-escuts-OSASUNA-copia.jpg?width=1200&height=750",
-    "url": "go:espn"
-  }
+    "title": "Central Córdoba SdE vs Boca Juniors",
+    "league": "2026 • Argentina - Liga Profesional",
+    "start": "2026-05-02T14:45:00",
+    "end": "2026-05-02T16:45",
+    "image": "https://www.ole.com.ar/images/2025/03/06/cvzXCv6Lf_1290x760__1.jpg",
+    "url": "go:tntar"
+  },
+{
+    "title": "San Lorenzo vs Independiente",
+    "league": "2026 • Argentina - Liga Profesional",
+    "start": "2026-05-02T16:45:00",
+    "end": "2026-05-02T18:45:00",
+    "image": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0428%2Fr1650372_1296x729_16%2D9.jpg",
+    "url": "go:tntar"
+  },
+
+{
+    "title": "Unión Santa Fe vs Talleres Córdoba",
+    "league": "2026 • Argentina - Liga Profesional",
+    "start": "2026-05-02T16:45:00",
+    "end": "2026-05-02T18:44:00",
+    "image": "https://www.ole.com.ar/images/2024/11/25/uNIOZD4-N_860x575__1.jpg",
+    "url": "go:espnpremium"
+  },
+{
+    "title": "Platense vs Estudiantes",
+    "league": "2026 • Argentina - Liga Profesional",
+    "start": "2026-05-02T19:15:00",
+    "end": "2026-05-02T21:14:00",
+    "image": "https://assets.elcrackdeportivo.com.ar/__export/1766105804115/sites/elcrackdeportivo/img/2025/12/18/bv--2025.jpg_842213340.jpg",
+    "url": "go:espnpremium"
+  },
 ]
