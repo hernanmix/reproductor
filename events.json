@@ -38,7 +38,7 @@
     "start": "2026-04-30T17:00:00",
     "end": "2026-04-30T18:59:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d9341-edb5-72eb-b169-28b7c0a6867f/compose?format=webp&width=2560",
-    "url": "go:dsports"
+    "url": "go:dsportsplus"
   },
   {
     "title": "Vasco da Gama vs Olimpia",
@@ -62,7 +62,7 @@
     "start": "2026-04-30T17:00:00",
     "end": "2026-04-30T18:58:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d6e59-aa06-74eb-992c-07cf729eac27/compose?format=webp&width=2880",
-    "url": "goespn5"
+    "url": "go:espn5"
   },
   {
     "title": "Knicks vs Hawks",
@@ -86,7 +86,7 @@
     "start": "2026-04-30T19:00:00",
     "end": "2026-04-30T20:59:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dbb08-1fd8-7809-b62e-8b8afa4bd255/compose?aspectRatio=1.78&format=webp&width=1200",
-    "url": "goespn2"
+    "url": "go:disney4"
   },
   {
     "title": "Tigre vs América de Cali",
