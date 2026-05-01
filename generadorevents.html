@@ -8,12 +8,14 @@
 </div>
 
 <script>
-function generarEventosJSON(inputTexto, fechaInicio = "2026-05-30") {
+function generarEventosJSON(inputTexto, fechaInicio = null) {
   const lineas = inputTexto.trim().split("\n").map(l => l.trim()).filter(l => l !== "");
   let eventos = [];
   let liga = "";
   let i = 0;
-  let fechaActual = new Date(fechaInicio);
+
+  // Si no se pasa la fecha de inicio, tomar la fecha actual
+  let fechaActual = fechaInicio ? new Date(fechaInicio) : new Date();
 
   while (i < lineas.length) {
     const linea = lineas[i];
