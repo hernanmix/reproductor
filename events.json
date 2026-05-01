@@ -11,7 +11,7 @@
   {
     "title": "Al Aire Ahora",
  "league": "2026 • SportsCenter Am Colombia",
-    "start": "2026-04-30T12:00",
+    "start": "2026-04-30T12:00:00",
     "end": "2026-04-30T13:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019c725a-a709-745b-9a3d-cb0ae4d73ae6/compose?format=webp&width=2560",
     "url": "go:espn"
@@ -19,7 +19,7 @@
   {
     "title": "Al Aire Ahora",
  "league": "2026 • SportsCenter Am Colombia",
-    "start": "2026-04-30T13:00",
+    "start": "2026-04-30T13:00:00",
     "end": "2026-04-30T13:55:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019c725a-a709-745b-9a3d-cb0ae4d73ae6/compose?format=webp&width=2560",
     "url": "go:espn"
@@ -219,7 +219,7 @@
     {
     "title": "Villarreal vs Levante",
  "league": "2026 • La Liga",
-    "start": "2026-05-02T07:00",
+    "start": "2026-05-02T07:00:00",
     "end": "2026-05-02T09:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dd494-9259-79ef-accf-00ce94467a11/compose?aspectRatio=1.78&format=webp&width=1200",
     "url": "go:"
@@ -227,7 +227,7 @@
   {
     "title": "Nantes vs Olympique Marseille",
  "league": "2026 • Ligue1",
-    "start": "2026-05-02T08:00",
+    "start": "2026-05-02T08:00:00",
     "end": "2026-05-02T010:00:00",
     "image": "https://media.tycsports.com/files/2026/04/30/945433/nantes-vs-olympique-de-marsella-en-vivo-como-llegan-al-partido_416x234.webp",
     "url": ""
@@ -235,7 +235,7 @@
   {
     "title": "Udinese vs Torino",
     "league": "2026 • Serie A Italia",
-    "start": "2026-05-02T08:00",
+    "start": "2026-05-02T08:00:00",
     "end": "2026-05-02T010:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dab35-abbe-71ca-a156-755015d9e8d6/compose?aspectRatio=1.78&format=webp&width=1200",
     "url": "go:"
@@ -275,7 +275,7 @@
   {
     "title": "Wolverhampton Wanderers vs Sunderland",
  "league": "2026 • Premier League",
-    "start": "2026-05-02T09:00",
+    "start": "2026-05-02T09:00:00",
     "end": "2026-05-02T10:59:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dd539-3c54-7d60-9460-b24dd2d0b735/compose?format=webp&width=467",
     "url": "go:"
@@ -355,8 +355,8 @@
   {
     "title": "Barracas Central vs Banfield",
  "league": "2026 • Argentina - Liga Profesional",
-    "start": "2026-05-02T12:00",
-    "end": "2026-05-02T014:00:00",
+    "start": "2026-05-02T12:00:00",
+    "end": "2026-05-02T14:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d452c-8ad4-7bb6-935c-d2fc65e6fa45/compose?aspectRatio=1.78&format=webp&width=1200",
     "url": "go:tntar"
   },
@@ -379,8 +379,8 @@
   {
     "title": "Boyacá Chicó vs Llaneros",
  "league": "2026 • LigaBetPlay",
-    "start": "2026-05-02T14:00",
-    "end": "2026-05-02T015:58:00",
+    "start": "2026-05-02T14:00:00",
+    "end": "2026-05-02T15:58:00",
     "image": "https://files.winsports.co/cms/2026/04/25222914/Medellin-vencio-con-suspenso-a-Fortaleza-y-pelea-por-los-playoffs-VizzorImage.jpg",
     "url": "go:winplus"
   },
@@ -392,12 +392,11 @@
     "image": "https://www.fcbarcelona.com/photo-resources/2025/12/12/b2688a3f-9637-4be8-a841-6666420fdc06/TIMEZONES-escuts-OSASUNA-copia.jpg?width=1200&height=750",
     "url": "go:espn"
   },
-  
   {
     "title": "Botafogo vs Remo",
- "league": "2026 • Brasileirão",
+    "league": "2026 • Brasileirão",
     "start": "2026-05-02T14:00:00",
-    "end": "2026-05-02T015:58:00",
+    "end": "2026-05-02T15:58:00",
     "image": "https://media.tycsports.com/files/2026/04/30/945552/botafogo-vs-remo-en-vivo-como-llegan-al-partido_862x485.webp",
     "url": "/"
   },
@@ -413,7 +412,7 @@
     "title": "Central Córdoba SdE vs Boca Juniors",
     "league": "2026 • Argentina - Liga Profesional",
     "start": "2026-05-02T14:45:00",
-    "end": "2026-05-02T16:45",
+    "end": "2026-05-02T16:45:00",
     "image": "https://www.ole.com.ar/images/2025/03/06/cvzXCv6Lf_1290x760__1.jpg",
     "url": "go:tntar"
   },
@@ -437,7 +436,7 @@
     "title": "Vitória vs Coritiba",
     "league": "2026 • Brasileirão",
     "start": "2026-05-02T16:30:00",
-    "end": "2026-05-02T18:29",
+    "end": "2026-05-02T18:29:00",
     "image": "https://image-service.onefootball.com/transform?w=280&h=210&dpr=2&image=https%3A%2F%2Fcdn-img.staticzz.com%2Fimg%2Fnoticias%2F167%2FimgS620I1111167T20260430224011.jpg",
     "url": "/"
   },
