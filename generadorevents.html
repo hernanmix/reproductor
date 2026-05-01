@@ -31,12 +31,12 @@ function generarEventosJSON(inputTexto, fechaInicio = "2026-05-01") {
       const equipos = lineas[i + 1] || "Partido desconocido";
 
       const fechaISO = fechaActual.toISOString().split("T")[0];
-      const horaFin = calcularHoraFin(horaInicio, 105, fechaActual); // Duración 105 min
+      const horaFin = calcularHoraFin(horaInicio, 120, fechaActual); // Duración 120 min exacta
 
       eventos.push({
         "title": equipos,
         "league": `2026 • ${liga}`,
-        "start": `${fechaISO}T${horaInicio.padStart(5,"0")}:00`,
+        "start": `${fechaISO}T${formatHora(horaInicio)}:00`,
         "end": `${fechaISO}T${horaFin}:00`,
         "image": "https://image.discovery.indazn.com/ca/v2/ca/image?id=7h3lmhd1h68d1v9kjjrw3jroe_image-header_pEs_1714920869000",
         "url": "##"
@@ -52,6 +52,12 @@ function generarEventosJSON(inputTexto, fechaInicio = "2026-05-01") {
   eventos.sort((a, b) => new Date(a.start) - new Date(b.start));
 
   return eventos;
+}
+
+// Asegura que siempre HH:MM tenga formato 2 dígitos
+function formatHora(horaStr) {
+  let [h, m] = horaStr.split(":").map(Number);
+  return `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}`;
 }
 
 function calcularHoraFin(horaInicio, duracionMin, fecha) {
