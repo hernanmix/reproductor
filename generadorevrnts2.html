@@ -1,0 +1,96 @@
+<div style="text-align:center; margin:20px;">
+  <h2 style="color:white;">Generador de Eventos Multi-Día</h2>
+  <textarea id="entradaEventos" rows="20" cols="80" placeholder="Pega aquí tus eventos con fecha, hora, liga, equipos y URL..." style="width:90%;"></textarea><br><br>
+  <button onclick="generarJSON()" style="padding:10px 20px; font-size:16px;">Generar JSON</button>
+  <button onclick="copiarJSON()" style="padding:10px 20px; font-size:16px; margin-left:10px;">Copiar JSON</button>
+  <h3 style="color:white;">Resultado:</h3>
+  <textarea id="salidaJSON" rows="20" cols="80" style="width:90%;"></textarea>
+</div>
+
+<script>
+function generarEventos(inputTexto) {
+  const lineas = inputTexto.trim().split("\n").map(l => l.trim()).filter(l => l !== "");
+  let eventos = [];
+
+  const hoy = new Date();
+
+  for (let i = 0; i < lineas.length; i++) {
+    const linea = lineas[i];
+
+    // Detectar formato opcional "DD/MM - HH:MM - Liga: Equipos" o solo "HH:MM - Liga: Equipos"
+    const regexConFecha = /^(\d{1,2})\/(\d{1,2})\s*-\s*(\d{1,2}:\d{2})\s*-\s*(.+?):\s*(.+)$/;
+    const regexSinFecha = /^(\d{1,2}:\d{2})\s*-\s*(.+?):\s*(.+)$/;
+
+    let dia, mes, hora, liga, equipos;
+
+    if (regexConFecha.test(linea)) {
+      const match = linea.match(regexConFecha);
+      dia = parseInt(match[1]);
+      mes = parseInt(match[2]) - 1; // meses 0-11 en JS
+      hora = match[3];
+      liga = match[4].trim();
+      equipos = match[5].trim();
+    } else if (regexSinFecha.test(linea)) {
+      const match = linea.match(regexSinFecha);
+      const fechaHoy = hoy;
+      dia = fechaHoy.getDate();
+      mes = fechaHoy.getMonth();
+      hora = match[1];
+      liga = match[2].trim();
+      equipos = match[3].trim();
+    } else {
+      continue; // no coincide con el formato esperado
+    }
+
+    // Buscar URLs siguientes
+    let urls = [];
+    for (let j = i + 1; j < lineas.length; j++) {
+      if (lineas[j].startsWith("http")) {
+        const canalMatch = lineas[j].match(/channel=([^\s]+)/);
+        if (canalMatch) urls.push(canalMatch[1]);
+      } else if (/^\d{1,2}(:|\s*\/)/.test(lineas[j])) {
+        break; // siguiente evento
+      }
+    }
+
+    const fechaEvento = new Date(hoy.getFullYear(), mes, dia);
+    const horaFin = calcularHoraFin(hora, 120, fechaEvento);
+
+    urls.forEach(url => {
+      eventos.push({
+        "title": equipos,
+        "league": `${fechaEvento.getFullYear()} • ${liga}`,
+        "start": `${fechaEvento.toISOString().split("T")[0]}T${hora.padStart(5,"0")}:00`,
+        "end": `${fechaEvento.toISOString().split("T")[0]}T${horaFin}:00`,
+        "image": "https://is1-ssl.mzstatic.com/image/thumb/Yxn7Kl8WIDRQT9JPl9j5NA/1200x675.jpg",
+        "url": `go:${url}`
+      });
+    });
+  }
+
+  eventos.sort((a, b) => new Date(a.start) - new Date(b.start));
+  return eventos;
+}
+
+function calcularHoraFin(horaInicio, duracionMin, fecha) {
+  const [h, m] = horaInicio.split(":").map(Number);
+  const inicio = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), h, m);
+  const fin = new Date(inicio.getTime() + duracionMin*60000);
+  const hh = String(fin.getHours()).padStart(2,"0");
+  const mm = String(fin.getMinutes()).padStart(2,"0");
+  return `${hh}:${mm}`;
+}
+
+function generarJSON() {
+  const entrada = document.getElementById("entradaEventos").value;
+  const eventos = generarEventos(entrada);
+  document.getElementById("salidaJSON").value = JSON.stringify(eventos, null, 2);
+}
+
+function copiarJSON() {
+  const salida = document.getElementById("salidaJSON");
+  salida.select();
+  document.execCommand("copy");
+  alert("JSON copiado al portapapeles");
+}
+</script>
