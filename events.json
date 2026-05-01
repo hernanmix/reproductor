@@ -392,6 +392,15 @@
     "image": "https://www.fcbarcelona.com/photo-resources/2025/12/12/b2688a3f-9637-4be8-a841-6666420fdc06/TIMEZONES-escuts-OSASUNA-copia.jpg?width=1200&height=750",
     "url": "go:espn"
   },
+  
+  {
+    "title": "Botafogo vs Remo",
+ "league": "2026 • Brasileirão",
+    "start": "2026-05-02T14:00:00",
+    "end": "2026-05-02T015:58:00",
+    "image": "https://media.tycsports.com/files/2026/04/30/945552/botafogo-vs-remo-en-vivo-como-llegan-al-partido_862x485.webp",
+    "url": "/"
+  },
   {
     "title": "Nice vs Lens",
     "league": "2026 • Logue1",
@@ -416,6 +425,22 @@
     "image": "https://r2.thesportsdb.com/images/media/event/thumb/7f2hep1769692272.jpg",
     "url": "go:winplus"
   },
+  {
+    "title": "Palmeiras vs Santos",
+    "league": "2026 • Brasileirão",
+    "start": "2026-05-02T16:30:00",
+    "end": "2026-05-02T18:29:00",
+    "image": "https://elcomercio-depor-prod.web.arc-cdn.net/resizer/v2/RV23LDOIXJD3ZO6E4YAAL3KZHM.jpg?auth=f5409a330de18217e72a09ce8110e1a3b19a95befae742417cfb7fb2d5f95837&width=1200&height=800&smart=true&quality=90",
+    "url": "/"
+  },
+ {
+    "title": "Vitória vs Coritiba",
+    "league": "2026 • Brasileirão",
+    "start": "2026-05-02T16:30:00",
+    "end": "2026-05-02T18:29",
+    "image": "https://image-service.onefootball.com/transform?w=280&h=210&dpr=2&image=https%3A%2F%2Fcdn-img.staticzz.com%2Fimg%2Fnoticias%2F167%2FimgS620I1111167T20260430224011.jpg",
+    "url": "/"
+  },
  {
     "title": "San Lorenzo vs Independiente",
     "league": "2026 • Argentina - Liga Profesional",
@@ -424,8 +449,7 @@
     "image": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0428%2Fr1650372_1296x729_16%2D9.jpg",
     "url": "go:tntar"
   },
-
-{
+  {
     "title": "Unión Santa Fe vs Talleres Córdoba",
     "league": "2026 • Argentina - Liga Profesional",
     "start": "2026-05-02T16:45:00",
@@ -433,7 +457,23 @@
     "image": "https://www.ole.com.ar/images/2024/11/25/uNIOZD4-N_860x575__1.jpg",
     "url": "go:espnpremium"
   },
-{
+  {
+    "title": "Athletico-PR vs Grêmio",
+    "league": "2026 • Brasileirão",
+    "start": "2026-05-02T18:30:00",
+    "end": "2026-05-02T20:29:00",
+    "image": "https://anecdotarios.com/wp-content/uploads/2026/04/792476_0.png",
+    "url": "/"
+  },
+  {
+    "title": "Cruzeiro vs Atlético Mineiro",
+    "league": "2026 • Brasileirão",
+    "start": "2026-05-02T19:00:00",
+    "end": "2026-05-02T20:59:00",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGI3afyiwmoR69SvBbftCr9fGZH11kWzQ_gTqnznRzjd9MumIQE5mkLX8&s=10",
+    "url": "/"
+  },
+  {
     "title": "Platense vs Estudiantes",
     "league": "2026 • Argentina - Liga Profesional",
     "start": "2026-05-02T19:15:00",
