@@ -1,5 +1,5 @@
 <div style="text-align:center; margin:20px;">
-  <h2 style="color:white;">Generador de Eventos</h2>
+  <h2 style="color:white;">Generador de Eventos JSON Limpio</h2>
   <textarea id="entradaEventos" rows="20" cols="80" placeholder="Pega aquí tus ligas y partidos..." style="width:90%;"></textarea><br><br>
   <button onclick="generarJSON()" style="padding:10px 20px; font-size:16px;">Generar JSON</button>
   <button onclick="copiarJSON()" style="padding:10px 20px; font-size:16px; margin-left:10px;">Copiar JSON</button>
@@ -8,47 +8,47 @@
 </div>
 
 <script>
-function generarEventos(inputTexto, fechaInicio="2026-04-30") {
-  const lineas = inputTexto.trim().split("\n");
+function generarEventosJSON(inputTexto, fechaInicio = "2026-05-01") {
+  const lineas = inputTexto.trim().split("\n").map(l => l.trim()).filter(l => l !== "");
   let eventos = [];
   let liga = "";
+  let i = 0;
   let fechaActual = new Date(fechaInicio);
 
-  for (let i = 0; i < lineas.length; i++) {
-    const linea = lineas[i].trim();
+  while (i < lineas.length) {
+    const linea = lineas[i];
 
     // Detectar liga
-    if (linea.includes("-")) {
+    if (!/^\d{1,2}:\d{2}$/.test(linea) && linea.includes("-")) {
       liga = linea;
+      i++;
       continue;
     }
 
     // Detectar hora
     if (/^\d{1,2}:\d{2}$/.test(linea)) {
       const horaInicio = linea;
-      const equipos = lineas[i+1]?.trim() || "";
-      const horaFin = calcularHoraFin(horaInicio, 118, fechaActual);
+      const equipos = lineas[i + 1] || "Partido desconocido";
 
       const fechaISO = fechaActual.toISOString().split("T")[0];
+      const horaFin = calcularHoraFin(horaInicio, 105, fechaActual); // Duración 105 min
 
-      const evento = {
+      eventos.push({
         "title": equipos,
-        "league": fechaActual.getFullYear() + " • " + liga, // carácter • real
+        "league": `2026 • ${liga}`,
         "start": `${fechaISO}T${horaInicio.padStart(5,"0")}:00`,
         "end": `${fechaISO}T${horaFin}:00`,
-        "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Soccer_ball.svg",
-        "url": "" // vacío para que tú pongas manualmente el canal
-      };
-      eventos.push(evento);
-    }
+        "image": "https://image.discovery.indazn.com/ca/v2/ca/image?id=7h3lmhd1h68d1v9kjjrw3jroe_image-header_pEs_1714920869000",
+        "url": "##"
+      });
 
-    // Avanzar al siguiente día cuando hay un salto de liga
-    if (linea === "" && liga !== "") {
-      fechaActual.setDate(fechaActual.getDate() + 1);
+      i += 2; // saltamos hora y equipos
+    } else {
+      i++;
     }
   }
 
-  // Ordenar por fecha/hora
+  // Ordenar los eventos por fecha y hora
   eventos.sort((a, b) => new Date(a.start) - new Date(b.start));
 
   return eventos;
@@ -57,7 +57,7 @@ function generarEventos(inputTexto, fechaInicio="2026-04-30") {
 function calcularHoraFin(horaInicio, duracionMin, fecha) {
   const [h, m] = horaInicio.split(":").map(Number);
   const inicio = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), h, m);
-  const fin = new Date(inicio.getTime() + duracionMin*60000);
+  const fin = new Date(inicio.getTime() + duracionMin * 60000);
   const hh = String(fin.getHours()).padStart(2,"0");
   const mm = String(fin.getMinutes()).padStart(2,"0");
   return `${hh}:${mm}`;
@@ -65,7 +65,7 @@ function calcularHoraFin(horaInicio, duracionMin, fecha) {
 
 function generarJSON() {
   const entrada = document.getElementById("entradaEventos").value;
-  const eventos = generarEventos(entrada);
+  const eventos = generarEventosJSON(entrada);
   document.getElementById("salidaJSON").value = JSON.stringify(eventos, null, 2);
 }
 
