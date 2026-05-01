@@ -385,6 +385,14 @@
     "url": "go:espnpremium"
   },
   {
+    "title": "FC Cajamarca vs Sport Boys",
+    "league": "2026 • Perú - Liga 1",
+    "start": "2026-05-02T13:00:00",
+    "end": "2026-05-02T14:59:00",
+    "image": "https://cdn.futbolperuano.com/sdi/2026/04/30/fc-cajamarca-vs-sport-boys-en-vivo-online-por-fecha-13-del-torneo-apertura-de-liga-1-2026-1339569-1.jpg",
+    "url": "go:liga1max"
+  },
+  {
     "title": "Atalanta vs Genoa",
     "league": "2026 • Serie A Italia",
     "start": "2026-05-02T13:45:00",
@@ -441,6 +449,14 @@
     "url": "go:tntar"
   },
   {
+    "title": "ADT vs Atlético Grau",
+    "league": "2026 • Perú - Liga 1",
+    "start": "2026-05-02T15:15:00",
+    "end": "2026-05-02T17:14:00",
+    "image": "https://cdn.teleticket.com.pe/especiales/adt-vs-grau-clausura-2024/images/versus.png",
+    "url": "go:liga1max"
+  },
+  {
     "title": "Jaguares de Córdoba vs Cúcuta Deportivo",
     "league": "2026 • LigaBetPlay",
     "start": "2026-05-02T16:00:00",
@@ -481,6 +497,14 @@
     "url": "go:espnpremium"
   },
   {
+    "title": "Cienciano vs Comerciantes Unidos",
+    "league": "2026 • Perú - Liga 1",
+    "start": "2026-05-02T17:30:00",
+    "end": "2026-05-02T19:29:00",
+    "image": "https://media.tycsports.com/files/2026/04/30/945630/cienciano-vs-comerciantes-unidos-en-vivo-como-llegan-al-partido_862x485.webp",
+    "url": "go:liga1max"
+  },
+  {
     "title": "Athletico-PR vs Grêmio",
     "league": "2026 • Brasileirão",
     "start": "2026-05-02T18:30:00",
@@ -495,6 +519,14 @@
     "end": "2026-05-02T20:59:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGI3afyiwmoR69SvBbftCr9fGZH11kWzQ_gTqnznRzjd9MumIQE5mkLX8&s=10",
     "url": "/"
+  },
+  {
+    "title": "Alianza Lima vs Deportivo Moquegua",
+    "league": "2026 • Perú - Liga 1",
+    "start": "2026-05-02T20:00:00",
+    "end": "2026-05-02T22:00:00",
+    "image": "https://media.tycsports.com/files/2026/04/30/945692/alianza-lima-vs-deportivo-moquegua-en-vivo-como-llegan-al-partido_862x485.webp",
+    "url": "go:liga1max"
   },
   {
     "title": "Platense vs Estudiantes",
