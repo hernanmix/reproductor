@@ -1,0 +1,83 @@
+<div style="text-align:center; margin:20px;">
+  <h2 style="color:white;">Generador de Eventos con Canales</h2>
+  <textarea id="entradaEventos" rows="20" cols="80" placeholder="Pega aquí tus eventos con hora, liga, equipos y URL..." style="width:90%;"></textarea><br><br>
+  <button onclick="generarJSON()" style="padding:10px 20px; font-size:16px;">Generar JSON</button>
+  <button onclick="copiarJSON()" style="padding:10px 20px; font-size:16px; margin-left:10px;">Copiar JSON</button>
+  <h3 style="color:white;">Resultado:</h3>
+  <textarea id="salidaJSON" rows="20" cols="80" style="width:90%;"></textarea>
+</div>
+
+<script>
+function generarEventos(inputTexto, fechaInicio="2026-04-30") {
+  const lineas = inputTexto.trim().split("\n");
+  let eventos = [];
+  let fechaActual = new Date(fechaInicio);
+
+  for (let i = 0; i < lineas.length; i++) {
+    const linea = lineas[i].trim();
+
+    // Detectar formato "HH:MM - Liga: Equipos"
+    if (/^\d{1,2}:\d{2}\s*-\s*/.test(linea)) {
+      const partes = linea.split("-");
+      const hora = partes[0].trim();
+      const resto = partes[1].trim();
+      const [liga, equipos] = resto.split(":").map(s => s.trim());
+
+      // Buscar la siguiente línea con URL
+      let canal = "";
+      for (let j = i+1; j < lineas.length; j++) {
+        if (lineas[j].includes("channel=")) {
+          const urlLinea = lineas[j].trim();
+          canal = urlLinea.split("channel=")[1];
+          break;
+        }
+      }
+
+      const horaFin = calcularHoraFin(hora, 118, fechaActual);
+      const fechaISO = fechaActual.toISOString().split("T")[0];
+
+      const evento = {
+        "title": equipos,
+        "league": fechaActual.getFullYear() + " • " + liga,
+        "start": `${fechaISO}T${hora.padStart(5,"0")}:00`,
+        "end": `${fechaISO}T${horaFin}:00`,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/6/60/Soccer_ball.svg",
+        "url": canal ? "go:" + canal : ""
+      };
+      eventos.push(evento);
+    }
+
+    // Avanzar al siguiente día si hay salto de bloque vacío
+    if (linea === "") {
+      fechaActual.setDate(fechaActual.getDate() + 1);
+    }
+  }
+
+  // Ordenar por fecha/hora
+  eventos.sort((a, b) => new Date(a.start) - new Date(b.start));
+
+  return eventos;
+}
+
+function calcularHoraFin(horaInicio, duracionMin, fecha) {
+  const [h, m] = horaInicio.split(":").map(Number);
+  const inicio = new Date(fecha.getFullYear(), fecha.getMonth(), fecha.getDate(), h, m);
+  const fin = new Date(inicio.getTime() + duracionMin*60000);
+  const hh = String(fin.getHours()).padStart(2,"0");
+  const mm = String(fin.getMinutes()).padStart(2,"0");
+  return `${hh}:${mm}`;
+}
+
+function generarJSON() {
+  const entrada = document.getElementById("entradaEventos").value;
+  const eventos = generarEventos(entrada);
+  document.getElementById("salidaJSON").value = JSON.stringify(eventos, null, 2);
+}
+
+function copiarJSON() {
+  const salida = document.getElementById("salidaJSON");
+  salida.select();
+  document.execCommand("copy");
+  alert("JSON copiado al portapapeles");
+}
+</script>
