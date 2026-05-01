@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Reproductor HD - Stream Rápido</title>
+<style>
+    * {margin:0; padding:0; box-sizing:border-box; user-select:none; -webkit-tap-highlight-color:transparent;}
+    body, html {width:100%; height:100%; overflow:hidden; position:fixed; background:#000;}
+    #iframeContainer {position:fixed; left:0; top:0; width:100%; height:100%; border:0; z-index:1;}
+    .loading-spinner {position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index:9999; width:40px; height:40px; border:3px solid rgba(255,255,255,0.2); border-radius:50%; border-top-color:#fff; animation:spin 0.6s linear infinite;}
+    @keyframes spin { to { transform:translate(-50%,-50%) rotate(360deg); } }
+    .hidden {display:none !important;}
+    .danicode-brand {position:fixed; top:12px; right:16px; z-index:10000; font-family:'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif; font-size:13px; font-weight:600; color:rgba(255,255,255,0.75); background:rgba(0,0,0,0.5); backdrop-filter:blur(6px); padding:5px 12px; border-radius:30px; letter-spacing:0.3px; pointer-events:none; text-shadow:0 1px 2px rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.2); transition:opacity 0.2s ease;}
+    @media (max-width:480px){.danicode-brand{font-size:11px; padding:4px 10px; top:10px; right:12px;}}
+</style>
+</head>
+<body>
+
+<div id="mainSpinner" class="loading-spinner"></div>
+<div class="danicode-brand">HsportsEc</div>
+
+<iframe id="iframeContainer" allowfullscreen="true" frameborder="0" mozallowfullscreen="true" scrolling="no" webkitallowfullscreen="true" sandbox="allow-same-origin allow-scripts allow-forms allow-modals" referrerpolicy="no-referrer" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" src="about:blank" style="will-change: transform; transform: translateZ(0px); touch-action: none; user-select: none; width: 100%; height: 100%;"></iframe>
+
+<script>
+(function() {
+    const iframe = document.getElementById('iframeContainer');
+    const spinner = document.getElementById('mainSpinner');
+
+    // FUNCIONES
+    function ocultarSpinner() { if(spinner) spinner.classList.add('hidden'); }
+    function decodeFromBase64(encoded) { try { return atob(encoded); } catch(e){ return ''; } }
+    function encodeToBase64(str) { try { return btoa(str); } catch(e){ return ''; } }
+    function getUrlParam(name) {
+        const regex = new RegExp('[\\?&]'+name.replace(/[\[\]]/g,'\\$&')+'=([^&#]*)');
+        const results = regex.exec(location.search);
+        return results===null?'':decodeURIComponent(results[1].replace(/\+/g,' '));
+    }
+
+    // LIMPIEZA DE PUBLICIDAD (simplificada)
+    function limpiarPublicidad() {
+        const selectoresAds = ['[class*="banner"]','[class*="ad"]','[id*="ad"]','[id*="banner"]'];
+        selectoresAds.forEach(sel=>{
+            document.querySelectorAll(sel).forEach(el=>{ el.style.cssText='display:none !important'; setTimeout(()=>el.remove(),200); });
+        });
+    }
+
+    // ==================== CARGAR CANAL ====================
+    let channel = getUrlParam('channel'); // obtiene ?channel=espn
+    if(channel) {
+        // convertir a base64 y cargar en iframe
+        const base64Url = encodeToBase64(`https://la14hd.com/vivo/canales.php?stream=${channel}`);
+        iframe.src = decodeFromBase64(base64Url); // decodificamos para el iframe
+        // Opcional: cambiar la URL visible sin recargar
+        const newUrl = window.location.origin + window.location.pathname + '?url=' + base64Url;
+        window.history.replaceState(null, '', newUrl);
+    } else {
+        iframe.src = 'about:blank';
+    }
+
+    // ==================== EVENTOS ====================
+    iframe.onload = ocultarSpinner;
+    iframe.onerror = ocultarSpinner;
+    setTimeout(ocultarSpinner,2500);
+    setInterval(limpiarPublicidad,3000);
+
+    document.oncontextmenu = e=>e.preventDefault();
+    document.onselectstart = e=>e.preventDefault();
+    document.ondragstart = e=>e.preventDefault();
+    document.addEventListener('keydown', e=>{
+        if(e.key==='F12'||(e.ctrlKey&&['U','S'].includes(e.key))||(e.ctrlKey&&e.shiftKey&&['I','C','J'].includes(e.key))){
+            e.preventDefault();
+            alert("🔒 Acción bloqueada.");
+        }
+    });
+
+})();
+</script>
+
+</body>
+</html>
