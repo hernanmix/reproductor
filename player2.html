@@ -27,11 +27,9 @@
         width: 100%;
         height: 100%;
         border: none;
-        /* Forzar horizontal en móviles si es necesario */
         max-width: 100vw;
         max-height: 100vh;
     }
-    /* Botón retroceso fijo y transparente */
     .exit-button {
         position: fixed;
         top: 20px;
@@ -63,7 +61,6 @@
     <iframe id="videoPlayer" allowfullscreen allow="autoplay; fullscreen"></iframe>
 </div>
 
-<!-- Botón de retroceso siempre visible -->
 <div class="exit-button" onclick="exitFs()">
     <svg viewBox="0 0 24 24">
         <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
@@ -71,33 +68,28 @@
 </div>
 
 <script>
-    // Obtener canal desde URL
+    // Obtener canal desde AppCreator24 (ref)
     function getChannelFromURL() {
         const params = new URLSearchParams(window.location.search);
-        return params.get('channel') || 'dsportsplus';
+        return params.get('ref') || 'dsportsplus'; // canal por defecto
     }
 
     const channel = getChannelFromURL();
     const iframe = document.getElementById('videoPlayer');
 
-    // Cargar URL del reproductor (Replit)
+    // Cambia aquí la URL de tu reproductor real
     iframe.src = `https://m-3-u-player--hermixervdj94.replit.app/?channel=${channel}`;
 
-    // Función para salir de fullscreen y volver al inicio
+    // Función para salir de fullscreen o volver al menú
     function exitFs() {
         if (document.fullscreenElement) {
             document.exitFullscreen();
         }
-        window.location.href = "go:exitFs"; 
+        // AppCreator24 puede manejar esto para volver al menú
+        window.location.href = "go:exitFs";
     }
 
-    // Detectar cambios de fullscreen y mantener botón visible
-    document.addEventListener('fullscreenchange', () => {
-        const exitBtn = document.querySelector('.exit-button');
-        exitBtn.style.display = 'flex'; // siempre visible
-    });
-
-    // Forzar pantalla completa horizontal al abrir en móviles
+    // Forzar fullscreen horizontal en móviles
     function requestFullscreenHorizontal() {
         const el = document.documentElement;
         if (el.requestFullscreen) {
@@ -109,9 +101,14 @@
         }
     }
 
-    // Intentar fullscreen automáticamente (opcional)
     window.addEventListener('load', () => {
         requestFullscreenHorizontal();
+    });
+
+    // Mantener botón visible
+    document.addEventListener('fullscreenchange', () => {
+        const exitBtn = document.querySelector('.exit-button');
+        exitBtn.style.display = 'flex';
     });
 </script>
 
