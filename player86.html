@@ -12,10 +12,28 @@
     @keyframes spin { to { transform:translate(-50%,-50%) rotate(360deg); } }
     .hidden {display:none !important;}
     .danicode-brand {position:fixed; top:12px; right:16px; z-index:10000; font-family:'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif; font-size:13px; font-weight:600; color:rgba(255,255,255,0.75); background:rgba(0,0,0,0.5); backdrop-filter:blur(6px); padding:5px 12px; border-radius:30px; letter-spacing:0.3px; pointer-events:none; text-shadow:0 1px 2px rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.2); transition:opacity 0.2s ease;}
-    #exitFs {position:fixed; top:12px; left:16px; z-index:10001; width:40px; height:40px; border-radius:50%; background:rgba(0,0,0,0.5); display:flex; justify-content:center; align-items:center; cursor:pointer; transition:background 0.2s; }
+    #exitFs {
+        position:fixed;
+        top:12px;
+        left:16px;
+        z-index:10001;
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        background:rgba(0,0,0,0.5);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        cursor:pointer;
+        transition:background 0.2s;
+    }
     #exitFs:hover {background:rgba(255,255,255,0.2);}
     #exitFs svg {width:20px; height:20px; fill:#fff;}
-    @media (max-width:480px){.danicode-brand{font-size:11px; padding:4px 10px; top:10px; right:12px;} #exitFs{width:32px;height:32px; top:10px; left:12px;} #exitFs svg{width:16px;height:16px;}}
+    @media (max-width:480px){
+        .danicode-brand{font-size:11px; padding:4px 10px; top:10px; right:12px;}
+        #exitFs{width:32px;height:32px; top:10px; left:12px;}
+        #exitFs svg{width:16px;height:16px;}
+    }
 </style>
 </head>
 <body>
@@ -61,14 +79,11 @@
     let url = getUrlParam('url');       // obtiene ?url=base64
 
     if(url) {
-        // Si ya viene URL codificada, usarla
         iframe.src = decodeFromBase64(url);
     } else if(player) {
-        // Construir URL dinámica
         const fullUrl = `https://cartelive.club/player/${player}`;
         const base64Url = encodeToBase64(fullUrl);
         iframe.src = decodeFromBase64(base64Url);
-        // Actualizar URL visible sin recargar
         const newUrl = window.location.origin + window.location.pathname + '?url=' + base64Url;
         window.history.replaceState(null, '', newUrl);
     } else {
@@ -93,7 +108,11 @@
 
     // ==================== BOTÓN VOLVER ====================
     exitFs.addEventListener('click', ()=>{
-        window.location.href = '/'; // Cambia esto si quieres otra URL de destino
+        if (document.referrer) {
+            window.history.back(); // Retrocede a la página anterior si existe
+        } else {
+            window.location.href = '/'; // Si no hay historial, ir al inicio
+        }
     });
 
 })();
