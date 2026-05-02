@@ -31,7 +31,7 @@
     "start": "2026-05-02T07:00:00",
     "end": "2026-05-02T09:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dd494-9259-79ef-accf-00ce94467a11/compose?aspectRatio=1.78&format=webp&width=1200",
-    "url": "/"
+    "url": "go:espn5"
   },
   {
     "title": "Nantes vs Olympique Marseille",
@@ -48,6 +48,14 @@
     "end": "2026-05-02T010:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dab35-abbe-71ca-a156-755015d9e8d6/compose?aspectRatio=1.78&format=webp&width=1200",
     "url": "go:"
+  },
+  {
+    "title": "Bayern München vs Heidenheim",
+    "league": "2026 • Bundes Liga Alemana",
+    "start": "2026-05-02T08:30:00",
+    "end": "2026-05-02T10:30:00",
+    "image": "https://image.discovery.indazn.com/ca/v2/ca/image?id=asy2ubohggs7d8wh74ud9bx4k_image-header_pEs_1775739582000&quality=50",
+    "url": "go:espn"
   },
   {
     "title": "Werder Bremen vs Augsburg",
@@ -144,14 +152,6 @@
     "end": "2026-05-02T13:30:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/67c52ed2-f45d-4070-b882-a27555de74ac/compose?aspectRatio=1.78&format=webp&width=1200",
     "url": "go:espn3"
-  },
-  {
-    "title": "Bayern München vs Heidenheim",
-    "league": "2026 • Bundes Liga Alemana",
-    "start": "2026-05-02T11:30:00",
-    "end": "2026-05-02T13:30:00",
-    "image": "https://image.discovery.indazn.com/ca/v2/ca/image?id=asy2ubohggs7d8wh74ud9bx4k_image-header_pEs_1775739582000&quality=50",
-    "url": "go:"
   },
   {
     "title": "Arsenal vs Fulham",
