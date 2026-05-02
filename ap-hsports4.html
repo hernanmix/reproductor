@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>HSP⚽RTSEC</title>
+<link rel="stylesheet" href="style.css">
+    <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+ <style>
+/* Efecto brillo + inflado para HSP⚽RTSEC */
+@keyframes glowScale {
+  0%, 100% {
+    color: #000000;
+    text-shadow: 0 0 5px #00e55b, 0 0 10px #00e55b, 0 0 20px #00e55b;
+    transform: scale(1);
+  }
+  50% {
+    color: #ffffff;
+    text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+    transform: scale(1.2);
+  }
+}
+
+.hsportsec-text {
+  display: inline-block;
+  font-weight: 900;
+  animation: glowScale 4s infinite;
+  transition: transform 0.3s ease;
+}
+
+   
+   
+/* Estilo del icono de Telegram */
+.telegram-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  md:w-14;
+  md:h-14;
+  background-color: #26A5E4;
+  border-radius: 9999px;
+  box-shadow: 0 0 15px #26A5E4;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.telegram-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #26A5E4;
+}
+
+.telegram-icon span {
+  color: white;
+  font-size: 1.25rem;
+}
+</style>
+ 
+</head>
+<body>
+
+<!-- Header -->
+<header class="w-full fixed top-0 z-50 bg-[#0b1326]/90 backdrop-blur-lg border-b border-[#2d3449]/50 py-4 flex justify-center items-center gap-4">
+  <span class="hsportsec-text text-2xl md:text-4xl italic tracking-[0.2em]">HSP⚽RTSEC</span>
+  <a href="https://t.me/hsportsec" target="_blank" class="telegram-icon">
+    <span class="material-symbols-outlined">send</span>
+  </a>
+</header>
+
+<section>
+  <h2>Destacados en vivo y próximamente</h2>
+  <div id="events" class="carousel"></div>
+</section>
+
+<section>
+  <h2>Canales de ESPN</h2>
+  <div id="channels" class="carousel"></div>
+</section>
+
+<script src="app6.js"></script>
+</body>
+</html>
