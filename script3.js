@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Verificar si estamos en la aplicación (APK)
   const isApp = window.location.href.includes("appcreator24"); // Detecta si está en la APK, cambia esto si tienes otra forma de hacerlo.
   
-  // Verificar si ya se mostró la intro en esta sesión
-  if (!sessionStorage.getItem("introShown") && !isApp) {
+  // Verificar si ya se mostró la intro en esta sesión (usamos localStorage para mantener el estado entre sesiones)
+  if (!localStorage.getItem("introShown") && isApp && window.location.href === "https://hernanmix.github.io/reproductor/ap-hsportsec.html") {
     // Crear contenedor de intro
     const intro = document.createElement("div");
     intro.id = "intro";
@@ -52,13 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1000);
     }, 4000);
 
-    // Guardar que ya se mostró la intro en esta sesión
-    sessionStorage.setItem("introShown", "true");
+    // Guardar que ya se mostró la intro en esta sesión usando localStorage
+    localStorage.setItem("introShown", "true");
   }
 
-  // Detecta si el usuario navega dentro de la aplicación (y no quiere que se muestre el intro)
-  if (isApp && sessionStorage.getItem("introShown")) {
-    // No hacer nada si ya se mostró la intro en esta sesión
+  // Detecta si el usuario navega dentro de la aplicación y no necesita ver el intro nuevamente
+  if (isApp && localStorage.getItem("introShown") && window.location.href !== "https://hernanmix.github.io/reproductor/ap-hsportsec.html") {
+    // No hacer nada si ya se mostró la intro en esta sesión y estamos navegando a otra sección interna
     return;
   }
 });
