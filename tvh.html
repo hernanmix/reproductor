@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App HSPORTSEC</title>
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial;
+    }
+
+    .logo {
+      text-align: center;
+      animation: glow 4s infinite;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #fff; }
+      50% { text-shadow: 0 0 20px red; }
+      100% { text-shadow: 0 0 5px #fff; }
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 10px;
+    }
+
+    .card {
+      min-width: 260px;
+      background: #111;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      outline: none;
+    }
+
+    .img-container {
+      position: relative;
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    /* Badge general (eventos abajo izquierda) */
+    .badge {
+      position: absolute;
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    /* Eventos (abajo izquierda) */
+    .badge.bottom-left {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    /* Canales (ARRIBA izquierda) */
+    .badge.top-left {
+      top: 10px;
+      left: 10px;
+    }
+
+    .live {
+      background: #e50914;
+      color: #fff;
+    }
+
+    .icon-live {
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .img-container img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .card {
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .badge.upcoming {
+      background-color: #1f7cab; /* celeste */
+      color: #fff; /* texto blanco */
+    }
+
+    /* Estilo de foco para Smart TV */
+    .menu-btn:focus {
+      outline: 2px solid #00f;
+      transform: scale(1.05); /* Efecto visual de aumento al seleccionar */
+    }
+
+    .card:focus {
+      outline: 2px solid #00f; /* Resalta las tarjetas de eventos cuando son seleccionadas */
+    }
+
+    .carousel .card:focus {
+      transform: scale(1.05); /* Efecto de enfoque para las tarjetas en el carrusel */
+    }
+    
+    body {
+      overflow: hidden; /* Evita el desplazamiento vertical */
+    }
+
+    .content {
+      height: 100vh; /* Ajuste la altura para que no se desplace */
+      overflow: auto;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="content">
+  <iframe id="mainFrame" src="https://hernanmix.github.io/reproductor/ap-index.html"></iframe>
+
+  <div class="ad-container" id="adContainer">
+    <div class="countdown" id="adCountdown">15</div>
+    <iframe id="adFrame"></iframe>
+  </div>
+</div>
+
+<!-- MENÚ -->
+<nav class="bottom-menu">
+  <div class="menu-btn active" tabindex="0" onclick="navigate('https://hernanmix.github.io/reproductor/ap-index.html')">
+    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">home</span>
+    Inicio
+  </div>
+
+  <div class="menu-btn" tabindex="0" onclick="navigate('https://hernanmix.github.io/reproductor/ap-tv.html')">
+    <span class="material-symbols-outlined">live_tv</span>
+    TV
+  </div>
+
+  <div class="menu-btn" tabindex="0" onclick="navigate('go:verweb')">
+    <span class="material-symbols-outlined">volunteer_activism</span>
+    Donar
+  </div>
+
+  <div class="menu-btn" tabindex="0" onclick="navigate('go:agenda1')">
+    <span class="material-symbols-outlined">sports_soccer</span>
+    Agenda
+  </div>
+
+  <div class="menu-btn" tabindex="0" onclick="showAd()">
+    <span class="material-symbols-outlined">ads_click</span>
+    Ads
+  </div>
+
+  <a href="http://action_exit" class="menu-btn">
+    <span class="material-symbols-outlined">logout</span>
+    Salir
+  </a>
+</nav>
+
+<script>
+  const iframe = document.getElementById('mainFrame');
+  const adContainer = document.getElementById('adContainer');
+  const adFrame = document.getElementById('adFrame');
+  const adCountdownEl = document.getElementById('adCountdown');
+
+  function navigate(url) {
+    const frame = document.getElementById('mainFrame');
+
+    // efecto scroll vertical
+    frame.classList.add('slide-out');
+
+    setTimeout(() => {
+      frame.src = url;
+
+      frame.classList.remove('slide-out');
+      frame.classList.add('slide-in');
+
+      setTimeout(() => {
+        frame.classList.remove('slide-in');
+      }, 400);
+
+    }, 300);
+  }
+
+  function showAd() {
+    adContainer.style.display = 'flex';
+    adFrame.src = 'https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db';
+
+    let counter = 15;
+    adCountdownEl.textContent = counter;
+
+    const timer = setInterval(() => {
+      counter--;
+      adCountdownEl.textContent = counter;
+
+      if (counter <= 0) {
+        clearInterval(timer);
+        adContainer.style.display = 'none';
+        adFrame.src = '';
+      }
+    }, 1000);
+  }
+
+  // Eventos para control remoto
+  document.addEventListener('keydown', function(event) {
+    const activeElement = document.activeElement;
+
+    if (event.key === 'ArrowUp') {
+      if (activeElement.previousElementSibling) {
+        activeElement.previousElementSibling.focus();
+      }
+    }
+
+    if (event.key === 'ArrowDown') {
+      if (activeElement.nextElementSibling) {
+        activeElement.nextElementSibling.focus();
+      }
+    }
+
+    if (event.key === 'Enter') {
+      if (activeElement && activeElement.onclick) {
+        activeElement.click();
+      }
+    }
+  });
+
+  const carousel = document.querySelector('.carousel');
+
+  document.addEventListener('keydown', function(event) {
+    const cards = carousel.querySelectorAll('.card');
+    let activeIndex = Array.from(cards).indexOf(document.activeElement);
+
+    if (event.key === 'ArrowRight' && activeIndex < cards.length - 1) {
+      cards[activeIndex + 1].focus();
+    } else if (event.key === 'ArrowLeft' && activeIndex > 0) {
+      cards[activeIndex - 1].focus();
+    }
+  });
+</script>
+  <script>
+    const eventsContainer = document.getElementById("events");
+const channelsContainer = document.getElementById("channels");
+
+// ⚡ SVG LIVE ICON  
+const liveSVG = `
+<svg class="icon-live" viewBox="-23.6 -23.6 384.39 384.39" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <polygon style="fill:#ffffff;" points="168.595,0 168.595,204.521 276.356,204.521"></polygon>
+    <polygon style="fill:#ffffff;" points="60.834,132.669 168.595,337.19 168.595,132.669"></polygon>
+  </g>
+</svg>`;
+
+// ========================  
+// 🔥 ESTADO DE EVENTOS  
+// ========================  
+function getStatus(start, end) {
+  const now = new Date();
+  const s = new Date(start);
+  const e = new Date(end);
+
+  if (isNaN(s) || isNaN(e)) return "invalid";
+
+  if (now < s) return "up
+  </script>
+<script src="https://hernanmix.github.io/reproductor/script3.js"></script>
+
+</body>
+</html>
