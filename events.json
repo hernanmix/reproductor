@@ -586,5 +586,112 @@
     "end": "2026-05-04T21:30:00",
     "image": "https://elobjetivo.com.ar/download/multimedia.normal.8ce0648f22ac4465.496e7374697475746f20767320457374756469616e7465732064652052c3ad6f5f6e6f726d616c2e6a706567.jpeg",
     "url": "go:esonpremiu"
+  },
+
+
+  
+  {
+    "title": "Arsenal vs Atlético Madrid",
+    "league": "2026 • Europa - UEFA Champions League",
+    "start": "2026-05-05T13:55:00",
+    "end": "2026-05-05T16:00:00",
+    "image": "https://elcomercio.pe/resizer/v2/FUV6LRHAJBALJIF3FORO4YW6XA.jpg?auth=fae31cead588c4609c7c41c603320e1bf80e46c5be991f0644cb1957ea7a12c4&width=2400&height=1600&quality=75&smart=true",
+    "url": "go:espn"
+  },
+  {
+    "title": "Deportivo Riestra vs Grêmio",
+    "league": "2026 • Sudamérica - Copa Sudamericana",
+    "start": "2026-05-05T16:55:00",
+    "end": "2026-05-05T19:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dede9-1092-743d-848a-561de327e87b/compose?format=webp&width=386",
+    "url": "##"
+  },
+  {
+    "title": "Juventud vs Atlético Mineiro",
+    "league": "2026 • Sudamérica - Copa Sudamericana",
+    "start": "2026-05-05T16:55:00",
+    "end": "2026-05-05T19:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d86de-ed67-71fe-b2ef-c2fd52677af0/compose?aspectRatio=1.78&format=webp&width=1200",
+    "url": "##"
+  },
+  {
+    "title": "Independiente Petrolero vs Caracas",
+    "league": "2026 • Sudamérica - Copa Sudamericana",
+    "start": "2026-05-05T16:55:00",
+    "end": "2026-05-05T19:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dedda-8c21-78aa-8725-c4da1ef79302/compose?format=webp&width=386",
+    "url": "go:espn3"
+  },
+  {
+    "title": "Sporting Cristal vs Palmeiras",
+    "league": "2026 • Sudamérica - Copa Libertadores",
+    "start": "2026-05-05T16:55:00",
+    "end": "2026-05-05T19:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d74a8-3611-7d98-a890-89f102478ddb/compose?format=webp&width=2560",
+    "url": "go:espn"
+  },
+  {
+    "title": "Rosario Central vs Libertad",
+    "league": "2026 • Sudamérica - Copa Libertadores",
+    "start": "2026-05-05T16:55:00",
+    "end": "2026-05-05T19:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dab6c-3997-7d14-be25-cbc5c30d4543/compose?format=webp&width=2880",
+    "url": "go:espn2"
+  },
+  {
+    "title": "UCV vs Independiente del Valle",
+    "league": "2026 • Sudamérica - Copa Libertadores",
+    "start": "2026-05-05T18:55:00",
+    "end": "2026-05-05T21:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dab6b-fb6e-74e4-b649-39b58a187ab5/compose?format=webp&width=2880",
+    "url": "go:espn2"
+  },
+  {
+    "title": "Barcelona vs Boca Juniors",
+    "league": "2026 • Sudamérica - Copa Libertadores",
+    "start": "2026-05-05T18:55:00",
+    "end": "2026-05-05T21:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d3efd-3947-7d8d-8db4-d948e07690ff/compose?format=webp&width=2880",
+    "url": "go:espn"
+  },
+  {
+    "title": "Deportivo Recoleta vs Santos",
+    "league": "2026 • Sudamérica - Copa Sudamericana",
+    "start": "2026-05-05T19:25:00",
+    "end": "2026-05-05T21:30:00",
+    "image": "https://www.elrancaguino.cl/wp-content/uploads/2026/05/797786_0.png",
+    "url": "##"
+  },
+  {
+    "title": "Academia Puerto Cabello vs Cienciano",
+    "league": "2026 • Sudamérica - Copa Sudamericana",
+    "start": "2026-05-05T19:25:00",
+    "end": "2026-05-05T21:30:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d86e2-d379-7a66-9701-7948b4163430/compose?aspectRatio=1.78&format=webp&width=1200",
+    "url": "##"
+  },
+  {
+    "title": "Always Ready vs Lanús",
+    "league": "2026 • Sudamérica - Copa Libertadores",
+    "start": "2026-05-05T19:25:00",
+    "end": "2026-05-05T21:30:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dab72-da0f-7dcf-9e51-1c7f781391bf/compose?format=webp&width=2880",
+    "url": "##"
+  },
+  {
+    "title": "Tigres UANL vs Nashville SC",
+    "league": "2026 • Norteamérica - Copa de Campeones de la Concacaf",
+    "start": "2026-05-05T20:25:00",
+    "end": "2026-05-05T22:30:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019da1ba-869b-773b-8542-135ff4ee0c1b/compose?format=webp&width=2880",
+    "url": "go:tudnus"
+  },
+  {
+    "title": "Deportivo Cuenca vs San Lorenzo",
+    "league": "2026 • Sudamérica - Copa Sudamericana",
+    "start": "2026-05-05T20:55:00",
+    "end": "2026-05-05T23:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dedd2-7305-7e55-9a05-0f524df85473/compose?format=webp&width=386",
+    "url": "go:espn"
   }
 ]
