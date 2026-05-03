@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -106,13 +106,10 @@
         }
     });
 
-    // ==================== BOTÓN VOLVER ====================
+    // ==================== BOTÓN VOLVER AL INICIO ====================
     exitFs.addEventListener('click', ()=>{
-        if (document.referrer) {
-            window.history.back(); // Retrocede a la página anterior si existe
-        } else {
-            window.location.href = '/'; // Si no hay historial, ir al inicio
-        }
+        // Cambia esta URL a tu inicio de app
+        window.location.href = 'https://appcreator24.com'; 
     });
 
 })();
