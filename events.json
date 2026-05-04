@@ -24,8 +24,6 @@
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAOJrsvSwI2ZVivSN1H49sdmVVWaXzgEN6bhH0WEa-xg&s=10",
     "url": "go:espn"
   },
-
-  
   {
     "title": "Chelsea vs Nottingham Forest",
     "league": "2026 • Inglaterra - Premier League",
@@ -41,6 +39,14 @@
     "end": "2026-05-04T13:30:00",
     "image": "https://media.tycsports.com/files/2026/05/02/946098/cremonese-vs-lazio-en-vivo-como-llegan-al-partido_416x234.webp",
     "url": "go:disney1"
+  },
+  {
+    "title": "Al Aire Ahora",
+    "league": "2026 • SportsCenter Am Colombia",
+    "start": "2026-05-04T12:00:00",
+    "end": "2026-05-04T13:50:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019c725a-a709-745b-9a3d-cb0ae4d73ae6/compose?format=webp&width=2560",
+    "url": "go:espn"
   },
   {
     "title": "Los Chankas vs Deportivo Garcilaso",
