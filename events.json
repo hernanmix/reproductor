@@ -24,125 +24,14 @@
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAOJrsvSwI2ZVivSN1H49sdmVVWaXzgEN6bhH0WEa-xg&s=10",
     "url": "go:espn"
   },
-  {
-    "title": "Chelsea vs Nottingham Forest",
-    "league": "2026 • Inglaterra - Premier League",
-    "start": "2026-05-04T09:00:00",
-    "end": "2026-05-04T11:00:00",
-    "image": "https://static.independent.co.uk/2023/09/02/15/SEI169819003.jpg",
-    "url": "go:disney1"
-  },
-  {
-    "title": "Cremonese vs Lazio",
-    "league": "2026 • Italia - Serie A",
-    "start": "2026-05-04T11:30:00",
-    "end": "2026-05-04T13:30:00",
-    "image": "https://media.tycsports.com/files/2026/05/02/946098/cremonese-vs-lazio-en-vivo-como-llegan-al-partido_416x234.webp",
-    "url": "go:disney2"
-  },
-  {
-    "title": "Al Aire Ahora",
-    "league": "2026 • SportsCenter Am Colombia",
-    "start": "2026-05-04T11:00:00",
-    "end": "2026-05-04T13:50:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019c725a-a709-745b-9a3d-cb0ae4d73ae6/compose?format=webp&width=2560",
-    "url": "go:espn"
-  },
-  {
-    "title": "Los Chankas vs Deportivo Garcilaso",
-    "league": "2026 • Perú - Liga 1",
-    "start": "2026-05-04T13:00:00",
-    "end": "2026-05-04T15:00:00",
-    "image": "https://depor.com/resizer/v2/Z4LLEQKDBZFH5AXJ4NYOGQUDMQ.png?auth=a1f1e60ca00d689186952d8b673e22cad19941f460df3a48823da9b3ece33a88&width=980&height=528&quality=75&smart=true",
-    "url": "go:liga1max"
-  },
-  {
-    "title": "Almería vs Mirandés",
-    "league": "2026 • España - LaLiga SmartBank",
-    "start": "2026-05-04T13:30:00",
-    "end": "2026-05-04T15:30:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8ChgVaWy16_jVePAHa07QH8RX0OEbC1Eap3kAmealkVfKV5fSvHYTiFSx&s=10",
-    "url": "go:hyper1"
-  },
-  {
-    "title": "Roma vs Fiorentina",
-    "league": "2026 • Italia - Serie A",
-    "start": "2026-05-04T13:45:00",
-    "end": "2026-05-04T15:45:00",
-    "image": "https://artwork.espncdn.com/events/401067810/16x9/1280x720_201903171747.jpg",
-    "url": "go:espn3"
-  },
-  {
-    "title": "Everton vs Manchester City",
-    "league": "2026 • Inglaterra - Premier League",
-    "start": "2026-05-04T14:00:00",
-    "end": "2026-05-04T16:00:00",
-    "image": "https://images.daznservices.com/di/library/DAZN_News/35/9e/manchester-city-fc-everton_ag9mn53oj5k319lyvzoxdup3c.png?t=1466373989",
-    "url": "go:espn"
-  },
-  {
-    "title": "Sevilla vs Real Sociedad",
-    "league": "2026 • España - LaLiga",
-    "start": "2026-05-04T14:00:00",
-    "end": "2026-05-04T16:00:00",
-    "image": "https://artwork.espncdn.com/events/401795522/16x9/1280x720_20260424182456.jpg",
-    "url": "go:disney5"
-  },
-  {
-    "title": "Sporting CP vs Vitória Guimarães",
-    "league": "2026 • Portugal - Primeira Liga",
-    "start": "2026-05-04T14:15:00",
-    "end": "2026-05-04T16:15:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKt4aik4sbmlitYC2V8yraVjtPksFPu1wSI-hv8ZTKOKbRH3oALsaQXYU&s=10",
-    "url": "go:sportv1"
-  },
-  {
-    "title": "Gimnasia Mendoza vs Defensa y Justicia",
-    "league": "2026 • Argentina - Liga Profesional",
-    "start": "2026-05-04T15:00:00",
-    "end": "2026-05-04T17:00:00",
-    "image": "https://anecdotarios.com/wp-content/uploads/2026/03/795826_0.png",
-    "url": "go:espnpremiu"
-  },
-  {
-    "title": "Vélez Sarsfield vs Newell's Old Boys",
-    "league": "2026 • Argentina - Liga Profesional",
-    "start": "2026-05-04T17:15:00",
-    "end": "2026-05-04T19:15:00",
-    "image": "https://image.discovery.indazn.com/ca/v2/ca/image?id=7h3lmhd1h68d1v9kjjrw3jroe_image-header_pEs_1714920869000",
-    "url": "go:tntar"
-  },
-  {
-    "title": "Peñarol vs Defensor Sporting",
-    "league": "2026 • Uruguay - Primera División",
-    "start": "2026-05-04T17:30:00",
-    "end": "2026-05-04T19:30:00",
-    "image": "https://cdn.conmebol.com/wp-content/uploads/2013/04/maximiliano_rodriguez_of_argentina_newell_old_boys_vies_for_the_ball_with_fabian_cubero_of_argentina_velez.jpg",
-    "url": "go:disney1"
-  },
-  {
-    "title": "Universitario de Vinto vs Blooming",
-    "league": "2026 • Bolivia - Primera División",
-    "start": "2026-05-04T19:00:00",
-    "end": "2026-05-04T21:00:00",
-    "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYrzlb1ifyYrolVvLiYxtCTwRK2G-eIBKeYJ0IluU1Uf6cwOJNs51zcbQP7GeleslqEB-wmAzgK6JFtBVSY3smtiYaU9SueoODfwbWCpkgwBD2JHESdfxV8smOJmHIulRWtg1uc5Tdw8ir/s1600/cjornadap+(1).jpg",
-    "url": ""
-  },
-  {
-    "title": "Santo Domingo vs LDU Portoviejo",
-    "league": "2026 • Ecuador - Serie B",
-    "start": "2026-05-04T19:00:00",
-    "end": "2026-05-04T21:00:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgC1NKsLidT6M_Ebv6bBAKfl1SDOscWpdzO5mP6Xk2QTy1FJIz26kMQEM&s=10",
-    "url": ""
-  },
+  
   {
     "title": "Estudiantes Río Cuarto vs Instituto",
     "league": "2026 • Argentina - Liga Profesional",
     "start": "2026-05-04T19:30:00",
     "end": "2026-05-04T21:30:00",
     "image": "https://elobjetivo.com.ar/download/multimedia.normal.8ce0648f22ac4465.496e7374697475746f20767320457374756469616e7465732064652052c3ad6f5f6e6f726d616c2e6a706567.jpeg",
-    "url": "go:esonpremiu"
+    "url": "go:espnpremiu"
   },
   {
     "title": "Al Aire Ahora",
