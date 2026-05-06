@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSP⚽RTSEC App</title>
+
+<!-- Tailwind y fuentes -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: #000022;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    flex: 1;
+    position: relative;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+
+  .slide-out { transform: translateY(-90px); opacity: 0; }
+  .slide-in { transform: translateY(0); opacity: 1; }
+
+  /* Menú inferior */
+  .bottom-menu {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+  }
+
+  .menu-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    user-select: none;
+  }
+
+  .menu-btn:hover { color: white; transform: scale(1.05); }
+  .menu-btn .material-symbols-outlined { font-size: 26px; margin-bottom: 4px; }
+  .active { color: white; border-top: 2px solid #0072FF; }
+
+  @media (min-width: 1200px) {
+    .bottom-menu { height: 85px; }
+    .menu-btn .material-symbols-outlined { font-size: 34px; }
+    .menu-btn { font-size: 14px; }
+  }
+
+  /* Carouseles HSPORTSEC */
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding: 10px;
+  }
+  .carousel div {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    background: #111;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 200px;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- CONTENIDO PRINCIPAL -->
+<div class="content">
+  <!-- Aquí se carga tu página HSPORTSEC -->
+  <iframe id="mainFrame" src="https://hernanmix.github.io/reproductor/ap-hsportsec2.html"></iframe>
+</div>
+
+<!-- MENÚ INFERIOR -->
+<nav class="bottom-menu">
+  <div class="menu-btn active" onclick="navigate('https://hernanmix.github.io/reproductor/ap-index.html')">
+    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">home</span>
+    Inicio
+  </div>
+
+  <div class="menu-btn" onclick="navigate('https://hernanmix.github.io/reproductor/ap-tv.html')">
+    <span class="material-symbols-outlined">live_tv</span>
+    TV
+  </div>
+
+  <div class="menu-btn" onclick="navigate('https://hernanmix.github.io/reproductor/ap-hsportsec2.html')">
+    <span class="material-symbols-outlined">sports_soccer</span>
+    Agenda
+  </div>
+
+  <div class="menu-btn" onclick="navigate('go:verweb')">
+    <span class="material-symbols-outlined">volunteer_activism</span>
+    Donar
+  </div>
+
+  <div class="menu-btn" onclick="showAd()">
+    <span class="material-symbols-outlined">ads_click</span>
+    Ads
+  </div>
+
+  <a href="http://action_exit" class="menu-btn">
+    <span class="material-symbols-outlined">logout</span>
+    Salir
+  </a>
+</nav>
+
+<script>
+  const frame = document.getElementById('mainFrame');
+
+  function navigate(url) {
+    frame.classList.add('slide-out');
+    setTimeout(() => {
+      frame.src = url;
+      frame.classList.remove('slide-out');
+      frame.classList.add('slide-in');
+      setTimeout(() => frame.classList.remove('slide-in'), 400);
+    }, 300);
+  }
+
+  function showAd() {
+    alert("Aquí iría tu contenedor de Ads");
+  }
+
+  // Navegación con control remoto (Smart TV)
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") frame.focus();
+    if (e.key === "ArrowUp") window.scrollBy(0, -50);
+    if (e.key === "ArrowDown") window.scrollBy(0, 50);
+  });
+</script>
+
+</body>
+</html>
