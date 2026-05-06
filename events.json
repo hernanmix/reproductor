@@ -1,12 +1,5 @@
 [
-  {
-    "title": "Al Aire Ahora",
- "league": "2026 • SportsCenter Am Colombia",
-    "start": "2026-05-02T10:00:00",
-    "end": "2026-05-02T10:19:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019c725a-a709-745b-9a3d-cb0ae4d73ae6/compose?format=webp&width=2560",
-    "url": "https://hernanmix.github.io/reproductor/player1.html?channel=espn"
-  },
+  
   
   {
     "title": "Al Aire Ahora",
@@ -66,14 +59,7 @@
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019c725a-a709-745b-9a3d-cb0ae4d73ae6/compose?format=webp&width=2560",
     "url": "go:espn"
   },
-  {
-    "title": "Brighton & Hove Albion vs Arsenal",
-    "league": "2026 • Inglaterra - Women's Super League",
-    "start": "2026-05-06T13:45:00",
-    "end": "2026-05-06T15:45:00",
-    "image": "https://images.daznservices.com/di/library/DAZN_News/58/70/brighton-v-arsenal_1qq11nuv2b7cz1o2z00i4ydg7i.png?t=803341740",
-    "url": "##"
-  },
+  
   {
     "title": "Bayern München vs PSG",
     "league": "2026 • Europa - UEFA Champions League",
