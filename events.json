@@ -24,22 +24,6 @@
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAOJrsvSwI2ZVivSN1H49sdmVVWaXzgEN6bhH0WEa-xg&s=10",
     "url": "go:espn"
   },
-  {
-    "title": "Tigres UANL vs Nashville SC",
-    "league": "2026 • Norteamérica - Copa de Campeones de la Concacaf",
-    "start": "2026-05-05T20:25:00",
-    "end": "2026-05-05T22:30:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019da1ba-869b-773b-8542-135ff4ee0c1b/compose?format=webp&width=2880",
-    "url": "go:tudnus"
-  },
-  {
-    "title": "Deportivo Cuenca vs San Lorenzo",
-    "league": "2026 • Sudamérica - Copa Sudamericana",
-    "start": "2026-05-05T20:55:00",
-    "end": "2026-05-05T22:55:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dedd2-7305-7e55-9a05-0f524df85473/compose?format=webp&width=386",
-    "url": "go:disney10"
-  },
 
   
   {
@@ -96,55 +80,7 @@
     "start": "2026-05-06T14:00:00",
     "end": "2026-05-06T16:00:00",
     "image": "https://cdn.milenio.com/uploads/media/2024/11/26/bayern-munich-vs-psg-vivo.jpg",
-    "url": "##"
-  },
-  {
-    "title": "Nueve de Octubre vs Santo Domingo",
-    "league": "2026 • Ecuador - Serie B",
-    "start": "2026-05-06T15:00:00",
-    "end": "2026-05-06T17:00:00",
-    "image": "https://tricolor.ec/web/media/pictures/_noticia_foto/noticia-foto-27-liga-pro-serie-b-tendra-un-retraso-segun-comunicado-oficial-del-organizador.jpg",
-    "url": "##"
-  },
-  {
-    "title": "San Antonio vs Cuniburo",
-    "league": "2026 • Ecuador - Serie B",
-    "start": "2026-05-06T15:00:00",
-    "end": "2026-05-06T17:00:00",
-    "image": "https://tricolor.ec/web/media/pictures/_noticia_foto/noticia-foto-27-liga-pro-serie-b-tendra-un-retraso-segun-comunicado-oficial-del-organizador.jpg",
-    "url": "##"
-  },
-  {
-    "title": "LDU Portoviejo vs Atlético Cali",
-    "league": "2026 • Ecuador - Serie B",
-    "start": "2026-05-06T15:00:00",
-    "end": "2026-05-06T17:00:00",
-    "image": "https://tricolor.ec/web/media/pictures/_noticia_foto/noticia-foto-27-liga-pro-serie-b-tendra-un-retraso-segun-comunicado-oficial-del-organizador.jpg",
-    "url": "##"
-  },
-  {
-    "title": "Independiente Juniors vs Gualaceo",
-    "league": "2026 • Ecuador - Serie B",
-    "start": "2026-05-06T15:00:00",
-    "end": "2026-05-06T17:00:00",
-    "image": "https://tricolor.ec/web/media/pictures/_noticia_foto/noticia-foto-27-liga-pro-serie-b-tendra-un-retraso-segun-comunicado-oficial-del-organizador.jpg",
-    "url": "##"
-  },
-  {
-    "title": "El Nacional vs 22 de Julio",
-    "league": "2026 • Ecuador - Serie B",
-    "start": "2026-05-06T15:00:00",
-    "end": "2026-05-06T17:00:00",
-    "image": "https://tricolor.ec/web/media/pictures/_noticia_foto/noticia-foto-27-liga-pro-serie-b-tendra-un-retraso-segun-comunicado-oficial-del-organizador.jpg",
-    "url": "##"
-  },
-  {
-    "title": "Deportivo Cuenca Juniors vs Cumbayá",
-    "league": "2026 • Ecuador - Serie B",
-    "start": "2026-05-06T15:00:00",
-    "end": "2026-05-06T17:00:00",
-    "image": "https://tricolor.ec/web/media/pictures/_noticia_foto/noticia-foto-27-liga-pro-serie-b-tendra-un-retraso-segun-comunicado-oficial-del-organizador.jpg",
-    "url": "##"
+    "url": "go:disney1"
   },
   {
     "title": "Audax Italiano vs Vasco da Gama",
@@ -152,7 +88,7 @@
     "start": "2026-05-06T17:00:00",
     "end": "2026-05-06T19:00:00",
     "image": "https://www.semana.com/resizer/v2/E4ZLLCL7LJEN7GYAUD54LWBAXA.png?auth=2c4011268512c9a98c1f4320b5a37a988631c1057434a057619a068679517bed&smart=true&quality=75&width=1280",
-    "url": "##"
+    "url": "go:fanatiz3"
   },
   {
     "title": "Torque vs Palestino",
@@ -160,7 +96,7 @@
     "start": "2026-05-06T17:00:00",
     "end": "2026-05-06T19:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dabb2-ec7a-7be7-b376-efcf81d07505/compose?format=webp&width=2880",
-    "url": "##"
+    "url": "go:disney4"
   },
   {
     "title": "Cusco vs Estudiantes",
@@ -168,7 +104,7 @@
     "start": "2026-05-06T17:00:00",
     "end": "2026-05-06T19:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dab79-cb1b-7e7a-bb9c-00d26efe962a/compose?format=webp&width=2880",
-    "url": "##"
+    "url": "go:disney2"
   },
   {
     "title": "Deportivo La Guaira vs Bolívar",
@@ -176,31 +112,7 @@
     "start": "2026-05-06T17:00:00",
     "end": "2026-05-06T19:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d15e5-ed6f-7922-b89f-93d5906056c6/compose?format=webp&width=2880",
-    "url": "##"
-  },
-  {
-    "title": "DC Power vs Sporting JAX",
-    "league": "2026 • Estados Unidos - USL Super League",
-    "start": "2026-05-06T18:00:00",
-    "end": "2026-05-06T20:00:00",
-    "image": "https://i.ytimg.com/vi/JOD4OaAOSiA/maxresdefault.jpg",
-    "url": "##"
-  },
-  {
-    "title": "Charlotte Independence vs Boise",
-    "league": "2026 • Estados Unidos - USL League One",
-    "start": "2026-05-06T18:30:00",
-    "end": "2026-05-06T20:30:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d91f8-1af2-7812-aa08-fdde9652032a/compose?format=webp&width=2880",
-    "url": "##"
-  },
-  {
-    "title": "Fort Wayne vs Portland Hearts of Pine",
-    "league": "2026 • Estados Unidos - USL League One",
-    "start": "2026-05-06T18:30:00",
-    "end": "2026-05-06T20:30:00",
-    "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https%3A%2F%2Fartwork.espncdn.com%2Fevents%2F401841774%2F16x9%2F1280x720_20260416173634.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "##"
+    "url": "go:disney3"
   },
   {
     "title": "Macará vs Tigre",
@@ -208,7 +120,7 @@
     "start": "2026-05-06T19:00:00",
     "end": "2026-05-06T21:00:00",
     "image": "https://www.semana.com/resizer/v2/RDK5NHB3VJAFTGXXKFUXSIZ5T4.png?auth=de5b717406e9f945dd9d2a7b0acefee954f782b2de1be344fc9231f1156becfc&smart=true&quality=75&width=1280",
-    "url": "##"
+    "url": "go:fanatiz6"
   },
   {
     "title": "Barracas Central vs Olimpia",
@@ -216,7 +128,7 @@
     "start": "2026-05-06T19:00:00",
     "end": "2026-05-06T21:00:00",
     "image": "https://cdn.eldestapeweb.com/eldestape/052026/1777821292287.webp?cw=400&ch=225&extw=jpeg",
-    "url": "##"
+    "url": "go:disney5"
   },
   {
     "title": "Botafogo vs Racing Club",
@@ -224,7 +136,7 @@
     "start": "2026-05-06T19:30:00",
     "end": "2026-05-06T21:30:00",
     "image": "https://www.365scores.com/es/news/wp-content/uploads/2025/02/Previa-Botafogo-vs-Racing.jpg",
-    "url": "##"
+    "url": "go:disney6"
   },
   {
     "title": "Santa Fe vs Corinthians",
@@ -232,7 +144,7 @@
     "start": "2026-05-06T19:30:00",
     "end": "2026-05-06T21:30:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d67d4-cd24-751a-9ca6-b0c8fc5656b6/compose?format=webp&width=2880",
-    "url": "##"
+    "url": "go:disney7"
   },
   {
     "title": "Independiente Rivadavia vs Fluminense",
@@ -240,15 +152,7 @@
     "start": "2026-05-06T19:30:00",
     "end": "2026-05-06T21:30:00",
     "image": "https://cdn.prod.website-files.com/668eb23ef0ab5402d67d0774/69de294cc7ad4bd054f5646f_15864263605942881100.jpeg",
-    "url": "##"
-  },
-  {
-    "title": "New Mexico United vs El Paso Locomotive",
-    "league": "2026 • Estados Unidos - USL Championship",
-    "start": "2026-05-06T20:00:00",
-    "end": "2026-05-06T22:00:00",
-    "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401317263/16x9/1280x720_20210806234044.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "##"
+    "url": "go:disney8"
   },
   {
     "title": "Toluca vs Los Angeles FC",
@@ -256,7 +160,7 @@
     "start": "2026-05-06T20:30:00",
     "end": "2026-05-06T22:30:00",
     "image": "https://unanimodeportes.s3.amazonaws.com/wp-content/uploads/2026/04/lafc-vs-toluca.webp",
-    "url": "##"
+    "url": "go:disney9"
   },
   {
     "title": "Alianza Atlético vs América de Cali",
@@ -264,7 +168,7 @@
     "start": "2026-05-06T21:00:00",
     "end": "2026-05-06T23:00:00",
     "image": "https://www.semana.com/resizer/v2/AAEMN5MNMREO7OZ7IWBQI73QUY.png?auth=fa9c70af64520e5508861500f9c6595e1d843f14c4caa6af8c8d67307e936044&smart=true&quality=75&width=1920",
-    "url": "##"
+    "url": "go:dsports"
   },
   {
     "title": "Universidad Católica vs Cruzeiro",
@@ -272,7 +176,7 @@
     "start": "2026-05-06T21:00:00",
     "end": "2026-05-06T23:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3CxljGBUADgTS9_3p_oQLOnEqHi4hCGVzxaQ-yeME1MpABtThecRqbPuq&s=10",
-    "url": "##"
+    "url": "go:disney10"
   },
   {
     "title": "Deportes Tolima vs Nacional",
@@ -280,7 +184,7 @@
     "start": "2026-05-06T21:00:00",
     "end": "2026-05-06T23:00:00",
     "image": "https://a.espncdn.com/combiner/i?img=/photo/2021/0725/r884807_1296x729_16-9.jpg&cquality=80&h=370&w=655",
-    "url": "##"
+    "url": "go:disney1"
   },
 
   
