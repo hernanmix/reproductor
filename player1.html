@@ -15,7 +15,9 @@
         font-family: Arial, sans-serif;
     }
     .player-container {
-        position: relative;
+        position: fixed; /* fijo en toda la pantalla */
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
     }
@@ -26,7 +28,7 @@
     }
     /* Botón retroceso fijo y transparente */
     .exit-button {
-        position: fixed; /* fijo sobre toda la pantalla */
+        position: fixed;
         top: 20px;
         left: 20px;
         width: 50px;
@@ -55,47 +57,39 @@
 <div class="player-container">
     <iframe id="videoPlayer" allowfullscreen allow="autoplay; fullscreen"></iframe>
 </div>
-<!---
-<!-- Botón de retroceso siempre visible 
+
+<!-- Botón de retroceso -->
 <div class="exit-button" onclick="exitFs()">
     <svg viewBox="0 0 24 24">
         <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
     </svg>
 </div>
---->
+
 <script>
-    // Obtener canal desde URL
-    function getChannelFromURL() {
+    // Obtener todos los parámetros de la URL
+    function getParamsFromURL() {
         const params = new URLSearchParams(window.location.search);
-        return params.get('channel') || 'dsportsplus';
+        return params.toString(); // devuelve channel=espn&app
     }
 
-    const channel = getChannelFromURL();
     const iframe = document.getElementById('videoPlayer');
+    const params = getParamsFromURL();
 
-    // Cargar URL del reproductor
-    iframe.src = `https://hello-world--hlema5120.replit.app/?channel=${channel}`;
+    // Cargar URL del reproductor con todos los parámetros
+    iframe.src = `https://hello-world--hlema5120.replit.app/?${params}`;
 
     // Función para salir de fullscreen y volver al inicio
     function exitFs() {
-        // Salir de fullscreen si está activo
         if (document.fullscreenElement) {
             document.exitFullscreen();
         }
-
-        // Redirigir a inicio de AppCreator24
-        // Aquí usamos go:exitFs como referencia de tu app
         window.location.href = "go:exitFs"; 
     }
 
-    // Detectar fullscreen del iframe y mantener botón visible
+    // Mantener botón visible en fullscreen
     document.addEventListener('fullscreenchange', () => {
         const exitBtn = document.querySelector('.exit-button');
-        if (document.fullscreenElement) {
-            exitBtn.style.display = 'flex';
-        } else {
-            exitBtn.style.display = 'flex'; // siempre visible
-        }
+        exitBtn.style.display = 'flex';
     });
 </script>
 
@@ -124,6 +118,5 @@
   <a href="//waust.at/d.js" target="_blank"><img src="//sstatic1.histats.com/0.gif?4743517&101" alt="counter create hit" border="0" /></a>
 </noscript>
 
-    
 </body>
 </html>
