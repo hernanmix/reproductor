@@ -27,6 +27,26 @@
     padding-top: 70px; /* espacio para header */
   }
 
+  /* Carrusel horizontal */
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding: 10px;
+  }
+  .carousel::-webkit-scrollbar { display: none; }
+  .card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    background:#111;
+    color:white;
+    border-radius:8px;
+    overflow:hidden;
+    width:220px;
+  }
+  .card img { width:100%; display:block; }
+
   .bottom-menu {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -65,9 +85,29 @@
     .menu-btn { font-size: 14px; }
   }
 
-  .carousel { display: flex; flex-wrap: wrap; gap: 10px; padding: 10px; }
-  .card { background:#111; color:white; border-radius:8px; overflow:hidden; width:200px; }
-  .card img { width:100%; display:block; }
+  /* Contenedor de Ads flotante */
+  .ad-container {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; max-width: 600px;
+    height: 80%; max-height: 400px;
+    background: #111;
+    border: 2px solid #00f;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+  }
+  .countdown {
+    position: absolute;
+    top: 5px; right: 10px;
+    font-size: 20px;
+    color: #00f;
+    font-weight: bold;
+  }
+  .ad-container iframe {
+    width: 100%; height: 100%; border: none;
+  }
 </style>
 </head>
 
@@ -93,7 +133,7 @@
 <!-- MENÚ -->
 <nav class="bottom-menu">
   <div class="menu-btn active" onclick="showEvents()">
-    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">sports_soccer</span>
+    <span class="material-symbols-outlined">sports_soccer</span>
     Eventos
   </div>
   <div class="menu-btn" onclick="showChannels()">
@@ -113,6 +153,12 @@
     Salir
   </a>
 </nav>
+
+<!-- Contenedor Ads -->
+<div class="ad-container" id="adContainer">
+  <div class="countdown" id="adCountdown">15</div>
+  <iframe id="adFrame"></iframe>
+</div>
 
 <script src="app6.js"></script>
 
@@ -136,7 +182,22 @@
     if (typeof loadMovies === "function") loadMovies();
   }
   function showAd() {
-    alert("Aquí iría tu contenedor de Ads");
+    const adContainer = document.getElementById('adContainer');
+    const adFrame = document.getElementById('adFrame');
+    const adCountdownEl = document.getElementById('adCountdown');
+    adContainer.style.display = 'flex';
+    adFrame.src = 'https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db';
+    let counter = 15;
+    adCountdownEl.textContent = counter;
+    const timer = setInterval(() => {
+      counter--;
+      adCountdownEl.textContent = counter;
+      if (counter <= 0) {
+        clearInterval(timer);
+        adContainer.style.display = 'none';
+        adFrame.src = '';
+      }
+    }, 1000);
   }
 </script>
 
