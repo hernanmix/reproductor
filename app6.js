@@ -213,7 +213,7 @@ loadChannels();
 
 
 function loadChannelsOnly() {
-  fetch("channel.json?v=" + Date.now())
+  fetch("chennel.json?v=" + Date.now())
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById("channelsOnly");
@@ -223,8 +223,11 @@ function loadChannelsOnly() {
         card.className = "card";
         card.innerHTML = `
           <div class="img-container">
-            <img src="${ch.image}">
-            <span class="badge live top-left">${liveSVG} EN VIVO</span>
+            <img src="${ch.image}" alt="${ch.name}">
+            <span class="badge live top-left">EN VIVO</span>
+          </div>
+          <div style="padding:10px; text-align:center;">
+            <h3>${ch.name}</h3>
           </div>
         `;
         card.style.cursor = "pointer";
