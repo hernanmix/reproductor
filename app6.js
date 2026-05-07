@@ -190,7 +190,7 @@ function loadChannels() {
 // 🔄 CARGA  
 // ========================  
 function loadEvents() {
-  fetch("events.json")
+  fetch("events.json?v=" + Date.now())
     .then(res => res.json())
     .then(data => renderEvents(data))
     .catch(err => {
