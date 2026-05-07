@@ -325,23 +325,26 @@
 <script>
   function showEvents() {
   document.getElementById("eventsBlock").style.display = "block";
+  document.getElementById("channelsBlock").style.display = "none";
   document.getElementById("moviesBlock").style.display = "none";
   loadEvents();
-  loadChannels();
+  loadChannels(); // porque en eventos quieres ver ambos juntos
 }
 
 function showChannels() {
-  // Si quieres que el botón "Canales" muestre solo canales, puedes hacer:
-  document.getElementById("eventsBlock").style.display = "block"; // sigue mostrando eventos
+  document.getElementById("eventsBlock").style.display = "none";
   document.getElementById("moviesBlock").style.display = "none";
-  loadChannels();
+  document.getElementById("channelsBlock").style.display = "block";
+  loadChannelsOnly(); // solo canales
 }
 
 function showMovies() {
   document.getElementById("eventsBlock").style.display = "none";
+  document.getElementById("channelsBlock").style.display = "none";
   document.getElementById("moviesBlock").style.display = "block";
   if (typeof loadMovies === "function") loadMovies();
 }
+
 
   function showAd() {
     const adContainer = document.getElementById('adContainer');
