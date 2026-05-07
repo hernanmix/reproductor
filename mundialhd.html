@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App HSPORTSEC</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: #000022;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    flex: 1;
+    position: relative;
+    height: calc(100vh - 48px);
+    overflow-y: auto;
+    padding-top: 70px; /* espacio para header */
+  }
+
+  .bottom-menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    height: 48px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+  }
+
+  .menu-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    user-select: none;
+  }
+
+  .menu-btn:hover { color: white; transform: scale(1.05); }
+  .menu-btn .material-symbols-outlined { font-size: 26px; margin-bottom: 4px; }
+  .active { color: white; border-top: 2px solid #0072FF; }
+
+  @media (min-width: 1200px) {
+    .bottom-menu { height: 85px; }
+    .menu-btn .material-symbols-outlined { font-size: 34px; }
+    .menu-btn { font-size: 14px; }
+  }
+
+  .carousel { display: flex; flex-wrap: wrap; gap: 10px; padding: 10px; }
+  .card { background:#111; color:white; border-radius:8px; overflow:hidden; width:200px; }
+  .card img { width:100%; display:block; }
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="w-full fixed top-0 z-50 bg-[#0b1326]/90 backdrop-blur-lg border-b border-[#2d3449]/50 py-4 flex justify-center items-center gap-4">
+  <div class="flex items-center gap-3">
+    <span class="text-2xl md:text-4xl font-black text-[#00e55b] italic tracking-[0.2em]">HSP⚽RTSEC</span>
+    <a class="flex items-center justify-center w-10 h-10 md:w-14 md:h-14 rounded-full bg-[#26A5E4] hover:scale-110 transition-transform shadow-xl shadow-[#26A5E4]/30" href="go:telegram" target="_blank">
+      <span class="material-symbols-outlined text-white text-2xl">send</span>
+    </a>
+  </div>
+</header>
+
+<!-- Contenido -->
+<div class="content">
+  <section id="events" class="carousel"></section>
+  <section id="channels" class="carousel" style="display:none;"></section>
+  <section id="movies" class="carousel" style="display:none;"></section>
+</div>
+
+<!-- MENÚ -->
+<nav class="bottom-menu">
+  <div class="menu-btn active" onclick="showEvents()">
+    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">sports_soccer</span>
+    Eventos
+  </div>
+  <div class="menu-btn" onclick="showChannels()">
+    <span class="material-symbols-outlined">live_tv</span>
+    Canales
+  </div>
+  <div class="menu-btn" onclick="showMovies()">
+    <span class="material-symbols-outlined">movie</span>
+    Películas
+  </div>
+  <div class="menu-btn" onclick="showAd()">
+    <span class="material-symbols-outlined">ads_click</span>
+    Ads
+  </div>
+  <a href="http://action_exit" class="menu-btn">
+    <span class="material-symbols-outlined">logout</span>
+    Salir
+  </a>
+</nav>
+
+<script src="app6.js"></script>
+
+<script>
+  function showEvents() {
+    document.getElementById("events").style.display = "flex";
+    document.getElementById("channels").style.display = "none";
+    document.getElementById("movies").style.display = "none";
+    loadEvents();
+  }
+  function showChannels() {
+    document.getElementById("events").style.display = "none";
+    document.getElementById("channels").style.display = "flex";
+    document.getElementById("movies").style.display = "none";
+    loadChannels();
+  }
+  function showMovies() {
+    document.getElementById("events").style.display = "none";
+    document.getElementById("channels").style.display = "none";
+    document.getElementById("movies").style.display = "flex";
+    if (typeof loadMovies === "function") loadMovies();
+  }
+  function showAd() {
+    alert("Aquí iría tu contenedor de Ads");
+  }
+</script>
+
+</body>
+</html>
