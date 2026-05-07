@@ -51,42 +51,33 @@
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAOJrsvSwI2ZVivSN1H49sdmVVWaXzgEN6bhH0WEa-xg&s=10",
     "url": "go:espn"
   },
+
+
+  
+  {
+    "title": "Al Aire Ahora",
+ "league": "2026 • ESPN90",
+    "start": "2026-05-06T23:05:00",
+    "end": "2026-05-07T00:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/57fa18ff-80ae-4f63-8946-74a2247054a6/compose?format=webp&width=2880",
+    "url": "go:espn"
+  },
   {
     "title": "Al Aire Ahora",
  "league": "2026 • SportsCenter Am Colombia",
-    "start": "2026-05-06T010:30:00",
-    "end": "2026-05-06T13:40:00",
+    "start": "2026-05-06T011:00:00",
+    "end": "2026-05-07T00:00:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019c725a-a709-745b-9a3d-cb0ae4d73ae6/compose?format=webp&width=2560",
     "url": "go:espn"
   },
-  
-  
   {
-    "title": "Alianza Atlético vs América de Cali",
-    "league": "2026 • Sudamérica - Copa Sudamericana",
-    "start": "2026-05-06T21:00:00",
-    "end": "2026-05-06T23:00:00",
-    "image": "https://www.semana.com/resizer/v2/AAEMN5MNMREO7OZ7IWBQI73QUY.png?auth=fa9c70af64520e5508861500f9c6595e1d843f14c4caa6af8c8d67307e936044&smart=true&quality=75&width=1920",
-    "url": "go:dsports"
+    "title": "Al Aire Ahora",
+ "league": "2026 • SportsCenter Am Colombia",
+    "start": "2026-05-07T09:00:00",
+    "end": "2026-05-07T10:00:00",
+    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019c725a-a709-745b-9a3d-cb0ae4d73ae6/compose?format=webp&width=2560",
+    "url": "go:espn"
   },
-  {
-    "title": "Universidad Católica vs Cruzeiro",
-    "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-06T21:00:00",
-    "end": "2026-05-06T23:00:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3CxljGBUADgTS9_3p_oQLOnEqHi4hCGVzxaQ-yeME1MpABtThecRqbPuq&s=10",
-    "url": "go:disney10"
-  },
-  {
-    "title": "Deportes Tolima vs Nacional",
-    "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-06T21:00:00",
-    "end": "2026-05-06T23:00:00",
-    "image": "https://a.espncdn.com/combiner/i?img=/photo/2021/0725/r884807_1296x729_16-9.jpg&cquality=80&h=370&w=655",
-    "url": "go:disney1"
-  },
-
-  
   {
     "title": "Freiburg vs Sporting Braga",
     "league": "2026 • Europa - Liga Europa de la UEFA |Semifinal Vuelta",
