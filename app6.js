@@ -212,8 +212,15 @@ loadEvents();
 loadChannels();
 
 
+function showChannels() {
+  document.getElementById("eventsBlock").style.display = "none";
+  document.getElementById("moviesBlock").style.display = "none";
+  document.getElementById("channelsBlock").style.display = "block";
+  loadChannelsOnly();
+}
+
 function loadChannelsOnly() {
-  fetch("chennel.json?v=" + Date.now())
+  fetch("chennel.json?v=" + Date.now()) // usa el nombre correcto
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById("channelsOnly");
