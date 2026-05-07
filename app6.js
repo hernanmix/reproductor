@@ -220,7 +220,7 @@ function showChannels() {
 }
 
 function loadChannelsOnly() {
-  fetch("chennel.json?v=" + Date.now()) // usa el nombre correcto
+  fetch("channel.json?v=" + Date.now()) // usa el nombre correcto
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById("channelsOnly");
