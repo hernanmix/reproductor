@@ -1,5 +1,5 @@
 [
-  { "name": "ZappinTV Eventos", "url": "go:zappintv", "image": "url imge" },
+  { "name": "ZappinTV Eventos", "url": "go:zappintv", "image": "logos/zappintv.png" },
   { "name": "Zappintv", "url": "go:vasm", "image": "logos/zappintv.png" },
   { "name": "ECDF", "url": "go:ecdf720p", "image": "logos/ecdf.png" },
   { "name": "Dsports", "url": "go:dsports", "image": "logos/dsports.png" },
