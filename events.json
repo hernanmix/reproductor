@@ -60,46 +60,7 @@
     "url": "go:espn"
   },
   
-  {
-    "title": "Bayern München vs PSG",
-    "league": "2026 • Europa - UEFA Champions League",
-    "start": "2026-05-06T13:55:00",
-    "end": "2026-05-06T15:58:00",
-    "image": "https://cdn.milenio.com/uploads/media/2024/11/26/bayern-munich-vs-psg-vivo.jpg",
-    "url": "go:disney1"
-  },
-  {
-    "title": "Audax Italiano vs Vasco da Gama",
-    "league": "2026 • Sudamérica - Copa Sudamericana",
-    "start": "2026-05-06T17:00:00",
-    "end": "2026-05-06T19:00:00",
-    "image": "https://www.semana.com/resizer/v2/E4ZLLCL7LJEN7GYAUD54LWBAXA.png?auth=2c4011268512c9a98c1f4320b5a37a988631c1057434a057619a068679517bed&smart=true&quality=75&width=1280",
-    "url": "go:fanatiz3"
-  },
-  {
-    "title": "Torque vs Palestino",
-    "league": "2026 • Sudamérica - Copa Sudamericana",
-    "start": "2026-05-06T17:00:00",
-    "end": "2026-05-06T19:00:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dabb2-ec7a-7be7-b376-efcf81d07505/compose?format=webp&width=2880",
-    "url": "go:disney4"
-  },
-  {
-    "title": "Cusco vs Estudiantes",
-    "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-06T17:00:00",
-    "end": "2026-05-06T19:00:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dab79-cb1b-7e7a-bb9c-00d26efe962a/compose?format=webp&width=2880",
-    "url": "go:disney2"
-  },
-  {
-    "title": "Deportivo La Guaira vs Bolívar",
-    "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-06T17:00:00",
-    "end": "2026-05-06T19:00:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d15e5-ed6f-7922-b89f-93d5906056c6/compose?format=webp&width=2880",
-    "url": "go:disney3"
-  },
+  
   {
     "title": "Macará vs Tigre",
     "league": "2026 • Sudamérica - Copa Sudamericana",
