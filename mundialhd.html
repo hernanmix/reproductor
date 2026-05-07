@@ -8,7 +8,83 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial;
+    }
 
+    .logo {
+      text-align: center;
+      animation: glow 4s infinite;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #fff; }
+      50% { text-shadow: 0 0 20px red; }
+      100% { text-shadow: 0 0 5px #fff; }
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 10px;
+    }
+
+    .card {
+      min-width: 260px;
+      background: #111;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .img-container {
+      position: relative;
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .badge {
+      position: absolute;
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .badge.bottom-left { bottom: 10px; left: 10px; }
+    .badge.top-left { top: 10px; left: 10px; }
+
+    .live { background: #e50914; color: #fff; }
+
+    .icon-live {
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .img-container img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .card { overflow: hidden; border-radius: 10px; }
+
+    .badge.upcoming {
+      background-color: #1f7cab;
+      color: #fff;
+    }
+  </style>
+<!--
 <style>
   html, body {
     height: 100%;
@@ -110,6 +186,7 @@
     width: 100%; height: 100%; border: none;
   }
 </style>
+  -->
 </head>
 
 <body>
