@@ -279,7 +279,7 @@
     <div id="events" class="carousel"></div>
 
     <h2 style="color:white; margin-left:10px;">Canales de ESPN</h2>
-    <div id="channel" class="carousel"></div>
+    <div id="channels" class="carousel"></div>
   </section>
 
   <section id="moviesBlock" style="display:none;">
@@ -325,7 +325,7 @@
 <script>
   function showEvents() {
   document.getElementById("eventsBlock").style.display = "block";
-  document.getElementById("channelBlock").style.display = "none";
+  document.getElementById("channelsBlock").style.display = "none";
   document.getElementById("moviesBlock").style.display = "none";
   loadEvents();
   loadChannels(); // porque en eventos quieres ver ambos juntos
@@ -334,7 +334,7 @@
 function showChannels() {
   document.getElementById("eventsBlock").style.display = "none";
   document.getElementById("moviesBlock").style.display = "none";
-  document.getElementById("channelBlock").style.display = "block";
+  document.getElementById("channelsBlock").style.display = "block";
   loadChannelsOnly(); // solo canales
 }
 
