@@ -284,10 +284,11 @@
   </section>
 
   <!-- Bloque solo de Canales -->
-  <section id="channelBlock" style="display:none;">
-    <h2 style="color:white; margin-left:10px;">Todos los Canales</h2>
-    <div id="channelOnly" class="tv-grid"></div>
-  </section>
+ <section id="channelsBlock" style="display:none;">
+  <h2 style="color:white; margin-left:10px;">Todos los Canales</h2>
+  <div id="channelsOnly" class="tv-grid"></div>
+</section>
+
 
   <!-- Bloque de Películas -->
   <section id="moviesBlock" style="display:none;">
@@ -345,8 +346,9 @@ function showChannels() {
   document.getElementById("eventsBlock").style.display = "none";
   document.getElementById("moviesBlock").style.display = "none";
   document.getElementById("channelsBlock").style.display = "block";
-  loadChannelOnly(); // solo canales
+  loadChannelsOnly(); // ✅ ahora sí carga el JSON correcto
 }
+
 
 function showMovies() {
   document.getElementById("eventsBlock").style.display = "none";
