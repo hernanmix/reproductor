@@ -78,38 +78,7 @@
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019c725a-a709-745b-9a3d-cb0ae4d73ae6/compose?format=webp&width=2560",
     "url": "go:espn"
   },
-  {
-    "title": "Freiburg vs Sporting Braga",
-    "league": "2026 • Europa - Liga Europa de la UEFA |Semifinal Vuelta",
-    "start": "2026-05-07T13:40:00",
-    "end": "2026-05-07T16:05:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019da2df-2565-7cac-92f9-758d283805ae/compose?format=webp&width=2880",
-    "url": "go:espn2"
-  },
-  {
-    "title": "Aston Villa vs Nottingham Forest",
-    "league": "2026 • Europa - Liga Europa de la UEFA | Semifinal Vuelta",
-    "start": "2026-05-07T13:40:00",
-    "end": "2026-05-07T16:00:00",
-    "image": "https://cdn-img.staticzz.com/img/noticias/064/imgS300I1017064T20260101123047.png",
-    "url": "go:espn"
-  },
-  {
-    "title": "Strasbourg vs Rayo Vallecano",
-    "league": "2026 • Europa - Liga de la Conferencia de la UEFA | Semifinal Vuelta",
-    "start": "2026-05-07T13:40:00",
-    "end": "2026-05-07T16:00:00",
-    "image": "https://editorial.uefa.com//resources/02a5-20871da657a1-b94d1890dc01-1000/format/wide1/rayo_vallecano_de_madrid_v_racing_club_de_strasbourg_alsace_-_uefa_conference_league_2025_26_semi-final_first_leg.jpeg",
-    "url": "go:disney3"
-  },
-  {
-    "title": "Crystal Palace vs Shakhtar Donetsk",
-    "league": "2026 • Europa - Liga de la Conferencia de la UEFA | Semifinal Vuelta",
-    "start": "2026-05-07T13:40:00",
-    "end": "2026-05-07T16:00:00",
-    "image": "https://assets.goal.com/images/v3/getty-2273913327/crop/MM5DGOJWG45DEMRTGE5G433XMU5DAORSGA3A====/GettyImages-2273913327.jpg?auto=webp&format=pjpg&width=3840&quality=60",
-    "url": "go:disney4"
-  },
+  
   {
     "title": "Boston River vs Millonarios",
     "league": "2026 • Sudamérica - Copa Sudamericana",
