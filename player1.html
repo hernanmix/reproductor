@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reproductor con Exit FS</title>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+    }
+    .player-container {
+        position: fixed; /* ocupa toda la pantalla */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    .exit-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: rgba(0,0,0,0.3);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 9999;
+        transition: background-color 0.3s;
+    }
+    .exit-button:hover { background-color: rgba(0,0,0,0.6); }
+    .exit-button svg { width: 24px; height: 24px; fill: #fff; }
+</style>
+</head>
+<body>
+
+<div class="player-container">
+    <iframe id="videoPlayer" allowfullscreen allow="autoplay; fullscreen"></iframe>
+</div>
+<!--
+<div class="exit-button" onclick="exitFs()">
+    <svg viewBox="0 0 24 24">
+        <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+    </svg>
+</div>
+-->
+<script>
+    // Obtener parámetros de la URL y forzar que siempre incluya &app
+    function getParamsFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        if (!params.has("app")) {
+            params.set("app", ""); // agrega &app vacío si no existe
+        }
+        return params.toString();
+    }
+
+    const iframe = document.getElementById('videoPlayer');
+    const params = getParamsFromURL();
+
+    // Cargar URL del reproductor con todos los parámetros
+    iframe.src = `https://hello-world--hlema5120.replit.app/?${params}`;
+
+    function exitFs() {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        }
+        window.location.href = "go:exitFs"; 
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+        document.querySelector('.exit-button').style.display = 'flex';
+    });
+</script>
+
+<div style="display:none;">
+  <img id="wau8bf" src="//whos.amung.us/cwidget/wh0ml5f8fj/000000ffffff.png" style="display: none !important;" />
+</div>
+<script>
+  var _wau8bf = document.getElementById("_wau8bf");
+  setInterval(function(){
+    wau8bf.src="//whos.amung.us/cwidget/wh0ml5f8fj/000000ffffff.png?"+new Date().getTime()
+  },100000);
+</script>
+
+<script type="text/javascript">
+  var _Hasync= _Hasync|| [];
+  _Hasync.push(['Histats.start', '1,4743517,4,0,0,0,00010000']);
+  _Hasync.push(['Histats.fasi', '1']);
+  _Hasync.push(['Histats.track_hits', '']);
+  (function() {
+    var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+    hs.src = ('//s10.histats.com/js15_as.js');
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+  })();
+</script>
+<noscript>
+  <a href="//waust.at/d.js" target="_blank"><img src="//sstatic1.histats.com/0.gif?4743517&101" alt="counter create hit" border="0" /></a>
+</noscript>
+
+</body>
+</html>
