@@ -1,5 +1,5 @@
 [
-  { "name": "ZappinTV Eventos", "url": "go:zappintv", "image": "logos/zappintv.png" },
+  { "name": "ZappinTV Eventos", "url": "go:zappintv", "image": "url imge" },
   { "name": "Zappintv", "url": "go:vasm", "image": "logos/zappintv.png" },
   { "name": "ECDF", "url": "go:ecdf720p", "image": "logos/ecdf.png" },
   { "name": "Dsports", "url": "go:dsports", "image": "logos/dsports.png" },
@@ -9,8 +9,8 @@
   { "name": "Ecuavisa Play", "url": "go:ecuavisa", "image": "logos/ecuavisa.png" },
   { "name": "TUDN MX", "url": "go:tudn", "image": "logos/tudnmx.png" },
   { "name": "TUDN USA", "url": "go:tudnus", "image": "logos/tudnusa.png" },
-  { "name": "ESPN Sur 720p", "url": "go:espn", "image": "logos/espn.png" },
-  { "name": "ESPN2 Col 720p", "url": "go:espncol", "image": "logos/espn2.png" },
+  { "name": "ESPN Sur 720p", "url": "go:espn", "image": "https://hernanmix.github.io/reproductor/ESPN.webp" },
+  { "name": "ESPN2 Col 720p", "url": "go:espncol", "image": "https://hernanmix.github.io/reproductor/ESPN_2.webp" },
   { "name": "ESPN3", "url": "go:espn3", "image": "logos/espn3.png" },
   { "name": "ESPN4", "url": "go:espn4", "image": "logos/espn4.png" },
   { "name": "ESPN5", "url": "go:espn5", "image": "logos/espn5.png" },
