@@ -210,3 +210,27 @@ setInterval(() => {
 // INIT  
 loadEvents();  
 loadChannels();
+
+
+function loadChannelsOnly() {
+  fetch("channels.json?v=" + Date.now())
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("channelsOnly");
+      container.innerHTML = "";
+      data.forEach(ch => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="img-container">
+            <img src="${ch.image}">
+            <span class="badge live top-left">${liveSVG} EN VIVO</span>
+          </div>
+        `;
+        card.style.cursor = "pointer";
+        card.onclick = () => window.open(ch.url);
+        container.appendChild(card);
+      });
+    })
+    .catch(err => console.error("Error cargando canales:", err));
+}
