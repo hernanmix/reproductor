@@ -25,6 +25,15 @@
       50% { text-shadow: 0 0 20px red; }
       100% { text-shadow: 0 0 5px #fff; }
     }
+    .content {
+  flex: 1;
+  position: relative;
+  height: calc(100vh - 48px); /* ocupa todo menos el menú inferior */
+  overflow-y: auto;           /* ✅ permite scroll vertical */
+  padding-top: 80px;          /* ✅ espacio debajo del header */
+  padding-bottom: 60px;       /* ✅ espacio antes del menú inferior */
+}
+
 
     .carousel {
       display: flex;
@@ -265,7 +274,6 @@
 
 <!-- Contenido -->
 <div class="content">
-  <!-- Bloque de Eventos + Canales -->
   <section id="eventsBlock">
     <h2 style="color:white; margin-left:10px;">Destacados en vivo y próximamente</h2>
     <div id="events" class="carousel"></div>
@@ -274,12 +282,12 @@
     <div id="channels" class="carousel"></div>
   </section>
 
-  <!-- Bloque de Películas -->
   <section id="moviesBlock" style="display:none;">
     <h2 style="color:white; margin-left:10px;">Películas</h2>
     <div id="movies" class="carousel"></div>
   </section>
 </div>
+
 
 
 <!-- MENÚ -->
