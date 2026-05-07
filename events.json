@@ -62,54 +62,6 @@
   
   
   {
-    "title": "Macará vs Tigre",
-    "league": "2026 • Sudamérica - Copa Sudamericana",
-    "start": "2026-05-06T19:00:00",
-    "end": "2026-05-06T21:00:00",
-    "image": "https://www.semana.com/resizer/v2/RDK5NHB3VJAFTGXXKFUXSIZ5T4.png?auth=de5b717406e9f945dd9d2a7b0acefee954f782b2de1be344fc9231f1156becfc&smart=true&quality=75&width=1280",
-    "url": "go:fanatiz6"
-  },
-  {
-    "title": "Barracas Central vs Olimpia",
-    "league": "2026 • Sudamérica - Copa Sudamericana",
-    "start": "2026-05-06T19:00:00",
-    "end": "2026-05-06T21:00:00",
-    "image": "https://cdn.eldestapeweb.com/eldestape/052026/1777821292287.webp?cw=400&ch=225&extw=jpeg",
-    "url": "go:disney5"
-  },
-  {
-    "title": "Botafogo vs Racing Club",
-    "league": "2026 • Sudamérica - Copa Sudamericana",
-    "start": "2026-05-06T19:30:00",
-    "end": "2026-05-06T21:30:00",
-    "image": "https://www.365scores.com/es/news/wp-content/uploads/2025/02/Previa-Botafogo-vs-Racing.jpg",
-    "url": "go:disney6"
-  },
-  {
-    "title": "Santa Fe vs Corinthians",
-    "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-06T19:30:00",
-    "end": "2026-05-06T21:30:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019d67d4-cd24-751a-9ca6-b0c8fc5656b6/compose?format=webp&width=2880",
-    "url": "go:disney7"
-  },
-  {
-    "title": "Independiente Rivadavia vs Fluminense",
-    "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-06T19:30:00",
-    "end": "2026-05-06T21:30:00",
-    "image": "https://cdn.prod.website-files.com/668eb23ef0ab5402d67d0774/69de294cc7ad4bd054f5646f_15864263605942881100.jpeg",
-    "url": "go:disney8"
-  },
-  {
-    "title": "Toluca vs Los Angeles FC",
-    "league": "2026 • Norteamérica - Copa de Campeones de la Concacaf",
-    "start": "2026-05-06T20:30:00",
-    "end": "2026-05-06T22:30:00",
-    "image": "https://unanimodeportes.s3.amazonaws.com/wp-content/uploads/2026/04/lafc-vs-toluca.webp",
-    "url": "go:disney9"
-  },
-  {
     "title": "Alianza Atlético vs América de Cali",
     "league": "2026 • Sudamérica - Copa Sudamericana",
     "start": "2026-05-06T21:00:00",
@@ -137,32 +89,32 @@
   
   {
     "title": "Freiburg vs Sporting Braga",
-    "league": "2026 • Europa - Liga Europa de la UEFA",
-    "start": "2026-05-07T14:00:00",
-    "end": "2026-05-07T16:00:00",
+    "league": "2026 • Europa - Liga Europa de la UEFA |Semifinal Vuelta",
+    "start": "2026-05-07T13:40:00",
+    "end": "2026-05-07T15:55:00",
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019da2df-2565-7cac-92f9-758d283805ae/compose?format=webp&width=2880",
     "url": "go:espn2"
   },
   {
     "title": "Aston Villa vs Nottingham Forest",
-    "league": "2026 • Europa - Liga Europa de la UEFA",
-    "start": "2026-05-07T14:00:00",
-    "end": "2026-05-07T16:00:00",
+    "league": "2026 • Europa - Liga Europa de la UEFA | Semifinal Vuelta",
+    "start": "2026-05-07T13:40:00",
+    "end": "2026-05-07T15:55:00",
     "image": "https://cdn-img.staticzz.com/img/noticias/064/imgS300I1017064T20260101123047.png",
     "url": "go:espn"
   },
   {
     "title": "Strasbourg vs Rayo Vallecano",
-    "league": "2026 • Europa - Liga de la Conferencia de la UEFA",
-    "start": "2026-05-07T14:00:00",
+    "league": "2026 • Europa - Liga de la Conferencia de la UEFA | Semifinal Vuelta",
+    "start": "2026-05-07T13:40:00",
     "end": "2026-05-07T16:00:00",
     "image": "https://editorial.uefa.com//resources/02a5-20871da657a1-b94d1890dc01-1000/format/wide1/rayo_vallecano_de_madrid_v_racing_club_de_strasbourg_alsace_-_uefa_conference_league_2025_26_semi-final_first_leg.jpeg",
     "url": "##"
   },
   {
     "title": "Crystal Palace vs Shakhtar Donetsk",
-    "league": "2026 • Europa - Liga de la Conferencia de la UEFA",
-    "start": "2026-05-07T14:00:00",
+    "league": "2026 • Europa - Liga de la Conferencia de la UEFA | Semifinal Vuelta",
+    "start": "2026-05-07T13:40:00",
     "end": "2026-05-07T16:00:00",
     "image": "https://assets.goal.com/images/v3/getty-2273913327/crop/MM5DGOJWG45DEMRTGE5G433XMU5DAORSGA3A====/GettyImages-2273913327.jpg?auto=webp&format=pjpg&width=3840&quality=60",
     "url": "##"
@@ -170,15 +122,15 @@
   {
     "title": "Boston River vs Millonarios",
     "league": "2026 • Sudamérica - Copa Sudamericana",
-    "start": "2026-05-07T17:00:00",
-    "end": "2026-05-07T19:00:00",
+    "start": "2026-05-07T16:45:00",
+    "end": "2026-05-07T18:55:00",
     "image": "https://www.semana.com/resizer/v2/EFRFKTUYY5HVTCVJTBVMAW5E3A.png?smart=true&auth=9bff9711f8a869760289f82cdb7d62daf15fd23faf2782376bb7a53028f63a2d&width=1280&height=720",
     "url": "##"
   },
   {
     "title": "O'Higgins vs São Paulo",
     "league": "2026 • Sudamérica - Copa Sudamericana",
-    "start": "2026-05-07T17:00:00",
+    "start": "2026-05-07T16:45:00",
     "end": "2026-05-07T19:00:00",
     "image": "https://www.semana.com/resizer/v2/6URMD42DYFALVLPMEXGYJNS7NY.png?auth=2aaeebc4c82fce7794d2f5a9a38ab8044206c5eab49b6203d6d8965f8156bd79&smart=true&quality=75&width=1280",
     "url": "go:espn5"
@@ -186,24 +138,24 @@
   {
     "title": "Mirassol vs LDU Quito",
     "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-07T17:00:00",
-    "end": "2026-05-07T19:00:00",
+    "start": "2026-05-07T16:45:00",
+    "end": "2026-05-07T18:55:00",
     "image": "https://www.ole.com.ar/images/2026/04/15/dHnfJ84lK_720x0__1.jpg",
     "url": "##"
   },
   {
     "title": "Platense vs Peñarol",
     "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-07T17:00:00",
-    "end": "2026-05-07T19:00:00",
+    "start": "2026-05-07T16:45:00",
+    "end": "2026-05-07T18:55:00",
     "image": "https://www.elrancaguino.cl/wp-content/uploads/2026/05/793813_0-1024x576.png",
     "url": "go:espn2"
   },
   {
     "title": "Coquimbo Unido vs Universitario",
     "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-07T19:00:00",
-    "end": "2026-05-07T21:00:00",
+    "start": "2026-05-07T18:55:00",
+    "end": "2026-05-07T20:55:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDD9UtsTZqCWjYoaLLHkXUmyHTjAFy0xxMJnbiJ8Iqtj7Tueh63qcDv2Aq&s=10",
     "url": "##"
   },
@@ -234,7 +186,7 @@
   {
     "title": "Medellín vs Flamengo",
     "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-07T19:30:00",
+    "start": "2026-05-07T18:55:00",
     "end": "2026-05-07T21:30:00",
     "image": "https://www.semana.com/resizer/v2/OBI2XFJDGRHANGJGN2VJYB7KW4.png?auth=085bc4f09e31e9769c395c8b8f660ada952a1e487206a96632285a546cb80530&smart=true&quality=75&width=1280",
     "url": "##"
@@ -242,7 +194,7 @@
   {
     "title": "Junior vs Cerro Porteño",
     "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-07T21:00:00",
+    "start": "2026-05-07T20:55:00",
     "end": "2026-05-07T23:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnHyQxSa9EO_vn40omrlsWa5MRSuVO7PJzT27aDxKudQ4XruN7i7J0Xgem&s=10",
     "url": "##"
