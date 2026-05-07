@@ -213,7 +213,7 @@ loadChannels();
 
 
 function loadChannelsOnly() {
-  fetch("channels.json?v=" + Date.now())
+  fetch("channel.json?v=" + Date.now())
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById("channelsOnly");
