@@ -213,14 +213,18 @@ loadChannels();
 
 
 function loadChannelsOnly() {
-  fetch("channel.json?v=" + Date.now())
+  fetch("channel.json?v=" + Date.now()) // ✅ usa el nombre correcto del archivo
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById("channelsOnly");
       container.innerHTML = "";
       data.forEach(ch => {
-        const card = document.createElement("div");
+        // cada tarjeta será un enlace <a> para mejor compatibilidad en Smart TV
+        const card = document.createElement("a");
         card.className = "card";
+        card.setAttribute("tabindex", "0"); // ✅ navegable con control remoto
+        card.href = ch.url; // ✅ al pulsar OK/Enter abre el canal
+
         card.innerHTML = `
           <div class="img-container">
             <img src="${ch.image}" alt="${ch.name}">
@@ -230,7 +234,7 @@ function loadChannelsOnly() {
             <h3>${ch.name}</h3>
           </div>
         `;
-        card.onclick = () => window.open(ch.url);
+
         container.appendChild(card);
       });
     })
