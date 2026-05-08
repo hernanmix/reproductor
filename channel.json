@@ -1,6 +1,6 @@
 [
-  { "name": "ZappinTV Eventos", "url": "go:zappintv", "image": "https://hernanmix.github.io/reproductor/zappintv.png" },
-  { "name": "Zappintv", "url": "go:vasm", "image": "https://hernanmix.github.io/reproductor/zappintv.png" },
+  { "name": "ZappinTV Eventos", "url": "go:zappintv", "image": "https://hernanmix.github.io/reproductor/Zappingtv..png" },
+  { "name": "Zappintv", "url": "go:vasm", "image": "https://hernanmix.github.io/reproductor/Zappingtv..png" },
   { "name": "ECDF", "url": "go:ecdf720p", "image": "https://hernanmix.github.io/reproductor/ecdf.png" },
   { "name": "Dsports", "url": "go:dsports", "image": "https://hernanmix.github.io/reproductor/dsports.png" },
   { "name": "Dsports 2", "url": "go:dsports2", "image": "https://hernanmix.github.io/reproductor/dsports2.png" },
