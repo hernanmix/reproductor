@@ -212,15 +212,8 @@ loadEvents();
 loadChannels();
 
 
-function showChannels() {
-  document.getElementById("eventsBlock").style.display = "none";
-  document.getElementById("moviesBlock").style.display = "none";
-  document.getElementById("channelsBlock").style.display = "block";
-  loadChannelsOnly();
-}
-
 function loadChannelsOnly() {
-  fetch("channel.json?v=" + Date.now()) // usa el nombre correcto
+  fetch("channel.json?v=" + Date.now())
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById("channelsOnly");
@@ -237,7 +230,6 @@ function loadChannelsOnly() {
             <h3>${ch.name}</h3>
           </div>
         `;
-        card.style.cursor = "pointer";
         card.onclick = () => window.open(ch.url);
         container.appendChild(card);
       });
