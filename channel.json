@@ -19,7 +19,6 @@
   { "name": "Oromartv", "url": "go:oromartv", "image": "https://hernanmix.github.io/reproductor/oromartv.png" },
   { "name": "RTS", "url": "go:rts", "image": "https://hernanmix.github.io/reproductor/rts.png" },
   { "name": "RTU", "url": "go:rtu", "image": "https://hernanmix.github.io/reproductor/rtu.png" },
-  { "name": "RTU 720p", "url": "go:rtu720", "image": "https://hernanmix.github.io/reproductor/rtu.png" },
   { "name": "Teleamazonas", "url": "go:teleamzona", "image": "https://hernanmix.github.io/reproductor/teleamazonas.png" },
   { "name": "Majestad TV", "url": "go:majestadtv", "image": "https://hernanmix.github.io/reproductor/majestad.png" },
   { "name": "Majestad TV FM", "url": "go:majestadfm", "image": "https://hernanmix.github.io/reproductor/majestadfm.png" },
