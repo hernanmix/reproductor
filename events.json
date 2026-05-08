@@ -10,16 +10,6 @@
     "url": "go:espn"
   },
   {
-    "title": "La Vuelta a España ",
- "league": "2026 • Femenina",
-    "start": "2026-05-04T08:25:00",
-    "end": "2026-05-04T09:55:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAOJrsvSwI2ZVivSN1H49sdmVVWaXzgEN6bhH0WEa-xg&s=10",
-    "url": "go:espn"
-  },
-
-  
-  {
     "title": "Al Aire Ahora",
  "league": "2026 • ESPN90",
     "start": "2026-05-05T22:55:00",
@@ -51,25 +41,6 @@
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAOJrsvSwI2ZVivSN1H49sdmVVWaXzgEN6bhH0WEa-xg&s=10",
     "url": "go:espn"
   },
-
-
-  
-  {
-    "title": "Al Aire Ahora",
- "league": "2026 • ESPN90",
-    "start": "2026-05-06T23:05:00",
-    "end": "2026-05-07T00:00:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/57fa18ff-80ae-4f63-8946-74a2247054a6/compose?format=webp&width=2880",
-    "url": "go:espn"
-  },
-  {
-    "title": "Al Aire Ahora",
- "league": "2026 • SportsCenter Am Colombia",
-    "start": "2026-05-06T011:00:00",
-    "end": "2026-05-07T00:00:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019c725a-a709-745b-9a3d-cb0ae4d73ae6/compose?format=webp&width=2560",
-    "url": "go:espn"
-  },
   {
     "title": "Al Aire Ahora",
  "league": "2026 • Balón Dividido",
@@ -79,78 +50,8 @@
     "url": "go:espn"
   },
   
-  {
-    "title": "Boston River vs Millonarios",
-    "league": "2026 • Sudamérica - Copa Sudamericana",
-    "start": "2026-05-07T16:45:00",
-    "end": "2026-05-07T18:55:00",
-    "image": "https://www.semana.com/resizer/v2/EFRFKTUYY5HVTCVJTBVMAW5E3A.png?smart=true&auth=9bff9711f8a869760289f82cdb7d62daf15fd23faf2782376bb7a53028f63a2d&width=1280&height=720",
-    "url": "go:disney7"
-  },
-  {
-    "title": "O'Higgins vs São Paulo",
-    "league": "2026 • Sudamérica - Copa Sudamericana",
-    "start": "2026-05-07T16:45:00",
-    "end": "2026-05-07T19:00:00",
-    "image": "https://www.semana.com/resizer/v2/6URMD42DYFALVLPMEXGYJNS7NY.png?auth=2aaeebc4c82fce7794d2f5a9a38ab8044206c5eab49b6203d6d8965f8156bd79&smart=true&quality=75&width=1280",
-    "url": "go:espn5"
-  },
-  {
-    "title": "Mirassol vs LDU Quito",
-    "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-07T16:45:00",
-    "end": "2026-05-07T18:55:00",
-    "image": "https://www.ole.com.ar/images/2026/04/15/dHnfJ84lK_720x0__1.jpg",
-    "url": "go:disney5"
-  },
-  {
-    "title": "Platense vs Peñarol",
-    "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-07T16:45:00",
-    "end": "2026-05-07T18:55:00",
-    "image": "https://www.elrancaguino.cl/wp-content/uploads/2026/05/793813_0-1024x576.png",
-    "url": "go:espn2"
-  },
-  {
-    "title": "Coquimbo Unido vs Universitario",
-    "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-07T18:55:00",
-    "end": "2026-05-07T20:55:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDD9UtsTZqCWjYoaLLHkXUmyHTjAFy0xxMJnbiJ8Iqtj7Tueh63qcDv2Aq&s=10",
-    "url": "go:disney9"
-  },
-  {
-    "title": "Birmingham Legion vs Miami FC",
-    "league": "2026 • Estados Unidos - USL Championship",
-    "start": "2026-05-07T19:00:00",
-    "end": "2026-05-07T21:00:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToZDf55hZHRIeWCI7S1vp_qZqZr9eGxkdztkjmH1sGTet8GIiAWscTlXs&s=10",
-    "url": "##"
-  },
-  {
-    "title": "Blooming vs RB Bragantino",
-    "league": "2026 • Sudamérica - Copa Sudamericana",
-    "start": "2026-05-07T19:30:00",
-    "end": "2026-05-07T21:30:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV2PSr5Ad7GXTmkEaQz0t68yDrxQWtlT7CgO9CwY2mfxsP3xgjCfbH4fcE&s=10",
-    "url": "go:fanatiz8"
-  },
-  {
-    "title": "Carabobo vs River Plate",
-    "league": "2026 • Sudamérica - Copa Sudamericana",
-    "start": "2026-05-07T19:30:00",
-    "end": "2026-05-07T21:30:00",
-    "image": "https://cdn.eldestapeweb.com/eldestape/052026/1777896402779.webp?cw=400&ch=225&extw=jpeg",
-    "url": "go:dsports"
-  },
-  {
-    "title": "Medellín vs Flamengo",
-    "league": "2026 • Sudamérica - Copa Libertadores",
-    "start": "2026-05-07T18:55:00",
-    "end": "2026-05-07T21:30:00",
-    "image": "https://www.semana.com/resizer/v2/OBI2XFJDGRHANGJGN2VJYB7KW4.png?auth=085bc4f09e31e9769c395c8b8f660ada952a1e487206a96632285a546cb80530&smart=true&quality=75&width=1280",
-    "url": "go:disney10"
-  },
+  
+  
   {
     "title": "Junior vs Cerro Porteño",
     "league": "2026 • Sudamérica - Copa Libertadores",
