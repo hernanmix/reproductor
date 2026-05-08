@@ -1,22 +1,22 @@
 [
   {
     "name": "ESPN",
-    "image": "https://hernanmix.github.io/reproductor/ESPN.webp",
+    "image": "https://hernanmix.github.io/reproductor/espn.png",
     "url": "go:espn"
   },
   {
     "name": "ESPN 2",
-    "image": "https://hernanmix.github.io/reproductor/ESPN_2.webp",
+    "image": "https://hernanmix.github.io/reproductor/espn2.png",
     "url": "go:espn2"
   },
   {
     "name": "ESPN 3",
-    "image": "https://hernanmix.github.io/reproductor/ESPN_3.webp",
+    "image": "https://hernanmix.github.io/reproductor/espn3.png",
     "url": "go:espn3"
   },
   {
     "name": "ESPN 4",
-    "image": "https://hernanmix.github.io/reproductor/ESPN4.png",
+    "image": "https://hernanmix.github.io/reproductor/espn4.png",
     "url": "go:espn4"
   },
   {
