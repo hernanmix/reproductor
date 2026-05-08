@@ -81,7 +81,7 @@
     "start": "2026-05-08T13:30:00",
     "end": "2026-05-08T15:30:00",
     "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401795730/16x9/1280x720_20251231143854.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "##"
+    "url": "go:hyper1"
   },
   {
     "title": "Torino vs Sassuolo",
@@ -89,7 +89,7 @@
     "start": "2026-05-08T13:45:00",
     "end": "2026-05-08T15:45:00",
     "image": "https://www.semana.com/resizer/v2/ONYSTKGMRFB2NMZKOSDS4SVCTY.png?auth=7eca135d9c384fd55df680500deed8189718c2ee2bf08451e202069a46178a01&smart=true&quality=75&width=1280&height=960",
-    "url": "##"
+    "url": "go:disney3"
   },
   {
     "title": "Lens vs Nantes",
@@ -105,7 +105,7 @@
     "start": "2026-05-08T14:00:00",
     "end": "2026-05-08T16:00:00",
     "image": "https://statics-maker.llt-services.com/lev/images/2025/12/09/medium-wp/d5844ec4-34a2-4f87-ba56-337109bb803a-215.webp",
-    "url": "go:espn2"
+    "url": "go:disney4"
   },
   {
     "title": "Hull City vs Millwall",
@@ -113,7 +113,7 @@
     "start": "2026-05-08T14:00:00",
     "end": "2026-05-08T16:00:00",
     "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/programs/52990ea7-a51a-488f-9793-153d47a58305/16x9/1280x720_201812102001.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "##"
+    "url": "go:espn7"
   },
   {
     "title": "UTC Cajamarca vs FC Cajamarca",
