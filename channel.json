@@ -8,9 +8,9 @@
   { "name": "TC Televisión", "url": "go:tc", "image": "https://hernanmix.github.io/reproductor/tc.png" },
   { "name": "Ecuavisa Play", "url": "go:ecuavisa", "image": "https://hernanmix.github.io/reproductor/ecuavisa.png" },
   { "name": "TUDN MX", "url": "go:tudn", "image": "https://hernanmix.github.io/reproductor/tudnmx.png" },
-  { "name": "TUDN USA", "url": "go:tudnus", "image": "https://hernanmix.github.io/reproductor/tudnusa.png" },
-  { "name": "ESPN Sur 720p", "url": "go:espn", "image": "https://hernanmix.github.io/reproductor/ESPN.webp" },
-  { "name": "ESPN2 Col 720p", "url": "go:espncol", "image": "https://hernanmix.github.io/reproductor/ESPN_2.webp" },
+  { "name": "TUDN USA", "url": "go:tudnus", "image": "https://hernanmix.github.io/reproductor/tudnus.png" },
+  { "name": "ESPN Sur 720p", "url": "go:espn", "image": "https://hernanmix.github.io/reproductor/espn.png" },
+  { "name": "ESPN2 Col 720p", "url": "go:espncol", "image": "https://hernanmix.github.io/reproductor/espn2.png" },
   { "name": "ESPN3", "url": "go:espn3", "image": "https://hernanmix.github.io/reproductor/espn3.png" },
   { "name": "ESPN4", "url": "go:espn4", "image": "https://hernanmix.github.io/reproductor/espn4.png" },
   { "name": "ESPN5", "url": "go:espn5", "image": "https://hernanmix.github.io/reproductor/espn5.png" },
@@ -24,7 +24,6 @@
   { "name": "Majestad TV FM", "url": "go:majestadfm", "image": "https://hernanmix.github.io/reproductor/majestadfm.png" },
   { "name": "Canal Uno Ecuador", "url": "go:canaluno", "image": "https://hernanmix.github.io/reproductor/canaluno.png" },
   { "name": "Ecuador TV", "url": "go:ecuadortv", "image": "https://hernanmix.github.io/reproductor/ecuadortv.png" },
-  { "name": "TELEFE", "url": "go:telefe", "image": "https://hernanmix.github.io/reproductor/telefe.png" },
   { "name": "Telemar", "url": "go:telemar", "image": "https://hernanmix.github.io/reproductor/telemar.png" },
   { "name": "FM Mundo TV", "url": "go:fmmundo", "image": "https://hernanmix.github.io/reproductor/fmmundo.png" }
 ]
