@@ -16,22 +16,22 @@
   },
   {
     "nombre": "ESPN ",
-    "imagen": "https://hernanmix.github.io/reproductor/ESPN.webp",
+    "imagen": "https://hernanmix.github.io/reproductor/espn.png",
     "url": "espn.html"
   },
   {
     "nombre": "ESPN 2",
-    "imagen": "https://hernanmix.github.io/reproductor/ESPN_2.webp",
+    "imagen": "https://hernanmix.github.io/reproductor/espn2.png",
     "url": "espn2.html"
   },
   {
     "nombre": "ESPN 3",
-    "imagen": "https://hernanmix.github.io/reproductor/ESPN_3.webp",
+    "imagen": "https://hernanmix.github.io/reproductor/espn3.png",
     "url": "espn3.html"
   },
   {
     "nombre": "ESPN 4",
-    "imagen": "https://hernanmix.github.io/reproductor/ESPN4.png",
+    "imagen": "https://hernanmix.github.io/reproductor/espn4.png",
     "url": "espn4.html"
   },
   {
@@ -46,7 +46,7 @@
   },
   {
     "nombre": "DSports",
-    "imagen": "https://hernanmix.github.io/reproductor/DSports.png",
+    "imagen": "https://hernanmix.github.io/reproductor/dsports.png",
     "url": "dsports.html"
   },
   {
