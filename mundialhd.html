@@ -9,261 +9,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>
-    body {
-      background: #000;
-      color: #fff;
-      font-family: Arial;
-    }
-
-    .logo {
-      text-align: center;
-      animation: glow 4s infinite;
-    }
-
-    @keyframes glow {
-      0% { text-shadow: 0 0 5px #fff; }
-      50% { text-shadow: 0 0 20px red; }
-      100% { text-shadow: 0 0 5px #fff; }
-    }
-    .content {
-  flex: 1;
-  position: relative;
-  height: calc(100vh - 48px); /* ocupa todo menos el menú inferior */
-  overflow-y: auto;           /* ✅ permite scroll vertical */
-  padding-top: 80px;          /* ✅ espacio debajo del header */
-  padding-bottom: 60px;       /* ✅ espacio antes del menú inferior */
-}
-
-
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      gap: 15px;
-      padding: 10px;
-    }
-
-    .card {
-      min-width: 260px;
-      background: #111;
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .img-container {
-      position: relative;
-    }
-
-    .card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-
-    .badge {
-      position: absolute;
-      padding: 6px 10px;
-      font-size: 12px;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .badge.bottom-left { bottom: 10px; left: 10px; }
-    .badge.top-left { top: 10px; left: 10px; }
-
-    .live { background: #e50914; color: #fff; }
-
-    .icon-live {
-      width: 12px;
-      height: 12px;
-      display: inline-block;
-      vertical-align: middle;
-    }
-
-    .img-container img {
-      width: 100%;
-      display: block;
-      border-radius: 10px;
-    }
-
-    .card { overflow: hidden; border-radius: 10px; }
-
-    .badge.upcoming {
-      background-color: #1f7cab;
-      color: #fff;
-    }
-
-    .bottom-menu {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255,255,255,0.1);
-    height: 48px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 50;
-  }
-
-  .menu-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #94a3b8;
-    font-size: 10px;
-    text-transform: uppercase;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
-    user-select: none;
-  }
-
-  .menu-btn:hover { color: white; transform: scale(1.05); }
-  .menu-btn .material-symbols-outlined { font-size: 26px; margin-bottom: 4px; }
-  .active { color: white; border-top: 2px solid #0072FF; }
-
-  @media (min-width: 1200px) {
-    .bottom-menu { height: 85px; }
-    .menu-btn .material-symbols-outlined { font-size: 34px; }
-    .menu-btn { font-size: 14px; }
-  }
-   /* Contenedor de Ads flotante */
-  .ad-container {
-    position: fixed;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%; max-width: 600px;
-    height: 80%; max-height: 400px;
-    background: #111;
-    border: 2px solid #00f;
-    display: none;
-    flex-direction: column;
-    z-index: 1000;
-  }
-  .countdown {
-    position: absolute;
-    top: 5px; right: 10px;
-    font-size: 20px;
-    color: #00f;
-    font-weight: bold;
-  }
-  .ad-container iframe {
-    width: 100%; height: 100%; border: none;
-  }
-
-    .card:focus {
-  outline: 2px solid #00e55b;
-  transform: scale(1.05);
-}
-
-    
-  </style>
-<!--
-<style>
-  html, body {
-    height: 100%;
-    margin: 0;
-    background: #000022;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .content {
-    flex: 1;
-    position: relative;
-    height: calc(100vh - 48px);
-    overflow-y: auto;
-    padding-top: 70px; /* espacio para header */
-  }
-
-  /* Carrusel horizontal */
-  .carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 12px;
-  padding: 10px;
-}
-.carousel::-webkit-scrollbar { display: none; }
-.card {
-  flex: 0 0 auto;
-  scroll-snap-align: start;
-  background:#111;
-  color:white;
-  border-radius:8px;
-  overflow:hidden;
-  width:220px;
-}
-.card img { width:100%; display:block; }
-
-
-  .bottom-menu {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255,255,255,0.1);
-    height: 48px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 50;
-  }
-
-  .menu-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #94a3b8;
-    font-size: 10px;
-    text-transform: uppercase;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
-    user-select: none;
-  }
-
-  .menu-btn:hover { color: white; transform: scale(1.05); }
-  .menu-btn .material-symbols-outlined { font-size: 26px; margin-bottom: 4px; }
-  .active { color: white; border-top: 2px solid #0072FF; }
-
-  @media (min-width: 1200px) {
-    .bottom-menu { height: 85px; }
-    .menu-btn .material-symbols-outlined { font-size: 34px; }
-    .menu-btn { font-size: 14px; }
-  }
-
-  /* Contenedor de Ads flotante */
-  .ad-container {
-    position: fixed;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%; max-width: 600px;
-    height: 80%; max-height: 400px;
-    background: #111;
-    border: 2px solid #00f;
-    display: none;
-    flex-direction: column;
-    z-index: 1000;
-  }
-  .countdown {
-    position: absolute;
-    top: 5px; right: 10px;
-    font-size: 20px;
-    color: #00f;
-    font-weight: bold;
-  }
-  .ad-container iframe {
-    width: 100%; height: 100%; border: none;
-  }
+  body { background:#000; color:#fff; font-family:Arial; }
+  .logo { text-align:center; animation:glow 4s infinite; }
+  @keyframes glow { 0%{text-shadow:0 0 5px #fff;} 50%{text-shadow:0 0 20px red;} 100%{text-shadow:0 0 5px #fff;} }
+  .content { flex:1; position:relative; height:calc(100vh - 48px); overflow-y:auto; padding-top:80px; padding-bottom:60px; }
+  .carousel { display:flex; overflow-x:auto; gap:15px; padding:10px; }
+  .card { min-width:260px; background:#111; border-radius:12px; overflow:hidden; position:relative; }
+  .img-container { position:relative; }
+  .card img { width:100%; height:150px; object-fit:cover; }
+  .badge { position:absolute; padding:6px 10px; font-size:12px; border-radius:6px; font-weight:bold; }
+  .badge.bottom-left{bottom:10px;left:10px;} .badge.top-left{top:10px;left:10px;}
+  .live{background:#e50914;color:#fff;} .badge.upcoming{background-color:#1f7cab;color:#fff;}
+  .bottom-menu { display:grid; grid-template-columns:repeat(6,1fr); background:rgba(15,23,42,0.8); backdrop-filter:blur(20px); border-top:1px solid rgba(255,255,255,0.1); height:48px; width:100%; position:fixed; bottom:0; left:0; z-index:50; }
+  .menu-btn { display:flex; flex-direction:column; align-items:center; justify-content:center; color:#94a3b8; font-size:10px; text-transform:uppercase; font-weight:600; cursor:pointer; transition:0.2s; user-select:none; }
+  .menu-btn:hover{color:white;transform:scale(1.05);} .menu-btn .material-symbols-outlined{font-size:26px;margin-bottom:4px;} .active{color:white;border-top:2px solid #0072FF;}
+  @media(min-width:1200px){.bottom-menu{height:85px;} .menu-btn .material-symbols-outlined{font-size:34px;} .menu-btn{font-size:14px;} }
+  .ad-container{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:90%;max-width:600px;height:80%;max-height:400px;background:#111;border:2px solid #00f;display:none;flex-direction:column;z-index:1000;}
+  .countdown{position:absolute;top:5px;right:10px;font-size:20px;color:#00f;font-weight:bold;}
+  .ad-container iframe{width:100%;height:100%;border:none;}
+  .card:focus{outline:2px solid #00e55b;transform:scale(1.05);}
 </style>
-  -->
 </head>
 
 <body>
@@ -290,22 +55,23 @@
   </section>
 
   <!-- Bloque solo de Canales -->
- <section id="channelsBlock" style="display:none;">
-  <h2 style="color:white; margin-left:10px;">Todos los Canales</h2>
-  <div id="channelsOnly" class="tv-grid"></div>
-</section>
-
+  <section id="channelsBlock" style="display:none;">
+    <h2 style="color:white; margin-left:10px;">Todos los Canales</h2>
+    <div id="channelsOnly" class="tv-grid"></div>
+  </section>
 
   <!-- Bloque de Películas -->
   <section id="moviesBlock" style="display:none;">
     <h2 style="color:white; margin-left:10px;">Películas</h2>
     <div id="movies" class="carousel"></div>
   </section>
+
+  <!-- Bloque de Erotismo -->
+  <section id="erotismoBlock" style="display:none;">
+    <h2 style="color:white; margin-left:10px;">ErotismoXX</h2>
+    <div id="erotismoSection" class="carousel"></div>
+  </section>
 </div>
-
-
-
-
 
 <!-- MENÚ -->
 <nav class="bottom-menu">
@@ -320,6 +86,10 @@
   <div class="menu-btn" onclick="showMovies()">
     <span class="material-symbols-outlined">movie</span>
     Películas
+  </div>
+  <div class="menu-btn" onclick="showErotismo()">
+    <span class="material-symbols-outlined">favorite</span>
+    Erotismo
   </div>
   <div class="menu-btn" onclick="showAd()">
     <span class="material-symbols-outlined">ads_click</span>
@@ -340,48 +110,57 @@
 <script src="app6.js"></script>
 
 <script>
-  function showEvents() {
+function showEvents() {
   document.getElementById("eventsBlock").style.display = "block";
   document.getElementById("channelsBlock").style.display = "none";
   document.getElementById("moviesBlock").style.display = "none";
+  document.getElementById("erotismoBlock").style.display = "none";
   loadEvents();
-  loadChannels(); // porque en eventos quieres ver ambos juntos
+  loadChannels();
 }
 
 function showChannels() {
   document.getElementById("eventsBlock").style.display = "none";
   document.getElementById("moviesBlock").style.display = "none";
+  document.getElementById("erotismoBlock").style.display = "none";
   document.getElementById("channelsBlock").style.display = "block";
-  loadChannelsOnly(); // ✅ ahora sí carga el JSON correcto
+  loadChannelsOnly();
 }
-
 
 function showMovies() {
   document.getElementById("eventsBlock").style.display = "none";
   document.getElementById("channelsBlock").style.display = "none";
+  document.getElementById("erotismoBlock").style.display = "none";
   document.getElementById("moviesBlock").style.display = "block";
   if (typeof loadMovies === "function") loadMovies();
 }
 
+function showErotismo() {
+  document.getElementById("eventsBlock").style.display = "none";
+  document.getElementById("channelsBlock").style.display = "none";
+  document.getElementById("moviesBlock").style.display = "none";
+  document.getElementById("erotismoBlock").style.display = "block";
+  if (typeof loadErotismo === "function") loadErotismo();
+}
 
-  function showAd() {
-    const adContainer = document.getElementById('adContainer');
-    const adFrame = document.getElementById('adFrame');
-    const adCountdownEl = document.getElementById('adCountdown');
-    adContainer.style.display = 'flex';
-    adFrame.src = 'https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db';
-    let counter = 15;
+function showAd() {
+  const adContainer = document.getElementById('adContainer');
+  const adFrame = document.getElementById('adFrame');
+  const adCountdownEl = document.getElementById('adCountdown');
+  adContainer.style.display = 'flex';
+  adFrame.src = 'https://annoyingnightmareedit.com/sx8hwavut?key=12d54e488207e905a50e1b60079637db';
+  let counter = 15;
+  adCountdownEl.textContent = counter;
+  const timer = setInterval(() => {
+    counter--;
     adCountdownEl.textContent = counter;
-    const timer = setInterval(() => {
-      counter--;
-      adCountdownEl.textContent = counter;
-      if (counter <= 0) {
-        clearInterval(timer);
-        adContainer.style.display = 'none';
-        adFrame.src = '';
-      }
-    }, 1000);
-  }
+    if (counter <= 0) {
+      clearInterval(timer);
+      adContainer.style.display = 'none';
+      adFrame.src = '';
+    }
+  }, 1000);
+}
 </script>
 
 </body>
