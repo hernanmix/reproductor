@@ -43,189 +43,7 @@
   },
 
 
-  
-  {
-    "title": "Banfield vs San Martín Tucumán",
-    "league": "2026 • Argentina - Copa Argentina",
-    "start": "2026-05-08T19:10:00",
-    "end": "2026-05-08T21:10:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCPZynyoAK_voiZCzdZRzIiH8FWQH3JfUTPWLQhgR1Abue9M3wElvC-1s&s=10",
-    "url": "go:tycint"
-  },
-  {
-    "title": "Spurs vs Timberwolves",
-    "league": "2026 • NBA",
-    "start": "2026-05-08T20:30:00",
-    "end": "2026-05-08T22:30:00",
-    "image": "https://artwork.espncdn.com/events/401616464/16x9/1280x720_20231129144116.jpg",
-    "url": "go:amazon2"
-  },
 
-
-  
-  {
-    "title": "Liverpool vs Chelsea",
-    "league": "2026 • Inglaterra - Premier League",
-    "start": "2026-05-09T06:25:00",
-    "end": "2026-05-09T08:25:00",
-    "image": "https://a.espncdn.com/combiner/i?img=/photo/2023/0121/r1120607_1296x729_16-9.jpg&cquality=80&h=370&w=655",
-    "url": "go:espn"
-  },
-  {
-    "title": "Middlesbrough vs Southampton",
-    "league": "2026 • Inglaterra - Championship",
-    "start": "2026-05-09T06:30:00",
-    "end": "2026-05-09T08:30:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdpcAil0YkMZrKqL7QAN-Lz_b4ILCmFILtFZ_CqkkUurgJiWjZdMqSGc4&s=10",
-    "url": "go:espn5"
-  },
-  {
-    "title": "Elche vs Deportivo Alavés",
-    "league": "2026 • España - LaLiga",
-    "start": "2026-05-09T07:00:00",
-    "end": "2026-05-09T09:00:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLcLHHbHlUwebOLIqWihj9DH0NZDKgTKrePSOHBnrv9kaQy5yB8li-EFI&s=10",
-    "url": "go:espndeport"
-  },
-  {
-    "title": "Ceuta vs CD Castellon",
-    "league": "2026 • España - LaLiga SmartBank",
-    "start": "2026-05-09T07:00:00",
-    "end": "2026-05-09T09:00:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_6_z9SPGhzE03P79Kv-RArMgxL2oho51FtGvoSOjDy0qV6a5PIgFv4xjv&s=10",
-    "url": "go:hyper1"
-  },
-  {
-    "title": "Cagliari vs Udinese",
-    "league": "2026 • Italia - Serie A",
-    "start": "2026-05-09T08:00:00",
-    "end": "2026-05-09T10:00:00",
-    "image": "https://anecdotarios.com/wp-content/uploads/2026/05/781143_0.png",
-    "url": "go:disney3"
-  },
-  {
-    "title": "Stuttgart vs Bayer Leverkusen",
-    "league": "2026 • Alemania - Bundesliga",
-    "start": "2026-05-09T08:30:00",
-    "end": "2026-05-09T10:30:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdoAVFRV_rhfcHmuQwjJPUrKRCT-jRCW-mRLo5cP9QbbpwdUgg9PjbwJOs&s=10",
-    "url": "go:disney5"
-  },
-  {
-    "title": "RB Leipzig vs St. Pauli",
-    "league": "2026 • Alemania - Bundesliga",
-    "start": "2026-05-09T08:30:00",
-    "end": "2026-05-09T10:30:00",
-    "image": "https://assets.bundesliga.com/video/jw/2Om0DqLZ.jpg?fit=540,540",
-    "url": "go:disney6"
-  },
-  {
-    "title": "Hoffenheim vs Werder Bremen",
-    "league": "2026 • Alemania - Bundesliga",
-    "start": "2026-05-09T08:30:00",
-    "end": "2026-05-09T10:30:00",
-    "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401564194/16x9/1280x720_20240228013951.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "go:disney7"
-  },
-  {
-    "title": "Augsburg vs Borussia M'gladbach",
-    "league": "2026 • Alemania - Bundesliga",
-    "start": "2026-05-09T08:30:00",
-    "end": "2026-05-09T10:30:00",
-    "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401340636/16x9/1280x720_20220125192913.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "go:disney4"
-  },
-  {
-    "title": "Brighton & Hove Albion vs Wolverhampton Wanderers",
-    "league": "2026 • Inglaterra - Premier League",
-    "start": "2026-05-09T09:00:00",
-    "end": "2026-05-09T11:00:00",
-    "image": "https://artwork.espncdn.com/airings/350041b2-a651-4af3-a482-857455d98a06/16x9/original_20210101213619.jpg",
-    "url": "go:disney10"
-  },
-  {
-    "title": "Sunderland vs Manchester United",
-    "league": "2026 • Inglaterra - Premier League",
-    "start": "2026-05-09T09:00:00",
-    "end": "2026-05-09T11:00:00",
-    "image": "https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2009/10/8/1255023282171/Manchester-United-v-Sunde-001.jpg?width=465&dpr=1&s=none&crop=none",
-    "url": "go:disney8"
-  },
-  {
-    "title": "Fulham vs AFC Bournemouth",
-    "league": "2026 • Inglaterra - Premier League",
-    "start": "2026-05-09T09:00:00",
-    "end": "2026-05-09T11:00:00",
-    "image": "https://www.reuters.com/resizer/v2/LP4SJCFPMRILPK2PJNLG543MDY.jpg?auth=6d3f5051027920a4f531b944be3f5dfb3ea6eece7d4016ec2af6885d097baedf&width=1080&quality=80",
-    "url": "go:disney9"
-  },
-  {
-    "title": "Sevilla vs Espanyol",
-    "league": "2026 • España - LaLiga",
-    "start": "2026-05-09T09:15:00",
-    "end": "2026-05-09T11:15:00",
-    "image": 
-"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKp-0XvCeJlMRuHvFdUg_dYS8dZEZNZyAXg78gUqFq7g&s=10",
-    "url": "go:espndeport"
-  },
-  {
-    "title": "Albacete vs Cultural Leonesa",
-    "league": "2026 • España - LaLiga SmartBank",
-    "start": "2026-05-09T09:15:00",
-    "end": "2026-05-09T11:15:00",
-    "image": 
-"https://cdn-img.zerozero.pt/img/noticias/537/imgS300I939537T20251004193041.png",
-    "url": "go:hyper2"
-  },
-  {
-    "title": "Burgos vs Almería",
-    "league": "2026 • España - LaLiga SmartBank",
-    "start": "2026-05-09T09:15:00",
-    "end": "2026-05-09T11:15:00",
-    "image": 
-"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcwRgblblNiXHt_oByBJCxnGuF_YlL7_ptu2jhAX5ELp6nH5CDb5kTTNc&s=10",
-    "url": "go:hyper1"
-  },
-  {
-    "title": "Lazio vs Internazionale",
-    "league": "2026 • Italia - Serie A",
-    "start": "2026-05-09T11:00:00",
-    "end": "2026-05-09T13:00:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3jmBO-lCIQ3oOfqIZ8BkBeflhL8f04m_cKmW5b_PatHlQvANucdqFRDk&s=10",
-    "url": "go:disney11"
-  },
-  {
-    "title": "Manchester City vs Brentford",
-    "league": "2026 • Inglaterra - Premier League",
-    "start": "2026-05-09T11:30:00",
-    "end": "2026-05-09T13:30:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019dca51-f8a3-7c52-8160-d3b7a3e30187/compose?aspectRatio=1.78&format=webp&width=1200",
-    "url": "go:disney12"
-  },
-  {
-    "title": "Atlético Madrid vs Celta de Vigo",
-    "league": "2026 • España - LaLiga",
-    "start": "2026-05-09T11:30:00",
-    "end": "2026-05-09T13:30:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkyofIEG8xL-_nh81KMnKN5wHaK27jYW68Uf48F1PZ0Q&s=10",
-    "url": "go:espn3"
-  },
-  {
-    "title": "Wolfsburg vs Bayern München",
-    "league": "2026 • Alemania - Bundesliga",
-    "start": "2026-05-09T11:30:00",
-    "end": "2026-05-09T13:30:00",
-    "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401689638/16x9/1280x720_20240723213721.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "go:espndeport"
-  },
-  {
-    "title": "Real Valladolid vs Real Zaragoza",
-    "league": "2026 • España - LaLiga SmartBank",
-    "start": "2026-05-09T11:30:00",
-    "end": "2026-05-09T13:30:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCDNtrBA2DHDm1fFBclEJKaP9L3OKlHbkP4tRuCCm1hA&s=10",
-    "url": "go:hyper1"
-  },
   {
     "title": "Alanyaspor vs Kayserispor",
     "league": "2026 • Turquía - Super Lig",
@@ -273,7 +91,7 @@
     "start": "2026-05-09T13:30:00",
     "end": "2026-05-09T15:30:00",
     "image": "https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/BCVDPCUUWZDSTJJ6K52V4Q5NWQ.jpg",
-    "url": "##"
+    "url": "go:f1"
   },
   {
     "title": "Danubio vs Albion",
@@ -345,7 +163,7 @@
     "start": "2026-05-09T16:00:00",
     "end": "2026-05-09T18:00:00",
     "image": "https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/BCVDPCUUWZDSTJJ6K52V4Q5NWQ.jpg",
-    "url": "##"
+    "url": "go:f1"
   },
   {
     "title": "Fluminense vs Vitória",
@@ -361,7 +179,7 @@
     "start": "2026-05-09T16:30:00",
     "end": "2026-05-09T18:30:00",
     "image": "https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/BCVDPCUUWZDSTJJ6K52V4Q5NWQ.jpg",
-    "url": "##"
+    "url": "go:f1"
   },
   {
     "title": "Central Español vs Racing",
@@ -409,7 +227,7 @@
     "start": "2026-05-09T19:00:00",
     "end": "2026-05-09T21:00:00",
     "image": "https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/BCVDPCUUWZDSTJJ6K52V4Q5NWQ.jpg",
-    "url": "##"
+    "url": "go:f1"
   },
   {
     "title": "Bahia vs Cruzeiro",
