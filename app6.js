@@ -241,32 +241,3 @@ function loadChannelsOnly() {
     .catch(err => console.error("Error cargando canales:", err));
 }
 
-function loadErotismo() {
-  fetch("erotismo.json?v=" + Date.now())
-    .then(res => res.json())
-    .then(data => {
-      const container = document.getElementById("erotismoSection");
-      container.innerHTML = "";
-      data.forEach(item => {
-        const card = document.createElement("a");
-        card.className = "card";
-        card.setAttribute("tabindex", "0");
-        card.href = item.url;
-
-        card.innerHTML = `
-          <div class="img-container">
-            <img src="${item.image}" alt="${item.name}">
-          </div>
-          <div style="padding:10px; text-align:center;">
-            <h3>${item.name}</h3>
-            <p>${item.description}</p>
-          </div>
-        `;
-
-        container.appendChild(card);
-      });
-    })
-    .catch(err => console.error("Error cargando erotismo:", err));
-}
-
-
