@@ -43,126 +43,7 @@
   },
 
 
-  {
-    "title": "Al Aire Ahora",
- "league": "2026 • SportsCenter Am Colombia",
-    "start": "2026-05-08T11:00:00",
-    "end": "2026-05-08T12:00:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019c725a-a709-745b-9a3d-cb0ae4d73ae6/compose?format=webp&width=2560",
-    "url": "go:espn"
-  },
-  {
-    "title": "Al Aire Ahora",
- "league": "2026 • SportsCenter Am Colombia",
-    "start": "2026-05-08T12:00:00",
-    "end": "2026-05-08T15:00:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019c725a-a709-745b-9a3d-cb0ae4d73ae6/compose?format=webp&width=2560",
-    "url": "go:espn"
-  },
-  {
-    "title": "Al Kholood vs Al Hilal",
-    "league": "2026 • Copa del Rey de Arabia Saudita | Final",
-    "start": "2026-05-08T12:55:00",
-    "end": "2026-05-08T15:30:00",
-    "image": "https://assets.goal.com/images/v3/getty-2264536116/crop/MM5DGNZUGQ5DEMJQGY5G433XMU5DAORTHEYA====/GettyImages-2264536116.jpg?auto=webp&format=pjpg&width=3840&quality=60",
-    "url": "go:foxdeporte"
-  },
-  {
-    "title": "Borussia Dortmund vs Eintracht Frankfurt",
-    "league": "2026 • Alemania - Bundesliga",
-    "start": "2026-05-08T13:30:00",
-    "end": "2026-05-08T15:30:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUKTC1s94b9iLFlleugxOhF3rNr1loyPiypv3YuMI5boJ6Y2eOxH4mYmh_&s=10",
-    "url": "go:espn5"
-  },
-  {
-    "title": "Cádiz vs Deportivo La Coruña",
-    "league": "2026 • España - LaLiga SmartBank",
-    "start": "2026-05-08T13:30:00",
-    "end": "2026-05-08T15:30:00",
-    "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401795730/16x9/1280x720_20251231143854.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "go:hyper1"
-  },
-  {
-    "title": "Torino vs Sassuolo",
-    "league": "2026 • Italia - Serie A",
-    "start": "2026-05-08T13:45:00",
-    "end": "2026-05-08T15:45:00",
-    "image": "https://www.semana.com/resizer/v2/ONYSTKGMRFB2NMZKOSDS4SVCTY.png?auth=7eca135d9c384fd55df680500deed8189718c2ee2bf08451e202069a46178a01&smart=true&quality=75&width=1280&height=960",
-    "url": "go:disney3"
-  },
-  {
-    "title": "Lens vs Nantes",
-    "league": "2026 • Francia - Ligue 1",
-    "start": "2026-05-08T13:45:00",
-    "end": "2026-05-08T15:45:00",
-    "image": "https://image.discovery.indazn.com/ca/v2/ca/image?id=5iohv5q5x2rj6ogk5uteo2irl_image-header_pDach_1730401315000&quality=70",
-    "url": "go:espn2"
-  },
-  {
-    "title": "Levante vs Osasuna",
-    "league": "2026 • España - LaLiga",
-    "start": "2026-05-08T14:00:00",
-    "end": "2026-05-08T16:00:00",
-    "image": "https://statics-maker.llt-services.com/lev/images/2025/12/09/medium-wp/d5844ec4-34a2-4f87-ba56-337109bb803a-215.webp",
-    "url": "go:disney4"
-  },
-  {
-    "title": "Hull City vs Millwall",
-    "league": "2026 • Inglaterra - Championship",
-    "start": "2026-05-08T14:00:00",
-    "end": "2026-05-08T16:00:00",
-    "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/programs/52990ea7-a51a-488f-9793-153d47a58305/16x9/1280x720_201812102001.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "go:espn7"
-  },
-  {
-    "title": "UTC Cajamarca vs FC Cajamarca",
-    "league": "2026 • Perú - Liga 1",
-    "start": "2026-05-08T15:00:00",
-    "end": "2026-05-08T17:00:00",
-    "image": "https://a.espncdn.com/photo/2026/0302/r1621942_960x640_3-2.jpg",
-    "url": "go:liga1max"
-  },
-  {
-    "title": "Al Aire Ahora",
- "league": "2026 • Balón Dividido",
-    "start": "2026-05-08T15:00:00",
-    "end": "2026-05-08T17:00:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/019cfc77-0bf2-74b3-9414-033dd33f0e31/compose?aspectRatio=1.78&format=webp&width=1200",
-    "url": "go:espn"
-  },
-  {
-    "title": "LDU Portoviejo vs Atlético Cali",
-    "league": "2026 • Ecuador - Serie B",
-    "start": "2026-05-08T16:30:00",
-    "end": "2026-05-08T18:30:00",
-    "image": "https://imagenes.primicias.ec/files/og_thumbnail/files/fp/uploads/2024/11/24/67439ef3bd02f.r_d.1398-1416-0.jpeg",
-    "url": "go:86"
-  },
-  {
-    "title": "Al Aire Ahora",
- "league": "2026 • ESPN90",
-    "start": "2026-05-08T17:00:00",
-    "end": "2026-05-08T19:00:00",
-    "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/57fa18ff-80ae-4f63-8946-74a2247054a6/compose?format=webp&width=2880",
-    "url": "go:espn"
-  },
-  {
-    "title": "Knicks vs 76ers",
-    "league": "2026 • NBA",
-    "start": "2026-05-08T18:00:00",
-    "end": "2026-05-08T20:00:00",
-    "image": "https://artwork.espncdn.com/events/401655108/16x9/1280x720_20240418041646.jpg",
-    "url": "go:amazon1"
-  },
-  {
-    "title": "Orense vs Leones del Norte",
-    "league": "2026 • Ecuador - Serie A de Ecuador",
-    "start": "2026-05-08T19:00:00",
-    "end": "2026-05-08T21:00:00",
-    "image": "https://imagenes.extra.ec/files/image_composite_mobile/uploads/2025/08/21/68a7338464bb3.jpeg",
-    "url": "go:86"
-  },
+  
   {
     "title": "Banfield vs San Martín Tucumán",
     "league": "2026 • Argentina - Copa Argentina",
@@ -196,7 +77,7 @@
     "start": "2026-05-09T07:00:00",
     "end": "2026-05-09T09:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLcLHHbHlUwebOLIqWihj9DH0NZDKgTKrePSOHBnrv9kaQy5yB8li-EFI&s=10",
-    "url": "##"
+    "url": "go:espndeport"
   },
   {
     "title": "Ceuta vs CD Castellon",
