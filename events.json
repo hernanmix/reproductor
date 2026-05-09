@@ -125,7 +125,7 @@
     "start": "2026-05-09T08:30:00",
     "end": "2026-05-09T10:30:00",
     "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401564194/16x9/1280x720_20240228013951.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "##"
+    "url": "go:disney7"
   },
   {
     "title": "Augsburg vs Borussia M'gladbach",
@@ -133,7 +133,7 @@
     "start": "2026-05-09T08:30:00",
     "end": "2026-05-09T10:30:00",
     "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401340636/16x9/1280x720_20220125192913.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "##"
+    "url": "go:disney4"
   },
   {
     "title": "Brighton & Hove Albion vs Wolverhampton Wanderers",
@@ -141,7 +141,7 @@
     "start": "2026-05-09T09:00:00",
     "end": "2026-05-09T11:00:00",
     "image": "https://artwork.espncdn.com/airings/350041b2-a651-4af3-a482-857455d98a06/16x9/original_20210101213619.jpg",
-    "url": "##"
+    "url": "go:disney10"
   },
   {
     "title": "Sunderland vs Manchester United",
