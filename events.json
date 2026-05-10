@@ -95,7 +95,7 @@
     "start": "2026-05-10T05:30:00",
     "end": "2026-05-10T07:30:00",
     "image": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.56756d61-e2bd-45c1-8285-127551920116/1/BOXART-16X9/en-US._UR1920,1080_SX624_FMjpg_.jpeg",
-    "url": "##"
+    "url": "go:espn"
   },
   {
     "title": "Liverpool vs Brighton & Hove Albion",
@@ -111,7 +111,7 @@
     "start": "2026-05-10T07:00:00",
     "end": "2026-05-10T09:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFq7clSjptZSLdVOkpuUy0qxJgcllDxTRxHlYkfTPKIQ&s=10",
-    "url": "##"
+    "url": "go:disney1"
   },
   {
     "title": "FC Andorra vs Las Palmas",
@@ -119,7 +119,7 @@
     "start": "2026-05-10T07:00:00",
     "end": "2026-05-10T09:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL4hBk1Npc4TQ2qhwknZxSsViZGgBgpAj_3ZQRkpP5NwbZJX76iQ4wAJU&s=10",
-    "url": "##"
+    "url": "go:hyper1"
   },
   {
     "title": "Burnley vs Aston Villa",
@@ -127,7 +127,7 @@
     "start": "2026-05-10T08:00:00",
     "end": "2026-05-10T10:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvl2jrKMqf8mPOOGZwoSGbYD1APrxOAxn9D47DdLjNNBp01R9jh1wC3eEo&s=10",
-    "url": "##"
+    "url": "go:disney2"
   },
   {
     "title": "Crystal Palace vs Everton",
@@ -135,7 +135,7 @@
     "start": "2026-05-10T08:00:00",
     "end": "2026-05-10T10:00:00",
     "image": "https://anecdotarios.com/wp-content/uploads/2026/05/782510_0.png",
-    "url": "##"
+    "url": "go:disney3"
   },
   {
     "title": "Nottingham Forest vs Newcastle United",
@@ -143,7 +143,7 @@
     "start": "2026-05-10T08:00:00",
     "end": "2026-05-10T10:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVLLcabfYMK7xeAaEN3vMVa8lGTauuu1xzWsRVXa1kZU9KMoAou7lrobQ&s=10",
-    "url": "##"
+    "url": "go:disney4"
   },
   {
     "title": "Cremonese vs Pisa",
@@ -151,7 +151,7 @@
     "start": "2026-05-10T08:00:00",
     "end": "2026-05-10T10:00:00",
     "image": "https://image-service.onefootball.com/transform?w=280&h=210&dpr=2&image=https%3A%2F%2Fcdn-img.staticzz.com%2Fimg%2Fnoticias%2F829%2FimgS620I1119829T20260508141542.jpg",
-    "url": "##"
+    "url": "go:disney5"
   },
   {
     "title": "Fiorentina vs Genoa",
@@ -159,7 +159,7 @@
     "start": "2026-05-10T08:00:00",
     "end": "2026-05-10T10:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsJL311G04o8siq6nsb95dIOgxeG6CfgDABPYz6orjW0TCA-0DaueFyiY&s=10",
-    "url": "##"
+    "url": "go:disney6"
   },
   {
     "title": "Hamburger SV vs Freiburg",
@@ -167,7 +167,7 @@
     "start": "2026-05-10T08:30:00",
     "end": "2026-05-10T10:30:00",
     "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401793371/16x9/1280x720_20260421153628.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "##"
+    "url": "go:disney7"
   },
   {
     "title": "Defensor Sporting vs Juventud",
@@ -175,7 +175,7 @@
     "start": "2026-05-10T09:00:00",
     "end": "2026-05-10T11:00:00",
     "image": "https://i.deportesrcn.com/old/public/2025-09/defensor-sporting-vs-juventud.jpg",
-    "url": "##"
+    "url": "go:disney8"
   },
   {
     "title": "Athletic Club vs Valencia",
@@ -183,7 +183,7 @@
     "start": "2026-05-10T09:15:00",
     "end": "2026-05-10T11:15:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDxZFS6fczSiCQPX38_LciVFbKDqwWyy64uDAB9ueX0fMlxU__w0x4BJQ&s=10",
-    "url": "##"
+    "url": "go:dsports"
   },
   {
     "title": "Leganés vs Racing Santander",
@@ -191,7 +191,7 @@
     "start": "2026-05-10T09:15:00",
     "end": "2026-05-10T11:15:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw8kMnml_OPx3S66oJ9Fi2Q3-T995BXomK6hRUkK0GsQ01ZZmVQWMS9ICO&s=10",
-    "url": "##"
+    "url": "go:hyper1"
   },
   {
     "title": "Chelsea FC vs Manchester City",
@@ -199,7 +199,7 @@
     "start": "2026-05-10T09:30:00",
     "end": "2026-05-10T11:30:00",
     "image": "https://shekicks.net/wp-content/uploads/2025/03/Manchester-City-v-Chelsea-FC-UEFA-Womens-Champions-League-Quarter-Finals-First-Leg-1.jpg",
-    "url": "##"
+    "url": ""
   }, 
   {
     "title": "Feyenoord vs AZ",
@@ -207,7 +207,7 @@
     "start": "2026-05-10T09:45:00",
     "end": "2026-05-10T11:45:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaLQtR1JCv5dzWfKwNxgL9zy4gdt8e-ilsahcdKya8Ag&s=10",
-    "url": "##"
+    "url": "go:disney9"
   },
   {
     "title": "Go Ahead Eagles vs PSV",
@@ -215,7 +215,7 @@
     "start": "2026-05-10T09:45:00",
     "end": "2026-05-10T11:45:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg0EaTBn8LLAr2xII65Y33yVBPldDl41FMX2ONLT-kXC6UTsTanaBHJq1o&s=10",
-    "url": "##"
+    "url": "go:disney10"
   },
   {
     "title": "Ajax vs Utrecht",
@@ -223,15 +223,7 @@
     "start": "2026-05-10T09:45:00",
     "end": "2026-05-10T11:45:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHgqLa-RoCngS_SR2KLbdFL5sXxJzXn7MWcNCm5fU98HF_cfIdo_14YG4&s=10",
-    "url": "##"
-  },
-  {
-    "title": "Twente vs Sparta Rotterdam",
-    "league": "2026 • Países Bajos - Eredivisie en Países Bajos",
-    "start": "2026-05-10T09:45:00",
-    "end": "2026-05-10T11:45:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkJVMQ3GCJGqS3nmIx8uczvt1Ps_5ceTT93EPiUASoOSJAZHXkWFi3PcIr&s=10",
-    "url": "##"
+    "url": "go:disney11"
   },
   {
     "title": "West Ham United vs Arsenal",
@@ -239,7 +231,7 @@
     "start": "2026-05-10T10:30:00",
     "end": "2026-05-10T12:30:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRQ1_E1QhzcjVFMz1HOd4vLJZtY1mLt68wXtQjSIOJngjgzm_jUbtphkda&s=10",
-    "url": "##"
+    "url": "go:disney13"
   },
   {
     "title": "Köln vs Heidenheim",
@@ -247,7 +239,7 @@
     "start": "2026-05-10T10:30:00",
     "end": "2026-05-10T12:30:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSOsgNP7kIKOFGiTO4FLL4-txMe7xoQeuWMNkxMpyVFw&s=10",
-    "url": "##"
+    "url": "go:disney14"
   },
   {
     "title": "Parma vs Roma",
@@ -255,7 +247,7 @@
     "start": "2026-05-10T11:00:00",
     "end": "2026-05-10T13:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRizHeVTKoV4SZb6R0rnD2Zuo5ngciZF04fCtWBe9aQc9DT7HlSul36iKM&s=10",
-    "url": "##"
+    "url": "go:disney15"
   },
   {
     "title": "Real Oviedo vs Getafe",
