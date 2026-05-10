@@ -46,14 +46,7 @@
 
 
   
-  {
-    "title": "Nashville SC vs DC United",
-    "league": "2026 • EE. UU./Canadá - Major League Soccer",
-    "start": "2026-05-09T20:15:00",
-    "end": "2026-05-09T22:17:00",
-    "image": "https://images.mlssoccer.com/image/private/t_editorial_landscape_12_desktop/prd-league/enlblvypb8xe5u6on53j.png",
-    "url": "go:foxdeporte"
-  },
+  
   {
     "title": "Colorado Rapids vs St. Louis City",
     "league": "2026 • MLS",
@@ -546,6 +539,14 @@
     "url": "go:fanatiz5"
   },
   {
+    "title": "Spurs vs Timberwolves",
+    "league": "2026 • NBA",
+    "start": "2026-05-10T18:30:00",
+    "end": "2026-05-10T20:30:00",
+    "image": "https://graffica.info/wp-content/uploads/2017/08/NBA-logo-png-download-free.png",
+    "url": "go:max1"
+  },
+  {
     "title": "Vélez Sarsfield vs Gimnasia La Plata",
     "league": "2026 • Argentina - Liga Profesional",
     "start": "2026-05-10T19:30:00",
@@ -560,6 +561,14 @@
     "end": "2026-05-10T22:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH942S6p4GhCEDBqV6_QvT4rMLahOy4NbwGPpw9bRi0A&s=10",
     "url": "go:mls3"
+  },
+  {
+    "title": "Pumas UNAM vs América",
+    "league": "2026 • Liga MX",
+    "start": "2026-05-10T20:15:00",
+    "end": "2026-05-10T22:14:00",
+    "image": "https://images2.minutemediacdn.com/image/upload/c_crop,x_300,y_84,w_2508,h_1410/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/GettyImages/mmsport/90min_es_international_web/01jmad212qdxe8y0dmpa.jpg",
+    "url": "go:canal5mx"
   }
   
   
