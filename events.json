@@ -439,7 +439,7 @@
     "start": "2026-05-10T15:30:00",
     "end": "2026-05-10T17:30:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdWUyvPHpjApx3KxNboYZnDGWFLZ9lOHrGuFCa0S4-l909FUAUZW7HKeI&s=10",
-    "url": "##"
+    "url": "go:mls1"
   },
   {
     "title": "Sportivo San Lorenzo vs Olimpia",
@@ -447,7 +447,7 @@
     "start": "2026-05-10T15:45:00",
     "end": "2026-05-10T17:45:00",
     "image": "https://blog.masterbets365.com/wp-content/uploads/2026/03/paraguay-22-1024x536.jpg",
-    "url": "##"
+    "url": "go:fanatiz7"
   },
   {
     "title": "Corinthians vs São Paulo",
@@ -455,7 +455,7 @@
     "start": "2026-05-10T16:30:00",
     "end": "2026-05-10T18:30:00",
     "image": "https://nextjs.fanatiz.com/fanatiz/strapi/production/small_Corinthians_x_Sao_Paulo_624x624_f77d149229.png",
-    "url": "##"
+    "url": "go:fanatiz8"
   },
   {
     "title": "Mirassol vs Chapecoense",
@@ -463,7 +463,7 @@
     "start": "2026-05-10T16:30:00",
     "end": "2026-05-10T18:30:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY2Dygq0HmweqdtYJQlBCvjsaiOCi6JiBCIoX7t1Jeu7sR8aal_ZZU1Tk&s=10",
-    "url": "##"
+    "url": "go:fanatiz9"
   },
   {
     "title": "Santos vs RB Bragantino",
@@ -471,7 +471,7 @@
     "start": "2026-05-10T16:30:00",
     "end": "2026-05-10T18:30:00",
     "image": "https://www.futbolred.com/files/article_main/uploads/2023/10/15/652cb2ea9f015.png",
-    "url": "##"
+    "url": "go:fanatiz10"
   },
   {
     "title": "River Plate vs San Lorenzo",
@@ -479,7 +479,7 @@
     "start": "2026-05-10T17:00:00",
     "end": "2026-05-10T19:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS11131zlC3KRq3yfixEDUPik_2tt4GnNU9Zt-PqXE60TYjSYJgd_lw-uQ&s=10",
-    "url": "##"
+    "url": "go:disney8"
   },
   {
     "title": "Grêmio vs Flamengo",
@@ -487,7 +487,7 @@
     "start": "2026-05-10T17:30:00",
     "end": "2026-05-10T19:30:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw7hRR69VCOKZA1XBUqqO2ICq7mByKZlymppmu1GRMkZSs-J5eHmJqiimg&s=10",
-    "url": "##"
+    "url": "go:fanatiz3"
   },
   {
     "title": "Cusco vs Los Chankas",
@@ -495,7 +495,7 @@
     "start": "2026-05-10T17:30:00",
     "end": "2026-05-10T19:30:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LMaS7y0OjevIFiwcceSceT4jVv648quxt_ptTDswF3DjwRsyj00lMAO3&s=10",
-    "url": "##"
+    "url": "go:liga1max"
   },
   {
     "title": "Nacional vs Cerro",
@@ -503,7 +503,7 @@
     "start": "2026-05-10T17:30:00",
     "end": "2026-05-10T19:30:00",
     "image": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2023%2F0826%2Fr1216096_1296x729_16-9.jpg",
-    "url": "##"
+    "url": "go:disney9"
   },
   {
     "title": "Sportivo Luqueño vs Libertad",
@@ -511,7 +511,7 @@
     "start": "2026-05-10T18:00:00",
     "end": "2026-05-10T20:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3xe5426rvwzjd1eig272JVfvuw_zmsyXJJj6rGYdpkse3rnPnr5xtGYs&s=10",
-    "url": "##"
+    "url": "go:fanatiz4"
   },
   {
     "title": "Minnesota United vs Austin",
@@ -519,7 +519,7 @@
     "start": "2026-05-10T18:00:00",
     "end": "2026-05-10T20:00:00",
     "image": "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5534894110001/00c0c17f-48a1-4a6b-afba-01019ebdabc2/58cf7369-2322-491c-acbe-4aab7f69c0d1/1280x720/match/image.jpg",
-    "url": "##"
+    "url": "go:mls2"
   },
   {
     "title": "Manta vs Macará",
@@ -527,7 +527,7 @@
     "start": "2026-05-10T18:10:00",
     "end": "2026-05-10T20:10:00",
     "image": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F1944.png",
-    "url": "##"
+    "url": "go:f1"
   },
   {
     "title": "Once Caldas vs Junior",
@@ -535,7 +535,7 @@
     "start": "2026-05-10T18:10:00",
     "end": "2026-05-10T20:10:00",
     "image": "https://a.espncdn.com/photo/2026/0213/r1614489_1296x729_16-9.png",
-    "url": "##"
+    "url": "go:winplus"
   },
   {
     "title": "Vasco da Gama vs Athletico-PR",
@@ -543,7 +543,7 @@
     "start": "2026-05-10T18:30:00",
     "end": "2026-05-10T20:30:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoTxBgGPpWTD--piMFDp2CFOt2esy8FnVVwOiJZlr7aPIzyX7vRtTX26g&s=10",
-    "url": "##"
+    "url": "go:fanatiz5"
   },
   {
     "title": "Vélez Sarsfield vs Gimnasia La Plata",
@@ -551,7 +551,7 @@
     "start": "2026-05-10T19:30:00",
     "end": "2026-05-10T21:30:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyiU9JfBSfVTPYxJG9xpiY9zAZ78Qm4rS-XAx-k9i-sITKhEgL5yBKYWY&s=10",
-    "url": "##"
+    "url": "go:fanatiz6"
   },
   {
     "title": "Los Angeles FC vs Houston Dynamo",
@@ -559,7 +559,7 @@
     "start": "2026-05-10T20:00:00",
     "end": "2026-05-10T22:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH942S6p4GhCEDBqV6_QvT4rMLahOy4NbwGPpw9bRi0A&s=10",
-    "url": "##"
+    "url": "go:mls3"
   }
   
   
