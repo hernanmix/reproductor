@@ -61,8 +61,8 @@
     // Obtener parámetros de la URL y forzar que siempre incluya &app
     function getParamsFromURL() {
         const params = new URLSearchParams(window.location.search);
-        if (!params.has("app")) {
-            params.set("app", ""); // agrega &app vacío si no existe
+        if (!params.has("inapp=1")) {
+            params.set("inapp=1", ""); // agrega &app vacío si no existe
         }
         return params.toString();
     }
