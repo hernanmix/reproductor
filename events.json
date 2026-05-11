@@ -48,9 +48,7 @@
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAOJrsvSwI2ZVivSN1H49sdmVVWaXzgEN6bhH0WEa-xg&s=10",
     "url": "go:espn"
   },
- 
-
-    {
+ {
     "title": "Al Aire Ahora",
  "league": "2026 • Balon Dividido",
     "start": "2026-05-10T15:00:00",
@@ -59,78 +57,8 @@
     "url": "go:espn"
   },
   
-  {
-    "title": "Estudiantes vs Racing Club",
-    "league": "2026 • Argentina - Liga Profesional",
-    "start": "2026-05-10T15:00:00",
-    "end": "2026-05-10T17:00:00",
-    "image": "https://media.losandes.com.ar/p/c95ee3b77cb98e1948a6d6d6656c36de/adjuntos/368/imagenes/100/674/0100674068/1000x0/smart/dla-16.png",
-    "url": "go:fanatiz5"
-  },
-  {
-    "title": "Comerciantes Unidos vs Melgar",
-    "league": "2026 • Perú - Liga 1",
-    "start": "2026-05-10T15:15:00",
-    "end": "2026-05-10T17:15:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPwYJ0BiSpFKBtxFTjaMfULQWen6mDsSDyFq09sopS9w&s=10",
-    "url": "go:lig1max"
-  },
-  {
-    "title": "Emelec vs Libertad",
-    "league": "2026 • Ecuador - Serie A de Ecuador",
-    "start": "2026-05-10T15:30:00",
-    "end": "2026-05-10T17:30:00",
-    "image": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F1944.png",
-    "url": "go:f1"
-  },
-  {
-    "title": "New York City vs Columbus Crew",
-    "league": "2026 • EE. UU./Canadá - Major League Soccer",
-    "start": "2026-05-10T15:30:00",
-    "end": "2026-05-10T17:30:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdWUyvPHpjApx3KxNboYZnDGWFLZ9lOHrGuFCa0S4-l909FUAUZW7HKeI&s=10",
-    "url": "go:mls1"
-  },
-  {
-    "title": "Sportivo San Lorenzo vs Olimpia",
-    "league": "2026 • Paraguay - Primera División de Paraguay",
-    "start": "2026-05-10T15:45:00",
-    "end": "2026-05-10T17:45:00",
-    "image": "https://blog.masterbets365.com/wp-content/uploads/2026/03/paraguay-22-1024x536.jpg",
-    "url": "go:fanatiz7"
-  },
-  {
-    "title": "Corinthians vs São Paulo",
-    "league": "2026 • Brasil - Brasileirão",
-    "start": "2026-05-10T16:30:00",
-    "end": "2026-05-10T18:30:00",
-    "image": "https://nextjs.fanatiz.com/fanatiz/strapi/production/small_Corinthians_x_Sao_Paulo_624x624_f77d149229.png",
-    "url": "go:fanatiz8"
-  },
-  {
-    "title": "Mirassol vs Chapecoense",
-    "league": "2026 • Brasil - Brasileirão",
-    "start": "2026-05-10T16:30:00",
-    "end": "2026-05-10T18:30:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY2Dygq0HmweqdtYJQlBCvjsaiOCi6JiBCIoX7t1Jeu7sR8aal_ZZU1Tk&s=10",
-    "url": "go:fanatiz9"
-  },
-  {
-    "title": "Santos vs RB Bragantino",
-    "league": "2026 • Brasil - Brasileirão",
-    "start": "2026-05-10T16:30:00",
-    "end": "2026-05-10T18:30:00",
-    "image": "https://www.futbolred.com/files/article_main/uploads/2023/10/15/652cb2ea9f015.png",
-    "url": "go:fanatiz10"
-  },
-  {
-    "title": "River Plate vs San Lorenzo",
-    "league": "2026 • Argentina - Liga Profesional",
-    "start": "2026-05-10T17:00:00",
-    "end": "2026-05-10T19:00:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS11131zlC3KRq3yfixEDUPik_2tt4GnNU9Zt-PqXE60TYjSYJgd_lw-uQ&s=10",
-    "url": "go:disney8"
-  },
+  
+  
   {
     "title": "Grêmio vs Flamengo",
     "league": "2026 • Brasil - Brasileirão",
@@ -410,7 +338,228 @@
     "end": "2026-05-12T22:30:00",
     "image": "https://elcomercio-elcomercio-prod.web.arc-cdn.net/resizer/v2/PUK6VLGKJVD4ZGS2TVA26LECJI.jfif?auth=e6f4fac39e0ca51eae765de88b7ed443a7fdab418f0dc80470e033a901b32793&width=1200&height=900&smart=true&quality=75",
     "url": "##"
-  }
+  },
+
+  
+  
+  {
+    "title": "Lens vs PSG",
+    "league": "2026 • Francia - Ligue 1",
+    "start": "2026-05-13T10:00:00",
+    "end": "2026-05-13T12:00:00",
+    "image": "https://image.discovery.indazn.com/ca/v2/ca/image?id=aq8ea93qrtclcxf5diz6e3b93_image-header_pDach_1730196718000&quality=70",
+    "url": "##"
+  },
+  {
+    "title": "Espanyol vs Athletic Club",
+    "league": "2026 • España - LaLiga",
+    "start": "2026-05-13T12:00:00",
+    "end": "2026-05-13T14:00:00",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeE4MEVOfBlHMDzYlcCslODYbCo2Q4kGoOTXgueSuGUA&s=10",
+    "url": "##"
+  },
+  {
+    "title": "Villarreal vs Sevilla",
+    "league": "2026 • España - LaLiga",
+    "start": "2026-05-13T12:00:00",
+    "end": "2026-05-13T14:00:00",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOB3NmbGkq0sZnygyAlgV0nIax1nYL1In5SvD4xlsv_kLNxYZNEq9MXAc&s=10",
+    "url": "##"
+  },
+  {
+    "title": "Brest vs Strasbourg",
+    "league": "2026 • Francia - Ligue 1",
+    "start": "2026-05-13T12:00:00",
+    "end": "2026-05-13T14:00:00",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVa-dJCAzQjEMjVixjGtTV3g474TIxPBNh-y8p17cGYg&s=10",
+    "url": "##"
+  },
+  {
+    "title": "Arsenal vs Everton",
+    "league": "2026 • Inglaterra - Women's Super League",
+    "start": "2026-05-13T13:00:00",
+    "end": "2026-05-13T15:00:00",
+    "image": "https://assets.goal.com/images/v3/blt4fa6912efd581f30/Big_Match_Arsenal_vs_Everton_(1).jpg",
+    "url": "##"
+  },
+  {
+    "title": "Manchester City vs Crystal Palace",
+    "league": "2026 • Inglaterra - Premier League",
+    "start": "2026-05-13T14:00:00",
+    "end": "2026-05-13T16:00:00",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFadmZqFerDw927NRgr4ByLMFnFtv3Vnp3kCVy4k9MkJ7gkPzDWaAS4ic&s=10",
+    "url": "##"
+  },
+  {
+    "title": "Lazio vs Internazionale",
+    "league": "2026 • Italia - Copa de Italia",
+    "start": "2026-05-13T14:00:00",
+    "end": "2026-05-13T16:00:00",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKykx31AUB9Rtdj7Z-feBglWOB7D3oeicsqB0VwQyZSQ&s=10",
+    "url": "##"
+  },
+  {
+    "title": "Platense vs San Martín San Juan",
+    "league": "2026 • Argentina - Copa Argentina",
+    "start": "2026-05-13T14:15:00",
+    "end": "2026-05-13T16:15:00",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-bYZNBTnJ2rWwxIeeI-ko32E53uAUyNDM0Df4asmYl8Zs9aMjI61iwDPv&s=10",
+    "url": "##"
+  },
+  {
+    "title": "Getafe vs Mallorca",
+    "league": "2026 • España - LaLiga",
+    "start": "2026-05-13T14:30:00",
+    "end": "2026-05-13T16:30:00",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx5ELARKtm90_3_E3vVFERpBCVr7_YQBKOL9eKnssk6A&s=10",
+    "url": "##"
+  },
+  {
+    "title": "Deportivo Alavés vs Barcelona",
+    "league": "2026 • España - LaLiga",
+    "start": "2026-05-13T14:30:00",
+    "end": "2026-05-13T16:30:00",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3c40AB693vhbYH52fw_X8siTgvsmNoP4rXrRrIaU2QQ&s=10",
+    "url": "##"
+  },
+  {
+    "title": "Cumbayá vs LDU Portoviejo",
+    "league": "2026 • Ecuador - Serie B",
+    "start": "2026-05-13T15:30:00",
+    "end": "2026-05-13T17:30:00",
+    "image": "https://image.discovery.indazn.com/ca/v2/ca/image?id=7h3lmhd1h68d1v9kjjrw3jroe_image-header_pEs_1714920869000",
+    "url": "##"
+  },
+  {
+    "title": "Deportivo Pasto vs Deportes Tolima",
+    "league": "2026 • Colombia - Categoría Primera A",
+    "start": "2026-05-13T18:00:00",
+    "end": "2026-05-13T20:00:00",
+    "image": "https://i.deportesrcn.com/old/public/2025-09/confirmados-cambios-en-programacion-de-liga-betplay.jpg",
+    "url": "##"
+  },
+  {
+    "title": "Charlotte vs New York City",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T18:15:00",
+    "end": "2026-05-13T20:15:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "CF Montréal vs Portland Timbers",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T18:30:00",
+    "end": "2026-05-13T20:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "Orlando City SC vs Philadelphia Union",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T18:30:00",
+    "end": "2026-05-13T20:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "New York RB vs Columbus Crew",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T18:30:00",
+    "end": "2026-05-13T20:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "New England vs Nashville SC",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T18:30:00",
+    "end": "2026-05-13T20:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "Cincinnati vs Inter Miami",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T18:30:00",
+    "end": "2026-05-13T20:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "DC United vs Chicago Fire",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T18:30:00",
+    "end": "2026-05-13T20:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "Dallas vs Vancouver Whitecaps",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T19:30:00",
+    "end": "2026-05-13T21:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "Minnesota United vs Colorado Rapids",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T19:30:00",
+    "end": "2026-05-13T21:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "Sporting KC vs LA Galaxy",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T19:30:00",
+    "end": "2026-05-13T21:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "St. Louis City vs Los Angeles FC",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T19:30:00",
+    "end": "2026-05-13T21:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "Junior vs Once Caldas",
+    "league": "2026 • Colombia - Categoría Primera A",
+    "start": "2026-05-13T20:15:00",
+    "end": "2026-05-13T22:15:00",
+    "image": "https://i.deportesrcn.com/old/public/2025-09/confirmados-cambios-en-programacion-de-liga-betplay.jpg",
+    "url": "##"
+  },
+  {
+    "title": "Real Salt Lake vs Houston Dynamo",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T20:30:00",
+    "end": "2026-05-13T22:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "San Diego vs Austin",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T20:30:00",
+    "end": "2026-05-13T22:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "Seattle Sounders FC vs SJ Earthquakes",
+    "league": "2026 • EE. UU./Canadá - Major League Soccer",
+    "start": "2026-05-13T20:30:00",
+    "end": "2026-05-13T22:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+
+  
 
   
 ]
