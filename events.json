@@ -59,107 +59,12 @@
   
   
   
-  {
-    "title": "Grêmio vs Flamengo",
-    "league": "2026 • Brasil - Brasileirão",
-    "start": "2026-05-10T17:30:00",
-    "end": "2026-05-10T19:30:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw7hRR69VCOKZA1XBUqqO2ICq7mByKZlymppmu1GRMkZSs-J5eHmJqiimg&s=10",
-    "url": "go:fanatiz3"
-  },
-  {
-    "title": "Cusco vs Los Chankas",
-    "league": "2026 • Perú - Liga 1",
-    "start": "2026-05-10T17:30:00",
-    "end": "2026-05-10T19:30:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LMaS7y0OjevIFiwcceSceT4jVv648quxt_ptTDswF3DjwRsyj00lMAO3&s=10",
-    "url": "go:liga1max"
-  },
-  {
-    "title": "Nacional vs Cerro",
-    "league": "2026 • Uruguay - Primera División",
-    "start": "2026-05-10T17:30:00",
-    "end": "2026-05-10T19:30:00",
-    "image": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2023%2F0826%2Fr1216096_1296x729_16-9.jpg",
-    "url": "go:disney9"
-  },
-  {
-    "title": "Sportivo Luqueño vs Libertad",
-    "league": "2026 • Paraguay - Primera División de Paraguay",
-    "start": "2026-05-10T18:00:00",
-    "end": "2026-05-10T20:00:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3xe5426rvwzjd1eig272JVfvuw_zmsyXJJj6rGYdpkse3rnPnr5xtGYs&s=10",
-    "url": "go:fanatiz4"
-  },
-  {
-    "title": "Minnesota United vs Austin",
-    "league": "2026 • EE. UU./Canadá - Major League Soccer",
-    "start": "2026-05-10T18:00:00",
-    "end": "2026-05-10T20:00:00",
-    "image": "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5534894110001/00c0c17f-48a1-4a6b-afba-01019ebdabc2/58cf7369-2322-491c-acbe-4aab7f69c0d1/1280x720/match/image.jpg",
-    "url": "go:mls2"
-  },
-  {
-    "title": "Manta vs Macará",
-    "league": "2026 • Ecuador - Serie A de Ecuador",
-    "start": "2026-05-10T18:10:00",
-    "end": "2026-05-10T20:10:00",
-    "image": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F1944.png",
-    "url": "go:f1"
-  },
-  {
-    "title": "Once Caldas vs Junior",
-    "league": "2026 • Colombia - Categoría Primera A",
-    "start": "2026-05-10T18:10:00",
-    "end": "2026-05-10T20:10:00",
-    "image": "https://a.espncdn.com/photo/2026/0213/r1614489_1296x729_16-9.png",
-    "url": "go:winplus"
-  },
-  {
-    "title": "Vasco da Gama vs Athletico-PR",
-    "league": "2026 • Brasil - Brasileirão",
-    "start": "2026-05-10T18:30:00",
-    "end": "2026-05-10T20:30:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoTxBgGPpWTD--piMFDp2CFOt2esy8FnVVwOiJZlr7aPIzyX7vRtTX26g&s=10",
-    "url": "go:fanatiz5"
-  },
-  {
-    "title": "Spurs vs Timberwolves",
-    "league": "2026 • NBA",
-    "start": "2026-05-10T18:30:00",
-    "end": "2026-05-10T20:30:00",
-    "image": "https://graffica.info/wp-content/uploads/2017/08/NBA-logo-png-download-free.png",
-    "url": "go:max1"
-  },
-  {
-    "title": "Vélez Sarsfield vs Gimnasia La Plata",
-    "league": "2026 • Argentina - Liga Profesional",
-    "start": "2026-05-10T19:30:00",
-    "end": "2026-05-10T21:30:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyiU9JfBSfVTPYxJG9xpiY9zAZ78Qm4rS-XAx-k9i-sITKhEgL5yBKYWY&s=10",
-    "url": "go:fanatiz6"
-  },
-  {
-    "title": "Los Angeles FC vs Houston Dynamo",
-    "league": "2026 • EE. UU./Canadá - Major League Soccer",
-    "start": "2026-05-10T20:00:00",
-    "end": "2026-05-10T22:00:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH942S6p4GhCEDBqV6_QvT4rMLahOy4NbwGPpw9bRi0A&s=10",
-    "url": "go:mls3"
-  },
-  {
-    "title": "Pumas UNAM vs América",
-    "league": "2026 • Liga MX",
-    "start": "2026-05-10T20:15:00",
-    "end": "2026-05-10T22:14:00",
-    "image": "https://images2.minutemediacdn.com/image/upload/c_crop,x_300,y_84,w_2508,h_1410/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/images/GettyImages/mmsport/90min_es_international_web/01jmad212qdxe8y0dmpa.jpg",
-    "url": "go:canal5mx"
-  },
+  
   {
     "title": "Al Aire Ahora",
  "league": "2026 • F90",
     "start": "2026-05-10T22:00:00",
-    "end": "2026-05-10T00:00:00",
+    "end": "2026-05-10T06:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6PSt5udjeWffjWqOrhzEc5mEfkJlUkJC7EuXoplgAMw&s=10",
     "url": "go:espn"
   },
