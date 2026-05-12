@@ -90,7 +90,7 @@
     "start": "2026-05-12T12:00:00",
     "end": "2026-05-12T14:00:00",
     "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401795244/16x9/1280x720_20251010031834.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "##"
+    "url": "go:espndeport"
   },
   {
     "title": "Real Betis vs Elche",
@@ -106,7 +106,7 @@
     "start": "2026-05-12T13:30:00",
     "end": "2026-05-12T15:30:00",
     "image": "https://www.soccerpunter.com/images/h2h/og/1083/9291.png",
-    "url": "##"
+    "url": "go:1f"
   },
   {
     "title": "Southampton vs Middlesbrough",
@@ -130,7 +130,7 @@
     "start": "2026-05-12T15:00:00",
     "end": "2026-05-12T17:00:00",
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/23/Logo_Copa_Ecuador_2022.jpg",
-    "url": "##"
+    "url": "go:86"
   },
   {
     "title": "Baños Ciudad de Fuego vs Delfin",
@@ -138,7 +138,7 @@
     "start": "2026-05-12T18:00:00",
     "end": "2026-05-12T20:00:00",
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/23/Logo_Copa_Ecuador_2022.jpg",
-    "url": "##"
+    "url": "go:86"
   },
   {
     "title": "Atlético Nacional vs Inter Bogotá",
