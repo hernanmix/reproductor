@@ -90,7 +90,7 @@
     "start": "2026-05-12T12:00:00",
     "end": "2026-05-12T14:00:00",
     "image": "https://s.secure.espncdn.com/stitcher/artwork/16x9.jpg?height=720&width=1280&cb=12&templateId=espn.core.dtc.large.16x9.1&source=https://artwork.espncdn.com/events/401795244/16x9/1280x720_20251010031834.jpg&showBadge=true&package=ESPN_PLUS",
-    "url": "go:espndeport"
+    "url": "go:espnplus1"
   },
   {
     "title": "Real Betis vs Elche",
@@ -98,7 +98,7 @@
     "start": "2026-05-12T13:00:00",
     "end": "2026-05-12T15:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSnSXskamNLESPn1iUGcMLkzRewKgstr9s1TmmiGmfKA&s=10",
-    "url": "go:espnplus1"
+    "url": "go:disney1"
   },
   {
     "title": "Red Star vs Rodez",
