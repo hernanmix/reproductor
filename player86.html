@@ -1,118 +1,84 @@
-   <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Reproductor HD - Stream Rápido</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reproductor Fluido</title>
 <style>
-    * {margin:0; padding:0; box-sizing:border-box; user-select:none; -webkit-tap-highlight-color:transparent;}
-    body, html {width:100%; height:100%; overflow:hidden; position:fixed; background:#000;}
-    #iframeContainer {position:fixed; left:0; top:0; width:100%; height:100%; border:0; z-index:1;}
-    .loading-spinner {position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index:9999; width:40px; height:40px; border:3px solid rgba(255,255,255,0.2); border-radius:50%; border-top-color:#fff; animation:spin 0.6s linear infinite;}
-    @keyframes spin { to { transform:translate(-50%,-50%) rotate(360deg); } }
-    .hidden {display:none !important;}
-    .danicode-brand {position:fixed; top:12px; right:16px; z-index:10000; font-family:'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif; font-size:13px; font-weight:600; color:rgba(255,255,255,0.75); background:rgba(0,0,0,0.5); backdrop-filter:blur(6px); padding:5px 12px; border-radius:30px; letter-spacing:0.3px; pointer-events:none; text-shadow:0 1px 2px rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.2); transition:opacity 0.2s ease;}
-    #exitFs {
-        position:fixed;
-        top:12px;
-        left:16px;
-        z-index:10001;
-        width:40px;
-        height:40px;
-        border-radius:50%;
-        background:rgba(0,0,0,0.5);
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        cursor:pointer;
-        transition:background 0.2s;
-    }
-    #exitFs:hover {background:rgba(255,255,255,0.2);}
-    #exitFs svg {width:20px; height:20px; fill:#fff;}
-    @media (max-width:480px){
-        .danicode-brand{font-size:11px; padding:4px 10px; top:10px; right:12px;}
-        #exitFs{width:32px;height:32px; top:10px; left:12px;}
-        #exitFs svg{width:16px;height:16px;}
-    }
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+  .player-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .exit-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: background-color 0.3s;
+  }
+  .exit-button:hover { background-color: rgba(0,0,0,0.6); }
+  .exit-button svg { width: 20px; height: 20px; fill: #fff; }
 </style>
 </head>
 <body>
 
-<div id="mainSpinner" class="loading-spinner"></div>
-<div class="danicode-brand">HsportsEc</div>
-
-<!-- Botón de retroceso -->
-<div id="exitFs" title="Volver al inicio">
-    <svg viewBox="0 0 24 24">
-        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    </svg>
+<div class="player-container">
+  <iframe id="videoPlayer" allowfullscreen allow="autoplay; fullscreen"></iframe>
 </div>
 
-<iframe id="iframeContainer" allowfullscreen="true" frameborder="0" mozallowfullscreen="true" scrolling="no" webkitallowfullscreen="true" sandbox="allow-same-origin allow-scripts allow-forms allow-modals" referrerpolicy="no-referrer" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" src="about:blank" style="will-change: transform; transform: translateZ(0px); touch-action: none; user-select: none; width: 100%; height: 100%;"></iframe>
+<!-- Botón de salida -->
+<div class="exit-button" onclick="exitFs()">
+  <svg viewBox="0 0 24 24">
+    <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+  </svg>
+</div>
 
 <script>
-(function() {
-    const iframe = document.getElementById('iframeContainer');
-    const spinner = document.getElementById('mainSpinner');
-    const exitFs = document.getElementById('exitFs');
+  // ✅ Obtener canal desde la URL (?ch=1 ... ?ch=200)
+  function getChannelParam() {
+    const params = new URLSearchParams(window.location.search);
+    let ch = params.get("ch");
+    if (!ch) { ch = "1"; } // valor por defecto
+    return ch;
+  }
 
-    // FUNCIONES
-    function ocultarSpinner() { if(spinner) spinner.classList.add('hidden'); }
-    function decodeFromBase64(encoded) { try { return atob(encoded); } catch(e){ return ''; } }
-    function encodeToBase64(str) { try { return btoa(str); } catch(e){ return ''; } }
-    function getUrlParam(name) {
-        const regex = new RegExp('[\\?&]'+name.replace(/[\[\]]/g,'\\$&')+'=([^&#]*)');
-        const results = regex.exec(location.search);
-        return results===null?'':decodeURIComponent(results[1].replace(/\+/g,' '));
+  const iframe = document.getElementById('videoPlayer');
+  const channel = getChannelParam();
+
+  // ✅ Construir URL final con inapp=1
+  iframe.src = `https://live-stream-scraper--hsportshd.replit.app/?ch=${channel}&inapp=1`;
+
+  // ✅ Botón de salida
+  function exitFs() {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
     }
-
-    // LIMPIEZA DE PUBLICIDAD (simplificada)
-    function limpiarPublicidad() {
-        const selectoresAds = ['[class*="banner"]','[class*="ad"]','[id*="ad"]','[id*="banner"]'];
-        selectoresAds.forEach(sel=>{
-            document.querySelectorAll(sel).forEach(el=>{ el.style.cssText='display:none !important'; setTimeout(()=>el.remove(),200); });
-        });
-    }
-
-    // ==================== CARGAR PLAYER ====================
-    let player = getUrlParam('player'); // obtiene ?player=1/86
-    let url = getUrlParam('url');       // obtiene ?url=base64
-
-    if(url) {
-        iframe.src = decodeFromBase64(url);
-    } else if(player) {
-        const fullUrl = `https://cartelive.club/player/${player}`;
-        const base64Url = encodeToBase64(fullUrl);
-        iframe.src = decodeFromBase64(base64Url);
-        const newUrl = window.location.origin + window.location.pathname + '?url=' + base64Url;
-        window.history.replaceState(null, '', newUrl);
-    } else {
-        iframe.src = 'about:blank';
-    }
-
-    // ==================== EVENTOS ====================
-    iframe.onload = ocultarSpinner;
-    iframe.onerror = ocultarSpinner;
-    setTimeout(ocultarSpinner,2500);
-    setInterval(limpiarPublicidad,3000);
-
-    document.oncontextmenu = e=>e.preventDefault();
-    document.onselectstart = e=>e.preventDefault();
-    document.ondragstart = e=>e.preventDefault();
-    document.addEventListener('keydown', e=>{
-        if(e.key==='F12'||(e.ctrlKey&&['U','S'].includes(e.key))||(e.ctrlKey&&e.shiftKey&&['I','C','J'].includes(e.key))){
-            e.preventDefault();
-            alert("🔒 Acción bloqueada.");
-        }
-    });
-
-    // ==================== BOTÓN VOLVER AL INICIO ====================
-    exitFs.addEventListener('click', ()=>{
-        // Cambia esta URL a tu inicio de app
-        window.location.href = 'go:exitFs'; 
-    });
-
-})();
+    window.location.href = "go:exitFs"; 
+  }
 </script>
 
 </body>
