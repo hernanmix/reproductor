@@ -64,34 +64,6 @@
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6PSt5udjeWffjWqOrhzEc5mEfkJlUkJC7EuXoplgAMw&s=10",
     "url": "go:espn"
   },
-
-  
-
-  {
-    "title": "Al Aire Ahora",
- "league": "2026 • Balon Dividido",
-    "start": "2026-05-11T15:00:00",
-    "end": "2026-05-11T17:00:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6PSt5udjeWffjWqOrhzEc5mEfkJlUkJC7EuXoplgAMw&s=10",
-    "url": "go:espn"
-  },
-  {
-    "title": "Deportivo Maldonado vs Boston River",
-    "league": "2026 • Uruguay - Primera División",
-    "start": "2026-05-11T15:00:00",
-    "end": "2026-05-11T17:00:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1PdEEW_b20PHfDStMwTRrP-7RhwXVA-oX4zLZjVPYO3tKFE2f2oEv7BM&s=10",
-    "url": "go:disney4"
-  },
-  {
-    "title": "Sportivo Ameliano vs Deportivo Recoleta",
-    "league": "2026 • Paraguay - Primera División de Paraguay",
-    "start": "2026-05-11T15:45:00",
-    "end": "2026-05-11T17:45:00",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQsLV9G4PD4khSeTS01phXf1E97ynzPKbw0ET0ZUHKGg&s=10",
-    "url": "go:fanatiz2"
-  },
-  
   {
     "title": "Al Aire Ahora",
  "league": "2026 • F360",
@@ -100,14 +72,7 @@
     "image": "https://is1-ssl.mzstatic.com/image/thumb/BVYN9cycauH6p_G556n07A/1200x675.jpg",
     "url": "go:espn"
   },
-  {
-    "title": "Cerro Porteño vs Guaraní",
-    "league": "2026 • Paraguay - Primera División de Paraguay",
-    "start": "2026-05-11T18:00:00",
-    "end": "2026-05-11T20:00:00",
-    "image": "https://i.ytimg.com/vi/i3_DtGbmmI8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB1Ik69cEWpRabPi7BXXDKKB5Kalg",
-    "url": "go:fanatiz3"
-  },
+
   {
     "title": "Cerro Largo vs Peñarol",
     "league": "2026 • Uruguay - Primera División",
@@ -122,7 +87,7 @@
     "start": "2026-05-11T19:00:00",
     "end": "2026-05-11T21:00:00",
     "image": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F1944.png",
-    "url": "go:f1"
+    "url": "go:86"
   },
   {
     "title": "Sport Boys vs Universitario",
