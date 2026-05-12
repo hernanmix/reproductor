@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,10 +6,8 @@
 <title>Reproductor Fluido</title>
 <style>
   html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
     background-color: #000;
     overflow: hidden;
     font-family: Arial, sans-serif;
@@ -27,13 +24,11 @@
   }
   .exit-button {
     position: fixed;
-    top: 15px;
-    left: 15px;
-    width: 40px;
-    height: 40px;
+    top: 15px; left: 15px;
+    width: 40px; height: 40px;
     background-color: rgba(0,0,0,0.3);
     border-radius: 50%;
-    display: flex;
+    display: none; /* por defecto oculto */
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -51,13 +46,18 @@
 </div>
 
 <!-- Botón de salida -->
-<div class="exit-button" onclick="exitFs()">
+<div class="exit-button" id="exitBtn" onclick="exitFs()">
   <svg viewBox="0 0 24 24">
     <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
   </svg>
 </div>
 
 <script>
+  // ✅ Función para codificar en Base64
+  function encodeBase64(str) {
+    return btoa(str);
+  }
+
   // ✅ Obtener canal desde la URL (?ch=1 ... ?ch=200)
   function getChannelParam() {
     const params = new URLSearchParams(window.location.search);
@@ -68,9 +68,15 @@
 
   const iframe = document.getElementById('videoPlayer');
   const channel = getChannelParam();
+  const encoded = encodeBase64(channel);
 
-  // ✅ Construir URL final con inapp=1
-  iframe.src = `https://live-stream-scraper--hsportshd.replit.app/?ch=${channel}&inapp=1`;
+  // ✅ Construir URL final con inapp=1 y canal en Base64
+  iframe.src = `https://live-stream-scraper--hsportshd.replit.app/?r=${encoded}&inapp=1`;
+
+  // ✅ Mostrar botón ⟨ solo en AppCreator24
+  if (navigator.userAgent.includes("AppCreator24")) {
+    document.getElementById("exitBtn").style.display = "flex";
+  }
 
   // ✅ Botón de salida
   function exitFs() {
