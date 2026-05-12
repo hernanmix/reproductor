@@ -67,8 +67,15 @@
   // ✅ Construir URL final con inapp=1
   iframe.src = `https://live-stream-scraper--hsportshd.replit.app/?ch=${channel}&inapp=1`;
 
+  // ✅ Detectar si es WebView (AppCreator24 usa WebView interno)
+  function isInAppCreator24() {
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const isAndroidWebView = /\bwv\b/.test(ua) || (ua.includes("Version/") && ua.includes("Chrome/"));
+    return isAndroidWebView;
+  }
+
   // ✅ Mostrar botón ⟨ solo en AppCreator24
-  if (navigator.userAgent.includes("AppCreator24")) {
+  if (isInAppCreator24()) {
     document.getElementById("exitBtn").style.display = "flex";
   }
 
