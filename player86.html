@@ -58,7 +58,7 @@
     return btoa(str);
   }
 
-  // ✅ Obtener canal desde la URL (?ch=1 ... ?ch=200)
+  // ✅ Obtener canal desde la URL (?ch=86)
   function getChannelParam() {
     const params = new URLSearchParams(window.location.search);
     let ch = params.get("ch");
@@ -70,7 +70,7 @@
   const channel = getChannelParam();
   const encoded = encodeBase64(channel);
 
-  // ✅ Construir URL final con inapp=1 y canal en Base64
+  // ✅ Construir URL final con inapp=1
   iframe.src = `https://live-stream-scraper--hsportshd.replit.app/?r=${encoded}&inapp=1`;
 
   // ✅ Mostrar botón ⟨ solo en AppCreator24
