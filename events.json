@@ -72,16 +72,6 @@
     "image": "https://is1-ssl.mzstatic.com/image/thumb/BVYN9cycauH6p_G556n07A/1200x675.jpg",
     "url": "go:espn"
   },
-
-  
-  {
-    "title": "Sport Boys vs Universitario",
-    "league": "2026 • Perú - Liga 1",
-    "start": "2026-05-11T20:30:00",
-    "end": "2026-05-11T22:31:00",
-    "image": "https://img.asmedia.epimg.net/resizer/v2/2FYPGIFMD5O6FE77GTZDEZXN3Q.jpg?auth=a3090dac864f8043ec7f11c6eb129993e7a509bc4e8202eac99544e6f7dc0720&width=1472&height=828&smart=true",
-    "url": "go:liga1max"
-  },
   {
     "title": "Al Aire Ahora",
  "league": "2026 • SportsCenter De Noche",
@@ -108,7 +98,7 @@
     "start": "2026-05-12T13:00:00",
     "end": "2026-05-12T15:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSnSXskamNLESPn1iUGcMLkzRewKgstr9s1TmmiGmfKA&s=10",
-    "url": "##"
+    "url": "go:dsportsplus"
   },
   {
     "title": "Red Star vs Rodez",
@@ -124,7 +114,7 @@
     "start": "2026-05-12T14:00:00",
     "end": "2026-05-12T16:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIvAU1W5MNTk0ZG-2WqhQqDwiczHLbm2PFbjKgh6HAEQ&s=10",
-    "url": "##"
+    "url": "go:espn7"
   },
   {
     "title": "Osasuna vs Atlético Madrid",
@@ -132,7 +122,7 @@
     "start": "2026-05-12T14:30:00",
     "end": "2026-05-12T16:30:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTufVrol1B3rIt7gheptioefK0p933qfOziMkSSAleyclGBe5aK8A1JALsD&s=10",
-    "url": "##"
+    "url": "go:dsports"
   },
   {
     "title": "Insutec vs Barcelona",
@@ -156,7 +146,7 @@
     "start": "2026-05-12T18:20:00",
     "end": "2026-05-12T20:20:00",
     "image": "https://elcomercio-elcomercio-prod.web.arc-cdn.net/resizer/v2/PUK6VLGKJVD4ZGS2TVA26LECJI.jfif?auth=e6f4fac39e0ca51eae765de88b7ed443a7fdab418f0dc80470e033a901b32793&width=1200&height=900&smart=true&quality=75",
-    "url": "##"
+    "url": "go:winplus"
   },
   {
     "title": "Santa Fe vs América de Cali",
@@ -164,7 +154,7 @@
     "start": "2026-05-12T20:30:00",
     "end": "2026-05-12T22:30:00",
     "image": "https://elcomercio-elcomercio-prod.web.arc-cdn.net/resizer/v2/PUK6VLGKJVD4ZGS2TVA26LECJI.jfif?auth=e6f4fac39e0ca51eae765de88b7ed443a7fdab418f0dc80470e033a901b32793&width=1200&height=900&smart=true&quality=75",
-    "url": "##"
+    "url": "go:winplus"
   },
 
   
