@@ -73,27 +73,12 @@
     "url": "go:espn"
   },
 
-  {
-    "title": "Cerro Largo vs Peñarol",
-    "league": "2026 • Uruguay - Primera División",
-    "start": "2026-05-11T18:30:00",
-    "end": "2026-05-11T20:30:00",
-    "image": "https://a.espncdn.com/combiner/i?img=/photo/2021/0407/r837011_1181x665_16-9.png&cquality=80&h=370&w=655",
-    "url": "go:disney1"
-  },
-  {
-    "title": "Mushuc Runa vs LDU Quito",
-    "league": "2026 • Ecuador - Serie A de Ecuador",
-    "start": "2026-05-11T19:00:00",
-    "end": "2026-05-11T21:00:00",
-    "image": "https://a.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F1944.png",
-    "url": "https://hernanmix.github.io/reproductor/player86.html?ch=86"
-  },
+  
   {
     "title": "Sport Boys vs Universitario",
     "league": "2026 • Perú - Liga 1",
     "start": "2026-05-11T20:30:00",
-    "end": "2026-05-11T22:30:00",
+    "end": "2026-05-11T22:31:00",
     "image": "https://img.asmedia.epimg.net/resizer/v2/2FYPGIFMD5O6FE77GTZDEZXN3Q.jpg?auth=a3090dac864f8043ec7f11c6eb129993e7a509bc4e8202eac99544e6f7dc0720&width=1472&height=828&smart=true",
     "url": "go:liga1max"
   },
