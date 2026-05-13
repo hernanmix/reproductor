@@ -188,12 +188,28 @@
     "url": "##"
   },
   {
-    "title": "River Plate vs Gimnasia La Plata",
-    "league": "2026 • Argentina - Liga Profesional",
-    "start": "2026-05-13T19:30:00",
-    "end": "2026-05-13T21:30:00",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Logo_Liga_Profesional_de_F%C3%BAtbol_%28Argentina%29.png",
-    "url": "go:espn"
+    "title": "Juventude vs São Paulo",
+    "league": "2026 • Brasil - Copa de Brasil",
+    "start": "2026-05-13T17:00:00",
+    "end": "2026-05-13T19:00:00",
+    "image": "https://1000marcas.net/wp-content/uploads/2020/03/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png",
+    "url": "go:foxdeporte"
+  },
+  {
+    "title": "Vasco da Gama vs Paysandu",
+    "league": "2026 • Brasil - Copa de Brasil",
+    "start": "2026-05-13T17:00:00",
+    "end": "2026-05-13T19:00:00",
+    "image": "https://1000marcas.net/wp-content/uploads/2020/03/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png",
+    "url": "##"
+  },
+  {
+    "title": "Coritiba vs Santos",
+    "league": "2026 • Brasil - Copa de Brasil",
+    "start": "2026-05-13T17:30:00",
+    "end": "2026-05-13T19:30:00",
+    "image": "https://1000marcas.net/wp-content/uploads/2020/03/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png",
+    "url": "##"
   },
   {
     "title": "Deportivo Pasto vs Deportes Tolima",
@@ -210,6 +226,14 @@
     "end": "2026-05-13T20:15:00",
     "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
     "url": "go:foxdeporte"
+  },
+  {
+    "title": "Mirassol vs RB Bragantino",
+    "league": "2026 • Brasil - Copa de Brasil",
+    "start": "2026-05-13T18:30:00",
+    "end": "2026-05-13T20:30:00",
+    "image": "https://1000marcas.net/wp-content/uploads/2020/03/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png",
+    "url": "##"
   },
   {
     "title": "CF Montréal vs Portland Timbers",
@@ -236,6 +260,14 @@
     "url": "##"
   },
   {
+    "title": "River Plate vs Gimnasia La Plata",
+    "league": "2026 • Argentina - Liga Profesional",
+    "start": "2026-05-13T19:30:00",
+    "end": "2026-05-13T21:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Logo_Liga_Profesional_de_F%C3%BAtbol_%28Argentina%29.png",
+    "url": "go:espn"
+  },
+  {
     "title": "New England vs Nashville SC",
     "league": "2026 • EE. UU./Canadá - Major League Soccer",
     "start": "2026-05-13T18:30:00",
@@ -257,6 +289,30 @@
     "start": "2026-05-13T18:30:00",
     "end": "2026-05-13T20:30:00",
     "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/2018_MLS_Cup_Playoffs_Logo_RGB_4C_fre_dkbg.png",
+    "url": "##"
+  },
+  {
+    "title": "Ceará vs Atlético Mineiro",
+    "league": "2026 • Brasil - Copa de Brasil",
+    "start": "2026-05-13T19:30:00",
+    "end": "2026-05-13T21:30:00",
+    "image": "https://1000marcas.net/wp-content/uploads/2020/03/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png",
+    "url": "##"
+  },
+  {
+    "title": "Jacuipense vs Palmeiras",
+    "league": "2026 • Brasil - Copa de Brasil",
+    "start": "2026-05-13T19:30:00",
+    "end": "2026-05-13T21:30:00",
+    "image": "https://1000marcas.net/wp-content/uploads/2020/03/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png",
+    "url": "##"
+  },
+  {
+    "title": "Remo vs Bahia",
+    "league": "2026 • Brasil - Copa de Brasil",
+    "start": "2026-05-13T19:30:00",
+    "end": "2026-05-13T21:30:00",
+    "image": "https://1000marcas.net/wp-content/uploads/2020/03/Campeonato-Brasileiro-S%C3%A9rie-A-logo.png",
     "url": "##"
   },
   {
