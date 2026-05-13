@@ -43,7 +43,7 @@
   {
     "title": "La Vuelta a España ",
  "league": "2026 • Femenina",
-    "start": "2026-05-06T012:00:00",
+    "start": "2026-05-06T12:00:00",
     "end": "2026-05-06T115:30:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAOJrsvSwI2ZVivSN1H49sdmVVWaXzgEN6bhH0WEa-xg&s=10",
     "url": "go:espn"
@@ -121,7 +121,7 @@
     "start": "2026-05-13T12:00:00",
     "end": "2026-05-13T14:00:00",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVa-dJCAzQjEMjVixjGtTV3g474TIxPBNh-y8p17cGYg&s=10",
-    "url": "##"
+    "url": "go:espn3"
   },
   {
     "title": "Arsenal vs Everton",
@@ -177,7 +177,23 @@
     "start": "2026-05-13T15:30:00",
     "end": "2026-05-13T17:30:00",
     "image": "https://image.discovery.indazn.com/ca/v2/ca/image?id=7h3lmhd1h68d1v9kjjrw3jroe_image-header_pEs_1714920869000",
+    "url": "go:86"
+  },
+  {
+    "title": "Rosario Central vs Racing Club",
+    "league": "2026 • Argentina - Liga Profesional",
+    "start": "2026-05-13T17:00:00",
+    "end": "2026-05-13T19:00:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Logo_Liga_Profesional_de_F%C3%BAtbol_%28Argentina%29.png",
     "url": "##"
+  },
+  {
+    "title": "River Plate vs Gimnasia La Plata",
+    "league": "2026 • Argentina - Liga Profesional",
+    "start": "2026-05-13T19:30:00",
+    "end": "2026-05-13T21:30:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Logo_Liga_Profesional_de_F%C3%BAtbol_%28Argentina%29.png",
+    "url": "go:espn"
   },
   {
     "title": "Deportivo Pasto vs Deportes Tolima",
