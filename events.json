@@ -80,8 +80,6 @@
     "image": "https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/69ea3491-51c4-4afe-b73d-68cd3f810dd7/compose?aspectRatio=1.78&format=webp&width=1200",
     "url": "go:espn"
   },
-  
-
   {
     "title": "SINNEY VS PELLEGRINO ",
  "league": "2026 • ATP TOUR",
@@ -89,73 +87,6 @@
     "end": "2026-05-13T11:00:00",
     "image": "https://i.ytimg.com/vi/aU5U408IWSI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC6eFEQql8mMVs0AMe9JjbPtyMJJw",
     "url": "go:espn"
-  },
-  
-
-  
-  {
-    "title": "Cuniburo vs Deportivo Cuenca Juniors",
-    "league": "2026 • Ecuador - Serie B",
-    "start": "2026-05-14T15:30:00",
-    "end": "2026-05-14T17:30:00",
-    "image": "https://tricolor.ec/web/media/pictures/_noticia_foto/noticia-foto-27-liga-pro-serie-b-tendra-un-retraso-segun-comunicado-oficial-del-organizador.jpg",
-    "url": "go:86"
-  },
-  {
-    "title": "Chapecoense vs Botafogo",
-    "league": "2026 • Brasil - Copa de Brasil",
-    "start": "2026-05-14T16:00:00",
-    "end": "2026-05-14T18:00:00",
-    "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/528.png",
-    "url": "go:premiere1"
-  },
-  {
-    "title": "Santo Domingo vs Atlético Cali",
-    "league": "2026 • Ecuador - Serie B",
-    "start": "2026-05-14T16:30:00",
-    "end": "2026-05-14T19:00:00",
-    "image": "https://hernanmix.github.io/reproductor/fondo.png",
-    "url": "go:86"
-  },
-  {
-    "title": "Confiança vs Grêmio",
-    "league": "2026 • Brasil - Copa de Brasil",
-    "start": "2026-05-14T17:00:00",
-    "end": "2026-05-14T19:00:00",
-    "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/528.png",
-    "url": "go:amazon1"
-  },
-  {
-    "title": "Atlético Goianiense vs Athletico-PR",
-    "league": "2026 • Brasil - Copa de Brasil",
-    "start": "2026-05-14T17:00:00",
-    "end": "2026-05-14T19:00:00",
-    "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/528.png",
-    "url": "go:premiere2"
-  },
-  {
-    "title": "Corinthians vs Barra",
-    "league": "2026 • Brasil - Copa de Brasil",
-    "start": "2026-05-14T17:30:00",
-    "end": "2026-05-14T19:30:00",
-    "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/528.png",
-    "url": "go:amazon2"
-  },
-  {
-    "title": "CRB vs Fortaleza",
-    "league": "2026 • Brasil - Copa de Brasil",
-    "start": "2026-05-14T18:00:00",
-    "end": "2026-05-14T20:00:00",
-    "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/528.png",
-    "url": "go:amazon3"
-  },
-  {
-    "title": "Vitória vs Flamengo",
-    "league": "2026 • Brasil - Copa de Brasil",
-    "start": "2026-05-14T19:30:00",
-    "end": "2026-05-14T21:30:00",
-    "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/528.png",
-    "url": "go:premiere1"
   },
 
 
@@ -166,7 +97,7 @@
     "start": "2026-05-15T07:30:00",
     "end": "2026-05-15T09:30:00",
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Logo-division-de-honor.png",
-    "url": "##"
+    "url": "#go:fanatiz5"
   },
   {
     "title": "Rizespor vs Beşiktaş",
@@ -174,7 +105,7 @@
     "start": "2026-05-15T12:00:00",
     "end": "2026-05-15T14:00:00",
     "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6Oa9tGB7PEOYy2enpkfw3XZ0nb3zJ2YrzkjlPw7nKWfQAfnI8yzQgXfNSzg5dg63jZeZrVUWSvGFrGFiP9sZ2larrCAlFjPbumH3I1kRElAx2rWdwZL1tiJUuBV_xtdhjbS58S5K3O0s/s512/TUR.png",
-    "url": "##"
+    "url": "go:espn5"
   },
   {
     "title": "Salford City vs Grimsby Town",
@@ -198,7 +129,7 @@
     "start": "2026-05-15T13:30:00",
     "end": "2026-05-15T15:30:00",
     "image": "https://logovectorseek.com/wp-content/uploads/2019/08/laliga-smartbank-logo-vector.png",
-    "url": "##"
+    "url": "go:hyper1"
   },
   {
     "title": "Aston Villa vs Liverpool",
@@ -206,7 +137,7 @@
     "start": "2026-05-15T14:00:00",
     "end": "2026-05-15T16:00:00",
     "image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Premier_League_Logo.svg/1280px-Premier_League_Logo.svg.png",
-    "url": "##"
+    "url": "go:disney1"
   },
   {
     "title": "Notts County vs Chesterfield",
@@ -222,7 +153,7 @@
     "start": "2026-05-15T14:00:00",
     "end": "2026-05-15T16:00:00",
     "image": "https://logovectorseek.com/wp-content/uploads/2019/08/laliga-smartbank-logo-vector.png",
-    "url": "##"
+    "url": "go:hyper2"
   },
   {
     "title": "Sportivo Trinidense vs Cerro Porteño",
@@ -230,7 +161,7 @@
     "start": "2026-05-15T15:00:00",
     "end": "2026-05-15T17:00:00",
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Logo-division-de-honor.png",
-    "url": "##"
+    "url": "go:fanatiz2"
   },
   {
     "title": "Rubio Ñú vs Nacional Asunción",
@@ -238,7 +169,7 @@
     "start": "2026-05-15T15:00:00",
     "end": "2026-05-15T17:00:00",
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Logo-division-de-honor.png",
-    "url": "##"
+    "url": "fanatiz3"
   },
   {
     "title": "FC Cajamarca vs Sporting Cristal",
@@ -246,7 +177,7 @@
     "start": "2026-05-15T15:00:00",
     "end": "2026-05-15T17:00:00",
     "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/1813.png",
-    "url": "##"
+    "url": "go:liga1max"
   },
   {
     "title": "LDU Quito vs Técnico Universitario",
@@ -254,7 +185,7 @@
     "start": "2026-05-15T16:30:00",
     "end": "2026-05-15T18:30:00",
     "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/1944.png",
-    "url": "##"
+    "url": "go:86"
   },
   {
     "title": "Torque vs Nacional",
@@ -262,23 +193,7 @@
     "start": "2026-05-15T18:00:00",
     "end": "2026-05-15T20:00:00",
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Logo-division-de-honor.png",
-    "url": "##"
-  },
-  {
-    "title": "Westchester SC vs NY Cosmos",
-    "league": "2026 • ▴Estados Unidos - USL Cup",
-    "start": "2026-05-15T18:00:00",
-    "end": "2026-05-15T20:00:00",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/USL_Championship_abbr_light_logo.svg/1280px-USL_Championship_abbr_light_logo.svg.png",
-    "url": "##"
-  },
-  {
-    "title": "Charlotte Independence vs Pittsburgh Riverhounds",
-    "league": "2026 • ▴Estados Unidos - USL Cup",
-    "start": "2026-05-15T18:30:00",
-    "end": "2026-05-15T20:30:00",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/USL_Championship_abbr_light_logo.svg/1280px-USL_Championship_abbr_light_logo.svg.png",
-    "url": "##"
+    "url": "go:disney1"
   },
   {
     "title": "Libertad vs Deportivo Cuenca",
@@ -286,7 +201,7 @@
     "start": "2026-05-15T19:00:00",
     "end": "2026-05-15T21:00:00",
     "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/1944.png",
-    "url": "##"
+    "url": "go:86"
   },
   {
     "title": "Palestino vs La Serena",
@@ -294,7 +209,7 @@
     "start": "2026-05-15T19:00:00",
     "end": "2026-05-15T21:00:00",
     "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Campeonato_AFP_Plan_Vital.png",
-    "url": "##"
+    "url": "go:max1"
   },
   {
     "title": "Coquimbo Unido vs Audax Italiano",
@@ -302,7 +217,7 @@
     "start": "2026-05-15T19:00:00",
     "end": "2026-05-15T21:00:00",
     "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Campeonato_AFP_Plan_Vital.png",
-    "url": "##"
+    "url": "go:max2"
   },
   {
     "title": "Universitario vs Atlético Grau",
@@ -310,7 +225,7 @@
     "start": "2026-05-15T20:00:00",
     "end": "2026-05-15T22:00:00",
     "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/1813.png",
-    "url": "##"
+    "url": "go:max"
   },
 
   
