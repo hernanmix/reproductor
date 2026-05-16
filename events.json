@@ -90,143 +90,6 @@
   },
 
 
-  
-  {
-    "title": "Olimpia vs Deportivo Recoleta",
-    "league": "2026 • ▴Paraguay - Primera División de Paraguay",
-    "start": "2026-05-15T07:30:00",
-    "end": "2026-05-15T09:30:00",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Logo-division-de-honor.png",
-    "url": "#go:fanatiz5"
-  },
-  {
-    "title": "Rizespor vs Beşiktaş",
-    "league": "2026 • ▴Turquía - Super Lig",
-    "start": "2026-05-15T12:00:00",
-    "end": "2026-05-15T14:00:00",
-    "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6Oa9tGB7PEOYy2enpkfw3XZ0nb3zJ2YrzkjlPw7nKWfQAfnI8yzQgXfNSzg5dg63jZeZrVUWSvGFrGFiP9sZ2larrCAlFjPbumH3I1kRElAx2rWdwZL1tiJUuBV_xtdhjbS58S5K3O0s/s512/TUR.png",
-    "url": "go:espn5"
-  },
-  {
-    "title": "Salford City vs Grimsby Town",
-    "league": "2026 • Inglaterra - League Two",
-    "start": "2026-05-15T13:15:00",
-    "end": "2026-05-15T15:15:00",
-    "image": "https://upload.wikimedia.org/wikipedia/fr/2/2e/English_Football_League_Logo.png",
-    "url": "##"
-  },
-  {
-    "title": "Saint-Étienne vs Rodez",
-    "league": "2026 • ▴Francia - Ligue 1",
-    "start": "2026-05-15T13:30:00",
-    "end": "2026-05-15T15:30:00",
-    "image": "https://1000marcas.net/wp-content/uploads/2020/03/French-Ligue-1-Logo-2020-2024.png",
-    "url": "##"
-  },
-  {
-    "title": "CD Castellon vs Cádiz",
-    "league": "2026 • ▴España - LaLiga SmartBank",
-    "start": "2026-05-15T13:30:00",
-    "end": "2026-05-15T15:30:00",
-    "image": "https://logovectorseek.com/wp-content/uploads/2019/08/laliga-smartbank-logo-vector.png",
-    "url": "go:hyper1"
-  },
-  {
-    "title": "Aston Villa vs Liverpool",
-    "league": "2026 • ▴Inglaterra - Premier League",
-    "start": "2026-05-15T14:00:00",
-    "end": "2026-05-15T16:00:00",
-    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Premier_League_Logo.svg/1280px-Premier_League_Logo.svg.png",
-    "url": "go:disney1"
-  },
-  {
-    "title": "Notts County vs Chesterfield",
-    "league": "2026 • Inglaterra - League Two",
-    "start": "2026-05-15T14:00:00",
-    "end": "2026-05-15T16:00:00",
-    "image": "https://upload.wikimedia.org/wikipedia/fr/2/2e/English_Football_League_Logo.png",
-    "url": "##"
-  },
-  {
-    "title": "Córdoba vs Albacete",
-    "league": "2026 • ▴España - LaLiga SmartBank",
-    "start": "2026-05-15T14:00:00",
-    "end": "2026-05-15T16:00:00",
-    "image": "https://logovectorseek.com/wp-content/uploads/2019/08/laliga-smartbank-logo-vector.png",
-    "url": "go:hyper2"
-  },
-  {
-    "title": "Sportivo Trinidense vs Cerro Porteño",
-    "league": "2026 • ▴Paraguay - Primera División de Paraguay",
-    "start": "2026-05-15T15:00:00",
-    "end": "2026-05-15T17:00:00",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Logo-division-de-honor.png",
-    "url": "go:fanatiz2"
-  },
-  {
-    "title": "Rubio Ñú vs Nacional Asunción",
-    "league": "2026 • ▴Paraguay - Primera División de Paraguay",
-    "start": "2026-05-15T15:00:00",
-    "end": "2026-05-15T17:00:00",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Logo-division-de-honor.png",
-    "url": "fanatiz3"
-  },
-  {
-    "title": "FC Cajamarca vs Sporting Cristal",
-    "league": "2026 • ▴Perú - Liga 1",
-    "start": "2026-05-15T15:00:00",
-    "end": "2026-05-15T17:00:00",
-    "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/1813.png",
-    "url": "go:liga1max"
-  },
-  {
-    "title": "LDU Quito vs Técnico Universitario",
-    "league": "2026 • Ecuador - Serie A de Ecuador",
-    "start": "2026-05-15T16:30:00",
-    "end": "2026-05-15T18:30:00",
-    "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/1944.png",
-    "url": "go:85"
-  },
-  {
-    "title": "Torque vs Nacional",
-    "league": "2026 • ▴Uruguay - Primera División",
-    "start": "2026-05-15T18:00:00",
-    "end": "2026-05-15T20:00:00",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Logo-division-de-honor.png",
-    "url": "go:disney1"
-  },
-  {
-    "title": "Libertad vs Deportivo Cuenca",
-    "league": "2026 • Ecuador - Serie A de Ecuador",
-    "start": "2026-05-15T19:00:00",
-    "end": "2026-05-15T21:00:00",
-    "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/1944.png",
-    "url": "go:86"
-  },
-  {
-    "title": "Palestino vs La Serena",
-    "league": "2026 • Chile - Primera División de Chile",
-    "start": "2026-05-15T19:00:00",
-    "end": "2026-05-15T21:00:00",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Campeonato_AFP_Plan_Vital.png",
-    "url": "go:max1"
-  },
-  {
-    "title": "Coquimbo Unido vs Audax Italiano",
-    "league": "2026 • Chile - Primera División de Chile",
-    "start": "2026-05-15T19:00:00",
-    "end": "2026-05-15T21:00:00",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Campeonato_AFP_Plan_Vital.png",
-    "url": "go:max2"
-  },
-  {
-    "title": "Universitario vs Atlético Grau",
-    "league": "2026 • ▴Perú - Liga 1",
-    "start": "2026-05-15T20:00:00",
-    "end": "2026-05-15T22:00:00",
-    "image": "https://a.espncdn.com/combiner/i?img=/i/leaguelogos/soccer/500/1813.png",
-    "url": "go:max"
-  },
 
   
   
@@ -236,7 +99,7 @@
     "start": "2026-05-16T07:00:00",
     "end": "2026-05-16T09:00:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:hyper1"
   },
   {
     "title": "Heidenheim vs Mainz 05",
@@ -244,7 +107,7 @@
     "start": "2026-05-16T08:30:00",
     "end": "2026-05-16T10:30:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:disney6"
   },
   {
     "title": "St. Pauli vs Wolfsburg",
@@ -252,7 +115,7 @@
     "start": "2026-05-16T08:30:00",
     "end": "2026-05-16T10:30:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:disney1"
   },
   {
     "title": "Bayer Leverkusen vs Hamburger SV",
@@ -260,7 +123,7 @@
     "start": "2026-05-16T08:30:00",
     "end": "2026-05-16T10:30:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:disney2"
   },
   {
     "title": "Eintracht Frankfurt vs Stuttgart",
@@ -268,7 +131,7 @@
     "start": "2026-05-16T08:30:00",
     "end": "2026-05-16T10:30:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:disney3"
   },
   {
     "title": "Werder Bremen vs Borussia Dortmund",
@@ -276,7 +139,7 @@
     "start": "2026-05-16T08:30:00",
     "end": "2026-05-16T10:30:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:disney5"
   },
   {
     "title": "Bayern München vs Köln",
@@ -284,7 +147,7 @@
     "start": "2026-05-16T08:30:00",
     "end": "2026-05-16T10:30:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:disney4"
   },
   {
     "title": "Union Berlin vs Augsburg",
@@ -292,7 +155,7 @@
     "start": "2026-05-16T08:30:00",
     "end": "2026-05-16T10:30:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:disney7"
   },
   {
     "title": "Borussia M'gladbach vs Hoffenheim",
@@ -300,7 +163,7 @@
     "start": "2026-05-16T08:30:00",
     "end": "2026-05-16T10:30:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:disney8"
   },
   {
     "title": "Freiburg vs RB Leipzig",
@@ -308,7 +171,7 @@
     "start": "2026-05-16T08:30:00",
     "end": "2026-05-16T10:30:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:disney9"
   },
   {
     "title": "Chelsea vs Manchester City",
@@ -316,7 +179,7 @@
     "start": "2026-05-16T09:00:00",
     "end": "2026-05-16T11:00:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:disney10"
   },
   {
     "title": "Cultural Leonesa vs Eibar",
@@ -324,7 +187,7 @@
     "start": "2026-05-16T09:15:00",
     "end": "2026-05-16T11:15:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:hyper2"
   },
   {
     "title": "Ceuta vs Málaga",
@@ -332,7 +195,7 @@
     "start": "2026-05-16T09:15:00",
     "end": "2026-05-16T11:15:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:hyper1"
   },
   {
     "title": "Boston River vs Cerro",
@@ -340,7 +203,7 @@
     "start": "2026-05-16T10:00:00",
     "end": "2026-05-16T12:00:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:disney11"
   },
   {
     "title": "Granada vs Burgos",
@@ -348,7 +211,7 @@
     "start": "2026-05-16T11:30:00",
     "end": "2026-05-16T13:30:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:hyper3"
   },
   {
     "title": "Racing Santander vs Real Valladolid",
@@ -356,7 +219,7 @@
     "start": "2026-05-16T11:30:00",
     "end": "2026-05-16T13:30:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:hyper1"
   },
   {
     "title": "Almería vs Las Palmas",
@@ -364,7 +227,7 @@
     "start": "2026-05-16T11:30:00",
     "end": "2026-05-16T13:30:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:hyper2"
   },
   {
     "title": "22 de Julio vs Independiente Juniors",
@@ -372,7 +235,7 @@
     "start": "2026-05-16T12:30:00",
     "end": "2026-05-16T14:30:00",
     "image": "https://hernanmix.github.io/reproductor/imagen.png",
-    "url": "##"
+    "url": "go:85"
   },
   {
     "title": "Al Nassr vs Gamba Osaka",
